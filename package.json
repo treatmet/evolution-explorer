@@ -1,0 +1,30 @@
+{
+  "name": "evo-tree",
+  "version": "0.1.0",
+  "private": true,
+  "description": "EVO-TREE monorepo",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "scripts/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "lint": "npm run lint --workspaces --if-present",
+    "dev:web": "npm --workspace @evo-tree/web run dev",
+    "data:refresh": "npm --workspace @evo-tree/data-refresh run refresh",
+    "data:promote": "npm --workspace @evo-tree/data-refresh run promote",
+    "data:refresh:media": "npm --workspace @evo-tree/data-refresh run refresh:media",
+    "data:promote:media": "npm --workspace @evo-tree/data-refresh run promote:media"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.13.3",
+    "typescript": "~6.0.2",
+    "vitest": "^3.2.4"
+  }
+}

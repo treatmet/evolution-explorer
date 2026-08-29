@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:51.772Z",
+  "value": {
+    "ottId": 731568,
+    "matchedName": "Prunus dulcis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott731568",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:51.772Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

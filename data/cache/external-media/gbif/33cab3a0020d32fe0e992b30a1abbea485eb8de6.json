@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:18.468Z",
+  "value": {
+    "usageKey": 4964133,
+    "canonicalName": "Tiktaalik roseae",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4964133",
+      "url": "https://api.gbif.org/v1/species/match?name=Tiktaalik%20roseae",
+      "retrievedAt": "2026-08-29T10:57:18.468Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

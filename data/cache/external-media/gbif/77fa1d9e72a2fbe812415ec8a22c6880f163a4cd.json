@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:30.059Z",
+  "value": {
+    "usageKey": 5228514,
+    "canonicalName": "Archilochus colubris",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5228514",
+      "url": "https://api.gbif.org/v1/species/match?name=Archilochus%20colubris",
+      "retrievedAt": "2026-08-29T04:49:30.059Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

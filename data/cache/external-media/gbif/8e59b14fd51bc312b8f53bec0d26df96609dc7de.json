@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:58.097Z",
+  "value": {
+    "usageKey": 8112799,
+    "canonicalName": "Stentor coeruleus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8112799",
+      "url": "https://api.gbif.org/v1/species/match?name=Stentor%20coeruleus",
+      "retrievedAt": "2026-08-29T10:55:58.097Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:15.146Z",
+  "value": {
+    "usageKey": 2462503,
+    "canonicalName": "Tiliqua scincoides",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2462503",
+      "url": "https://api.gbif.org/v1/species/match?name=Tiliqua%20scincoides",
+      "retrievedAt": "2026-08-29T04:50:15.146Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:49:58.408Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/37748207/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37748207/square.jpg",
+    "title": "Galápagos Giant Tortoise",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "539452",
+      "sourceUrl": "https://www.inaturalist.org/taxa/539452",
+      "attributionText": "(c) John G. Phillips, some rights reserved (CC BY), uploaded by John G. Phillips",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "539452",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Chelonoidis%20niger&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:49:58.408Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

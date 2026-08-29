@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:32.931Z",
+  "value": {
+    "usageKey": 2475532,
+    "canonicalName": "Alcedo atthis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2475532",
+      "url": "https://api.gbif.org/v1/species/match?name=Alcedo%20atthis",
+      "retrievedAt": "2026-08-29T04:49:32.931Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

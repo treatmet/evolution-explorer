@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:44.280Z",
+  "value": {
+    "usageKey": 5858758,
+    "canonicalName": "Cornu aspersum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5858758",
+      "url": "https://api.gbif.org/v1/species/match?name=Cornu%20aspersum",
+      "retrievedAt": "2026-08-29T04:52:44.280Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

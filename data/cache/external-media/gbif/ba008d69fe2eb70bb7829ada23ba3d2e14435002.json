@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:41.311Z",
+  "value": {
+    "usageKey": 2007574,
+    "canonicalName": "Belostoma flumineum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2007574",
+      "url": "https://api.gbif.org/v1/species/match?name=Belostoma%20flumineum",
+      "retrievedAt": "2026-08-29T10:51:41.311Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

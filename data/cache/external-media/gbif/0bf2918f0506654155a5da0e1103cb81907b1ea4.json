@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:37.139Z",
+  "value": {
+    "usageKey": 2077503,
+    "canonicalName": "Acyrthosiphon pisum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2077503",
+      "url": "https://api.gbif.org/v1/species/match?name=Acyrthosiphon%20pisum",
+      "retrievedAt": "2026-08-29T10:51:37.139Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

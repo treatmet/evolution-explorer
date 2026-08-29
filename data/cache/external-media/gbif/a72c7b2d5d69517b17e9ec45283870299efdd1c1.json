@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:39.724Z",
+  "value": {
+    "usageKey": 3226559,
+    "canonicalName": "Clostridium botulinum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3226559",
+      "url": "https://api.gbif.org/v1/species/match?name=Clostridium%20botulinum",
+      "retrievedAt": "2026-08-29T10:56:39.724Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

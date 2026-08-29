@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:47.040Z",
+  "value": {
+    "usageKey": 1000053,
+    "canonicalName": "Sulfolobus acidocaldarius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1000053",
+      "url": "https://api.gbif.org/v1/species/match?name=Sulfolobus%20acidocaldarius",
+      "retrievedAt": "2026-08-29T10:56:47.040Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:02.733Z",
+  "value": {
+    "usageKey": 3024146,
+    "canonicalName": "Eriobotrya japonica",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3024146",
+      "url": "https://api.gbif.org/v1/species/match?name=Eriobotrya%20japonica",
+      "retrievedAt": "2026-08-29T10:53:02.733Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

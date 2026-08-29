@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:22.499Z",
+  "value": {
+    "usageKey": 2668952,
+    "canonicalName": "Galdieria sulphuraria",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2668952",
+      "url": "https://api.gbif.org/v1/species/match?name=Galdieria%20sulphuraria",
+      "retrievedAt": "2026-08-29T10:56:22.499Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:25.230Z",
+  "value": {
+    "usageKey": 5353770,
+    "canonicalName": "Arachis hypogaea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5353770",
+      "url": "https://api.gbif.org/v1/species/match?name=Arachis%20hypogaea",
+      "retrievedAt": "2026-08-29T10:53:25.230Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

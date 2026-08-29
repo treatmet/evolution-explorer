@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:51:48.973Z",
+  "value": {
+    "ottId": 673746,
+    "canonicalName": "Loxosceles reclusa",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott673746",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:51:48.973Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

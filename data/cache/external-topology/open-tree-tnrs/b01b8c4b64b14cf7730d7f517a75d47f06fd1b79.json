@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:52.708Z",
+  "value": {
+    "ottId": 410145,
+    "matchedName": "Odocoileus virginianus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott410145",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:52.708Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

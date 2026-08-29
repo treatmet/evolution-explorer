@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T10:51:18.376Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Mantis%20religiosa&show=attr",
+      "retrievedAt": "2026-08-29T10:51:18.376Z"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:53.673Z",
+  "value": {
+    "usageKey": 8262490,
+    "canonicalName": "Globigerina bulloides",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8262490",
+      "url": "https://api.gbif.org/v1/species/match?name=Globigerina%20bulloides",
+      "retrievedAt": "2026-08-29T10:55:53.673Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

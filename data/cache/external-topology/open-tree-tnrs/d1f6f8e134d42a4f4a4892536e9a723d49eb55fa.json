@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:53.866Z",
+  "value": {
+    "ottId": 796672,
+    "matchedName": "Dasypus novemcinctus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott796672",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:53.866Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

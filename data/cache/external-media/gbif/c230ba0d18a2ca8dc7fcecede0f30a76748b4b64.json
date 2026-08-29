@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:39.281Z",
+  "value": {
+    "usageKey": 1319394,
+    "canonicalName": "Eciton burchellii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1319394",
+      "url": "https://api.gbif.org/v1/species/match?name=Eciton%20burchellii",
+      "retrievedAt": "2026-08-29T10:50:39.281Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

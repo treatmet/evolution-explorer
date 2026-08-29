@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T10:54:44.593Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Saccharum%20officinarum&show=attr",
+      "retrievedAt": "2026-08-29T10:54:44.593Z"
+    }
+  }
+}

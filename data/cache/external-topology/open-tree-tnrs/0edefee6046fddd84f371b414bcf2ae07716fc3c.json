@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:57.853Z",
+  "value": {
+    "ottId": 226610,
+    "matchedName": "Narcissus pseudonarcissus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott226610",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:57.853Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

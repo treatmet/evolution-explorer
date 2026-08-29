@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:50:02.038Z",
+  "value": {
+    "ottId": 1091028,
+    "canonicalName": "Varanus komodoensis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott1091028",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:50:02.038Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

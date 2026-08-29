@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:48.309Z",
+  "value": {
+    "usageKey": 9326020,
+    "canonicalName": "Gallus gallus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9326020",
+      "url": "https://api.gbif.org/v1/species/match?name=Gallus%20gallus",
+      "retrievedAt": "2026-08-29T04:48:48.309Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:19.899Z",
+  "value": {
+    "usageKey": 2436637,
+    "canonicalName": "Cebus capucinus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2436637",
+      "url": "https://api.gbif.org/v1/species/match?name=Cebus%20capucinus",
+      "retrievedAt": "2026-08-29T04:47:19.899Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

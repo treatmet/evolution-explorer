@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:07.129Z",
+  "value": {
+    "usageKey": 1087226,
+    "canonicalName": "Scarabaeus sacer",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1087226",
+      "url": "https://api.gbif.org/v1/species/match?name=Scarabaeus%20sacer",
+      "retrievedAt": "2026-08-29T10:51:07.129Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

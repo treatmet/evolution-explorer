@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:49:03.985Z",
+  "value": {
+    "ottId": 534514,
+    "canonicalName": "Falco tinnunculus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott534514",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:49:03.985Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

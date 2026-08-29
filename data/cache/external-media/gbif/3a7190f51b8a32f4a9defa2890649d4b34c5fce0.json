@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:30.121Z",
+  "value": {
+    "usageKey": 2253484,
+    "canonicalName": "Milnesium tardigradum",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2253484",
+      "url": "https://api.gbif.org/v1/species/match?name=Milnesium%20tardigradum",
+      "retrievedAt": "2026-08-29T10:49:30.121Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

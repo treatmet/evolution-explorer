@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:04.939Z",
+  "value": {
+    "ottId": 464865,
+    "matchedName": "Serinus canaria",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott464865",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:04.939Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

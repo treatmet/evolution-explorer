@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:30.062Z",
+  "value": {
+    "usageKey": 5214139,
+    "canonicalName": "Solea solea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5214139",
+      "url": "https://api.gbif.org/v1/species/match?name=Solea%20solea",
+      "retrievedAt": "2026-08-29T04:52:30.062Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

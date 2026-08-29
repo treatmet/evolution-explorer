@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:51.423Z",
+  "value": {
+    "ottId": 3902985,
+    "matchedName": "Malus domestica",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott3902985",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:51.423Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

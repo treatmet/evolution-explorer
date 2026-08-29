@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:07.844Z",
+  "value": {
+    "usageKey": 2440735,
+    "canonicalName": "Balaenoptera musculus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2440735",
+      "url": "https://api.gbif.org/v1/species/match?name=Balaenoptera%20musculus",
+      "retrievedAt": "2026-08-29T04:48:07.844Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

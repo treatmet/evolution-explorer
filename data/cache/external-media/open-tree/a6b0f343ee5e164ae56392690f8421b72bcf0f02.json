@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:55:34.163Z",
+  "value": {
+    "ottId": 110737,
+    "canonicalName": "Boletus edulis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott110737",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:55:34.163Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

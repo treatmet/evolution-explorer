@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:53:41.739Z",
+  "value": {
+    "ottId": 671807,
+    "canonicalName": "Fraxinus americana",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott671807",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:53:41.739Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

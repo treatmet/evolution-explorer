@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:57.118Z",
+  "value": {
+    "ottId": 923734,
+    "matchedName": "Lepus americanus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott923734",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:57.118Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

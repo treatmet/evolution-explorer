@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:54.081Z",
+  "value": {
+    "usageKey": 5217160,
+    "canonicalName": "Bufo bufo",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5217160",
+      "url": "https://api.gbif.org/v1/species/match?name=Bufo%20bufo",
+      "retrievedAt": "2026-08-29T04:50:54.081Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:50.834Z",
+  "value": {
+    "usageKey": 3189767,
+    "canonicalName": "Plantago major",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3189767",
+      "url": "https://api.gbif.org/v1/species/match?name=Plantago%20major",
+      "retrievedAt": "2026-08-29T10:53:50.834Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

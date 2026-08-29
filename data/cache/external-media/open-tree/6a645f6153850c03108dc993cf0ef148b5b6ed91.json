@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:37.077Z",
+  "value": {
+    "ottId": 330000,
+    "canonicalName": "Fregata magnificens",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott330000",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:37.077Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

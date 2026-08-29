@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:55.009Z",
+  "value": {
+    "ottId": 226198,
+    "matchedName": "Megaptera novaeangliae",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott226198",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:55.009Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

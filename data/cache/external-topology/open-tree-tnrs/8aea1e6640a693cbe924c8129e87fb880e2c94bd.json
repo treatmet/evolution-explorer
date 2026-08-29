@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:03.274Z",
+  "value": {
+    "ottId": 776471,
+    "matchedName": "Pica pica",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott776471",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:03.274Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

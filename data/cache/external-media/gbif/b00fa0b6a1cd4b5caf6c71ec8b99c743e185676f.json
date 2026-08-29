@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:35.723Z",
+  "value": {
+    "usageKey": 5219416,
+    "canonicalName": "Panthera tigris",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219416",
+      "url": "https://api.gbif.org/v1/species/match?name=Panthera%20tigris",
+      "retrievedAt": "2026-08-29T04:47:35.723Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

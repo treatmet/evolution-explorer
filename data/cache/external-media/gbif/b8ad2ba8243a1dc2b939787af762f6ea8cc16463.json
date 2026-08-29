@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:35.296Z",
+  "value": {
+    "usageKey": 5204019,
+    "canonicalName": "Oncorhynchus mykiss",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5204019",
+      "url": "https://api.gbif.org/v1/species/match?name=Oncorhynchus%20mykiss",
+      "retrievedAt": "2026-08-29T04:51:35.296Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

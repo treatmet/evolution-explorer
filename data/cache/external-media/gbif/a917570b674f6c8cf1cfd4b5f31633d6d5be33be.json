@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:07.846Z",
+  "value": {
+    "usageKey": 5384220,
+    "canonicalName": "Lophophora williamsii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5384220",
+      "url": "https://api.gbif.org/v1/species/match?name=Lophophora%20williamsii",
+      "retrievedAt": "2026-08-29T10:55:07.846Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

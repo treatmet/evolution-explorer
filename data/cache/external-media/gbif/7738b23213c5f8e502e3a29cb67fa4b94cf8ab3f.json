@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:33.626Z",
+  "value": {
+    "usageKey": 2481433,
+    "canonicalName": "Fulmarus glacialis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2481433",
+      "url": "https://api.gbif.org/v1/species/match?name=Fulmarus%20glacialis",
+      "retrievedAt": "2026-08-29T04:48:33.626Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

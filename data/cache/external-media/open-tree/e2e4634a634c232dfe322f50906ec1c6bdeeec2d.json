@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:42.174Z",
+  "value": {
+    "ottId": 561114,
+    "canonicalName": "Procavia capensis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott561114",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:42.174Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:04.185Z",
+  "value": {
+    "usageKey": 5213725,
+    "canonicalName": "Mola mola",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5213725",
+      "url": "https://api.gbif.org/v1/species/match?name=Mola%20mola",
+      "retrievedAt": "2026-08-29T04:52:04.185Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

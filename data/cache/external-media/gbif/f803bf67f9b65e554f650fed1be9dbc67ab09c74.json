@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:19.930Z",
+  "value": {
+    "usageKey": 8234398,
+    "canonicalName": "Spongia officinalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8234398",
+      "url": "https://api.gbif.org/v1/species/match?name=Spongia%20officinalis",
+      "retrievedAt": "2026-08-29T10:50:19.930Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

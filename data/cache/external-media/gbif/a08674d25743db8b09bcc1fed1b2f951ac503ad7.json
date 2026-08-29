@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:49.866Z",
+  "value": {
+    "usageKey": 2481700,
+    "canonicalName": "Scolopax rusticola",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2481700",
+      "url": "https://api.gbif.org/v1/species/match?name=Scolopax%20rusticola",
+      "retrievedAt": "2026-08-29T04:49:49.866Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

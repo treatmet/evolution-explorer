@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:20.624Z",
+  "value": {
+    "usageKey": 5225712,
+    "canonicalName": "Eunectes murinus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5225712",
+      "url": "https://api.gbif.org/v1/species/match?name=Eunectes%20murinus",
+      "retrievedAt": "2026-08-29T04:50:20.624Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

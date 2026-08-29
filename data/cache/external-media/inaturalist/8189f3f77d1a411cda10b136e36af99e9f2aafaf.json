@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:48:46.740Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/171955255/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/171955255/square.jpg",
+    "title": "Mandarin Duck",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "7106",
+      "sourceUrl": "https://www.inaturalist.org/taxa/7106",
+      "attributionText": "(c) Alexis Lours, some rights reserved (CC BY), uploaded by Alexis Lours",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "7106",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Aix%20galericulata&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:48:46.740Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

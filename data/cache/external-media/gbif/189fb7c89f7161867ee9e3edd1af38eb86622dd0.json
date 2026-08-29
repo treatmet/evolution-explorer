@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:29.927Z",
+  "value": {
+    "usageKey": 2433399,
+    "canonicalName": "Ailuropoda melanoleuca",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2433399",
+      "url": "https://api.gbif.org/v1/species/match?name=Ailuropoda%20melanoleuca",
+      "retrievedAt": "2026-08-29T04:47:29.927Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

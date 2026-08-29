@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:54.129Z",
+  "value": {
+    "ottId": 962377,
+    "matchedName": "Ornithorhynchus anatinus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott962377",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:54.129Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

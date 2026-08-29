@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:44.780Z",
+  "value": {
+    "usageKey": 2703912,
+    "canonicalName": "Saccharum officinarum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2703912",
+      "url": "https://api.gbif.org/v1/species/match?name=Saccharum%20officinarum",
+      "retrievedAt": "2026-08-29T10:54:44.780Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

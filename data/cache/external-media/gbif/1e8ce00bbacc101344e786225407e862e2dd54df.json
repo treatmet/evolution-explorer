@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:39.162Z",
+  "value": {
+    "usageKey": 4558786,
+    "canonicalName": "Ascaris lumbricoides",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4558786",
+      "url": "https://api.gbif.org/v1/species/match?name=Ascaris%20lumbricoides",
+      "retrievedAt": "2026-08-29T10:49:39.162Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

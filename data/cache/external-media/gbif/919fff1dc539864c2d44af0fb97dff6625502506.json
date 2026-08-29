@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:52.042Z",
+  "value": {
+    "usageKey": 2149490,
+    "canonicalName": "Nephila pilipes",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2149490",
+      "url": "https://api.gbif.org/v1/species/match?name=Nephila%20pilipes",
+      "retrievedAt": "2026-08-29T10:51:52.042Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

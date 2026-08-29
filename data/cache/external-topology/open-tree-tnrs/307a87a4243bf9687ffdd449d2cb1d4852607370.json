@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:19.077Z",
+  "value": {
+    "ottId": 401066,
+    "matchedName": "Gasterosteus aculeatus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott401066",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:19.077Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

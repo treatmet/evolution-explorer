@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:39.990Z",
+  "value": {
+    "usageKey": 4286942,
+    "canonicalName": "Carassius auratus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4286942",
+      "url": "https://api.gbif.org/v1/species/match?name=Carassius%20auratus",
+      "retrievedAt": "2026-08-29T04:51:39.990Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

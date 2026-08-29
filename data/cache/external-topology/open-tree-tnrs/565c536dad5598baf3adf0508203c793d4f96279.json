@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:46.325Z",
+  "value": {
+    "ottId": 616441,
+    "matchedName": "Euscorpius italicus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott616441",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:46.325Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

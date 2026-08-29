@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:56.557Z",
+  "value": {
+    "usageKey": 2441110,
+    "canonicalName": "Ovis aries",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2441110",
+      "url": "https://api.gbif.org/v1/species/match?name=Ovis%20aries",
+      "retrievedAt": "2026-08-29T04:47:56.557Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

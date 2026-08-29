@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:40.127Z",
+  "value": {
+    "usageKey": 5290052,
+    "canonicalName": "Zea mays",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5290052",
+      "url": "https://api.gbif.org/v1/species/match?name=Zea%20mays",
+      "retrievedAt": "2026-08-29T10:54:40.127Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

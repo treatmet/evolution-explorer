@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:19.662Z",
+  "value": {
+    "usageKey": 5387142,
+    "canonicalName": "Dahlia pinnata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5387142",
+      "url": "https://api.gbif.org/v1/species/match?name=Dahlia%20pinnata",
+      "retrievedAt": "2026-08-29T10:53:19.662Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:11.903Z",
+  "value": {
+    "ottId": 534288,
+    "matchedName": "Cryptobranchus alleganiensis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott534288",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:11.903Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

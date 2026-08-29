@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:09.075Z",
+  "value": {
+    "ottId": 276851,
+    "canonicalName": "Physeter catodon",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott276851",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:09.075Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

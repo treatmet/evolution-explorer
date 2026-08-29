@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:02.595Z",
+  "value": {
+    "usageKey": 2285337,
+    "canonicalName": "Pinctada margaritifera",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2285337",
+      "url": "https://api.gbif.org/v1/species/match?name=Pinctada%20margaritifera",
+      "retrievedAt": "2026-08-29T10:49:02.595Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

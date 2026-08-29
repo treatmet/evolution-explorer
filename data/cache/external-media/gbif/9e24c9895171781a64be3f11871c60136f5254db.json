@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:43.064Z",
+  "value": {
+    "usageKey": 3172261,
+    "canonicalName": "Jasminum officinale",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3172261",
+      "url": "https://api.gbif.org/v1/species/match?name=Jasminum%20officinale",
+      "retrievedAt": "2026-08-29T10:53:43.064Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

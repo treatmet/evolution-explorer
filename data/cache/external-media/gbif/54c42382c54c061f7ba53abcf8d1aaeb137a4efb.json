@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:55.015Z",
+  "value": {
+    "usageKey": 2495924,
+    "canonicalName": "Otidiphaps nobilis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2495924",
+      "url": "https://api.gbif.org/v1/species/match?name=Otidiphaps%20nobilis",
+      "retrievedAt": "2026-08-29T04:48:55.015Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

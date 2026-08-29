@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:55.451Z",
+  "value": {
+    "ottId": 285641,
+    "canonicalName": "Psittacus erithacus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott285641",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:55.451Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

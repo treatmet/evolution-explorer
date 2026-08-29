@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:09.274Z",
+  "value": {
+    "usageKey": 7974238,
+    "canonicalName": "Alexandrium catenella",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7974238",
+      "url": "https://api.gbif.org/v1/species/match?name=Alexandrium%20catenella",
+      "retrievedAt": "2026-08-29T10:56:09.274Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

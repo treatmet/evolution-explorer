@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:10.341Z",
+  "value": {
+    "usageKey": 2256559,
+    "canonicalName": "Actinia equina",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2256559",
+      "url": "https://api.gbif.org/v1/species/match?name=Actinia%20equina",
+      "retrievedAt": "2026-08-29T10:50:10.341Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

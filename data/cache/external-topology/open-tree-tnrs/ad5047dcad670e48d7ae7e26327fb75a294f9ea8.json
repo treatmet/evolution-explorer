@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:57.991Z",
+  "value": {
+    "ottId": 71459,
+    "matchedName": "Diomedea exulans",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott71459",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:57.991Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:02.249Z",
+  "value": {
+    "usageKey": 2480516,
+    "canonicalName": "Harpia harpyja",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2480516",
+      "url": "https://api.gbif.org/v1/species/match?name=Harpia%20harpyja",
+      "retrievedAt": "2026-08-29T04:49:02.249Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

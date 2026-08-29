@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:06.328Z",
+  "value": {
+    "usageKey": 2480649,
+    "canonicalName": "Gypaetus barbatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2480649",
+      "url": "https://api.gbif.org/v1/species/match?name=Gypaetus%20barbatus",
+      "retrievedAt": "2026-08-29T04:49:06.328Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

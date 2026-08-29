@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:52:57.486Z",
+  "value": {
+    "ottId": 972654,
+    "canonicalName": "Pyrus communis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott972654",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:52:57.486Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:10.017Z",
+  "value": {
+    "usageKey": 2465641,
+    "canonicalName": "Pogona vitticeps",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2465641",
+      "url": "https://api.gbif.org/v1/species/match?name=Pogona%20vitticeps",
+      "retrievedAt": "2026-08-29T04:50:10.017Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

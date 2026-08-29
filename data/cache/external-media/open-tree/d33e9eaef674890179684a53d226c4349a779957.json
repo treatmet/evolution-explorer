@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:53:55.281Z",
+  "value": {
+    "ottId": 62303,
+    "canonicalName": "Aloe vera",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott62303",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:53:55.281Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

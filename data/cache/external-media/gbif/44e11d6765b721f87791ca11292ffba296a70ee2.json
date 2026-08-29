@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:28.970Z",
+  "value": {
+    "usageKey": 14,
+    "canonicalName": "Tardigrada",
+    "rank": "PHYLUM",
+    "confidence": 94,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "14",
+      "url": "https://api.gbif.org/v1/species/match?name=Tardigrada",
+      "retrievedAt": "2026-08-29T10:49:28.970Z",
+      "note": "GBIF confidence 94"
+    }
+  }
+}

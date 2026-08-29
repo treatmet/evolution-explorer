@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:43.243Z",
+  "value": {
+    "usageKey": 2502879,
+    "canonicalName": "Dugesia tigrina",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2502879",
+      "url": "https://api.gbif.org/v1/species/match?name=Dugesia%20tigrina",
+      "retrievedAt": "2026-08-29T10:49:43.243Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

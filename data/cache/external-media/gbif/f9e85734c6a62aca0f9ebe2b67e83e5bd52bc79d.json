@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:49.370Z",
+  "value": {
+    "usageKey": 7960979,
+    "canonicalName": "Urtica dioica",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7960979",
+      "url": "https://api.gbif.org/v1/species/match?name=Urtica%20dioica",
+      "retrievedAt": "2026-08-29T10:52:49.370Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

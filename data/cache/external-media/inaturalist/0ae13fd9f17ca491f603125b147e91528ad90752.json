@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:53:52.574Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/59895393/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59895393/square.jpeg",
+    "title": "Asian plantain",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "501675",
+      "sourceUrl": "https://www.inaturalist.org/taxa/501675",
+      "attributionText": "no rights reserved, uploaded by 葉子",
+      "licenseCode": "cc0",
+      "licenseName": "Creative Commons Zero",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "501675",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Plantago%20major&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:53:52.574Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

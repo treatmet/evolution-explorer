@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:23.481Z",
+  "value": {
+    "usageKey": 2439838,
+    "canonicalName": "Castor canadensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2439838",
+      "url": "https://api.gbif.org/v1/species/match?name=Castor%20canadensis",
+      "retrievedAt": "2026-08-29T04:48:23.481Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

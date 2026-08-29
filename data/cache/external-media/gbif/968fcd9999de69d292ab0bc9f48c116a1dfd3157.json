@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:28.223Z",
+  "value": {
+    "usageKey": 2436982,
+    "canonicalName": "Ochotona princeps",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2436982",
+      "url": "https://api.gbif.org/v1/species/match?name=Ochotona%20princeps",
+      "retrievedAt": "2026-08-29T04:48:28.223Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:02.466Z",
+  "value": {
+    "usageKey": 2329622,
+    "canonicalName": "Ciona intestinalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2329622",
+      "url": "https://api.gbif.org/v1/species/match?name=Ciona%20intestinalis",
+      "retrievedAt": "2026-08-29T10:50:02.466Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

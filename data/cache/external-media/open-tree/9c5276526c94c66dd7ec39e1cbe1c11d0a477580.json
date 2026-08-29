@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:46.022Z",
+  "value": {
+    "ottId": 765167,
+    "canonicalName": "Anas platyrhynchos",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott765167",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:46.022Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

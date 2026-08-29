@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:30.528Z",
+  "value": {
+    "usageKey": 5358457,
+    "canonicalName": "Prosopis glandulosa",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5358457",
+      "url": "https://api.gbif.org/v1/species/match?name=Prosopis%20glandulosa",
+      "retrievedAt": "2026-08-29T10:53:30.528Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

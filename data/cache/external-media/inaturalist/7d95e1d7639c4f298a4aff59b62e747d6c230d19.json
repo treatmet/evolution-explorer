@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:49:14.530Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/84967662/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84967662/square.jpg",
+    "title": "Japanese Spider Crab",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "127535",
+      "sourceUrl": "https://www.inaturalist.org/taxa/127535",
+      "attributionText": "(c) Brian Gratwicke, some rights reserved (CC BY)",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "127535",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Macrocheira%20kaempferi&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:49:14.530Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

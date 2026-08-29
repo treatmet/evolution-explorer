@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:49:17.979Z",
+  "value": {
+    "ottId": 411348,
+    "canonicalName": "Euphausia superba",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott411348",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:49:17.979Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:49.470Z",
+  "value": {
+    "usageKey": 10822801,
+    "canonicalName": "Prometheoarchaeum",
+    "rank": "GENUS",
+    "confidence": 92,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "10822801",
+      "url": "https://api.gbif.org/v1/species/match?name=Candidatus%20Prometheoarchaeum%20syntrophicum",
+      "retrievedAt": "2026-08-29T10:56:49.470Z",
+      "note": "GBIF confidence 92"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:10.479Z",
+  "value": {
+    "usageKey": 4825829,
+    "canonicalName": "Mammut americanum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4825829",
+      "url": "https://api.gbif.org/v1/species/match?name=Mammut%20americanum",
+      "retrievedAt": "2026-08-29T10:57:10.479Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

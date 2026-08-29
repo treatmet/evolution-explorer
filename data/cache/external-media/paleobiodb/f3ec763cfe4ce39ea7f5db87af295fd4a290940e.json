@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T10:57:11.758Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Doedicurus%20clavicaudatus&show=attr",
+      "retrievedAt": "2026-08-29T10:57:11.757Z"
+    }
+  }
+}

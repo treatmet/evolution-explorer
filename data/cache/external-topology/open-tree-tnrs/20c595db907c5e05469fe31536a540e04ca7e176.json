@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:34.737Z",
+  "value": {
+    "ottId": 487091,
+    "matchedName": "Botryllus schlosseri",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott487091",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:34.737Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T10:52:39.424Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Corylus%20avellana&show=attr",
+      "retrievedAt": "2026-08-29T10:52:39.424Z"
+    }
+  }
+}

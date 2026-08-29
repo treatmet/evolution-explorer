@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:54.423Z",
+  "value": {
+    "usageKey": 2495347,
+    "canonicalName": "Zenaida macroura",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2495347",
+      "url": "https://api.gbif.org/v1/species/match?name=Zenaida%20macroura",
+      "retrievedAt": "2026-08-29T04:48:54.423Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

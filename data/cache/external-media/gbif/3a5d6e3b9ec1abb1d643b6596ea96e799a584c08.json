@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:02.794Z",
+  "value": {
+    "usageKey": 5743122,
+    "canonicalName": "Lucanus cervus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5743122",
+      "url": "https://api.gbif.org/v1/species/match?name=Lucanus%20cervus",
+      "retrievedAt": "2026-08-29T10:51:02.794Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

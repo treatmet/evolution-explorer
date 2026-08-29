@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:50.251Z",
+  "value": {
+    "ottId": 42307,
+    "matchedName": "Puma concolor",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott42307",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:50.251Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

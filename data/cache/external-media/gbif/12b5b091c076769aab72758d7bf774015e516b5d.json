@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:33.471Z",
+  "value": {
+    "usageKey": 6109699,
+    "canonicalName": "Phoenix dactylifera",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "6109699",
+      "url": "https://api.gbif.org/v1/species/match?name=Phoenix%20dactylifera",
+      "retrievedAt": "2026-08-29T10:54:33.471Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

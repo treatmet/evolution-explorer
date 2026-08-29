@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:01.331Z",
+  "value": {
+    "usageKey": 7931731,
+    "canonicalName": "Prunus domestica",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7931731",
+      "url": "https://api.gbif.org/v1/species/match?name=Prunus%20domestica",
+      "retrievedAt": "2026-08-29T10:53:01.331Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

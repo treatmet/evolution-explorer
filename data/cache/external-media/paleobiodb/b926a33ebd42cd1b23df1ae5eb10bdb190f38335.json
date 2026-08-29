@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:50:22.552Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Naja%20naja&show=attr",
+      "retrievedAt": "2026-08-29T04:50:22.552Z"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:45.214Z",
+  "value": {
+    "usageKey": 2474944,
+    "canonicalName": "Grus japonensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2474944",
+      "url": "https://api.gbif.org/v1/species/match?name=Grus%20japonensis",
+      "retrievedAt": "2026-08-29T04:49:45.214Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

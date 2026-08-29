@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:45.336Z",
+  "value": {
+    "usageKey": 9072021,
+    "canonicalName": "Laetiporus sulphureus",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9072021",
+      "url": "https://api.gbif.org/v1/species/match?name=Laetiporus%20sulphureus",
+      "retrievedAt": "2026-08-29T10:55:45.336Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

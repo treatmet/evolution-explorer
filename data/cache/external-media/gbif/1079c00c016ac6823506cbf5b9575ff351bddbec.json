@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:55.049Z",
+  "value": {
+    "usageKey": 2150962,
+    "canonicalName": "Dolomedes triton",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2150962",
+      "url": "https://api.gbif.org/v1/species/match?name=Dolomedes%20triton",
+      "retrievedAt": "2026-08-29T10:51:55.049Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

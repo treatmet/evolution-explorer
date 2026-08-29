@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:16.050Z",
+  "value": {
+    "usageKey": 5422328,
+    "canonicalName": "Macrocystis pyrifera",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5422328",
+      "url": "https://api.gbif.org/v1/species/match?name=Macrocystis%20pyrifera",
+      "retrievedAt": "2026-08-29T10:56:16.050Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

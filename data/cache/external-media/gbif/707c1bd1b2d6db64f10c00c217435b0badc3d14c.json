@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:58.768Z",
+  "value": {
+    "usageKey": 5217334,
+    "canonicalName": "Xenopus laevis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5217334",
+      "url": "https://api.gbif.org/v1/species/match?name=Xenopus%20laevis",
+      "retrievedAt": "2026-08-29T04:50:58.768Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

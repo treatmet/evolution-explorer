@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:22.875Z",
+  "value": {
+    "usageKey": 5183631,
+    "canonicalName": "Cliona celata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5183631",
+      "url": "https://api.gbif.org/v1/species/match?name=Cliona%20celata",
+      "retrievedAt": "2026-08-29T10:50:22.875Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

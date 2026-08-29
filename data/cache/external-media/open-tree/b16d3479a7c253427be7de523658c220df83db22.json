@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:53:52.272Z",
+  "value": {
+    "ottId": 596457,
+    "canonicalName": "Antirrhinum majus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott596457",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:53:52.272Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

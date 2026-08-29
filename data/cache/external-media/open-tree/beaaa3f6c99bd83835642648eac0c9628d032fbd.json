@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:52:34.755Z",
+  "value": {
+    "ottId": 239659,
+    "canonicalName": "Quercus robur",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott239659",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:52:34.755Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:29.596Z",
+  "value": {
+    "usageKey": 1342324,
+    "canonicalName": "Xylocopa virginica",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1342324",
+      "url": "https://api.gbif.org/v1/species/match?name=Xylocopa%20virginica",
+      "retrievedAt": "2026-08-29T10:50:29.596Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

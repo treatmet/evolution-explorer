@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:52:10.318Z",
+  "value": {
+    "ottId": 766703,
+    "canonicalName": "Chaetodon auriga",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott766703",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:52:10.318Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

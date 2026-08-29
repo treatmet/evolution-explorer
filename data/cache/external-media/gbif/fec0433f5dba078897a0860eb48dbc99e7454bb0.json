@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:37.746Z",
+  "value": {
+    "usageKey": 9797255,
+    "canonicalName": "Danio rerio",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9797255",
+      "url": "https://api.gbif.org/v1/species/match?name=Danio%20rerio",
+      "retrievedAt": "2026-08-29T04:51:37.746Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:19.861Z",
+  "value": {
+    "ottId": 217252,
+    "canonicalName": "Cebus capucinus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott217252",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:19.861Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:08.992Z",
+  "value": {
+    "usageKey": 5383983,
+    "canonicalName": "Schlumbergera truncata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5383983",
+      "url": "https://api.gbif.org/v1/species/match?name=Schlumbergera%20truncata",
+      "retrievedAt": "2026-08-29T10:55:08.992Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

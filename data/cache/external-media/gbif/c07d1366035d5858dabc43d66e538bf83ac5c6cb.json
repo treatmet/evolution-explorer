@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:20.456Z",
+  "value": {
+    "usageKey": 7903057,
+    "canonicalName": "Brassica rapa",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7903057",
+      "url": "https://api.gbif.org/v1/species/match?name=Brassica%20rapa",
+      "retrievedAt": "2026-08-29T10:54:20.456Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

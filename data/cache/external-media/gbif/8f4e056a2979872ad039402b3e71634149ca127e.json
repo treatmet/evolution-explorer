@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:53.896Z",
+  "value": {
+    "usageKey": 5173485,
+    "canonicalName": "Portia fimbriata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5173485",
+      "url": "https://api.gbif.org/v1/species/match?name=Portia%20fimbriata",
+      "retrievedAt": "2026-08-29T10:51:53.896Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

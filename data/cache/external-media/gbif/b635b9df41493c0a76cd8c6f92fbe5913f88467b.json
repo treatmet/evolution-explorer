@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:39.910Z",
+  "value": {
+    "usageKey": 2434126,
+    "canonicalName": "Suricata suricatta",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2434126",
+      "url": "https://api.gbif.org/v1/species/match?name=Suricata%20suricatta",
+      "retrievedAt": "2026-08-29T04:47:39.910Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:48.139Z",
+  "value": {
+    "ottId": 696022,
+    "matchedName": "Indri indri",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott696022",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:48.139Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

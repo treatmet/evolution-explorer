@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:42.976Z",
+  "value": {
+    "ottId": 362113,
+    "matchedName": "Mastotermes darwiniensis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott362113",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:42.976Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

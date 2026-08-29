@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:10.368Z",
+  "value": {
+    "usageKey": 2385390,
+    "canonicalName": "Chaetodon auriga",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2385390",
+      "url": "https://api.gbif.org/v1/species/match?name=Chaetodon%20auriga",
+      "retrievedAt": "2026-08-29T04:52:10.368Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

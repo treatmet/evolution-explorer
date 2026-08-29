@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:19.708Z",
+  "value": {
+    "usageKey": 5275705,
+    "canonicalName": "Porphyra umbilicalis",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5275705",
+      "url": "https://api.gbif.org/v1/species/match?name=Porphyra%20umbilicalis",
+      "retrievedAt": "2026-08-29T10:56:19.708Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

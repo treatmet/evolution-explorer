@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:51:43.149Z",
+  "value": {
+    "ottId": 765295,
+    "canonicalName": "Dactylopius coccus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott765295",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:51:43.149Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

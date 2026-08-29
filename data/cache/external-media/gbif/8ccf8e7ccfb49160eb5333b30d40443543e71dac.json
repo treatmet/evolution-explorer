@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:40.319Z",
+  "value": {
+    "usageKey": 5191261,
+    "canonicalName": "Aplysia californica",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5191261",
+      "url": "https://api.gbif.org/v1/species/match?name=Aplysia%20californica",
+      "retrievedAt": "2026-08-29T04:52:40.319Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

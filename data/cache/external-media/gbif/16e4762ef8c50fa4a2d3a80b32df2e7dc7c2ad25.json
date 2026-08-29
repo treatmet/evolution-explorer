@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:47.856Z",
+  "value": {
+    "usageKey": 2441247,
+    "canonicalName": "Hippopotamus amphibius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2441247",
+      "url": "https://api.gbif.org/v1/species/match?name=Hippopotamus%20amphibius",
+      "retrievedAt": "2026-08-29T04:47:47.856Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

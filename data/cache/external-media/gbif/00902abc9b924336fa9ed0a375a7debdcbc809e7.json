@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:16.124Z",
+  "value": {
+    "usageKey": 2420637,
+    "canonicalName": "Mitsukurina owstoni",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2420637",
+      "url": "https://api.gbif.org/v1/species/match?name=Mitsukurina%20owstoni",
+      "retrievedAt": "2026-08-29T04:51:16.124Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

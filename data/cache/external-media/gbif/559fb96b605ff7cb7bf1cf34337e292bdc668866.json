@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:51.432Z",
+  "value": {
+    "usageKey": 2441207,
+    "canonicalName": "Okapia johnstoni",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2441207",
+      "url": "https://api.gbif.org/v1/species/match?name=Okapia%20johnstoni",
+      "retrievedAt": "2026-08-29T04:47:51.432Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:32.233Z",
+  "value": {
+    "ottId": 471703,
+    "matchedName": "Brachionus plicatilis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott471703",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:32.233Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

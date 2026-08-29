@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:50:51.962Z",
+  "value": {
+    "ottId": 116647,
+    "canonicalName": "Manduca sexta",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott116647",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:50:51.962Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

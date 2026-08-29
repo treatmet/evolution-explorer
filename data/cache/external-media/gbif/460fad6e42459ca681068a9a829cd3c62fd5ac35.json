@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:22.043Z",
+  "value": {
+    "usageKey": 8316400,
+    "canonicalName": "Sorex araneus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8316400",
+      "url": "https://api.gbif.org/v1/species/match?name=Sorex%20araneus",
+      "retrievedAt": "2026-08-29T04:48:22.043Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

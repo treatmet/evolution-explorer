@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:21.705Z",
+  "value": {
+    "ottId": 230493,
+    "matchedName": "Micropterus salmoides",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott230493",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:21.705Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:03.919Z",
+  "value": {
+    "usageKey": 8661110,
+    "canonicalName": "Mosasaurus hoffmannii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8661110",
+      "url": "https://api.gbif.org/v1/species/match?name=Mosasaurus%20hoffmannii",
+      "retrievedAt": "2026-08-29T10:57:03.919Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

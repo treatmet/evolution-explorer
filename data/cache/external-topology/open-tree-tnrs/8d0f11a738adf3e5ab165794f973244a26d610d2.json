@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:11.373Z",
+  "value": {
+    "ottId": 456236,
+    "matchedName": "Pantherophis guttatus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott456236",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:11.373Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

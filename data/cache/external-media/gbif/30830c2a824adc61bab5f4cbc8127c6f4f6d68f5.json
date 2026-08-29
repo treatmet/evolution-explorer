@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:30.927Z",
+  "value": {
+    "usageKey": 11286021,
+    "canonicalName": "Escherichia coli",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "11286021",
+      "url": "https://api.gbif.org/v1/species/match?name=Escherichia%20coli",
+      "retrievedAt": "2026-08-29T10:56:30.927Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

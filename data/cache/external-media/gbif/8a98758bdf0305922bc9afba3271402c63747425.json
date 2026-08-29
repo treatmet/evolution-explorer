@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:17.008Z",
+  "value": {
+    "usageKey": 5219553,
+    "canonicalName": "Hylobates lar",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219553",
+      "url": "https://api.gbif.org/v1/species/match?name=Hylobates%20lar",
+      "retrievedAt": "2026-08-29T04:47:17.008Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

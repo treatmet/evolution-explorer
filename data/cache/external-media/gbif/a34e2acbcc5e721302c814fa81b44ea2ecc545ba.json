@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:56.557Z",
+  "value": {
+    "usageKey": 1505543,
+    "canonicalName": "Tipula paludosa",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1505543",
+      "url": "https://api.gbif.org/v1/species/match?name=Tipula%20paludosa",
+      "retrievedAt": "2026-08-29T10:50:56.557Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

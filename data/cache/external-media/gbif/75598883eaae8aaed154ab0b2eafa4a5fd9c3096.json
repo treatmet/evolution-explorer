@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:27.757Z",
+  "value": {
+    "usageKey": 5212973,
+    "canonicalName": "Anguilla anguilla",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5212973",
+      "url": "https://api.gbif.org/v1/species/match?name=Anguilla%20anguilla",
+      "retrievedAt": "2026-08-29T04:51:27.757Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

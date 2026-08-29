@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:56.071Z",
+  "value": {
+    "usageKey": 3210521,
+    "canonicalName": "Actinosphaerium eichhorni",
+    "rank": "SPECIES",
+    "confidence": 96,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3210521",
+      "url": "https://api.gbif.org/v1/species/match?name=Actinosphaerium%20eichhornii",
+      "retrievedAt": "2026-08-29T10:55:56.071Z",
+      "note": "GBIF confidence 96"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:30.180Z",
+  "value": {
+    "usageKey": 1421091,
+    "canonicalName": "Lepisma saccharinum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1421091",
+      "url": "https://api.gbif.org/v1/species/match?name=Lepisma%20saccharinum",
+      "retrievedAt": "2026-08-29T10:51:30.180Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

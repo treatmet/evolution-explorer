@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:25.688Z",
+  "value": {
+    "usageKey": 1419845,
+    "canonicalName": "Forficula auricularia",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1419845",
+      "url": "https://api.gbif.org/v1/species/match?name=Forficula%20auricularia",
+      "retrievedAt": "2026-08-29T10:51:25.688Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

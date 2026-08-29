@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:59.677Z",
+  "value": {
+    "ottId": 164204,
+    "canonicalName": "Salix babylonica",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott164204",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:59.677Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

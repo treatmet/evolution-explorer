@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:35.011Z",
+  "value": {
+    "usageKey": 2290924,
+    "canonicalName": "Vampyroteuthis infernalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2290924",
+      "url": "https://api.gbif.org/v1/species/match?name=Vampyroteuthis%20infernalis",
+      "retrievedAt": "2026-08-29T04:52:35.011Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

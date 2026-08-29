@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:28.185Z",
+  "value": {
+    "ottId": 644261,
+    "canonicalName": "Ochotona princeps",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott644261",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:28.185Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

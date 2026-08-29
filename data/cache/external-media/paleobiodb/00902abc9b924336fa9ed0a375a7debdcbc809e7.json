@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:51:16.024Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Mitsukurina%20owstoni&show=attr",
+      "retrievedAt": "2026-08-29T04:51:16.024Z"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:14.144Z",
+  "value": {
+    "usageKey": 3465658,
+    "canonicalName": "Aspergillus niger",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3465658",
+      "url": "https://api.gbif.org/v1/species/match?name=Aspergillus%20niger",
+      "retrievedAt": "2026-08-29T10:55:14.144Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

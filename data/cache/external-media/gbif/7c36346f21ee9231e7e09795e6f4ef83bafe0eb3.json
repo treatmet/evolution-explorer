@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:45.943Z",
+  "value": {
+    "usageKey": 2337607,
+    "canonicalName": "Silurus glanis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2337607",
+      "url": "https://api.gbif.org/v1/species/match?name=Silurus%20glanis",
+      "retrievedAt": "2026-08-29T04:51:45.943Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

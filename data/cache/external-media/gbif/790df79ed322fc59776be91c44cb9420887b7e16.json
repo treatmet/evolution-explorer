@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:42.255Z",
+  "value": {
+    "usageKey": 2496459,
+    "canonicalName": "Geococcyx californianus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2496459",
+      "url": "https://api.gbif.org/v1/species/match?name=Geococcyx%20californianus",
+      "retrievedAt": "2026-08-29T04:49:42.255Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

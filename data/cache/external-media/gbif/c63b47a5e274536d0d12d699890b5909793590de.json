@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:14.730Z",
+  "value": {
+    "usageKey": 5216248,
+    "canonicalName": "Isurus oxyrinchus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5216248",
+      "url": "https://api.gbif.org/v1/species/match?name=Isurus%20oxyrinchus",
+      "retrievedAt": "2026-08-29T04:51:14.730Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

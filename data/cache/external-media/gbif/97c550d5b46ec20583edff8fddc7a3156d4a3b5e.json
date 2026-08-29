@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:24.186Z",
+  "value": {
+    "usageKey": 2490384,
+    "canonicalName": "Cardinalis cardinalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2490384",
+      "url": "https://api.gbif.org/v1/species/match?name=Cardinalis%20cardinalis",
+      "retrievedAt": "2026-08-29T04:49:24.186Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:37.287Z",
+  "value": {
+    "usageKey": 2928751,
+    "canonicalName": "Datura stramonium",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2928751",
+      "url": "https://api.gbif.org/v1/species/match?name=Datura%20stramonium",
+      "retrievedAt": "2026-08-29T10:53:37.287Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

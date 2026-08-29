@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:42.266Z",
+  "value": {
+    "ottId": 657948,
+    "canonicalName": "Hordeum vulgare",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott657948",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:42.266Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

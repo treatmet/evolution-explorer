@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:25.787Z",
+  "value": {
+    "usageKey": 3033558,
+    "canonicalName": "Clematis vitalba",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3033558",
+      "url": "https://api.gbif.org/v1/species/match?name=Clematis%20vitalba",
+      "retrievedAt": "2026-08-29T10:54:25.787Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

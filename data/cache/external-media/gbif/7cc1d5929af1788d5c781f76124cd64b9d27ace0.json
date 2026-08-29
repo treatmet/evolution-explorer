@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:32.325Z",
+  "value": {
+    "usageKey": 3086357,
+    "canonicalName": "Piper nigrum",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3086357",
+      "url": "https://api.gbif.org/v1/species/match?name=Piper%20nigrum",
+      "retrievedAt": "2026-08-29T10:52:32.325Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

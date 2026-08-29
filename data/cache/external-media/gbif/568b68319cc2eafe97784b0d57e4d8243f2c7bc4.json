@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:28.131Z",
+  "value": {
+    "usageKey": 9102011,
+    "canonicalName": "Bitis gabonica",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9102011",
+      "url": "https://api.gbif.org/v1/species/match?name=Bitis%20gabonica",
+      "retrievedAt": "2026-08-29T04:50:28.131Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

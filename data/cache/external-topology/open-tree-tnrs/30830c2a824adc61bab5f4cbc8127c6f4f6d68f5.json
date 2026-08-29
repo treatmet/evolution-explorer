@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:39:11.339Z",
+  "value": {
+    "ottId": 474506,
+    "matchedName": "Escherichia coli",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott474506",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:39:11.339Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

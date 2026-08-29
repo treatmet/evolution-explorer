@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:12.524Z",
+  "value": {
+    "ottId": 14688,
+    "matchedName": "Rana catesbeiana",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott14688",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:12.524Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

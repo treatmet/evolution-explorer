@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:38.452Z",
+  "value": {
+    "ottId": 489862,
+    "matchedName": "Solenopsis invicta",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott489862",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:38.452Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

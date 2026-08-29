@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:55.737Z",
+  "value": {
+    "usageKey": 2273754,
+    "canonicalName": "Pisaster ochraceus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2273754",
+      "url": "https://api.gbif.org/v1/species/match?name=Pisaster%20ochraceus",
+      "retrievedAt": "2026-08-29T10:49:55.737Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

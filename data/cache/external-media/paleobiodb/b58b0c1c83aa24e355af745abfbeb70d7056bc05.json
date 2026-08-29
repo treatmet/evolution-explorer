@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:52:38.372Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Nautilus%20pompilius&show=attr",
+      "retrievedAt": "2026-08-29T04:52:38.372Z"
+    }
+  }
+}

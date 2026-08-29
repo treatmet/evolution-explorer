@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:52.599Z",
+  "value": {
+    "usageKey": 2441370,
+    "canonicalName": "Alligator mississippiensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2441370",
+      "url": "https://api.gbif.org/v1/species/match?name=Alligator%20mississippiensis",
+      "retrievedAt": "2026-08-29T04:49:52.599Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

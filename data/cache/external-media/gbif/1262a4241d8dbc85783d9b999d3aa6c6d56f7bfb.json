@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:26.028Z",
+  "value": {
+    "usageKey": 5219173,
+    "canonicalName": "Canis lupus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219173",
+      "url": "https://api.gbif.org/v1/species/match?name=Canis%20lupus",
+      "retrievedAt": "2026-08-29T04:47:26.028Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

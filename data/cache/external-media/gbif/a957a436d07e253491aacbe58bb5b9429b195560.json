@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:24.401Z",
+  "value": {
+    "usageKey": 5219702,
+    "canonicalName": "Cavia porcellus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219702",
+      "url": "https://api.gbif.org/v1/species/match?name=Cavia%20porcellus",
+      "retrievedAt": "2026-08-29T04:48:24.401Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

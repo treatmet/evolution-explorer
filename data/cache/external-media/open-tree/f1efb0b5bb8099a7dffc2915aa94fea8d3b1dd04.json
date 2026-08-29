@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:33.340Z",
+  "value": {
+    "ottId": 231602,
+    "canonicalName": "Mephitis mephitis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott231602",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:33.340Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

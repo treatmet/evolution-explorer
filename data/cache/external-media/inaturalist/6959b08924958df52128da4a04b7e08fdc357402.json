@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:47:13.546Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/80550183/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/80550183/square.jpg",
+    "title": "Human",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "43584",
+      "sourceUrl": "https://www.inaturalist.org/taxa/43584",
+      "attributionText": "no rights reserved, uploaded by Abhas Misraraj",
+      "licenseCode": "cc0",
+      "licenseName": "Creative Commons Zero",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "43584",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Homo%20sapiens&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:47:13.546Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

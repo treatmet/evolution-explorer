@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:18.987Z",
+  "value": {
+    "ottId": 435643,
+    "matchedName": "Phycodurus eques",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott435643",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:18.987Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

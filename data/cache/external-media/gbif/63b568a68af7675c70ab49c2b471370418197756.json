@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:30.883Z",
+  "value": {
+    "usageKey": 2404329,
+    "canonicalName": "Muraena helena",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2404329",
+      "url": "https://api.gbif.org/v1/species/match?name=Muraena%20helena",
+      "retrievedAt": "2026-08-29T04:51:30.883Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

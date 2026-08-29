@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:31.033Z",
+  "value": {
+    "usageKey": 5815560,
+    "canonicalName": "Eisenia fetida",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5815560",
+      "url": "https://api.gbif.org/v1/species/match?name=Eisenia%20fetida",
+      "retrievedAt": "2026-08-29T10:49:31.033Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

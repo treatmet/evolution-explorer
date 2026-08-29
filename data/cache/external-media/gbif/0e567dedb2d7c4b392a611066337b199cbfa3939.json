@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:19.340Z",
+  "value": {
+    "usageKey": 2381939,
+    "canonicalName": "Coryphaena hippurus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2381939",
+      "url": "https://api.gbif.org/v1/species/match?name=Coryphaena%20hippurus",
+      "retrievedAt": "2026-08-29T04:52:19.340Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:56.899Z",
+  "value": {
+    "ottId": 122965,
+    "matchedName": "Plantago major",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott122965",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:56.899Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:50:58.385Z",
+  "value": {
+    "ottId": 173570,
+    "canonicalName": "Lucilia sericata",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott173570",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:50:58.385Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

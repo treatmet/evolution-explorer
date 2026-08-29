@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:50:12.965Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/291326666/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/291326666/square.jpg",
+    "title": "Cuban Green Anole",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "36651",
+      "sourceUrl": "https://www.inaturalist.org/taxa/36651",
+      "attributionText": "(c) Robin White, some rights reserved (CC BY), uploaded by Robin White",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "36651",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Anolis%20carolinensis&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:50:12.965Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

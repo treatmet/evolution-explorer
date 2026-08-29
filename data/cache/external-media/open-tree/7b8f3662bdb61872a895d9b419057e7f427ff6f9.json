@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:52:04.531Z",
+  "value": {
+    "ottId": 3518397,
+    "canonicalName": "Scolopendra gigantea",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott3518397",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:52:04.531Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

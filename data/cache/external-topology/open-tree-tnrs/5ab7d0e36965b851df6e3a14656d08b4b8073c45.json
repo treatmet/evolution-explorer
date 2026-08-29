@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:55.846Z",
+  "value": {
+    "ottId": 23729,
+    "matchedName": "Olea europaea",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott23729",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:55.846Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

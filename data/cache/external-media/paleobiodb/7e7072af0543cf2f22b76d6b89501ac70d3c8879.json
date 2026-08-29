@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:48:39.765Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Ardea%20herodias&show=attr",
+      "retrievedAt": "2026-08-29T04:48:39.765Z"
+    }
+  }
+}

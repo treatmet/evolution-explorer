@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:03.031Z",
+  "value": {
+    "usageKey": 8265662,
+    "canonicalName": "Trichomonas",
+    "rank": "GENUS",
+    "confidence": 92,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8265662",
+      "url": "https://api.gbif.org/v1/species/match?name=Trichomonas%20vaginalis",
+      "retrievedAt": "2026-08-29T10:56:03.031Z",
+      "note": "GBIF confidence 92"
+    }
+  }
+}

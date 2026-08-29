@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:58.061Z",
+  "value": {
+    "ottId": 19028,
+    "canonicalName": "Connochaetes taurinus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott19028",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:58.061Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

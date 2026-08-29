@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:50:06.831Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/62397915/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/62397915/square.jpg",
+    "title": "Brown Basilisk",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "33118",
+      "sourceUrl": "https://www.inaturalist.org/taxa/33118",
+      "attributionText": "(c) Nick Tobler (Cowturtle), some rights reserved (CC BY), uploaded by Nick Tobler (Cowturtle)",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "33118",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Basiliscus%20basiliscus&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:50:06.831Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

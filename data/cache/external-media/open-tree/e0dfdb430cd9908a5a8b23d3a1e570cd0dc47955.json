@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:36.463Z",
+  "value": {
+    "ottId": 627039,
+    "canonicalName": "Ananas comosus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott627039",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:36.463Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

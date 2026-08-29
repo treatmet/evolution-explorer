@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:02.839Z",
+  "value": {
+    "usageKey": 2480726,
+    "canonicalName": "Pandion haliaetus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2480726",
+      "url": "https://api.gbif.org/v1/species/match?name=Pandion%20haliaetus",
+      "retrievedAt": "2026-08-29T04:49:02.839Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:09.431Z",
+  "value": {
+    "ottId": 953907,
+    "matchedName": "Gekko gecko",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott953907",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:09.431Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

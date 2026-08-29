@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:03.362Z",
+  "value": {
+    "ottId": 30736,
+    "matchedName": "Cyanocitta cristata",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott30736",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:03.362Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

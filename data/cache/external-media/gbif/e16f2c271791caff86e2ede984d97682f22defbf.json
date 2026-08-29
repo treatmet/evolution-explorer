@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:43.391Z",
+  "value": {
+    "usageKey": 2705966,
+    "canonicalName": "Secale cereale",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2705966",
+      "url": "https://api.gbif.org/v1/species/match?name=Secale%20cereale",
+      "retrievedAt": "2026-08-29T10:54:43.391Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

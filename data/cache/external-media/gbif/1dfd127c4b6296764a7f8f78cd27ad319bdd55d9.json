@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:34.089Z",
+  "value": {
+    "usageKey": 3222442,
+    "canonicalName": "Vibrio cholerae",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3222442",
+      "url": "https://api.gbif.org/v1/species/match?name=Vibrio%20cholerae",
+      "retrievedAt": "2026-08-29T10:56:34.089Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

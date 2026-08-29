@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:20.443Z",
+  "value": {
+    "usageKey": 2419543,
+    "canonicalName": "Dasyatis pastinaca",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2419543",
+      "url": "https://api.gbif.org/v1/species/match?name=Dasyatis%20pastinaca",
+      "retrievedAt": "2026-08-29T04:51:20.443Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

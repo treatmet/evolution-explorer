@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:29.344Z",
+  "value": {
+    "usageKey": 2956176,
+    "canonicalName": "Delonix regia",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2956176",
+      "url": "https://api.gbif.org/v1/species/match?name=Delonix%20regia",
+      "retrievedAt": "2026-08-29T10:53:29.344Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

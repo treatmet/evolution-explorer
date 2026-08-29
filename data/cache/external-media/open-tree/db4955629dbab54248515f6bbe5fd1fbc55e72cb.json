@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:53:03.459Z",
+  "value": {
+    "ottId": 756728,
+    "canonicalName": "Vitis vinifera",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott756728",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:53:03.459Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:05.208Z",
+  "value": {
+    "usageKey": 2435451,
+    "canonicalName": "Sarcophilus harrisii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2435451",
+      "url": "https://api.gbif.org/v1/species/match?name=Sarcophilus%20harrisii",
+      "retrievedAt": "2026-08-29T04:48:05.208Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

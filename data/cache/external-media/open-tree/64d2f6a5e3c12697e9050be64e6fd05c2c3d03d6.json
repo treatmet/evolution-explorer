@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:23.442Z",
+  "value": {
+    "ottId": 886085,
+    "canonicalName": "Castor canadensis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott886085",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:23.442Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

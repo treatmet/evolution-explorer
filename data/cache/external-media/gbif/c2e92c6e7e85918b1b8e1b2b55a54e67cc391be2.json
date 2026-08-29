@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:20.109Z",
+  "value": {
+    "usageKey": 4836874,
+    "canonicalName": "Eusthenopteron foordi",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4836874",
+      "url": "https://api.gbif.org/v1/species/match?name=Eusthenopteron%20foordi",
+      "retrievedAt": "2026-08-29T10:57:20.109Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

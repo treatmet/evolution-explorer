@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:15.056Z",
+  "value": {
+    "ottId": 970846,
+    "matchedName": "Sphyrna mokarran",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott970846",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:15.056Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

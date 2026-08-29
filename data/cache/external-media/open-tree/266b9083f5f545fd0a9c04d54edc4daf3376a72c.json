@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:49.532Z",
+  "value": {
+    "ottId": 986973,
+    "canonicalName": "Lama glama",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott986973",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:49.532Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

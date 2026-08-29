@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:29.856Z",
+  "value": {
+    "usageKey": 5231783,
+    "canonicalName": "Casuarius casuarius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5231783",
+      "url": "https://api.gbif.org/v1/species/match?name=Casuarius%20casuarius",
+      "retrievedAt": "2026-08-29T04:48:29.856Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

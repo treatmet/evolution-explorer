@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:44.356Z",
+  "value": {
+    "usageKey": 6101576,
+    "canonicalName": "Taenia solium",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "6101576",
+      "url": "https://api.gbif.org/v1/species/match?name=Taenia%20solium",
+      "retrievedAt": "2026-08-29T10:49:44.356Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

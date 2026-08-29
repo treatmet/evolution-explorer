@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:14.434Z",
+  "value": {
+    "usageKey": 5273309,
+    "canonicalName": "Ulva lactuca",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5273309",
+      "url": "https://api.gbif.org/v1/species/match?name=Ulva%20lactuca",
+      "retrievedAt": "2026-08-29T10:56:14.434Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

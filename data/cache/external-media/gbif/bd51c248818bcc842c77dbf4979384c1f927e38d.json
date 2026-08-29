@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:23.216Z",
+  "value": {
+    "usageKey": 11545536,
+    "canonicalName": "Copepoda",
+    "rank": "CLASS",
+    "confidence": 94,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "11545536",
+      "url": "https://api.gbif.org/v1/species/match?name=Copepoda",
+      "retrievedAt": "2026-08-29T10:49:23.216Z",
+      "note": "GBIF confidence 94"
+    }
+  }
+}

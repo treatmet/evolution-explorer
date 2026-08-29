@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:10.833Z",
+  "value": {
+    "usageKey": 9206251,
+    "canonicalName": "Helianthus annuus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9206251",
+      "url": "https://api.gbif.org/v1/species/match?name=Helianthus%20annuus",
+      "retrievedAt": "2026-08-29T10:53:10.833Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

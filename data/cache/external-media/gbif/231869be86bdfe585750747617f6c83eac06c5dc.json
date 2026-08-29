@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:34.568Z",
+  "value": {
+    "usageKey": 2289324,
+    "canonicalName": "Hapalochlaena lunulata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2289324",
+      "url": "https://api.gbif.org/v1/species/match?name=Hapalochlaena%20lunulata",
+      "retrievedAt": "2026-08-29T04:52:34.568Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

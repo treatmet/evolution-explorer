@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:46.653Z",
+  "value": {
+    "usageKey": 7705930,
+    "canonicalName": "Sus scrofa",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7705930",
+      "url": "https://api.gbif.org/v1/species/match?name=Sus%20scrofa",
+      "retrievedAt": "2026-08-29T04:47:46.653Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

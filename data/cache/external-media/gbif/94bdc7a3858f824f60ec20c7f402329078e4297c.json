@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:38.134Z",
+  "value": {
+    "usageKey": 2478523,
+    "canonicalName": "Picus viridis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2478523",
+      "url": "https://api.gbif.org/v1/species/match?name=Picus%20viridis",
+      "retrievedAt": "2026-08-29T04:49:38.134Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

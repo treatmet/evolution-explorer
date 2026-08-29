@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:55:37.024Z",
+  "value": {
+    "ottId": 376066,
+    "canonicalName": "Tuber melanosporum",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott376066",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:55:37.024Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:48.227Z",
+  "value": {
+    "ottId": 152022,
+    "matchedName": "Loris tardigradus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott152022",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:48.227Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

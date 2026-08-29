@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:31.294Z",
+  "value": {
+    "usageKey": 5243447,
+    "canonicalName": "Agaricus bisporus",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5243447",
+      "url": "https://api.gbif.org/v1/species/match?name=Agaricus%20bisporus",
+      "retrievedAt": "2026-08-29T10:55:31.294Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:21.618Z",
+  "value": {
+    "ottId": 557687,
+    "matchedName": "Sander vitreus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott557687",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:21.618Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:22.066Z",
+  "value": {
+    "usageKey": 2115706,
+    "canonicalName": "Balanus glandula",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2115706",
+      "url": "https://api.gbif.org/v1/species/match?name=Balanus%20glandula",
+      "retrievedAt": "2026-08-29T10:49:22.066Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

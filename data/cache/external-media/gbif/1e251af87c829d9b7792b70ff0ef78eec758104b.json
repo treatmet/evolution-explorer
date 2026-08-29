@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:23.497Z",
+  "value": {
+    "usageKey": 2494303,
+    "canonicalName": "Serinus canaria",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2494303",
+      "url": "https://api.gbif.org/v1/species/match?name=Serinus%20canaria",
+      "retrievedAt": "2026-08-29T04:49:23.497Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

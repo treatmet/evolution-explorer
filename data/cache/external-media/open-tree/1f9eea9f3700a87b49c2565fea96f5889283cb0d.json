@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:56:33.566Z",
+  "value": {
+    "ottId": 604112,
+    "canonicalName": "Mycobacterium tuberculosis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott604112",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:56:33.566Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

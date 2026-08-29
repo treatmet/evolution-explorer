@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:39.150Z",
+  "value": {
+    "usageKey": 4352332,
+    "canonicalName": "Phoenicopterus roseus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4352332",
+      "url": "https://api.gbif.org/v1/species/match?name=Phoenicopterus%20roseus",
+      "retrievedAt": "2026-08-29T04:48:39.150Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

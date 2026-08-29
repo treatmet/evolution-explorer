@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:47.486Z",
+  "value": {
+    "usageKey": 1920506,
+    "canonicalName": "Pieris brassicae",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1920506",
+      "url": "https://api.gbif.org/v1/species/match?name=Pieris%20brassicae",
+      "retrievedAt": "2026-08-29T10:50:47.486Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

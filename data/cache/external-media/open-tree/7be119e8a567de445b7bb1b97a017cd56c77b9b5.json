@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:50:37.975Z",
+  "value": {
+    "ottId": 1083670,
+    "canonicalName": "Oecophylla smaragdina",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott1083670",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:50:37.975Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

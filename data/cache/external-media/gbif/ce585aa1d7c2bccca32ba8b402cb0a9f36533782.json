@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:30.436Z",
+  "value": {
+    "usageKey": 2495145,
+    "canonicalName": "Apteryx australis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2495145",
+      "url": "https://api.gbif.org/v1/species/match?name=Apteryx%20australis",
+      "retrievedAt": "2026-08-29T04:48:30.436Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

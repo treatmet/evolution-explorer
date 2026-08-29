@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:38.013Z",
+  "value": {
+    "usageKey": 2501343,
+    "canonicalName": "Priapulus caudatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2501343",
+      "url": "https://api.gbif.org/v1/species/match?name=Priapulus%20caudatus",
+      "retrievedAt": "2026-08-29T10:49:38.013Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

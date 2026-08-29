@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:59.730Z",
+  "value": {
+    "usageKey": 215,
+    "canonicalName": "Crinoidea",
+    "rank": "CLASS",
+    "confidence": 94,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "215",
+      "url": "https://api.gbif.org/v1/species/match?name=Crinoidea",
+      "retrievedAt": "2026-08-29T10:49:59.730Z",
+      "note": "GBIF confidence 94"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:52:54.933Z",
+  "value": {
+    "ottId": 156929,
+    "canonicalName": "Rubus idaeus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott156929",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:52:54.933Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

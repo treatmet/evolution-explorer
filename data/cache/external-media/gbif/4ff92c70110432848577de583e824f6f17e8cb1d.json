@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:35.350Z",
+  "value": {
+    "usageKey": 2878092,
+    "canonicalName": "Quercus virginiana",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2878092",
+      "url": "https://api.gbif.org/v1/species/match?name=Quercus%20virginiana",
+      "retrievedAt": "2026-08-29T10:52:35.350Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

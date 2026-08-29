@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:03.706Z",
+  "value": {
+    "usageKey": 2459658,
+    "canonicalName": "Iguana iguana",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2459658",
+      "url": "https://api.gbif.org/v1/species/match?name=Iguana%20iguana",
+      "retrievedAt": "2026-08-29T04:50:03.706Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

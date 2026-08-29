@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:10.591Z",
+  "value": {
+    "usageKey": 5221283,
+    "canonicalName": "Eublepharis macularius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5221283",
+      "url": "https://api.gbif.org/v1/species/match?name=Eublepharis%20macularius",
+      "retrievedAt": "2026-08-29T04:50:10.591Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

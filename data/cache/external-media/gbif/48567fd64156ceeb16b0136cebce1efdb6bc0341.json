@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:47.525Z",
+  "value": {
+    "usageKey": 2480320,
+    "canonicalName": "Charadrius vociferus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2480320",
+      "url": "https://api.gbif.org/v1/species/match?name=Charadrius%20vociferus",
+      "retrievedAt": "2026-08-29T04:49:47.525Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

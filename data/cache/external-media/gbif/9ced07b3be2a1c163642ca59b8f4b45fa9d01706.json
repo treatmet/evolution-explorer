@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:57.533Z",
+  "value": {
+    "usageKey": 5362573,
+    "canonicalName": "Pyrus communis",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5362573",
+      "url": "https://api.gbif.org/v1/species/match?name=Pyrus%20communis",
+      "retrievedAt": "2026-08-29T10:52:57.533Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

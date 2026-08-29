@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:31.604Z",
+  "value": {
+    "usageKey": 5223730,
+    "canonicalName": "Heterodon platirhinos",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5223730",
+      "url": "https://api.gbif.org/v1/species/match?name=Heterodon%20platirhinos",
+      "retrievedAt": "2026-08-29T04:50:31.604Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

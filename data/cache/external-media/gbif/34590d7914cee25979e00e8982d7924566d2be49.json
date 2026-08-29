@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:30.328Z",
+  "value": {
+    "usageKey": 2457522,
+    "canonicalName": "Thamnophis sirtalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2457522",
+      "url": "https://api.gbif.org/v1/species/match?name=Thamnophis%20sirtalis",
+      "retrievedAt": "2026-08-29T04:50:30.328Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

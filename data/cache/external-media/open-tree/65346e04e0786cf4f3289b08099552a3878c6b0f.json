@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:50:16.392Z",
+  "value": {
+    "ottId": 449663,
+    "canonicalName": "Anguis fragilis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott449663",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:50:16.392Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

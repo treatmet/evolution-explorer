@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:38.472Z",
+  "value": {
+    "usageKey": 2289202,
+    "canonicalName": "Nautilus pompilius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2289202",
+      "url": "https://api.gbif.org/v1/species/match?name=Nautilus%20pompilius",
+      "retrievedAt": "2026-08-29T04:52:38.472Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

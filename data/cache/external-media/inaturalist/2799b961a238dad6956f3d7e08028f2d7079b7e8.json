@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:52:33.299Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/177061879/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/177061879/square.jpg",
+    "title": "American Octopus",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "1288883",
+      "sourceUrl": "https://www.inaturalist.org/taxa/1288883",
+      "attributionText": "(c) Pauline Walsh Jacobson, some rights reserved (CC BY), uploaded by Pauline Walsh Jacobson",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "1288883",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Octopus%20vulgaris&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:52:33.299Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

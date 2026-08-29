@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:34.700Z",
+  "value": {
+    "usageKey": 5035230,
+    "canonicalName": "Solenopsis invicta",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5035230",
+      "url": "https://api.gbif.org/v1/species/match?name=Solenopsis%20invicta",
+      "retrievedAt": "2026-08-29T10:50:34.700Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

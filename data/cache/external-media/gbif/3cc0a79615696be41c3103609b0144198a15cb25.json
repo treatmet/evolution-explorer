@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:15.337Z",
+  "value": {
+    "usageKey": 3112364,
+    "canonicalName": "Cynara cardunculus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3112364",
+      "url": "https://api.gbif.org/v1/species/match?name=Cynara%20cardunculus",
+      "retrievedAt": "2026-08-29T10:53:15.337Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

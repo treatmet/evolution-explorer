@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:31.887Z",
+  "value": {
+    "usageKey": 2481661,
+    "canonicalName": "Aptenodytes forsteri",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2481661",
+      "url": "https://api.gbif.org/v1/species/match?name=Aptenodytes%20forsteri",
+      "retrievedAt": "2026-08-29T04:48:31.887Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:05.712Z",
+  "value": {
+    "usageKey": 1025719,
+    "canonicalName": "Archispirostreptus gigas",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1025719",
+      "url": "https://api.gbif.org/v1/species/match?name=Archispirostreptus%20gigas",
+      "retrievedAt": "2026-08-29T10:52:05.712Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:35.009Z",
+  "value": {
+    "usageKey": 2329593,
+    "canonicalName": "Osedax rubiplumus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2329593",
+      "url": "https://api.gbif.org/v1/species/match?name=Osedax%20rubiplumus",
+      "retrievedAt": "2026-08-29T10:49:35.009Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

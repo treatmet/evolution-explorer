@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:54.368Z",
+  "value": {
+    "usageKey": 1650518,
+    "canonicalName": "Anopheles gambiae",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1650518",
+      "url": "https://api.gbif.org/v1/species/match?name=Anopheles%20gambiae",
+      "retrievedAt": "2026-08-29T10:50:54.368Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

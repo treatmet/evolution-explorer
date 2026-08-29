@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:52:48.851Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/494948269/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/494948269/square.jpeg",
+    "title": "Ficus benghalensis benghalensis",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "1059065",
+      "sourceUrl": "https://www.inaturalist.org/taxa/1059065",
+      "attributionText": "(c) Raja Sekhar Chimirala, some rights reserved (CC BY), uploaded by Raja Sekhar Chimirala",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "1059065",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Ficus%20benghalensis&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:52:48.851Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

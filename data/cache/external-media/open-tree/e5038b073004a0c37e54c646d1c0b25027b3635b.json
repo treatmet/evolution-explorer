@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:27.561Z",
+  "value": {
+    "ottId": 864596,
+    "canonicalName": "Oryctolagus cuniculus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott864596",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:27.561Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

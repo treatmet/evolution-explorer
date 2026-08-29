@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:50.233Z",
+  "value": {
+    "usageKey": 9724339,
+    "canonicalName": "Dendrobates tinctorius",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9724339",
+      "url": "https://api.gbif.org/v1/species/match?name=Dendrobates%20tinctorius",
+      "retrievedAt": "2026-08-29T04:50:50.233Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

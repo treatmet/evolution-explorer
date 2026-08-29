@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:56:15.662Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/466138499/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/466138499/square.jpeg",
+    "title": "Feather Caulerpa",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "50919",
+      "sourceUrl": "https://www.inaturalist.org/taxa/50919",
+      "attributionText": "(c) Srichakra Pranav Tamarapalli, some rights reserved (CC BY-SA), uploaded by Srichakra Pranav Tamarapalli",
+      "licenseCode": "cc-by-sa",
+      "licenseName": "Creative Commons Attribution ShareAlike",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "50919",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Caulerpa%20taxifolia&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:56:15.662Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:59.648Z",
+  "value": {
+    "ottId": 190887,
+    "matchedName": "Anser anser",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott190887",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:59.648Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

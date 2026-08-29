@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:40.996Z",
+  "value": {
+    "usageKey": 7795888,
+    "canonicalName": "Triticum aestivum",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7795888",
+      "url": "https://api.gbif.org/v1/species/match?name=Triticum%20aestivum",
+      "retrievedAt": "2026-08-29T10:54:40.996Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

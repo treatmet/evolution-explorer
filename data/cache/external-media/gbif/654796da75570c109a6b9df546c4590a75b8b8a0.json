@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:32.471Z",
+  "value": {
+    "usageKey": 1311671,
+    "canonicalName": "Vespula vulgaris",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1311671",
+      "url": "https://api.gbif.org/v1/species/match?name=Vespula%20vulgaris",
+      "retrievedAt": "2026-08-29T10:50:32.471Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

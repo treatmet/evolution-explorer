@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:39:03.567Z",
+  "value": {
+    "ottId": 396274,
+    "matchedName": "Opuntia ficus-indica",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott396274",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:39:03.567Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

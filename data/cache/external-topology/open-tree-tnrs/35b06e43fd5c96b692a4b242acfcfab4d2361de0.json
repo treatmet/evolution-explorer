@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:16.012Z",
+  "value": {
+    "ottId": 493424,
+    "matchedName": "Raja clavata",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott493424",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:16.012Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:49:42.726Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Caprimulgus%20europaeus&show=attr",
+      "retrievedAt": "2026-08-29T04:49:42.726Z"
+    }
+  }
+}

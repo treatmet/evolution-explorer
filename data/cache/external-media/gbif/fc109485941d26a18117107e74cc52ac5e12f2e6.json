@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:08.882Z",
+  "value": {
+    "usageKey": 5855960,
+    "canonicalName": "Doryteuthis pealeii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5855960",
+      "url": "https://api.gbif.org/v1/species/match?name=Doryteuthis%20pealeii",
+      "retrievedAt": "2026-08-29T10:49:08.882Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:34.864Z",
+  "value": {
+    "usageKey": 2731882,
+    "canonicalName": "Elaeis guineensis",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2731882",
+      "url": "https://api.gbif.org/v1/species/match?name=Elaeis%20guineensis",
+      "retrievedAt": "2026-08-29T10:54:34.864Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

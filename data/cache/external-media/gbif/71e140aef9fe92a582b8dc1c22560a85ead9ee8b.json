@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:42.895Z",
+  "value": {
+    "usageKey": 2480764,
+    "canonicalName": "Threskiornis aethiopicus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2480764",
+      "url": "https://api.gbif.org/v1/species/match?name=Threskiornis%20aethiopicus",
+      "retrievedAt": "2026-08-29T04:48:42.895Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

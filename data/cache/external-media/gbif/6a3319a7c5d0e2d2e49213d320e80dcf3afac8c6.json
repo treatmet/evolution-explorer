@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:36.875Z",
+  "value": {
+    "usageKey": 5034116,
+    "canonicalName": "Camponotus pennsylvanicus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5034116",
+      "url": "https://api.gbif.org/v1/species/match?name=Camponotus%20pennsylvanicus",
+      "retrievedAt": "2026-08-29T10:50:36.875Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

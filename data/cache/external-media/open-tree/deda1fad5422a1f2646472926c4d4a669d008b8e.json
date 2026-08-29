@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:55:02.557Z",
+  "value": {
+    "ottId": 339346,
+    "canonicalName": "Ricinus communis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott339346",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:55:02.557Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

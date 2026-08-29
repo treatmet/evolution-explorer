@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:49.518Z",
+  "value": {
+    "usageKey": 3172622,
+    "canonicalName": "Sesamum indicum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3172622",
+      "url": "https://api.gbif.org/v1/species/match?name=Sesamum%20indicum",
+      "retrievedAt": "2026-08-29T10:53:49.518Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

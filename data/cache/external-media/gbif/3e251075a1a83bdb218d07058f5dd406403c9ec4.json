@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:11.205Z",
+  "value": {
+    "usageKey": 3202272,
+    "canonicalName": "Phaeocystis antarctica",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3202272",
+      "url": "https://api.gbif.org/v1/species/match?name=Phaeocystis%20antarctica",
+      "retrievedAt": "2026-08-29T10:56:11.205Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

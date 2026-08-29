@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:58.673Z",
+  "value": {
+    "usageKey": 2415075,
+    "canonicalName": "Lophius piscatorius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2415075",
+      "url": "https://api.gbif.org/v1/species/match?name=Lophius%20piscatorius",
+      "retrievedAt": "2026-08-29T04:51:58.673Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

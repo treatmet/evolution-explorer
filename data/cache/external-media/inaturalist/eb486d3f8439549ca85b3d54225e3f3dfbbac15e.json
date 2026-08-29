@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:55:00.700Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/60706943/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/60706943/square.jpeg",
+    "title": "rubber tree",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "53940",
+      "sourceUrl": "https://www.inaturalist.org/taxa/53940",
+      "attributionText": "(c) Cheongweei Gan, some rights reserved (CC BY-SA), uploaded by Cheongweei Gan",
+      "licenseCode": "cc-by-sa",
+      "licenseName": "Creative Commons Attribution ShareAlike",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "53940",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Hevea%20brasiliensis&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:55:00.700Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

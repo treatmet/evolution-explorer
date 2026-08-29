@@ -1,0 +1,108 @@
+{
+  "datasetVersion": "fixture-0.1.0",
+  "rootId": "luca",
+  "nodesById": {
+    "luca": {
+      "id": "luca",
+      "parentId": null,
+      "childIds": ["eukaryota", "bacteria"],
+      "kind": "ancestral",
+      "displayName": "LUCA",
+      "isGameEndpoint": false,
+      "isTargetEligible": false,
+      "navigationOnly": false,
+      "extant": false,
+      "divergenceAgeMa": 3900,
+      "traits": [],
+      "confidence": "medium",
+      "provenance": [
+        {
+          "sourceId": "fixture-reference",
+          "sourceType": "curated"
+        }
+      ]
+    },
+    "eukaryota": {
+      "id": "eukaryota",
+      "parentId": "luca",
+      "childIds": ["metazoa"],
+      "kind": "named-taxon",
+      "displayName": "Eukaryota",
+      "isGameEndpoint": false,
+      "isTargetEligible": false,
+      "navigationOnly": false,
+      "extant": true,
+      "divergenceAgeMa": 1800,
+      "traits": [],
+      "confidence": "medium",
+      "provenance": [
+        {
+          "sourceId": "fixture-reference",
+          "sourceType": "curated"
+        }
+      ]
+    },
+    "metazoa": {
+      "id": "metazoa",
+      "parentId": "eukaryota",
+      "childIds": ["panthera-tigris"],
+      "kind": "named-taxon",
+      "displayName": "Metazoa",
+      "isGameEndpoint": false,
+      "isTargetEligible": false,
+      "navigationOnly": false,
+      "extant": true,
+      "divergenceAgeMa": 800,
+      "traits": [],
+      "confidence": "medium",
+      "provenance": [
+        {
+          "sourceId": "fixture-reference",
+          "sourceType": "curated"
+        }
+      ]
+    },
+    "panthera-tigris": {
+      "id": "panthera-tigris",
+      "parentId": "metazoa",
+      "childIds": [],
+      "kind": "named-taxon",
+      "displayName": "Tiger",
+      "scientificName": "Panthera tigris",
+      "commonName": "Tiger",
+      "isGameEndpoint": true,
+      "isTargetEligible": true,
+      "navigationOnly": false,
+      "extant": true,
+      "divergenceAgeMa": 0,
+      "traits": [],
+      "confidence": "high",
+      "provenance": [
+        {
+          "sourceId": "fixture-reference",
+          "sourceType": "curated"
+        }
+      ]
+    },
+    "bacteria": {
+      "id": "bacteria",
+      "parentId": "luca",
+      "childIds": [],
+      "kind": "named-taxon",
+      "displayName": "Bacteria",
+      "isGameEndpoint": false,
+      "isTargetEligible": false,
+      "navigationOnly": false,
+      "extant": true,
+      "divergenceAgeMa": 3500,
+      "traits": [],
+      "confidence": "high",
+      "provenance": [
+        {
+          "sourceId": "fixture-reference",
+          "sourceType": "curated"
+        }
+      ]
+    }
+  }
+}

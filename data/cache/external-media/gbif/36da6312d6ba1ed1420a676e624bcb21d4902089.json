@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:55.488Z",
+  "value": {
+    "usageKey": 2480181,
+    "canonicalName": "Psittacus erithacus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2480181",
+      "url": "https://api.gbif.org/v1/species/match?name=Psittacus%20erithacus",
+      "retrievedAt": "2026-08-29T04:48:55.488Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

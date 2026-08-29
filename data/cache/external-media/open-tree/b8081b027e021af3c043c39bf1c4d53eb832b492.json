@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:44.072Z",
+  "value": {
+    "ottId": 124776,
+    "canonicalName": "Equus burchellii quagga",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott124776",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:44.072Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:10.756Z",
+  "value": {
+    "ottId": 600088,
+    "matchedName": "Crotalus atrox",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott600088",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:10.756Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

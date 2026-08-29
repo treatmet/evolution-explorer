@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:52:44.610Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/384772714/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/384772714/square.jpeg",
+    "title": "Ulmus americana americana",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "1549990",
+      "sourceUrl": "https://www.inaturalist.org/taxa/1549990",
+      "attributionText": "(c) Brandon Corder, some rights reserved (CC BY), uploaded by Brandon Corder",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "1549990",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Ulmus%20americana&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:52:44.610Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

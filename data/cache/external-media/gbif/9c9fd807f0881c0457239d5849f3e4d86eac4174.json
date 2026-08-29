@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:09.242Z",
+  "value": {
+    "usageKey": 4825833,
+    "canonicalName": "Mammuthus primigenius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4825833",
+      "url": "https://api.gbif.org/v1/species/match?name=Mammuthus%20primigenius",
+      "retrievedAt": "2026-08-29T10:57:09.242Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

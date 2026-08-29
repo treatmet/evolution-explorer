@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:48.616Z",
+  "value": {
+    "usageKey": 10801319,
+    "canonicalName": "Nanoarchaeum equitans",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "10801319",
+      "url": "https://api.gbif.org/v1/species/match?name=Nanoarchaeum%20equitans",
+      "retrievedAt": "2026-08-29T10:56:48.616Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

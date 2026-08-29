@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:46.138Z",
+  "value": {
+    "usageKey": 6475141,
+    "canonicalName": "Fasciola hepatica",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "6475141",
+      "url": "https://api.gbif.org/v1/species/match?name=Fasciola%20hepatica",
+      "retrievedAt": "2026-08-29T10:49:46.138Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

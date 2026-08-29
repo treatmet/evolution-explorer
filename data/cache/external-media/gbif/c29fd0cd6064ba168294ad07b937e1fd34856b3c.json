@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:25.447Z",
+  "value": {
+    "usageKey": 2432087,
+    "canonicalName": "Galeopterus variegatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2432087",
+      "url": "https://api.gbif.org/v1/species/match?name=Galeopterus%20variegatus",
+      "retrievedAt": "2026-08-29T04:47:25.447Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

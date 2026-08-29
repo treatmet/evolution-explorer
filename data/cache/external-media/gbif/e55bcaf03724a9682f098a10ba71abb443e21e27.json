@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:24.878Z",
+  "value": {
+    "usageKey": 8911913,
+    "canonicalName": "Aegirocassis benmoulae",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8911913",
+      "url": "https://api.gbif.org/v1/species/match?name=Aegirocassis%20benmoulae",
+      "retrievedAt": "2026-08-29T10:57:24.878Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

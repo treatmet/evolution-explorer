@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:02.081Z",
+  "value": {
+    "ottId": 616511,
+    "canonicalName": "Lilium candidum",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott616511",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:02.081Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:43.216Z",
+  "value": {
+    "usageKey": 2549730,
+    "canonicalName": "Ganoderma lucidum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2549730",
+      "url": "https://api.gbif.org/v1/species/match?name=Ganoderma%20lucidum",
+      "retrievedAt": "2026-08-29T10:55:43.216Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:24.123Z",
+  "value": {
+    "usageKey": 2402203,
+    "canonicalName": "Acipenser sturio",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2402203",
+      "url": "https://api.gbif.org/v1/species/match?name=Acipenser%20sturio",
+      "retrievedAt": "2026-08-29T04:51:24.123Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

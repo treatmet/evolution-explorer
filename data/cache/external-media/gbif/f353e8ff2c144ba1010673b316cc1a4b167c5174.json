@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:55.509Z",
+  "value": {
+    "usageKey": 1651891,
+    "canonicalName": "Aedes aegypti",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1651891",
+      "url": "https://api.gbif.org/v1/species/match?name=Aedes%20aegypti",
+      "retrievedAt": "2026-08-29T10:50:55.509Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

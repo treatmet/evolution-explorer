@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:04.591Z",
+  "value": {
+    "ottId": 745175,
+    "matchedName": "Passer domesticus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott745175",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:04.591Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

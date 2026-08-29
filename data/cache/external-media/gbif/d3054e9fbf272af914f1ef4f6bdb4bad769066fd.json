@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:57.298Z",
+  "value": {
+    "usageKey": 2479798,
+    "canonicalName": "Melopsittacus undulatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2479798",
+      "url": "https://api.gbif.org/v1/species/match?name=Melopsittacus%20undulatus",
+      "retrievedAt": "2026-08-29T04:48:57.298Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:35.874Z",
+  "value": {
+    "usageKey": 2481139,
+    "canonicalName": "Larus argentatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2481139",
+      "url": "https://api.gbif.org/v1/species/match?name=Larus%20argentatus",
+      "retrievedAt": "2026-08-29T04:48:35.874Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

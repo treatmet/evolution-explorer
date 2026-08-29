@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:54.967Z",
+  "value": {
+    "usageKey": 2993094,
+    "canonicalName": "Rubus idaeus",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2993094",
+      "url": "https://api.gbif.org/v1/species/match?name=Rubus%20idaeus",
+      "retrievedAt": "2026-08-29T10:52:54.967Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

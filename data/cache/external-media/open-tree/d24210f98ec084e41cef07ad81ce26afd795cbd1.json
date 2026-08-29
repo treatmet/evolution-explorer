@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:53:47.789Z",
+  "value": {
+    "ottId": 778824,
+    "canonicalName": "Salvia rosmarinus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott778824",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:53:47.789Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

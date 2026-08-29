@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:25.984Z",
+  "value": {
+    "usageKey": 5178716,
+    "canonicalName": "Stenopus hispidus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5178716",
+      "url": "https://api.gbif.org/v1/species/match?name=Stenopus%20hispidus",
+      "retrievedAt": "2026-08-29T10:49:25.984Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

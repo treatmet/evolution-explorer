@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:38.929Z",
+  "value": {
+    "usageKey": 2432031,
+    "canonicalName": "Cryptobranchus alleganiensis",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2432031",
+      "url": "https://api.gbif.org/v1/species/match?name=Cryptobranchus%20alleganiensis",
+      "retrievedAt": "2026-08-29T04:50:38.929Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

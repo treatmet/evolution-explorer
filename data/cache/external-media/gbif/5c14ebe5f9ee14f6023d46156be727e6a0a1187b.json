@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:07.867Z",
+  "value": {
+    "usageKey": 2895345,
+    "canonicalName": "Coffea arabica",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2895345",
+      "url": "https://api.gbif.org/v1/species/match?name=Coffea%20arabica",
+      "retrievedAt": "2026-08-29T10:53:07.867Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:39.136Z",
+  "value": {
+    "usageKey": 2928859,
+    "canonicalName": "Petunia atkinsiana",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2928859",
+      "url": "https://api.gbif.org/v1/species/match?name=Petunia%20%C3%97%20atkinsiana",
+      "retrievedAt": "2026-08-29T10:53:39.136Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

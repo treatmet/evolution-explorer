@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:28.072Z",
+  "value": {
+    "usageKey": 10786041,
+    "canonicalName": "Synechococcus elongatus",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "10786041",
+      "url": "https://api.gbif.org/v1/species/match?name=Synechococcus%20elongatus",
+      "retrievedAt": "2026-08-29T10:56:28.072Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:40.613Z",
+  "value": {
+    "usageKey": 2367742,
+    "canonicalName": "Pimephales promelas",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2367742",
+      "url": "https://api.gbif.org/v1/species/match?name=Pimephales%20promelas",
+      "retrievedAt": "2026-08-29T04:51:40.613Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

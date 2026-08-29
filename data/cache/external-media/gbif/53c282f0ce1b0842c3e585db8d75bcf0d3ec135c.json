@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:49.643Z",
+  "value": {
+    "usageKey": 9606290,
+    "canonicalName": "Meleagris gallopavo",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9606290",
+      "url": "https://api.gbif.org/v1/species/match?name=Meleagris%20gallopavo",
+      "retrievedAt": "2026-08-29T04:48:49.643Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

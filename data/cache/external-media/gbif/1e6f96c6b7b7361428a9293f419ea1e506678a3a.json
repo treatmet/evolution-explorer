@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:25.801Z",
+  "value": {
+    "usageKey": 9151957,
+    "canonicalName": "Medicago sativa",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9151957",
+      "url": "https://api.gbif.org/v1/species/match?name=Medicago%20sativa",
+      "retrievedAt": "2026-08-29T10:53:25.801Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

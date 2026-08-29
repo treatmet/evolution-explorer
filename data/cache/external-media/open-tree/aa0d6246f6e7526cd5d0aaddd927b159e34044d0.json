@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:50:24.774Z",
+  "value": {
+    "ottId": 570365,
+    "canonicalName": "Trichoplax adhaerens",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott570365",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:50:24.774Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

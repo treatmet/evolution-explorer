@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:57:24.139Z",
+  "value": {
+    "ottId": 4987729,
+    "canonicalName": "Wiwaxia corrugata",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott4987729",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:57:24.139Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:42.317Z",
+  "value": {
+    "usageKey": 9772663,
+    "canonicalName": "Leptoptilos crumenifer",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9772663",
+      "url": "https://api.gbif.org/v1/species/match?name=Leptoptilos%20crumenifer",
+      "retrievedAt": "2026-08-29T04:48:42.317Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

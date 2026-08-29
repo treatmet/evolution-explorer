@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:04.171Z",
+  "value": {
+    "usageKey": 2440301,
+    "canonicalName": "Vombatus ursinus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2440301",
+      "url": "https://api.gbif.org/v1/species/match?name=Vombatus%20ursinus",
+      "retrievedAt": "2026-08-29T04:48:04.171Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

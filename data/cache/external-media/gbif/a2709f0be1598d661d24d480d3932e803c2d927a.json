@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:41.886Z",
+  "value": {
+    "usageKey": 7603975,
+    "canonicalName": "Triatoma infestans",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7603975",
+      "url": "https://api.gbif.org/v1/species/match?name=Triatoma%20infestans",
+      "retrievedAt": "2026-08-29T10:51:41.886Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

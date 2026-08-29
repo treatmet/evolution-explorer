@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:36.450Z",
+  "value": {
+    "usageKey": 8351995,
+    "canonicalName": "Frankliniella occidentalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8351995",
+      "url": "https://api.gbif.org/v1/species/match?name=Frankliniella%20occidentalis",
+      "retrievedAt": "2026-08-29T10:51:36.450Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

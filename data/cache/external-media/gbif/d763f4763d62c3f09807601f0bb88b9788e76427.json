@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:04.743Z",
+  "value": {
+    "usageKey": 2407604,
+    "canonicalName": "Takifugu rubripes",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2407604",
+      "url": "https://api.gbif.org/v1/species/match?name=Takifugu%20rubripes",
+      "retrievedAt": "2026-08-29T04:52:04.743Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

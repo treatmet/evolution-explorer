@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:15.583Z",
+  "value": {
+    "usageKey": 4844156,
+    "canonicalName": "Aepyornis maximus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4844156",
+      "url": "https://api.gbif.org/v1/species/match?name=Aepyornis%20maximus",
+      "retrievedAt": "2026-08-29T10:57:15.583Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

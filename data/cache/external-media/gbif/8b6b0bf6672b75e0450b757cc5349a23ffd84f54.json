@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:51.297Z",
+  "value": {
+    "usageKey": 2984535,
+    "canonicalName": "Humulus lupulus",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2984535",
+      "url": "https://api.gbif.org/v1/species/match?name=Humulus%20lupulus",
+      "retrievedAt": "2026-08-29T10:52:51.297Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:43.966Z",
+  "value": {
+    "ottId": 1043893,
+    "matchedName": "Pulex irritans",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott1043893",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:43.966Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

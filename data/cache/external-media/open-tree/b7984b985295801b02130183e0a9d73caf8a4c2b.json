@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:50:47.390Z",
+  "value": {
+    "ottId": 386601,
+    "canonicalName": "Pelophylax lessonae",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott386601",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:50:47.390Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

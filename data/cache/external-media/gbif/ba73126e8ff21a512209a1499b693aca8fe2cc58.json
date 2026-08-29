@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:21.390Z",
+  "value": {
+    "usageKey": 3150767,
+    "canonicalName": "Chrysanthemum morifolium",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3150767",
+      "url": "https://api.gbif.org/v1/species/match?name=Chrysanthemum%20%C3%97%20morifolium",
+      "retrievedAt": "2026-08-29T10:53:21.390Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

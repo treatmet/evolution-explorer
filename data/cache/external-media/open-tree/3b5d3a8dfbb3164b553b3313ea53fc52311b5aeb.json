@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:49:55.697Z",
+  "value": {
+    "ottId": 76843,
+    "canonicalName": "Pisaster ochraceus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott76843",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:49:55.697Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

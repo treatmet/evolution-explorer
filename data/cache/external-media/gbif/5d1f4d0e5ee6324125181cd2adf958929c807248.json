@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:28.639Z",
+  "value": {
+    "usageKey": 11750881,
+    "canonicalName": "Anabaena variabilis",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "11750881",
+      "url": "https://api.gbif.org/v1/species/match?name=Anabaena%20variabilis",
+      "retrievedAt": "2026-08-29T10:56:28.639Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

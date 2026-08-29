@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:11.638Z",
+  "value": {
+    "ottId": 323406,
+    "matchedName": "Xenopeltis unicolor",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott323406",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:11.638Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

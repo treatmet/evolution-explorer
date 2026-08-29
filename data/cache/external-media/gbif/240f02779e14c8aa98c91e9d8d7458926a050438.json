@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:45.638Z",
+  "value": {
+    "usageKey": 5361889,
+    "canonicalName": "Morus alba",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5361889",
+      "url": "https://api.gbif.org/v1/species/match?name=Morus%20alba",
+      "retrievedAt": "2026-08-29T10:52:45.638Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:09.320Z",
+  "value": {
+    "usageKey": 2460817,
+    "canonicalName": "Heloderma suspectum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2460817",
+      "url": "https://api.gbif.org/v1/species/match?name=Heloderma%20suspectum",
+      "retrievedAt": "2026-08-29T04:50:09.320Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

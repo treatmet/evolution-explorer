@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:38.921Z",
+  "value": {
+    "usageKey": 2696328,
+    "canonicalName": "Puya raimondii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2696328",
+      "url": "https://api.gbif.org/v1/species/match?name=Puya%20raimondii",
+      "retrievedAt": "2026-08-29T10:54:38.921Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

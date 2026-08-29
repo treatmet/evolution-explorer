@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:35.247Z",
+  "value": {
+    "usageKey": 5219404,
+    "canonicalName": "Panthera leo",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219404",
+      "url": "https://api.gbif.org/v1/species/match?name=Panthera%20leo",
+      "retrievedAt": "2026-08-29T04:47:35.247Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

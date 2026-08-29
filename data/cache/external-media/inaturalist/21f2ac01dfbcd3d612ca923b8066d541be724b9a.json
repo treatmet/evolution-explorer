@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:56:48.257Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/442767973/medium.png",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/442767973/square.png",
+    "title": "Pyrococcus furiosus",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "1226460",
+      "sourceUrl": "https://www.inaturalist.org/taxa/1226460",
+      "attributionText": "(c) \nServé Kengen, some rights reserved (CC BY)",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "1226460",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Pyrococcus%20furiosus&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:56:48.257Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

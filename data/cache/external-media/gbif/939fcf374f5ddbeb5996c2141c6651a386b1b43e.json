@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:09.111Z",
+  "value": {
+    "usageKey": 5421410,
+    "canonicalName": "Dionaea muscipula",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5421410",
+      "url": "https://api.gbif.org/v1/species/match?name=Dionaea%20muscipula",
+      "retrievedAt": "2026-08-29T10:54:09.111Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

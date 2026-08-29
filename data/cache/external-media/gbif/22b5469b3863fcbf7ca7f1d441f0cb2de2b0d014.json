@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:45.055Z",
+  "value": {
+    "usageKey": 2440898,
+    "canonicalName": "Tapirus terrestris",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2440898",
+      "url": "https://api.gbif.org/v1/species/match?name=Tapirus%20terrestris",
+      "retrievedAt": "2026-08-29T04:47:45.055Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

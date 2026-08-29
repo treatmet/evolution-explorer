@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:06.810Z",
+  "value": {
+    "usageKey": 8063862,
+    "canonicalName": "Noctiluca scintillans",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8063862",
+      "url": "https://api.gbif.org/v1/species/match?name=Noctiluca%20scintillans",
+      "retrievedAt": "2026-08-29T10:56:06.810Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

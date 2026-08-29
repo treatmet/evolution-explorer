@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:32.356Z",
+  "value": {
+    "usageKey": 2478765,
+    "canonicalName": "Ramphastos toco",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2478765",
+      "url": "https://api.gbif.org/v1/species/match?name=Ramphastos%20toco",
+      "retrievedAt": "2026-08-29T04:49:32.356Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

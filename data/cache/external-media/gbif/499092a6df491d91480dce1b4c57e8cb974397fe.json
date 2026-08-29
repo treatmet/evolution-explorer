@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:28.506Z",
+  "value": {
+    "usageKey": 3152861,
+    "canonicalName": "Liriodendron tulipifera",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3152861",
+      "url": "https://api.gbif.org/v1/species/match?name=Liriodendron%20tulipifera",
+      "retrievedAt": "2026-08-29T10:52:28.506Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

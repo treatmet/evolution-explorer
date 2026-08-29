@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:39:11.781Z",
+  "value": {
+    "ottId": 219415,
+    "matchedName": "Vibrio cholerae",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott219415",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:39:11.781Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

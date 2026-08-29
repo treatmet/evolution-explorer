@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:13.719Z",
+  "value": {
+    "usageKey": 5270961,
+    "canonicalName": "Chlorella vulgaris",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5270961",
+      "url": "https://api.gbif.org/v1/species/match?name=Chlorella%20vulgaris",
+      "retrievedAt": "2026-08-29T10:56:13.719Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

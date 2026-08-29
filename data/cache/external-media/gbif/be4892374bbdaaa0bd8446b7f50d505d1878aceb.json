@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:14.887Z",
+  "value": {
+    "usageKey": 4311512,
+    "canonicalName": "Birgus latro",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4311512",
+      "url": "https://api.gbif.org/v1/species/match?name=Birgus%20latro",
+      "retrievedAt": "2026-08-29T10:49:14.887Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

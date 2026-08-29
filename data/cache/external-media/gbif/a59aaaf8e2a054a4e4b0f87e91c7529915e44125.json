@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:09.231Z",
+  "value": {
+    "usageKey": 3152661,
+    "canonicalName": "Gossypium hirsutum",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3152661",
+      "url": "https://api.gbif.org/v1/species/match?name=Gossypium%20hirsutum",
+      "retrievedAt": "2026-08-29T10:53:09.231Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

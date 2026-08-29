@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:04.503Z",
+  "value": {
+    "ottId": 80418,
+    "matchedName": "Gracula religiosa",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott80418",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:04.503Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

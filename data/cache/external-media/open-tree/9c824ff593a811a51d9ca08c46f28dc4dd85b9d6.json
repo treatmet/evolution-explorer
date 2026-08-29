@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:29.969Z",
+  "value": {
+    "ottId": 1059899,
+    "canonicalName": "Wolffia globosa",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott1059899",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:29.969Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

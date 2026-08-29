@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:39.631Z",
+  "value": {
+    "usageKey": 12176003,
+    "canonicalName": "Trichinella spiralis",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "12176003",
+      "url": "https://api.gbif.org/v1/species/match?name=Trichinella%20spiralis",
+      "retrievedAt": "2026-08-29T10:49:39.631Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

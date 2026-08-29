@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:04.438Z",
+  "value": {
+    "usageKey": 8205154,
+    "canonicalName": "Trypanosoma cruzi",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8205154",
+      "url": "https://api.gbif.org/v1/species/match?name=Trypanosoma%20cruzi",
+      "retrievedAt": "2026-08-29T10:56:04.438Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

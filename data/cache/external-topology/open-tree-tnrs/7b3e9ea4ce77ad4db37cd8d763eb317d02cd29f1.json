@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:02.311Z",
+  "value": {
+    "ottId": 263127,
+    "matchedName": "Aquila chrysaetos",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott263127",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:02.311Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

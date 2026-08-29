@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:49:02.212Z",
+  "value": {
+    "ottId": 783378,
+    "canonicalName": "Harpia harpyja",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott783378",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:49:02.212Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

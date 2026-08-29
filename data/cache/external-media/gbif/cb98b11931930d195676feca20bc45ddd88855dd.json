@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:15.268Z",
+  "value": {
+    "usageKey": 9510564,
+    "canonicalName": "Turdus migratorius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9510564",
+      "url": "https://api.gbif.org/v1/species/match?name=Turdus%20migratorius",
+      "retrievedAt": "2026-08-29T04:49:15.268Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

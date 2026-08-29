@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:53:07.184Z",
+  "value": {
+    "ottId": 388185,
+    "canonicalName": "Theobroma cacao",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott388185",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:53:07.184Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

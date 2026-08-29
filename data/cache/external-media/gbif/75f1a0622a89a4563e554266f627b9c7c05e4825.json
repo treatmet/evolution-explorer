@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:47.698Z",
+  "value": {
+    "usageKey": 5289423,
+    "canonicalName": "Typha latifolia",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5289423",
+      "url": "https://api.gbif.org/v1/species/match?name=Typha%20latifolia",
+      "retrievedAt": "2026-08-29T10:54:47.698Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

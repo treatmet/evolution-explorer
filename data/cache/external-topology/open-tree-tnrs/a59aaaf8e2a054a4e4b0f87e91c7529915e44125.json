@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:52.743Z",
+  "value": {
+    "ottId": 854480,
+    "matchedName": "Gossypium hirsutum",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott854480",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:52.743Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

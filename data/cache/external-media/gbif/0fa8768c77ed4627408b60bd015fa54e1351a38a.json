@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:23.850Z",
+  "value": {
+    "usageKey": 4802813,
+    "canonicalName": "Mastotermes darwiniensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4802813",
+      "url": "https://api.gbif.org/v1/species/match?name=Mastotermes%20darwiniensis",
+      "retrievedAt": "2026-08-29T10:51:23.850Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

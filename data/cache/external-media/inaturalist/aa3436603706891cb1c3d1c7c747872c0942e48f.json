@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:47:34.841Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/129658776/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129658776/square.jpg",
+    "title": "Domestic Cat",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "118552",
+      "sourceUrl": "https://www.inaturalist.org/taxa/118552",
+      "attributionText": "(c) Von.grzanka, some rights reserved (CC BY-SA)",
+      "licenseCode": "cc-by-sa",
+      "licenseName": "Creative Commons Attribution ShareAlike",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "118552",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Felis%20silvestris&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:47:34.841Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:04.636Z",
+  "value": {
+    "usageKey": 5229409,
+    "canonicalName": "Sagittarius serpentarius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5229409",
+      "url": "https://api.gbif.org/v1/species/match?name=Sagittarius%20serpentarius",
+      "retrievedAt": "2026-08-29T04:49:04.636Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

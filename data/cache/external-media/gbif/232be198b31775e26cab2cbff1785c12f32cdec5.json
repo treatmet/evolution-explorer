@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:12.565Z",
+  "value": {
+    "usageKey": 2227300,
+    "canonicalName": "Procambarus clarkii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2227300",
+      "url": "https://api.gbif.org/v1/species/match?name=Procambarus%20clarkii",
+      "retrievedAt": "2026-08-29T10:49:12.565Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:43.790Z",
+  "value": {
+    "ottId": 331411,
+    "matchedName": "Machilis germanica",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott331411",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:43.790Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

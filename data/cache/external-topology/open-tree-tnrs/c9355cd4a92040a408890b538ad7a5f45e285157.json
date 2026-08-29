@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:32.849Z",
+  "value": {
+    "ottId": 451024,
+    "matchedName": "Terebratulina retusa",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott451024",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:32.849Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

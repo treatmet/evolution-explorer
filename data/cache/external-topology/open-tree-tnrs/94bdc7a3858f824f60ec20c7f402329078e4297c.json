@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:06.352Z",
+  "value": {
+    "ottId": 1010553,
+    "matchedName": "Picus viridis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott1010553",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:06.352Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

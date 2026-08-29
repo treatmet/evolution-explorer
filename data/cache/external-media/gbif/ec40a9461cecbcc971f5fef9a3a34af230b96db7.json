@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:39.510Z",
+  "value": {
+    "usageKey": 2875979,
+    "canonicalName": "Corylus avellana",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2875979",
+      "url": "https://api.gbif.org/v1/species/match?name=Corylus%20avellana",
+      "retrievedAt": "2026-08-29T10:52:39.510Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

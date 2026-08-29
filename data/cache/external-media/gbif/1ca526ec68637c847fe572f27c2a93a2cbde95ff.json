@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:20.794Z",
+  "value": {
+    "usageKey": 7678610,
+    "canonicalName": "Raphanus sativus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7678610",
+      "url": "https://api.gbif.org/v1/species/match?name=Raphanus%20sativus",
+      "retrievedAt": "2026-08-29T10:54:20.794Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

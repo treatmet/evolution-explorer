@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:38.144Z",
+  "value": {
+    "usageKey": 2435099,
+    "canonicalName": "Puma concolor",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2435099",
+      "url": "https://api.gbif.org/v1/species/match?name=Puma%20concolor",
+      "retrievedAt": "2026-08-29T04:47:38.144Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

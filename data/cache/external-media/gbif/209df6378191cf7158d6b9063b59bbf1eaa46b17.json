@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:27.421Z",
+  "value": {
+    "usageKey": 2863967,
+    "canonicalName": "Zostera marina",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2863967",
+      "url": "https://api.gbif.org/v1/species/match?name=Zostera%20marina",
+      "retrievedAt": "2026-08-29T10:54:27.421Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:43.552Z",
+  "value": {
+    "usageKey": 2402231,
+    "canonicalName": "Scleropages formosus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2402231",
+      "url": "https://api.gbif.org/v1/species/match?name=Scleropages%20formosus",
+      "retrievedAt": "2026-08-29T04:51:43.552Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

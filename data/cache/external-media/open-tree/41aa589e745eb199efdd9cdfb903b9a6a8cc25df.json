@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:00.814Z",
+  "value": {
+    "ottId": 878707,
+    "canonicalName": "Tulipa gesneriana",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott878707",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:00.814Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

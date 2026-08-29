@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:16.428Z",
+  "value": {
+    "usageKey": 2235058,
+    "canonicalName": "Triops cancriformis",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2235058",
+      "url": "https://api.gbif.org/v1/species/match?name=Triops%20cancriformis",
+      "retrievedAt": "2026-08-29T10:49:16.428Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

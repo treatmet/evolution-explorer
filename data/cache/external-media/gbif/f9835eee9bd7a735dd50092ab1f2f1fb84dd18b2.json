@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:43.127Z",
+  "value": {
+    "usageKey": 9729967,
+    "canonicalName": "Dugong dugon",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9729967",
+      "url": "https://api.gbif.org/v1/species/match?name=Dugong%20dugon",
+      "retrievedAt": "2026-08-29T04:47:43.127Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

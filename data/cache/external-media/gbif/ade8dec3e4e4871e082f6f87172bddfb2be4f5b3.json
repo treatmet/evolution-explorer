@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:36.360Z",
+  "value": {
+    "usageKey": 5219436,
+    "canonicalName": "Panthera pardus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219436",
+      "url": "https://api.gbif.org/v1/species/match?name=Panthera%20pardus",
+      "retrievedAt": "2026-08-29T04:47:36.360Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

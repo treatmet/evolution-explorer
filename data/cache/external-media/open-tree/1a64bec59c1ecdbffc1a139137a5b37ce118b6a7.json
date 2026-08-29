@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:49:06.103Z",
+  "value": {
+    "ottId": 325999,
+    "canonicalName": "Teredo navalis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott325999",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:49:06.103Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:16.281Z",
+  "value": {
+    "ottId": 770302,
+    "canonicalName": "Pongo pygmaeus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott770302",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:16.281Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:51.324Z",
+  "value": {
+    "usageKey": 3210448,
+    "canonicalName": "Naegleria fowleri",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3210448",
+      "url": "https://api.gbif.org/v1/species/match?name=Naegleria%20fowleri",
+      "retrievedAt": "2026-08-29T10:55:51.324Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

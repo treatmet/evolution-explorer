@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:20.188Z",
+  "value": {
+    "usageKey": 2210260,
+    "canonicalName": "Cymothoa exigua",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2210260",
+      "url": "https://api.gbif.org/v1/species/match?name=Cymothoa%20exigua",
+      "retrievedAt": "2026-08-29T10:49:20.188Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

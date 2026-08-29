@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:37.878Z",
+  "value": {
+    "usageKey": 2432039,
+    "canonicalName": "Andrias japonicus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2432039",
+      "url": "https://api.gbif.org/v1/species/match?name=Andrias%20japonicus",
+      "retrievedAt": "2026-08-29T04:50:37.878Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

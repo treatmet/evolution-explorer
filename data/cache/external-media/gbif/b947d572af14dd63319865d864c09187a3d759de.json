@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:14.045Z",
+  "value": {
+    "usageKey": 2418036,
+    "canonicalName": "Carcharhinus leucas",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2418036",
+      "url": "https://api.gbif.org/v1/species/match?name=Carcharhinus%20leucas",
+      "retrievedAt": "2026-08-29T04:51:14.045Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

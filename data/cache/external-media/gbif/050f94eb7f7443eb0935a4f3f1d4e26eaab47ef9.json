@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:22.707Z",
+  "value": {
+    "usageKey": 5347845,
+    "canonicalName": "Pisum sativum",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5347845",
+      "url": "https://api.gbif.org/v1/species/match?name=Pisum%20sativum",
+      "retrievedAt": "2026-08-29T10:53:22.707Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

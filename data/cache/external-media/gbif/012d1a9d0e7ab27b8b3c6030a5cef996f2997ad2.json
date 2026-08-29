@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:07.849Z",
+  "value": {
+    "usageKey": 2306437,
+    "canonicalName": "Lepidochitona cinerea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2306437",
+      "url": "https://api.gbif.org/v1/species/match?name=Lepidochitona%20cinerea",
+      "retrievedAt": "2026-08-29T10:49:07.849Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

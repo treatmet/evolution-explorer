@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:24.502Z",
+  "value": {
+    "ottId": 370524,
+    "matchedName": "Cypraea tigris",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott370524",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:24.502Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

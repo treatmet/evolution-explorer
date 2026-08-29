@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:54.524Z",
+  "value": {
+    "usageKey": 4965814,
+    "canonicalName": "Triceratops horridus",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4965814",
+      "url": "https://api.gbif.org/v1/species/match?name=Triceratops%20horridus",
+      "retrievedAt": "2026-08-29T10:56:54.524Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

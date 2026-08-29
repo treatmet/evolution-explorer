@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:47.733Z",
+  "value": {
+    "usageKey": 9537647,
+    "canonicalName": "Mergus merganser",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9537647",
+      "url": "https://api.gbif.org/v1/species/match?name=Mergus%20merganser",
+      "retrievedAt": "2026-08-29T04:48:47.733Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

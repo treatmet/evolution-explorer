@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:26.981Z",
+  "value": {
+    "ottId": 929440,
+    "matchedName": "Pagurus bernhardus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott929440",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:26.981Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:51:20.452Z",
+  "value": {
+    "ottId": 813157,
+    "canonicalName": "Idolomantis diabolica",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott813157",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:51:20.452Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

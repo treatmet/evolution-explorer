@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:36.506Z",
+  "value": {
+    "ottId": 507956,
+    "matchedName": "Renilla reniformis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott507956",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:36.506Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

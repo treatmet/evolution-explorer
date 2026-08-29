@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:39:06.099Z",
+  "value": {
+    "ottId": 186590,
+    "matchedName": "Morchella esculenta",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott186590",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:39:06.099Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

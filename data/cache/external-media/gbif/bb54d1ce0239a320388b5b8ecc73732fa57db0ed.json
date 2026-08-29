@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:07.178Z",
+  "value": {
+    "usageKey": 5189550,
+    "canonicalName": "Chaetoderma nitidulum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5189550",
+      "url": "https://api.gbif.org/v1/species/match?name=Chaetoderma%20nitidulum",
+      "retrievedAt": "2026-08-29T10:49:07.178Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

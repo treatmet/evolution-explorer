@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:47:29.553Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/595813608/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/595813608/square.jpg",
+    "title": "Pizzly bear",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "1655158",
+      "sourceUrl": "https://www.inaturalist.org/taxa/1655158",
+      "attributionText": "(c) Corradox, some rights reserved (CC BY-SA)",
+      "licenseCode": "cc-by-sa",
+      "licenseName": "Creative Commons Attribution ShareAlike",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "1655158",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Ursus%20maritimus&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:47:29.553Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

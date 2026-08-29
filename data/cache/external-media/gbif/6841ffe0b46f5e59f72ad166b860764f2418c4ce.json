@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:45.018Z",
+  "value": {
+    "usageKey": 1000108,
+    "canonicalName": "Methanobrevibacter smithii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1000108",
+      "url": "https://api.gbif.org/v1/species/match?name=Methanobrevibacter%20smithii",
+      "retrievedAt": "2026-08-29T10:56:45.018Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

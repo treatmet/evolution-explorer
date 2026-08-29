@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:25.241Z",
+  "value": {
+    "usageKey": 9173089,
+    "canonicalName": "Micrurus fulvius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9173089",
+      "url": "https://api.gbif.org/v1/species/match?name=Micrurus%20fulvius",
+      "retrievedAt": "2026-08-29T04:50:25.241Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

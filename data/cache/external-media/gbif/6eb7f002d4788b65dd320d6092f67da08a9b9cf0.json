@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:50.235Z",
+  "value": {
+    "usageKey": 9451184,
+    "canonicalName": "Pavo cristatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9451184",
+      "url": "https://api.gbif.org/v1/species/match?name=Pavo%20cristatus",
+      "retrievedAt": "2026-08-29T04:48:50.235Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:51:07.083Z",
+  "value": {
+    "ottId": 720405,
+    "canonicalName": "Scarabaeus sacer",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott720405",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:51:07.083Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

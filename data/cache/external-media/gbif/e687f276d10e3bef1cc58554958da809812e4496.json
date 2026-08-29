@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:52.670Z",
+  "value": {
+    "usageKey": 1876542,
+    "canonicalName": "Galleria mellonella",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1876542",
+      "url": "https://api.gbif.org/v1/species/match?name=Galleria%20mellonella",
+      "retrievedAt": "2026-08-29T10:50:52.670Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

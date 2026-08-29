@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:55:49.449Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/25573045/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/25573045/square.jpg",
+    "title": "Many-Headed Slime",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "1598948",
+      "sourceUrl": "https://www.inaturalist.org/taxa/1598948",
+      "attributionText": "no rights reserved, uploaded by Garrett Taylor",
+      "licenseCode": "cc0",
+      "licenseName": "Creative Commons Zero",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "1598948",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Physarum%20polycephalum&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:55:49.449Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

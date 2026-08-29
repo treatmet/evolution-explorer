@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:53.457Z",
+  "value": {
+    "usageKey": 5553148,
+    "canonicalName": "Victoria amazonica",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5553148",
+      "url": "https://api.gbif.org/v1/species/match?name=Victoria%20amazonica",
+      "retrievedAt": "2026-08-29T10:54:53.457Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:18.203Z",
+  "value": {
+    "ottId": 309263,
+    "canonicalName": "Arabidopsis thaliana",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott309263",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:18.203Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

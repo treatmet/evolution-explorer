@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:47:16.910Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Hylobates%20lar&show=attr",
+      "retrievedAt": "2026-08-29T04:47:16.910Z"
+    }
+  }
+}

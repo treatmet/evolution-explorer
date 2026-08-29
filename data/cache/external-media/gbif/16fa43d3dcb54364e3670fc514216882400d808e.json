@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:18.279Z",
+  "value": {
+    "usageKey": 2465380,
+    "canonicalName": "Python regius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2465380",
+      "url": "https://api.gbif.org/v1/species/match?name=Python%20regius",
+      "retrievedAt": "2026-08-29T04:50:18.279Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:37.119Z",
+  "value": {
+    "usageKey": 2480189,
+    "canonicalName": "Fregata magnificens",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2480189",
+      "url": "https://api.gbif.org/v1/species/match?name=Fregata%20magnificens",
+      "retrievedAt": "2026-08-29T04:48:37.119Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

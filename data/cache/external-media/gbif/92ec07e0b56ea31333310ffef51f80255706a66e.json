@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:43.594Z",
+  "value": {
+    "usageKey": 9117798,
+    "canonicalName": "Equus ferus caballus",
+    "rank": "SUBSPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9117798",
+      "url": "https://api.gbif.org/v1/species/match?name=Equus%20ferus%20caballus",
+      "retrievedAt": "2026-08-29T04:47:43.594Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

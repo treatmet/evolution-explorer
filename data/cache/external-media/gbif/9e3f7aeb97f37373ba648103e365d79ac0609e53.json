@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:31.073Z",
+  "value": {
+    "usageKey": 3033987,
+    "canonicalName": "Cinnamomum verum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3033987",
+      "url": "https://api.gbif.org/v1/species/match?name=Cinnamomum%20verum",
+      "retrievedAt": "2026-08-29T10:52:31.073Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

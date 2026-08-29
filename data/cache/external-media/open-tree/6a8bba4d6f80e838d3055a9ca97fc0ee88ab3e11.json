@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:49.999Z",
+  "value": {
+    "ottId": 738914,
+    "canonicalName": "Cyperus papyrus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott738914",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:49.999Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

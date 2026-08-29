@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:49.912Z",
+  "value": {
+    "usageKey": 1865668,
+    "canonicalName": "Actias luna",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1865668",
+      "url": "https://api.gbif.org/v1/species/match?name=Actias%20luna",
+      "retrievedAt": "2026-08-29T10:50:49.912Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

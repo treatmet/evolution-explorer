@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:50:48.594Z",
+  "value": {
+    "ottId": 677266,
+    "canonicalName": "Hyla arborea",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott677266",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:50:48.594Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

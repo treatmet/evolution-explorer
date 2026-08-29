@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:39:03.218Z",
+  "value": {
+    "ottId": 339369,
+    "matchedName": "Manihot esculenta",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott339369",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:39:03.218Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

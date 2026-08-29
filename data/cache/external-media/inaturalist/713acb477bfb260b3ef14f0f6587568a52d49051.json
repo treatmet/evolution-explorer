@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:51:44.271Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/84709831/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84709831/square.jpg",
+    "title": "Redbelly Piranha",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "120226",
+      "sourceUrl": "https://www.inaturalist.org/taxa/120226",
+      "attributionText": "(c) Marco Verch, some rights reserved (CC BY)",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "120226",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Pygocentrus%20nattereri&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:51:44.271Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

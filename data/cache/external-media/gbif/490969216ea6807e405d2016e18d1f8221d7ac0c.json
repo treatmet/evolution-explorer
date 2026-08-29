@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:13.731Z",
+  "value": {
+    "usageKey": 7786316,
+    "canonicalName": "Dinornis",
+    "rank": "GENUS",
+    "confidence": 92,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7786316",
+      "url": "https://api.gbif.org/v1/species/match?name=Dinornis%20robustus",
+      "retrievedAt": "2026-08-29T10:57:13.731Z",
+      "note": "GBIF confidence 92"
+    }
+  }
+}

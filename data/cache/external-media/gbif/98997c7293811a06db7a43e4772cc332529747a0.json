@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:55.784Z",
+  "value": {
+    "usageKey": 8541999,
+    "canonicalName": "Stegosaurus stenops",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8541999",
+      "url": "https://api.gbif.org/v1/species/match?name=Stegosaurus%20stenops",
+      "retrievedAt": "2026-08-29T10:56:55.784Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

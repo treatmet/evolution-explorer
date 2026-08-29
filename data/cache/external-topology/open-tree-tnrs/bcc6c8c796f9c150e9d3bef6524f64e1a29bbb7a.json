@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:23.974Z",
+  "value": {
+    "ottId": 388568,
+    "matchedName": "Elysia chlorotica",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott388568",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:23.974Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

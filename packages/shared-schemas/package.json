@@ -1,0 +1,16 @@
+{
+  "name": "@evo-tree/shared-schemas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "zod": "^4.1.8"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  }
+}

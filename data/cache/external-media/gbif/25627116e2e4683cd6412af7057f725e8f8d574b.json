@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:27.880Z",
+  "value": {
+    "usageKey": 9515886,
+    "canonicalName": "Hirundo rustica",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9515886",
+      "url": "https://api.gbif.org/v1/species/match?name=Hirundo%20rustica",
+      "retrievedAt": "2026-08-29T04:49:27.880Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

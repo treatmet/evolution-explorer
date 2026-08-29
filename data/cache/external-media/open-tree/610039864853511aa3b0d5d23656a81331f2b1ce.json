@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:55:40.271Z",
+  "value": {
+    "ottId": 376128,
+    "canonicalName": "Armillaria ostoyae",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott376128",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:55:40.271Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

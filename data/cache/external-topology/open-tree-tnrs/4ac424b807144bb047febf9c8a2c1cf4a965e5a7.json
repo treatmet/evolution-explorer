@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:47.553Z",
+  "value": {
+    "ottId": 517943,
+    "matchedName": "Picea abies",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott517943",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:47.553Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

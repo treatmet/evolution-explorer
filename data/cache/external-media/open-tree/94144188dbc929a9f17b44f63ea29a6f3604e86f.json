@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:50:59.543Z",
+  "value": {
+    "ottId": 386108,
+    "canonicalName": "Ceratophrys ornata",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott386108",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:50:59.543Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

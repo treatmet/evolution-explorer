@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:13.651Z",
+  "value": {
+    "usageKey": 2334574,
+    "canonicalName": "Scorpaena scrofa",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2334574",
+      "url": "https://api.gbif.org/v1/species/match?name=Scorpaena%20scrofa",
+      "retrievedAt": "2026-08-29T04:52:13.651Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

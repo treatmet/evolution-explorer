@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:31.790Z",
+  "value": {
+    "usageKey": 1421105,
+    "canonicalName": "Thermobia domestica",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1421105",
+      "url": "https://api.gbif.org/v1/species/match?name=Thermobia%20domestica",
+      "retrievedAt": "2026-08-29T10:51:31.790Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

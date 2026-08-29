@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:41.527Z",
+  "value": {
+    "usageKey": 3054368,
+    "canonicalName": "Juglans regia",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3054368",
+      "url": "https://api.gbif.org/v1/species/match?name=Juglans%20regia",
+      "retrievedAt": "2026-08-29T10:52:41.527Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

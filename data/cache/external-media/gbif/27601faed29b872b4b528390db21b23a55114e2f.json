@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:12.788Z",
+  "value": {
+    "usageKey": 2488980,
+    "canonicalName": "Menura novaehollandiae",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2488980",
+      "url": "https://api.gbif.org/v1/species/match?name=Menura%20novaehollandiae",
+      "retrievedAt": "2026-08-29T04:49:12.788Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

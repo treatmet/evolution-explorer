@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:38.565Z",
+  "value": {
+    "usageKey": 2481890,
+    "canonicalName": "Phalacrocorax carbo",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2481890",
+      "url": "https://api.gbif.org/v1/species/match?name=Phalacrocorax%20carbo",
+      "retrievedAt": "2026-08-29T04:48:38.565Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

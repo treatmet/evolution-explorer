@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:18.151Z",
+  "value": {
+    "usageKey": 2558944,
+    "canonicalName": "Rhizopus stolonifer",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2558944",
+      "url": "https://api.gbif.org/v1/species/match?name=Rhizopus%20stolonifer",
+      "retrievedAt": "2026-08-29T10:55:18.151Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

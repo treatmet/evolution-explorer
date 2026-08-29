@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:47.154Z",
+  "value": {
+    "usageKey": 2498352,
+    "canonicalName": "Somateria mollissima",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2498352",
+      "url": "https://api.gbif.org/v1/species/match?name=Somateria%20mollissima",
+      "retrievedAt": "2026-08-29T04:48:47.154Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

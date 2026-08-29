@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:27.114Z",
+  "value": {
+    "usageKey": 2221512,
+    "canonicalName": "Nebalia bipes",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2221512",
+      "url": "https://api.gbif.org/v1/species/match?name=Nebalia%20bipes",
+      "retrievedAt": "2026-08-29T10:49:27.114Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:11.773Z",
+  "value": {
+    "usageKey": 2334438,
+    "canonicalName": "Pterois volitans",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2334438",
+      "url": "https://api.gbif.org/v1/species/match?name=Pterois%20volitans",
+      "retrievedAt": "2026-08-29T04:52:11.773Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

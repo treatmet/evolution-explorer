@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:52:36.724Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/5737290/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5737290/square.jpg",
+    "title": "Mexican beech",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "291169",
+      "sourceUrl": "https://www.inaturalist.org/taxa/291169",
+      "attributionText": "(c) Claudio Cantú Muñiz, some rights reserved (CC BY), uploaded by Claudio Cantú Muñiz",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "291169",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Fagus%20grandifolia&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:52:36.724Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

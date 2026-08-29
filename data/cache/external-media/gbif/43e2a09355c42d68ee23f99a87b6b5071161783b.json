@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:03.756Z",
+  "value": {
+    "usageKey": 7822322,
+    "canonicalName": "Trypanosoma brucei",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7822322",
+      "url": "https://api.gbif.org/v1/species/match?name=Trypanosoma%20brucei",
+      "retrievedAt": "2026-08-29T10:56:03.756Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

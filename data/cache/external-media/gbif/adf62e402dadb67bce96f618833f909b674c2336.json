@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:25.531Z",
+  "value": {
+    "usageKey": 3193414,
+    "canonicalName": "Thalassiosira pseudonana",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3193414",
+      "url": "https://api.gbif.org/v1/species/match?name=Thalassiosira%20pseudonana",
+      "retrievedAt": "2026-08-29T10:56:25.531Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

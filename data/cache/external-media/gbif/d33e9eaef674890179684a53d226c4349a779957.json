@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:55.312Z",
+  "value": {
+    "usageKey": 2777724,
+    "canonicalName": "Aloe vera",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2777724",
+      "url": "https://api.gbif.org/v1/species/match?name=Aloe%20vera",
+      "retrievedAt": "2026-08-29T10:53:55.312Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

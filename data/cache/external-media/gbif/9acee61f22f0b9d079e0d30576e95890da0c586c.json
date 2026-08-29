@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:57.435Z",
+  "value": {
+    "usageKey": 2181351,
+    "canonicalName": "Damon diadema",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2181351",
+      "url": "https://api.gbif.org/v1/species/match?name=Damon%20diadema",
+      "retrievedAt": "2026-08-29T10:51:57.435Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

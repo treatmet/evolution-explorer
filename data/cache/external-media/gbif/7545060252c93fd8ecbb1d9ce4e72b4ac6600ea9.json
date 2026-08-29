@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:50.626Z",
+  "value": {
+    "usageKey": 5124716,
+    "canonicalName": "Attacus atlas",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5124716",
+      "url": "https://api.gbif.org/v1/species/match?name=Attacus%20atlas",
+      "retrievedAt": "2026-08-29T10:50:50.626Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

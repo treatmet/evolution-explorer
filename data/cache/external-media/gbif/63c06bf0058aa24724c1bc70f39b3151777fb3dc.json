@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:32.930Z",
+  "value": {
+    "usageKey": 3589283,
+    "canonicalName": "Aristolochia gigantea",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3589283",
+      "url": "https://api.gbif.org/v1/species/match?name=Aristolochia%20gigantea",
+      "retrievedAt": "2026-08-29T10:52:32.930Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

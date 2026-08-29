@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:09.791Z",
+  "value": {
+    "usageKey": 2873861,
+    "canonicalName": "Linum usitatissimum",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2873861",
+      "url": "https://api.gbif.org/v1/species/match?name=Linum%20usitatissimum",
+      "retrievedAt": "2026-08-29T10:53:09.791Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

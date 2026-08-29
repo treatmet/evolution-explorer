@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:09.400Z",
+  "value": {
+    "usageKey": 2482593,
+    "canonicalName": "Cyanocitta cristata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2482593",
+      "url": "https://api.gbif.org/v1/species/match?name=Cyanocitta%20cristata",
+      "retrievedAt": "2026-08-29T04:49:09.400Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

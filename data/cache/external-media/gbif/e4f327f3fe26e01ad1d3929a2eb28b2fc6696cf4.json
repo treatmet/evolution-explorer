@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:19.072Z",
+  "value": {
+    "usageKey": 2203611,
+    "canonicalName": "Armadillidium vulgare",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2203611",
+      "url": "https://api.gbif.org/v1/species/match?name=Armadillidium%20vulgare",
+      "retrievedAt": "2026-08-29T10:49:19.072Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

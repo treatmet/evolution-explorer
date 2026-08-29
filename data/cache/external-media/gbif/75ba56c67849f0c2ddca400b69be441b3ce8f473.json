@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:08.477Z",
+  "value": {
+    "usageKey": 5209188,
+    "canonicalName": "Acanthurus coeruleus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5209188",
+      "url": "https://api.gbif.org/v1/species/match?name=Acanthurus%20coeruleus",
+      "retrievedAt": "2026-08-29T04:52:08.477Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

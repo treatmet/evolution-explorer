@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:42.683Z",
+  "value": {
+    "usageKey": 5333230,
+    "canonicalName": "Castanea dentata",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5333230",
+      "url": "https://api.gbif.org/v1/species/match?name=Castanea%20dentata",
+      "retrievedAt": "2026-08-29T10:52:42.683Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

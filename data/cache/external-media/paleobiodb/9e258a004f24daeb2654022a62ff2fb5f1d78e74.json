@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:47:50.744Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Giraffa%20camelopardalis&show=attr",
+      "retrievedAt": "2026-08-29T04:47:50.744Z"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:04.530Z",
+  "value": {
+    "usageKey": 2430957,
+    "canonicalName": "Typhlonectes natans",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2430957",
+      "url": "https://api.gbif.org/v1/species/match?name=Typhlonectes%20natans",
+      "retrievedAt": "2026-08-29T04:51:04.530Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

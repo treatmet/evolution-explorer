@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:54:37.767Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/179291263/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179291263/square.jpeg",
+    "title": "pineapple",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "122965",
+      "sourceUrl": "https://www.inaturalist.org/taxa/122965",
+      "attributionText": "(c) Diogo Luiz, some rights reserved (CC BY), uploaded by Diogo Luiz",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "122965",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Ananas%20comosus&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:54:37.767Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

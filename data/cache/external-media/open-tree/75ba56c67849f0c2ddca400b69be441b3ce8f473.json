@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:52:08.430Z",
+  "value": {
+    "ottId": 324283,
+    "canonicalName": "Acanthurus coeruleus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott324283",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:52:08.430Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

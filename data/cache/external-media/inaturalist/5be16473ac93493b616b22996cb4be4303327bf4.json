@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:49:02.354Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/447085421/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447085421/square.jpeg",
+    "title": "Harpy Eagle",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "5321",
+      "sourceUrl": "https://www.inaturalist.org/taxa/5321",
+      "attributionText": "(c) Christoph Moning, some rights reserved (CC BY), uploaded by Christoph Moning",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "5321",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Harpia%20harpyja&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:49:02.354Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

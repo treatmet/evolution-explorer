@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:29.354Z",
+  "value": {
+    "usageKey": 2433451,
+    "canonicalName": "Ursus maritimus",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2433451",
+      "url": "https://api.gbif.org/v1/species/match?name=Ursus%20maritimus",
+      "retrievedAt": "2026-08-29T04:47:29.354Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

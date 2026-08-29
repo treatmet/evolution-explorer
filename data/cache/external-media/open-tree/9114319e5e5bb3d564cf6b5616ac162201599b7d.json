@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:49:32.022Z",
+  "value": {
+    "ottId": 954033,
+    "canonicalName": "Riftia pachyptila",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott954033",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:49:32.022Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

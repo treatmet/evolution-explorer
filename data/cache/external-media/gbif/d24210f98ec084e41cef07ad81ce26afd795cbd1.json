@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:47.829Z",
+  "value": {
+    "usageKey": 2926634,
+    "canonicalName": "Rosmarinus officinalis",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2926634",
+      "url": "https://api.gbif.org/v1/species/match?name=Rosmarinus%20officinalis",
+      "retrievedAt": "2026-08-29T10:53:47.829Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

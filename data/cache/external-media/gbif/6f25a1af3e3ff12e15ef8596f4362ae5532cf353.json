@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:51.156Z",
+  "value": {
+    "usageKey": 2441341,
+    "canonicalName": "Crocodylus niloticus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2441341",
+      "url": "https://api.gbif.org/v1/species/match?name=Crocodylus%20niloticus",
+      "retrievedAt": "2026-08-29T04:49:51.156Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

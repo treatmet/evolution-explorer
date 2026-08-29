@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:49.049Z",
+  "value": {
+    "usageKey": 9457155,
+    "canonicalName": "Gallus gallus domesticus",
+    "rank": "FORM",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9457155",
+      "url": "https://api.gbif.org/v1/species/match?name=Gallus%20gallus%20domesticus",
+      "retrievedAt": "2026-08-29T04:48:49.049Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

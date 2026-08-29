@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:55.578Z",
+  "value": {
+    "ottId": 3869511,
+    "matchedName": "Petunia x hybrida",
+    "score": 0.8888888955116272,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott3869511",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:55.578Z",
+      "note": "OpenTree TNRS score 0.8888888955116272"
+    }
+  }
+}

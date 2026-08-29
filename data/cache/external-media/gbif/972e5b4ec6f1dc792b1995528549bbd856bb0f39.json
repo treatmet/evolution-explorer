@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:02.936Z",
+  "value": {
+    "usageKey": 2400566,
+    "canonicalName": "Regalecus glesne",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2400566",
+      "url": "https://api.gbif.org/v1/species/match?name=Regalecus%20glesne",
+      "retrievedAt": "2026-08-29T04:52:02.936Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

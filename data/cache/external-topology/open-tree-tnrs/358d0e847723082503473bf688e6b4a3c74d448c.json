@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:16.977Z",
+  "value": {
+    "ottId": 1027727,
+    "matchedName": "Sardina pilchardus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott1027727",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:16.977Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

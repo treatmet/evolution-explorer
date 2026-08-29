@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:54:12.564Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/707039/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/707039/square.jpg",
+    "title": "northern purple pitcher plant",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "181907",
+      "sourceUrl": "https://www.inaturalist.org/taxa/181907",
+      "attributionText": "(c) Aaron Carlson, some rights reserved (CC BY), uploaded by Aaron Carlson",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "181907",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Sarracenia%20purpurea&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:54:12.564Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

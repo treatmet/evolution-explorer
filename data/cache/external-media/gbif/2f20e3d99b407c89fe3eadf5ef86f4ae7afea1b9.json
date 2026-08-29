@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:16.502Z",
+  "value": {
+    "usageKey": 5183974,
+    "canonicalName": "Metridium senile",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5183974",
+      "url": "https://api.gbif.org/v1/species/match?name=Metridium%20senile",
+      "retrievedAt": "2026-08-29T10:50:16.502Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

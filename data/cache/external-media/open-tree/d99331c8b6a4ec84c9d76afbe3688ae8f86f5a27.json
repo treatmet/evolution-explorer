@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:59.095Z",
+  "value": {
+    "ottId": 1065606,
+    "canonicalName": "Tyto alba",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott1065606",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:59.095Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

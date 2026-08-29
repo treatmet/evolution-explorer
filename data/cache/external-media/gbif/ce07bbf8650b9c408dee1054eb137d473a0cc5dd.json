@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:32.370Z",
+  "value": {
+    "usageKey": 5765493,
+    "canonicalName": "Machilis germanica",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5765493",
+      "url": "https://api.gbif.org/v1/species/match?name=Machilis%20germanica",
+      "retrievedAt": "2026-08-29T10:51:32.370Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

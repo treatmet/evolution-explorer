@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:56.203Z",
+  "value": {
+    "usageKey": 3189859,
+    "canonicalName": "Acer saccharum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3189859",
+      "url": "https://api.gbif.org/v1/species/match?name=Acer%20saccharum",
+      "retrievedAt": "2026-08-29T10:54:56.203Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:48:17.619Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Mirounga%20leonina&show=attr",
+      "retrievedAt": "2026-08-29T04:48:17.619Z"
+    }
+  }
+}

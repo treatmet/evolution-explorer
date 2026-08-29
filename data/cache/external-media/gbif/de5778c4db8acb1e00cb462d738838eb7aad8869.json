@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:55.751Z",
+  "value": {
+    "usageKey": 5406695,
+    "canonicalName": "Adansonia digitata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5406695",
+      "url": "https://api.gbif.org/v1/species/match?name=Adansonia%20digitata",
+      "retrievedAt": "2026-08-29T10:54:55.751Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

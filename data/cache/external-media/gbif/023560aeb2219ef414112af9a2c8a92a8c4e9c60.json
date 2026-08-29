@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:27.791Z",
+  "value": {
+    "usageKey": 1341976,
+    "canonicalName": "Apis mellifera",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1341976",
+      "url": "https://api.gbif.org/v1/species/match?name=Apis%20mellifera",
+      "retrievedAt": "2026-08-29T10:50:27.791Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

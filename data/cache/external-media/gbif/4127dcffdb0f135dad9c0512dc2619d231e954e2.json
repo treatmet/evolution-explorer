@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:13.053Z",
+  "value": {
+    "usageKey": 1713418,
+    "canonicalName": "Locusta migratoria",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1713418",
+      "url": "https://api.gbif.org/v1/species/match?name=Locusta%20migratoria",
+      "retrievedAt": "2026-08-29T10:51:13.053Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

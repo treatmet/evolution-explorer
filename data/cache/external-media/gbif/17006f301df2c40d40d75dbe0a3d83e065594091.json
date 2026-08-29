@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:20.330Z",
+  "value": {
+    "usageKey": 2687885,
+    "canonicalName": "Ginkgo biloba",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2687885",
+      "url": "https://api.gbif.org/v1/species/match?name=Ginkgo%20biloba",
+      "retrievedAt": "2026-08-29T10:52:20.330Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

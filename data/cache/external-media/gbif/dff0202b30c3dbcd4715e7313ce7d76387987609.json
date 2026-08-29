@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:21.765Z",
+  "value": {
+    "usageKey": 5275521,
+    "canonicalName": "Welwitschia mirabilis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5275521",
+      "url": "https://api.gbif.org/v1/species/match?name=Welwitschia%20mirabilis",
+      "retrievedAt": "2026-08-29T10:52:21.765Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

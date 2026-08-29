@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:51:48.404Z",
+  "value": {
+    "ottId": 744200,
+    "canonicalName": "Latrodectus mactans",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott744200",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:51:48.404Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

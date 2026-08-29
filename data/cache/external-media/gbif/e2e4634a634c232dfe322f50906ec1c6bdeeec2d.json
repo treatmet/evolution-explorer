@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:42.214Z",
+  "value": {
+    "usageKey": 5219598,
+    "canonicalName": "Procavia capensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219598",
+      "url": "https://api.gbif.org/v1/species/match?name=Procavia%20capensis",
+      "retrievedAt": "2026-08-29T04:47:42.214Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

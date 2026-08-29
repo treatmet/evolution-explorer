@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:13.576Z",
+  "value": {
+    "ottId": 919164,
+    "matchedName": "Pipa pipa",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott919164",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:13.576Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

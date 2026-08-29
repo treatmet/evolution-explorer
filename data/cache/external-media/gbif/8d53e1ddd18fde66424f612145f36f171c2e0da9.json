@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:24.091Z",
+  "value": {
+    "usageKey": 2685085,
+    "canonicalName": "Wollemia nobilis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2685085",
+      "url": "https://api.gbif.org/v1/species/match?name=Wollemia%20nobilis",
+      "retrievedAt": "2026-08-29T10:52:24.091Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

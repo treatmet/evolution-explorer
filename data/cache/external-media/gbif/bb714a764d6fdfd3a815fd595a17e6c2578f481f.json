@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:02.066Z",
+  "value": {
+    "usageKey": 5219628,
+    "canonicalName": "Manis javanica",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219628",
+      "url": "https://api.gbif.org/v1/species/match?name=Manis%20javanica",
+      "retrievedAt": "2026-08-29T04:48:02.066Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

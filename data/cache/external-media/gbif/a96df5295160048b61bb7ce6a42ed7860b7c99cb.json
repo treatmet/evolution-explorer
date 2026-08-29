@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:25.820Z",
+  "value": {
+    "usageKey": 2444356,
+    "canonicalName": "Crotalus atrox",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2444356",
+      "url": "https://api.gbif.org/v1/species/match?name=Crotalus%20atrox",
+      "retrievedAt": "2026-08-29T04:50:25.820Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

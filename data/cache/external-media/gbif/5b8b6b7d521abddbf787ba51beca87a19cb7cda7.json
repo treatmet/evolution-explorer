@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:40.949Z",
+  "value": {
+    "usageKey": 3220369,
+    "canonicalName": "Nitrosomonas europaea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3220369",
+      "url": "https://api.gbif.org/v1/species/match?name=Nitrosomonas%20europaea",
+      "retrievedAt": "2026-08-29T10:56:40.949Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

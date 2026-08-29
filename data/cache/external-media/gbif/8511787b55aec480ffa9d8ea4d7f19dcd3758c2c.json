@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:20.498Z",
+  "value": {
+    "usageKey": 2436643,
+    "canonicalName": "Ateles geoffroyi",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2436643",
+      "url": "https://api.gbif.org/v1/species/match?name=Ateles%20geoffroyi",
+      "retrievedAt": "2026-08-29T04:47:20.498Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:56:24.928Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/60684753/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/60684753/square.jpg",
+    "title": "Diatoma vulgaris grandis",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "1112288",
+      "sourceUrl": "https://www.inaturalist.org/taxa/1112288",
+      "attributionText": "(c) Owen Strickland, some rights reserved (CC BY), uploaded by Owen Strickland",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "1112288",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Diatoma%20vulgare&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:56:24.928Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

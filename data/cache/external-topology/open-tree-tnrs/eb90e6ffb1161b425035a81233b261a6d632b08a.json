@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:23.887Z",
+  "value": {
+    "ottId": 1000166,
+    "matchedName": "Chromodoris lochi",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott1000166",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:23.887Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

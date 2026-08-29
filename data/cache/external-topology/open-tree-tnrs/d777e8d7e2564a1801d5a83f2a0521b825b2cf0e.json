@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:50.777Z",
+  "value": {
+    "ottId": 541936,
+    "matchedName": "Loxodonta africana",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott541936",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:50.777Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

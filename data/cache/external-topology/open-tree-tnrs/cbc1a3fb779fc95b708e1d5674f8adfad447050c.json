@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:29.433Z",
+  "value": {
+    "ottId": 316451,
+    "matchedName": "Eisenia fetida",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott316451",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:29.433Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

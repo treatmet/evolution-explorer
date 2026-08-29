@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:58.395Z",
+  "value": {
+    "usageKey": 8149923,
+    "canonicalName": "Prunus persica",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8149923",
+      "url": "https://api.gbif.org/v1/species/match?name=Prunus%20persica",
+      "retrievedAt": "2026-08-29T10:52:58.395Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

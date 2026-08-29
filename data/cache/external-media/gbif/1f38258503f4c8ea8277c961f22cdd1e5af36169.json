@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:29.677Z",
+  "value": {
+    "usageKey": 8225325,
+    "canonicalName": "Nostoc commune",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "8225325",
+      "url": "https://api.gbif.org/v1/species/match?name=Nostoc%20commune",
+      "retrievedAt": "2026-08-29T10:56:29.677Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

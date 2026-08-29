@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:06.014Z",
+  "value": {
+    "usageKey": 3190172,
+    "canonicalName": "Citrus reticulata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3190172",
+      "url": "https://api.gbif.org/v1/species/match?name=Citrus%20reticulata",
+      "retrievedAt": "2026-08-29T10:53:06.014Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

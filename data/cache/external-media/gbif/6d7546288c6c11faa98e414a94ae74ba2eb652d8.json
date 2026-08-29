@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:27.352Z",
+  "value": {
+    "usageKey": 9605163,
+    "canonicalName": "Magnolia grandiflora",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9605163",
+      "url": "https://api.gbif.org/v1/species/match?name=Magnolia%20grandiflora",
+      "retrievedAt": "2026-08-29T10:52:27.352Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

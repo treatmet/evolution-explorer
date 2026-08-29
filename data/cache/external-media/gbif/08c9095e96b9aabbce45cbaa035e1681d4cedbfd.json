@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:15.618Z",
+  "value": {
+    "usageKey": 2685383,
+    "canonicalName": "Abies balsamea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2685383",
+      "url": "https://api.gbif.org/v1/species/match?name=Abies%20balsamea",
+      "retrievedAt": "2026-08-29T10:52:15.618Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

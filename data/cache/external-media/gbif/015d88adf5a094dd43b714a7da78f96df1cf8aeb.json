@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:58.534Z",
+  "value": {
+    "usageKey": 2279167,
+    "canonicalName": "Holothuria atra",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2279167",
+      "url": "https://api.gbif.org/v1/species/match?name=Holothuria%20atra",
+      "retrievedAt": "2026-08-29T10:49:58.534Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:28.591Z",
+  "value": {
+    "usageKey": 2433433,
+    "canonicalName": "Ursus arctos",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2433433",
+      "url": "https://api.gbif.org/v1/species/match?name=Ursus%20arctos",
+      "retrievedAt": "2026-08-29T04:47:28.591Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

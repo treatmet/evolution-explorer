@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:37.593Z",
+  "value": {
+    "usageKey": 5229158,
+    "canonicalName": "Pelecanus occidentalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5229158",
+      "url": "https://api.gbif.org/v1/species/match?name=Pelecanus%20occidentalis",
+      "retrievedAt": "2026-08-29T04:48:37.593Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:16.319Z",
+  "value": {
+    "usageKey": 5219532,
+    "canonicalName": "Pongo pygmaeus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219532",
+      "url": "https://api.gbif.org/v1/species/match?name=Pongo%20pygmaeus",
+      "retrievedAt": "2026-08-29T04:47:16.319Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

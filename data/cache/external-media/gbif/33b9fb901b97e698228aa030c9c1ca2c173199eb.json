@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:48.427Z",
+  "value": {
+    "usageKey": 9055455,
+    "canonicalName": "Camelus dromedarius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9055455",
+      "url": "https://api.gbif.org/v1/species/match?name=Camelus%20dromedarius",
+      "retrievedAt": "2026-08-29T04:47:48.427Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

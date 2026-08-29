@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:47.286Z",
+  "value": {
+    "usageKey": 11374585,
+    "canonicalName": "Sus scrofa domesticus",
+    "rank": "SUBSPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "11374585",
+      "url": "https://api.gbif.org/v1/species/match?name=Sus%20scrofa%20domesticus",
+      "retrievedAt": "2026-08-29T04:47:47.286Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

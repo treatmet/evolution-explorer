@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:26.072Z",
+  "value": {
+    "usageKey": 5219681,
+    "canonicalName": "Sciurus carolinensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219681",
+      "url": "https://api.gbif.org/v1/species/match?name=Sciurus%20carolinensis",
+      "retrievedAt": "2026-08-29T04:48:26.072Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

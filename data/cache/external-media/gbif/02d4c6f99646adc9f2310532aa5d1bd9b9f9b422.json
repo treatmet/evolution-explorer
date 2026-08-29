@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:53.087Z",
+  "value": {
+    "usageKey": 5173257,
+    "canonicalName": "Phidippus audax",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5173257",
+      "url": "https://api.gbif.org/v1/species/match?name=Phidippus%20audax",
+      "retrievedAt": "2026-08-29T10:51:53.087Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

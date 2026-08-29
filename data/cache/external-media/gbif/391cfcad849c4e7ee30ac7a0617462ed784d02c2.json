@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:36.849Z",
+  "value": {
+    "usageKey": 2431950,
+    "canonicalName": "Ambystoma mexicanum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2431950",
+      "url": "https://api.gbif.org/v1/species/match?name=Ambystoma%20mexicanum",
+      "retrievedAt": "2026-08-29T04:50:36.849Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

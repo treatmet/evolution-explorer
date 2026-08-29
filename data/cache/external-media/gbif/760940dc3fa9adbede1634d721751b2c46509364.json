@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:43.805Z",
+  "value": {
+    "usageKey": 5892123,
+    "canonicalName": "Schmidtea mediterranea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5892123",
+      "url": "https://api.gbif.org/v1/species/match?name=Schmidtea%20mediterranea",
+      "retrievedAt": "2026-08-29T10:49:43.805Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

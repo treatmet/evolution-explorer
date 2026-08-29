@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:37.444Z",
+  "value": {
+    "usageKey": 5234445,
+    "canonicalName": "Sipunculus nudus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5234445",
+      "url": "https://api.gbif.org/v1/species/match?name=Sipunculus%20nudus",
+      "retrievedAt": "2026-08-29T10:49:37.444Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:23.949Z",
+  "value": {
+    "usageKey": 5219888,
+    "canonicalName": "Hystrix cristata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219888",
+      "url": "https://api.gbif.org/v1/species/match?name=Hystrix%20cristata",
+      "retrievedAt": "2026-08-29T04:48:23.949Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:53.936Z",
+  "value": {
+    "usageKey": 5188139,
+    "canonicalName": "Echinus esculentus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5188139",
+      "url": "https://api.gbif.org/v1/species/match?name=Echinus%20esculentus",
+      "retrievedAt": "2026-08-29T10:49:53.936Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

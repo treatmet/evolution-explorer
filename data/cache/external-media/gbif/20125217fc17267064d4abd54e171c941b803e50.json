@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:00.620Z",
+  "value": {
+    "usageKey": 5190391,
+    "canonicalName": "Patella vulgata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5190391",
+      "url": "https://api.gbif.org/v1/species/match?name=Patella%20vulgata",
+      "retrievedAt": "2026-08-29T10:49:00.620Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

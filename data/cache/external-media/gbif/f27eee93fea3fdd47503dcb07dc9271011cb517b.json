@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:29.150Z",
+  "value": {
+    "usageKey": 1340503,
+    "canonicalName": "Bombus terrestris",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1340503",
+      "url": "https://api.gbif.org/v1/species/match?name=Bombus%20terrestris",
+      "retrievedAt": "2026-08-29T10:50:29.150Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

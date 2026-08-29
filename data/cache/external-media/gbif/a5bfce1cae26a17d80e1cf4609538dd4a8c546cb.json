@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:24.176Z",
+  "value": {
+    "usageKey": 2318802,
+    "canonicalName": "Wiwaxia corrugata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2318802",
+      "url": "https://api.gbif.org/v1/species/match?name=Wiwaxia%20corrugata",
+      "retrievedAt": "2026-08-29T10:57:24.176Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

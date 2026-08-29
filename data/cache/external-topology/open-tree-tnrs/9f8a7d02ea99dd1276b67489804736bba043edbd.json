@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:08.113Z",
+  "value": {
+    "ottId": 284917,
+    "matchedName": "Chelonoidis niger",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott284917",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:08.113Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

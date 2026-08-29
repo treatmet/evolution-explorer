@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:58.889Z",
+  "value": {
+    "usageKey": 2441461,
+    "canonicalName": "Testudo graeca",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2441461",
+      "url": "https://api.gbif.org/v1/species/match?name=Testudo%20graeca",
+      "retrievedAt": "2026-08-29T04:49:58.889Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

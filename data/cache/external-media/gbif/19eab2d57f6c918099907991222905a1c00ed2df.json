@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:07.689Z",
+  "value": {
+    "usageKey": 5179027,
+    "canonicalName": "Scutigera coleoptrata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5179027",
+      "url": "https://api.gbif.org/v1/species/match?name=Scutigera%20coleoptrata",
+      "retrievedAt": "2026-08-29T10:52:07.689Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

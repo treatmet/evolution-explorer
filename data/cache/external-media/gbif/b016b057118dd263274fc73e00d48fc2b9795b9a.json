@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:35.507Z",
+  "value": {
+    "usageKey": 2594602,
+    "canonicalName": "Morchella esculenta",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2594602",
+      "url": "https://api.gbif.org/v1/species/match?name=Morchella%20esculenta",
+      "retrievedAt": "2026-08-29T10:55:35.507Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

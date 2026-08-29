@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:47.752Z",
+  "value": {
+    "usageKey": 2340710,
+    "canonicalName": "Pangasianodon gigas",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2340710",
+      "url": "https://api.gbif.org/v1/species/match?name=Pangasianodon%20gigas",
+      "retrievedAt": "2026-08-29T04:51:47.752Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

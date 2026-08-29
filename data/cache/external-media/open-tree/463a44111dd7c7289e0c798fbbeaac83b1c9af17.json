@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:49:55.432Z",
+  "value": {
+    "ottId": 559133,
+    "canonicalName": "Chelonia mydas",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott559133",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:49:55.432Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

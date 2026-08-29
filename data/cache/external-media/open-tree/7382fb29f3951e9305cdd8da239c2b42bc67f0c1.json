@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:50:29.562Z",
+  "value": {
+    "ottId": 430308,
+    "canonicalName": "Xylocopa virginica",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott430308",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:50:29.562Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

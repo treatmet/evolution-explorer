@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:54:13.589Z",
+  "value": {
+    "ottId": 305739,
+    "canonicalName": "Amorphophallus titanum",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott305739",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:54:13.589Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

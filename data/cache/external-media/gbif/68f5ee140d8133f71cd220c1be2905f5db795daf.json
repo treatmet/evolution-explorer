@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:12.316Z",
+  "value": {
+    "usageKey": 2599597,
+    "canonicalName": "Candida albicans",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2599597",
+      "url": "https://api.gbif.org/v1/species/match?name=Candida%20albicans",
+      "retrievedAt": "2026-08-29T10:55:12.316Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

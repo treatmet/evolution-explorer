@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:49:03.928Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Falco%20tinnunculus&show=attr",
+      "retrievedAt": "2026-08-29T04:49:03.928Z"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:11.460Z",
+  "value": {
+    "usageKey": 5285053,
+    "canonicalName": "Pinus ponderosa",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5285053",
+      "url": "https://api.gbif.org/v1/species/match?name=Pinus%20ponderosa",
+      "retrievedAt": "2026-08-29T10:52:11.460Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

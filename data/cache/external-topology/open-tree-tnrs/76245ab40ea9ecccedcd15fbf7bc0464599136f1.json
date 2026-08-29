@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:26.631Z",
+  "value": {
+    "ottId": 182906,
+    "matchedName": "Callinectes sapidus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott182906",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:26.631Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

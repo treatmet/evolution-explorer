@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:50.626Z",
+  "value": {
+    "ottId": 658505,
+    "matchedName": "Ficus carica (species in kingdom Archaeplastida)",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott658505",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:50.626Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

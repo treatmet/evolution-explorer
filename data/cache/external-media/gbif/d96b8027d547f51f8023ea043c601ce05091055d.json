@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:31.085Z",
+  "value": {
+    "usageKey": 2476674,
+    "canonicalName": "Calypte anna",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2476674",
+      "url": "https://api.gbif.org/v1/species/match?name=Calypte%20anna",
+      "retrievedAt": "2026-08-29T04:49:31.085Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

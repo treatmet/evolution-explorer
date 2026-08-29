@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:15.727Z",
+  "value": {
+    "usageKey": 2436441,
+    "canonicalName": "Gorilla gorilla",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2436441",
+      "url": "https://api.gbif.org/v1/species/match?name=Gorilla%20gorilla",
+      "retrievedAt": "2026-08-29T04:47:15.727Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

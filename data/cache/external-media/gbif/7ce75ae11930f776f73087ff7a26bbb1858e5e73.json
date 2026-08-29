@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:24.129Z",
+  "value": {
+    "usageKey": 6789233,
+    "canonicalName": "Diatoma vulgare",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "6789233",
+      "url": "https://api.gbif.org/v1/species/match?name=Diatoma%20vulgare",
+      "retrievedAt": "2026-08-29T10:56:24.129Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

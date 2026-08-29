@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:56:56.242Z",
+  "value": {
+    "usageKey": 4967320,
+    "canonicalName": "Brachiosaurus altithorax",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4967320",
+      "url": "https://api.gbif.org/v1/species/match?name=Brachiosaurus%20altithorax",
+      "retrievedAt": "2026-08-29T10:56:56.242Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:42.905Z",
+  "value": {
+    "usageKey": 5133088,
+    "canonicalName": "Danaus plexippus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5133088",
+      "url": "https://api.gbif.org/v1/species/match?name=Danaus%20plexippus",
+      "retrievedAt": "2026-08-29T10:50:42.905Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

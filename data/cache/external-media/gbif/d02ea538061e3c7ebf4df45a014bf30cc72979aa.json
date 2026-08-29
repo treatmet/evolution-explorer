@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:17.623Z",
+  "value": {
+    "usageKey": 2501136,
+    "canonicalName": "Pleurobrachia pileus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2501136",
+      "url": "https://api.gbif.org/v1/species/match?name=Pleurobrachia%20pileus",
+      "retrievedAt": "2026-08-29T10:50:17.623Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

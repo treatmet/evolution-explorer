@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:52:23.527Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/110394904/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/110394904/square.jpg",
+    "title": "Baringo Tilapia",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "244326",
+      "sourceUrl": "https://www.inaturalist.org/taxa/244326",
+      "attributionText": "no rights reserved, uploaded by Jean-Paul Boerekamps",
+      "licenseCode": "cc0",
+      "licenseName": "Creative Commons Zero",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "244326",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Oreochromis%20niloticus&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:52:23.527Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:48:47.834Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/8898875/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8898875/square.jpg",
+    "title": "Goosander",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "512408",
+      "sourceUrl": "https://www.inaturalist.org/taxa/512408",
+      "attributionText": "(c) Bengt Nyman, some rights reserved (CC BY)",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "512408",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Mergus%20merganser&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:48:47.834Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

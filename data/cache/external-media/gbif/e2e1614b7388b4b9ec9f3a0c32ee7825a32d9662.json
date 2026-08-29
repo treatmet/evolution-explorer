@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:42.926Z",
+  "value": {
+    "usageKey": 2705290,
+    "canonicalName": "Avena sativa",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2705290",
+      "url": "https://api.gbif.org/v1/species/match?name=Avena%20sativa",
+      "retrievedAt": "2026-08-29T10:54:42.926Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

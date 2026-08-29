@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:10.501Z",
+  "value": {
+    "usageKey": 5189614,
+    "canonicalName": "Argonauta argo",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5189614",
+      "url": "https://api.gbif.org/v1/species/match?name=Argonauta%20argo",
+      "retrievedAt": "2026-08-29T10:49:10.501Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

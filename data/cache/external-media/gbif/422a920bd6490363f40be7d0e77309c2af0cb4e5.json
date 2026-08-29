@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:08.263Z",
+  "value": {
+    "usageKey": 1076779,
+    "canonicalName": "Goliathus goliatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1076779",
+      "url": "https://api.gbif.org/v1/species/match?name=Goliathus%20goliatus",
+      "retrievedAt": "2026-08-29T10:51:08.263Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

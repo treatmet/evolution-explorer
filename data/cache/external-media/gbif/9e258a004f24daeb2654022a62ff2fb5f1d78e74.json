@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:50.844Z",
+  "value": {
+    "usageKey": 2441205,
+    "canonicalName": "Giraffa camelopardalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2441205",
+      "url": "https://api.gbif.org/v1/species/match?name=Giraffa%20camelopardalis",
+      "retrievedAt": "2026-08-29T04:47:50.844Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

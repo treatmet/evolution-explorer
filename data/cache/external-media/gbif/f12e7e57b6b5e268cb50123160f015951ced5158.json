@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:23.006Z",
+  "value": {
+    "usageKey": 7567077,
+    "canonicalName": "Cordyceps militaris",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7567077",
+      "url": "https://api.gbif.org/v1/species/match?name=Cordyceps%20militaris",
+      "retrievedAt": "2026-08-29T10:55:23.006Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:33.161Z",
+  "value": {
+    "usageKey": 5229302,
+    "canonicalName": "Diomedea exulans",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5229302",
+      "url": "https://api.gbif.org/v1/species/match?name=Diomedea%20exulans",
+      "retrievedAt": "2026-08-29T04:48:33.161Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

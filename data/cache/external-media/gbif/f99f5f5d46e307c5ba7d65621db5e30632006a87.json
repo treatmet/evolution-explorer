@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:33.590Z",
+  "value": {
+    "usageKey": 2537743,
+    "canonicalName": "Lentinula edodes",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2537743",
+      "url": "https://api.gbif.org/v1/species/match?name=Lentinula%20edodes",
+      "retrievedAt": "2026-08-29T10:55:33.590Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

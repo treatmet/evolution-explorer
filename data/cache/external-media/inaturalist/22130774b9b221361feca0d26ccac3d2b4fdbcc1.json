@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:53:28.952Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/58693887/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58693887/square.jpeg",
+    "title": "Sensitive Plant",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "51921",
+      "sourceUrl": "https://www.inaturalist.org/taxa/51921",
+      "attributionText": "no rights reserved, uploaded by 葉子",
+      "licenseCode": "cc0",
+      "licenseName": "Creative Commons Zero",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "51921",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Mimosa%20pudica&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:53:28.952Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

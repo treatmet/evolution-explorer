@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:45.875Z",
+  "value": {
+    "usageKey": 7661971,
+    "canonicalName": "Bambusa vulgaris",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7661971",
+      "url": "https://api.gbif.org/v1/species/match?name=Bambusa%20vulgaris",
+      "retrievedAt": "2026-08-29T10:54:45.875Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

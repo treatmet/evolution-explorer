@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:49.075Z",
+  "value": {
+    "ottId": 510768,
+    "canonicalName": "Camelus bactrianus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott510768",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:49.075Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

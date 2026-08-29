@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:12.747Z",
+  "value": {
+    "usageKey": 5284884,
+    "canonicalName": "Picea abies",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5284884",
+      "url": "https://api.gbif.org/v1/species/match?name=Picea%20abies",
+      "retrievedAt": "2026-08-29T10:52:12.747Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

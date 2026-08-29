@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:18.043Z",
+  "value": {
+    "usageKey": 9784990,
+    "canonicalName": "Sphyraena barracuda",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9784990",
+      "url": "https://api.gbif.org/v1/species/match?name=Sphyraena%20barracuda",
+      "retrievedAt": "2026-08-29T04:52:18.043Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

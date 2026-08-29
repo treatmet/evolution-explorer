@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:23.660Z",
+  "value": {
+    "usageKey": 2436432,
+    "canonicalName": "Indri indri",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2436432",
+      "url": "https://api.gbif.org/v1/species/match?name=Indri%20indri",
+      "retrievedAt": "2026-08-29T04:47:23.660Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:36.159Z",
+  "value": {
+    "usageKey": 3802655,
+    "canonicalName": "Atropa belladonna",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3802655",
+      "url": "https://api.gbif.org/v1/species/match?name=Atropa%20belladonna",
+      "retrievedAt": "2026-08-29T10:53:36.159Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

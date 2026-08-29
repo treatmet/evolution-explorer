@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T04:48:42.793Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Threskiornis%20aethiopicus&show=attr",
+      "retrievedAt": "2026-08-29T04:48:42.793Z"
+    }
+  }
+}

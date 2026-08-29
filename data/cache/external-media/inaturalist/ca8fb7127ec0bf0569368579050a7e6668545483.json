@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:49:35.096Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/156182227/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/156182227/square.jpg",
+    "title": "Osedax rubiplumus",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "553235",
+      "sourceUrl": "https://www.inaturalist.org/taxa/553235",
+      "attributionText": "(c) \nRobert C. Vrijenhoek, Shannon B. Johnson & Greg W. Rouse, some rights reserved (CC BY)",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "553235",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Osedax%20rubiplumus&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:49:35.096Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

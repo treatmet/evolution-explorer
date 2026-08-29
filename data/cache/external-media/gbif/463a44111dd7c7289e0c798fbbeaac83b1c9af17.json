@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:55.467Z",
+  "value": {
+    "usageKey": 2442225,
+    "canonicalName": "Chelonia mydas",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2442225",
+      "url": "https://api.gbif.org/v1/species/match?name=Chelonia%20mydas",
+      "retrievedAt": "2026-08-29T04:49:55.467Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:47:30.367Z",
+  "value": {
+    "ottId": 348040,
+    "canonicalName": "Procyon lotor",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott348040",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:47:30.367Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

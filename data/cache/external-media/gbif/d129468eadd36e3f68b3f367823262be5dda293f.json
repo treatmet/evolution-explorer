@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:59.769Z",
+  "value": {
+    "usageKey": 2436353,
+    "canonicalName": "Bradypus variegatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2436353",
+      "url": "https://api.gbif.org/v1/species/match?name=Bradypus%20variegatus",
+      "retrievedAt": "2026-08-29T04:47:59.769Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

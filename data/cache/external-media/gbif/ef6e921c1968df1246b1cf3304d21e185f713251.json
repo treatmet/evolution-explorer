@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:14.919Z",
+  "value": {
+    "usageKey": 5185376,
+    "canonicalName": "Gorgonia ventalina",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5185376",
+      "url": "https://api.gbif.org/v1/species/match?name=Gorgonia%20ventalina",
+      "retrievedAt": "2026-08-29T10:50:14.919Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

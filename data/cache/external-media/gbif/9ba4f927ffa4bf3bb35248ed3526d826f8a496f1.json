@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:07.814Z",
+  "value": {
+    "usageKey": 2266021,
+    "canonicalName": "Turritopsis dohrnii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2266021",
+      "url": "https://api.gbif.org/v1/species/match?name=Turritopsis%20dohrnii",
+      "retrievedAt": "2026-08-29T10:50:07.814Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

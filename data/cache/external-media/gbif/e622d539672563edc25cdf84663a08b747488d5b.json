@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:35.255Z",
+  "value": {
+    "usageKey": 2475443,
+    "canonicalName": "Merops apiaster",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2475443",
+      "url": "https://api.gbif.org/v1/species/match?name=Merops%20apiaster",
+      "retrievedAt": "2026-08-29T04:49:35.255Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:51:20.755Z",
+  "value": {
+    "ottId": 48274,
+    "canonicalName": "Blatta orientalis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott48274",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:51:20.755Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

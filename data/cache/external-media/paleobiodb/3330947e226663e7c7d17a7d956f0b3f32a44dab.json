@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T10:49:21.967Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Balanus%20glandula&show=attr",
+      "retrievedAt": "2026-08-29T10:49:21.967Z"
+    }
+  }
+}

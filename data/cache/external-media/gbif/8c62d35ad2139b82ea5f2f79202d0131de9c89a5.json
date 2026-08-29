@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:50.295Z",
+  "value": {
+    "usageKey": 2160133,
+    "canonicalName": "Araneus diadematus",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2160133",
+      "url": "https://api.gbif.org/v1/species/match?name=Araneus%20diadematus",
+      "retrievedAt": "2026-08-29T10:51:50.294Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

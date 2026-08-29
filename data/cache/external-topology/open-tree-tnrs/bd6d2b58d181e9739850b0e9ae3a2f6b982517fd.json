@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:39:14.057Z",
+  "value": {
+    "ottId": 4946547,
+    "matchedName": "Ankylosaurus magniventris",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott4946547",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:39:14.057Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

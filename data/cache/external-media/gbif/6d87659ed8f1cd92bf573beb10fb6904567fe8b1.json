@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:26.598Z",
+  "value": {
+    "usageKey": 7341834,
+    "canonicalName": "Setophaga petechia",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7341834",
+      "url": "https://api.gbif.org/v1/species/match?name=Setophaga%20petechia",
+      "retrievedAt": "2026-08-29T04:49:26.598Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:39.861Z",
+  "value": {
+    "usageKey": 5248508,
+    "canonicalName": "Hericium erinaceus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5248508",
+      "url": "https://api.gbif.org/v1/species/match?name=Hericium%20erinaceus",
+      "retrievedAt": "2026-08-29T10:55:39.861Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

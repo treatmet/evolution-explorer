@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:32.777Z",
+  "value": {
+    "usageKey": 5197443,
+    "canonicalName": "Arenicola marina",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5197443",
+      "url": "https://api.gbif.org/v1/species/match?name=Arenicola%20marina",
+      "retrievedAt": "2026-08-29T10:49:32.777Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

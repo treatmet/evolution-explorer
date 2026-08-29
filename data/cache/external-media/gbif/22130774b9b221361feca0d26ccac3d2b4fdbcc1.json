@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:28.257Z",
+  "value": {
+    "usageKey": 2969284,
+    "canonicalName": "Mimosa pudica",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2969284",
+      "url": "https://api.gbif.org/v1/species/match?name=Mimosa%20pudica",
+      "retrievedAt": "2026-08-29T10:53:28.257Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:45.814Z",
+  "value": {
+    "usageKey": 5228229,
+    "canonicalName": "Balearica regulorum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5228229",
+      "url": "https://api.gbif.org/v1/species/match?name=Balearica%20regulorum",
+      "retrievedAt": "2026-08-29T04:49:45.814Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

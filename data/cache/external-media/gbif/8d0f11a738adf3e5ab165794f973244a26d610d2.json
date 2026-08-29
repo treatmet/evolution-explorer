@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:33.339Z",
+  "value": {
+    "usageKey": 2455615,
+    "canonicalName": "Pantherophis guttatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2455615",
+      "url": "https://api.gbif.org/v1/species/match?name=Pantherophis%20guttatus",
+      "retrievedAt": "2026-08-29T04:50:33.339Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

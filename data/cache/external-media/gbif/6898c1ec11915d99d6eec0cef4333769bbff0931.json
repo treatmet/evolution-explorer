@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:26.669Z",
+  "value": {
+    "usageKey": 6164210,
+    "canonicalName": "Canis lupus familiaris",
+    "rank": "SUBSPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "6164210",
+      "url": "https://api.gbif.org/v1/species/match?name=Canis%20lupus%20familiaris",
+      "retrievedAt": "2026-08-29T04:47:26.669Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

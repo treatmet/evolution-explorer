@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:16.373Z",
+  "value": {
+    "usageKey": 3112801,
+    "canonicalName": "Cirsium vulgare",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3112801",
+      "url": "https://api.gbif.org/v1/species/match?name=Cirsium%20vulgare",
+      "retrievedAt": "2026-08-29T10:53:16.373Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

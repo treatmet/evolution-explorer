@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:51:30.171Z",
+  "value": {
+    "ottId": 845486,
+    "canonicalName": "Lepisma saccharina",
+    "score": 0.8888888955116272,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott845486",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:51:30.170Z",
+      "note": "OpenTree TNRS score 0.8888888955116272"
+    }
+  }
+}

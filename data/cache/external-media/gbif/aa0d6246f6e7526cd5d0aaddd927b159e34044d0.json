@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:24.818Z",
+  "value": {
+    "usageKey": 2255380,
+    "canonicalName": "Trichoplax adhaerens",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2255380",
+      "url": "https://api.gbif.org/v1/species/match?name=Trichoplax%20adhaerens",
+      "retrievedAt": "2026-08-29T10:50:24.818Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

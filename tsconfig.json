@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    { "path": "./packages/domain" },
+    { "path": "./packages/shared-schemas" },
+    { "path": "./packages/renderer-contracts" },
+    { "path": "./packages/scientific-data" },
+    { "path": "./packages/game-engine" },
+    { "path": "./scripts/data-refresh" },
+    { "path": "./apps/web" }
+  ]
+}

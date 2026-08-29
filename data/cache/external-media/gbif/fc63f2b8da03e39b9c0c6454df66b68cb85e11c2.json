@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:41.193Z",
+  "value": {
+    "usageKey": 2359014,
+    "canonicalName": "Catostomus commersonii",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2359014",
+      "url": "https://api.gbif.org/v1/species/match?name=Catostomus%20commersonii",
+      "retrievedAt": "2026-08-29T04:51:41.193Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

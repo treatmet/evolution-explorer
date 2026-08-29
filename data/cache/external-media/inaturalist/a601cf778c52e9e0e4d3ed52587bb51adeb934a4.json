@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:47:32.255Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/172440134/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/172440134/square.jpg",
+    "title": "North American River Otter",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "41777",
+      "sourceUrl": "https://www.inaturalist.org/taxa/41777",
+      "attributionText": "no rights reserved, uploaded by Adam Jackson",
+      "licenseCode": "cc0",
+      "licenseName": "Creative Commons Zero",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "41777",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Lutra%20lutra&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:47:32.255Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

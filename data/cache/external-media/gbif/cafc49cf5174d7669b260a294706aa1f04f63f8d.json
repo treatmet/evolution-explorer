@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:26.013Z",
+  "value": {
+    "usageKey": 2346701,
+    "canonicalName": "Lepisosteus osseus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2346701",
+      "url": "https://api.gbif.org/v1/species/match?name=Lepisosteus%20osseus",
+      "retrievedAt": "2026-08-29T04:51:26.013Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

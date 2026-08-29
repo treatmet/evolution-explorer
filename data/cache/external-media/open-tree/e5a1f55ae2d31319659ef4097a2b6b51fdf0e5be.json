@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:45.283Z",
+  "value": {
+    "ottId": 140314,
+    "canonicalName": "Cygnus olor",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott140314",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:45.283Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

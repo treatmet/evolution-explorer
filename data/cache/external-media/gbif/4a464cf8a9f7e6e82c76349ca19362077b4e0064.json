@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:10.279Z",
+  "value": {
+    "usageKey": 2440447,
+    "canonicalName": "Tursiops truncatus",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2440447",
+      "url": "https://api.gbif.org/v1/species/match?name=Tursiops%20truncatus",
+      "retrievedAt": "2026-08-29T04:48:10.279Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:01.167Z",
+  "value": {
+    "usageKey": 3060998,
+    "canonicalName": "Manihot esculenta",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3060998",
+      "url": "https://api.gbif.org/v1/species/match?name=Manihot%20esculenta",
+      "retrievedAt": "2026-08-29T10:55:01.167Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:53.192Z",
+  "value": {
+    "usageKey": 2495414,
+    "canonicalName": "Columba livia",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2495414",
+      "url": "https://api.gbif.org/v1/species/match?name=Columba%20livia",
+      "retrievedAt": "2026-08-29T04:48:53.192Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:13.181Z",
+  "value": {
+    "usageKey": 2436436,
+    "canonicalName": "Homo sapiens",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2436436",
+      "url": "https://api.gbif.org/v1/species/match?name=Homo%20sapiens",
+      "retrievedAt": "2026-08-29T04:47:13.181Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

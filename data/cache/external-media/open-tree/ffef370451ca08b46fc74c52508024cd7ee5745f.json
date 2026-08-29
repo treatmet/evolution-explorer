@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:49:59.693Z",
+  "value": {
+    "ottId": 732545,
+    "canonicalName": "Crinoidea",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott732545",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:49:59.693Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

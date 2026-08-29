@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:13.138Z",
+  "value": {
+    "usageKey": 2225646,
+    "canonicalName": "Callinectes sapidus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2225646",
+      "url": "https://api.gbif.org/v1/species/match?name=Callinectes%20sapidus",
+      "retrievedAt": "2026-08-29T10:49:13.138Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

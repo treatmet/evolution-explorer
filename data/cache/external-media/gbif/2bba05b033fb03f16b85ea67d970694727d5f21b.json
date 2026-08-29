@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:11.083Z",
+  "value": {
+    "usageKey": 2374663,
+    "canonicalName": "Zanclus cornutus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2374663",
+      "url": "https://api.gbif.org/v1/species/match?name=Zanclus%20cornutus",
+      "retrievedAt": "2026-08-29T04:52:11.083Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:55.525Z",
+  "value": {
+    "usageKey": 4298634,
+    "canonicalName": "Radiolaria",
+    "rank": "GENUS",
+    "confidence": 94,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4298634",
+      "url": "https://api.gbif.org/v1/species/match?name=Radiolaria",
+      "retrievedAt": "2026-08-29T10:55:55.525Z",
+      "note": "GBIF confidence 94"
+    }
+  }
+}

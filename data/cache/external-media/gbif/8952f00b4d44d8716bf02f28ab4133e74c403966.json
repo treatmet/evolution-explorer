@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:52.933Z",
+  "value": {
+    "usageKey": 5201037,
+    "canonicalName": "Hippocampus kuda",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5201037",
+      "url": "https://api.gbif.org/v1/species/match?name=Hippocampus%20kuda",
+      "retrievedAt": "2026-08-29T04:51:52.932Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

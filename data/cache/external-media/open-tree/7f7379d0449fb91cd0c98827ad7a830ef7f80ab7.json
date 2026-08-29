@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:57:15.980Z",
+  "value": {
+    "ottId": 3601482,
+    "canonicalName": "Hesperornis regalis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott3601482",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:57:15.980Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

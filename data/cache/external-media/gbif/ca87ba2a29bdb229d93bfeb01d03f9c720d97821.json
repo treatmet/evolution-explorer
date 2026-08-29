@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:21.527Z",
+  "value": {
+    "usageKey": 2488999,
+    "canonicalName": "Gracula religiosa",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2488999",
+      "url": "https://api.gbif.org/v1/species/match?name=Gracula%20religiosa",
+      "retrievedAt": "2026-08-29T04:49:21.527Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

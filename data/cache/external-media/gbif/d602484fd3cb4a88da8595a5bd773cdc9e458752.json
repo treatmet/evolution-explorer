@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:24.721Z",
+  "value": {
+    "usageKey": 5212833,
+    "canonicalName": "Polyodon spathula",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5212833",
+      "url": "https://api.gbif.org/v1/species/match?name=Polyodon%20spathula",
+      "retrievedAt": "2026-08-29T04:51:24.721Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

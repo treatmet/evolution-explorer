@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:58.204Z",
+  "value": {
+    "ottId": 753610,
+    "matchedName": "Ophrys apifera",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott753610",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:58.204Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

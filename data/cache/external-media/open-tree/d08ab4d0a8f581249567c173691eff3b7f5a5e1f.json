@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:55:57.400Z",
+  "value": {
+    "ottId": 568125,
+    "canonicalName": "Paramecium caudatum",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott568125",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:55:57.400Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

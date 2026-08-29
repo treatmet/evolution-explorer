@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:04.573Z",
+  "value": {
+    "usageKey": 5179388,
+    "canonicalName": "Scolopendra gigantea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5179388",
+      "url": "https://api.gbif.org/v1/species/match?name=Scolopendra%20gigantea",
+      "retrievedAt": "2026-08-29T10:52:04.573Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

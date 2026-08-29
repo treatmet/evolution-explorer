@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:52.606Z",
+  "value": {
+    "usageKey": 2496202,
+    "canonicalName": "Opisthocomus hoazin",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2496202",
+      "url": "https://api.gbif.org/v1/species/match?name=Opisthocomus%20hoazin",
+      "retrievedAt": "2026-08-29T04:48:52.606Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:31.892Z",
+  "value": {
+    "usageKey": 2408866,
+    "canonicalName": "Paralichthys dentatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2408866",
+      "url": "https://api.gbif.org/v1/species/match?name=Paralichthys%20dentatus",
+      "retrievedAt": "2026-08-29T04:52:31.892Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

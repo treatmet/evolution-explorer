@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:18.244Z",
+  "value": {
+    "usageKey": 3052436,
+    "canonicalName": "Arabidopsis thaliana",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3052436",
+      "url": "https://api.gbif.org/v1/species/match?name=Arabidopsis%20thaliana",
+      "retrievedAt": "2026-08-29T10:54:18.244Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

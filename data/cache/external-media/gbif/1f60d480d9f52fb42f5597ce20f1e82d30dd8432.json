@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:25.499Z",
+  "value": {
+    "usageKey": 10236802,
+    "canonicalName": "Hoilungia hongkongensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "10236802",
+      "url": "https://api.gbif.org/v1/species/match?name=Hoilungia%20hongkongensis",
+      "retrievedAt": "2026-08-29T10:50:25.499Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

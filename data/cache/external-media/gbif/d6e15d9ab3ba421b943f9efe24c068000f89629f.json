@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:51.317Z",
+  "value": {
+    "usageKey": 1868664,
+    "canonicalName": "Bombyx mori",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1868664",
+      "url": "https://api.gbif.org/v1/species/match?name=Bombyx%20mori",
+      "retrievedAt": "2026-08-29T10:50:51.317Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:52:34.968Z",
+  "value": {
+    "ottId": 537559,
+    "canonicalName": "Vampyroteuthis infernalis",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott537559",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:52:34.968Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

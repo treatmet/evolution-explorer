@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:51:24.508Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/346806635/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346806635/square.jpg",
+    "title": "Giant Northern Termite",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "895936",
+      "sourceUrl": "https://www.inaturalist.org/taxa/895936",
+      "attributionText": "(c) CSIRO, some rights reserved (CC BY)",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "895936",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Mastotermes%20darwiniensis&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:51:24.508Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:09.849Z",
+  "value": {
+    "usageKey": 5229493,
+    "canonicalName": "Garrulus glandarius",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5229493",
+      "url": "https://api.gbif.org/v1/species/match?name=Garrulus%20glandarius",
+      "retrievedAt": "2026-08-29T04:49:09.849Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

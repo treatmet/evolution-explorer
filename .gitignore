@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.vscode/
+*.log
+.DS_Store
+apps/web/node_modules/
+apps/web/dist/
+apps/web/package-lock.json

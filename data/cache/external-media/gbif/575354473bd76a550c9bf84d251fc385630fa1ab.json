@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:56.870Z",
+  "value": {
+    "usageKey": 2153629,
+    "canonicalName": "Aphonopelma chalcodes",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2153629",
+      "url": "https://api.gbif.org/v1/species/match?name=Aphonopelma%20chalcodes",
+      "retrievedAt": "2026-08-29T10:51:56.870Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

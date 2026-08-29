@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:30.709Z",
+  "value": {
+    "usageKey": 3034046,
+    "canonicalName": "Persea americana",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3034046",
+      "url": "https://api.gbif.org/v1/species/match?name=Persea%20americana",
+      "retrievedAt": "2026-08-29T10:52:30.709Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

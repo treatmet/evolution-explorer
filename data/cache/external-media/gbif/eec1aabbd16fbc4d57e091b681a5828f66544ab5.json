@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:19.851Z",
+  "value": {
+    "usageKey": 2432655,
+    "canonicalName": "Rhinolophus ferrumequinum",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2432655",
+      "url": "https://api.gbif.org/v1/species/match?name=Rhinolophus%20ferrumequinum",
+      "retrievedAt": "2026-08-29T04:48:19.851Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

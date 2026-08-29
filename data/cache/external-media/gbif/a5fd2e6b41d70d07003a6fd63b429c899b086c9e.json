@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:59.129Z",
+  "value": {
+    "usageKey": 3040215,
+    "canonicalName": "Populus tremuloides",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3040215",
+      "url": "https://api.gbif.org/v1/species/match?name=Populus%20tremuloides",
+      "retrievedAt": "2026-08-29T10:54:59.129Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

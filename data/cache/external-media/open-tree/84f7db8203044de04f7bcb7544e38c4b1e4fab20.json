@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:57:07.458Z",
+  "value": {
+    "ottId": 4946288,
+    "canonicalName": "Inostrancevia alexandri",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott4946288",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:57:07.458Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

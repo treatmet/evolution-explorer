@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:51.995Z",
+  "value": {
+    "usageKey": 9752149,
+    "canonicalName": "Phasianus colchicus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "9752149",
+      "url": "https://api.gbif.org/v1/species/match?name=Phasianus%20colchicus",
+      "retrievedAt": "2026-08-29T04:48:51.995Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

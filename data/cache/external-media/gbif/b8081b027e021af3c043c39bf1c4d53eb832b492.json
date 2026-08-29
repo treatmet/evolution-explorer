@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:44.104Z",
+  "value": {
+    "usageKey": 2440892,
+    "canonicalName": "Equus quagga",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2440892",
+      "url": "https://api.gbif.org/v1/species/match?name=Equus%20quagga",
+      "retrievedAt": "2026-08-29T04:47:44.104Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

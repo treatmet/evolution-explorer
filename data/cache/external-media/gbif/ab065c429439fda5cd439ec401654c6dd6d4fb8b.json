@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:12.812Z",
+  "value": {
+    "usageKey": 3117424,
+    "canonicalName": "Bellis perennis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3117424",
+      "url": "https://api.gbif.org/v1/species/match?name=Bellis%20perennis",
+      "retrievedAt": "2026-08-29T10:53:12.812Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

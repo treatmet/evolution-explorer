@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:18.916Z",
+  "value": {
+    "usageKey": 5389029,
+    "canonicalName": "Solidago canadensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5389029",
+      "url": "https://api.gbif.org/v1/species/match?name=Solidago%20canadensis",
+      "retrievedAt": "2026-08-29T10:53:18.916Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

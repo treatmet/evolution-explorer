@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:01.697Z",
+  "value": {
+    "ottId": 6520246,
+    "matchedName": "Strigops habroptila",
+    "score": 0.8947368264198303,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott6520246",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:01.697Z",
+      "note": "OpenTree TNRS score 0.8947368264198303"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:38.787Z",
+  "value": {
+    "usageKey": 4286975,
+    "canonicalName": "Cyprinus carpio",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4286975",
+      "url": "https://api.gbif.org/v1/species/match?name=Cyprinus%20carpio",
+      "retrievedAt": "2026-08-29T04:51:38.787Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:48.757Z",
+  "value": {
+    "usageKey": 5361919,
+    "canonicalName": "Ficus benghalensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5361919",
+      "url": "https://api.gbif.org/v1/species/match?name=Ficus%20benghalensis",
+      "retrievedAt": "2026-08-29T10:52:48.757Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

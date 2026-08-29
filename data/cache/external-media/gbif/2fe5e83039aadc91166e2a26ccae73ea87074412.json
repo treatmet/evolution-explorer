@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:43.726Z",
+  "value": {
+    "usageKey": 2182727,
+    "canonicalName": "Ixodes scapularis",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2182727",
+      "url": "https://api.gbif.org/v1/species/match?name=Ixodes%20scapularis",
+      "retrievedAt": "2026-08-29T10:51:43.726Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

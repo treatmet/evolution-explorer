@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:14.583Z",
+  "value": {
+    "usageKey": 5259820,
+    "canonicalName": "Aspergillus flavus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5259820",
+      "url": "https://api.gbif.org/v1/species/match?name=Aspergillus%20flavus",
+      "retrievedAt": "2026-08-29T10:55:14.583Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

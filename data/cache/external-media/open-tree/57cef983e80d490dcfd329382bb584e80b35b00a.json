@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:53:31.430Z",
+  "value": {
+    "ottId": 434080,
+    "canonicalName": "Caesalpinia pulcherrima",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott434080",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:53:31.430Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

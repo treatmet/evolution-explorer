@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:57.227Z",
+  "value": {
+    "usageKey": 5187835,
+    "canonicalName": "Ophiothrix fragilis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5187835",
+      "url": "https://api.gbif.org/v1/species/match?name=Ophiothrix%20fragilis",
+      "retrievedAt": "2026-08-29T10:49:57.227Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

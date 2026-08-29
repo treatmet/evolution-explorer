@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:17.578Z",
+  "value": {
+    "usageKey": 2374149,
+    "canonicalName": "Scomber scombrus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2374149",
+      "url": "https://api.gbif.org/v1/species/match?name=Scomber%20scombrus",
+      "retrievedAt": "2026-08-29T04:52:17.578Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

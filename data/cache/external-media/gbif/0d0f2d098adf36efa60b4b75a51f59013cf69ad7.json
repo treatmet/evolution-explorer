@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:49:17.753Z",
+  "value": {
+    "usageKey": 7660710,
+    "canonicalName": "Luscinia megarhynchos",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7660710",
+      "url": "https://api.gbif.org/v1/species/match?name=Luscinia%20megarhynchos",
+      "retrievedAt": "2026-08-29T04:49:17.753Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

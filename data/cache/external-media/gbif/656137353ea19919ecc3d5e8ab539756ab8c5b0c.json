@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:41.731Z",
+  "value": {
+    "usageKey": 2481912,
+    "canonicalName": "Ciconia ciconia",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2481912",
+      "url": "https://api.gbif.org/v1/species/match?name=Ciconia%20ciconia",
+      "retrievedAt": "2026-08-29T04:48:41.731Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

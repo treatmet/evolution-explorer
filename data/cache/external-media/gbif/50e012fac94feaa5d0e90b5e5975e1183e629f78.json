@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:02.531Z",
+  "value": {
+    "usageKey": 2433376,
+    "canonicalName": "Ornithorhynchus anatinus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2433376",
+      "url": "https://api.gbif.org/v1/species/match?name=Ornithorhynchus%20anatinus",
+      "retrievedAt": "2026-08-29T04:48:02.531Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:12.570Z",
+  "value": {
+    "usageKey": 2435474,
+    "canonicalName": "Thylacinus cynocephalus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2435474",
+      "url": "https://api.gbif.org/v1/species/match?name=Thylacinus%20cynocephalus",
+      "retrievedAt": "2026-08-29T10:57:12.570Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

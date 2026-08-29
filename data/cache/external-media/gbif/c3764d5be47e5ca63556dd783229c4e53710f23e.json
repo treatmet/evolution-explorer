@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:41.549Z",
+  "value": {
+    "usageKey": 2284340,
+    "canonicalName": "Enterobius vermicularis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2284340",
+      "url": "https://api.gbif.org/v1/species/match?name=Enterobius%20vermicularis",
+      "retrievedAt": "2026-08-29T10:49:41.549Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

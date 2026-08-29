@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:36.753Z",
+  "value": {
+    "usageKey": 5234395,
+    "canonicalName": "Bonellia viridis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5234395",
+      "url": "https://api.gbif.org/v1/species/match?name=Bonellia%20viridis",
+      "retrievedAt": "2026-08-29T10:49:36.753Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

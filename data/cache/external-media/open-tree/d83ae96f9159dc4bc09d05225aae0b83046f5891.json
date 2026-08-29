@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:51:03.433Z",
+  "value": {
+    "ottId": 377548,
+    "canonicalName": "Ichthyophis glutinosus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott377548",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:51:03.433Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

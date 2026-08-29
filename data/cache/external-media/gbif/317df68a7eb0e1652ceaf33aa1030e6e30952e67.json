@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:11.880Z",
+  "value": {
+    "usageKey": 5421389,
+    "canonicalName": "Sarracenia purpurea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5421389",
+      "url": "https://api.gbif.org/v1/species/match?name=Sarracenia%20purpurea",
+      "retrievedAt": "2026-08-29T10:54:11.880Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

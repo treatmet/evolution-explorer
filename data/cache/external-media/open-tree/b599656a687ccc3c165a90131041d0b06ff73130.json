@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:52:14.068Z",
+  "value": {
+    "ottId": 833184,
+    "canonicalName": "Thunnus thynnus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott833184",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:52:14.068Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

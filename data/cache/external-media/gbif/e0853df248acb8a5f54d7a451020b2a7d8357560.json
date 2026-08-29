@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:48.803Z",
+  "value": {
+    "usageKey": 2344418,
+    "canonicalName": "Synodontis nigriventris",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2344418",
+      "url": "https://api.gbif.org/v1/species/match?name=Synodontis%20nigriventris",
+      "retrievedAt": "2026-08-29T04:51:48.803Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

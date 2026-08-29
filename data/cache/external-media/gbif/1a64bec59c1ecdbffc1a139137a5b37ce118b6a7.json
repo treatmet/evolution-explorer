@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:06.141Z",
+  "value": {
+    "usageKey": 2288847,
+    "canonicalName": "Teredo navalis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2288847",
+      "url": "https://api.gbif.org/v1/species/match?name=Teredo%20navalis",
+      "retrievedAt": "2026-08-29T10:49:06.141Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

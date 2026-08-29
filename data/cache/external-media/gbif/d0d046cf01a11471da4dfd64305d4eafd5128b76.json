@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:33.382Z",
+  "value": {
+    "usageKey": 4987992,
+    "canonicalName": "Pediculus humanus capitis",
+    "rank": "SUBSPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4987992",
+      "url": "https://api.gbif.org/v1/species/match?name=Pediculus%20humanus%20capitis",
+      "retrievedAt": "2026-08-29T10:51:33.382Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

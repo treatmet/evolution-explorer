@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:39.607Z",
+  "value": {
+    "ottId": 167943,
+    "matchedName": "Pieris brassicae",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott167943",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:39.607Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

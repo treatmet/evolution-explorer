@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:03.939Z",
+  "value": {
+    "usageKey": 5298069,
+    "canonicalName": "Iris germanica",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5298069",
+      "url": "https://api.gbif.org/v1/species/match?name=Iris%20germanica",
+      "retrievedAt": "2026-08-29T10:54:03.939Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

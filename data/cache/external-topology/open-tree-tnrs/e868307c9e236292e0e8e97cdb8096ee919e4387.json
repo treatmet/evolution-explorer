@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:37:52.885Z",
+  "value": {
+    "ottId": 907693,
+    "matchedName": "Bison bison",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott907693",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:37:52.885Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

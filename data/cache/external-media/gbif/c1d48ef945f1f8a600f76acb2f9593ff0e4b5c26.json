@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:08.554Z",
+  "value": {
+    "usageKey": 3189635,
+    "canonicalName": "Camellia sinensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3189635",
+      "url": "https://api.gbif.org/v1/species/match?name=Camellia%20sinensis",
+      "retrievedAt": "2026-08-29T10:53:08.554Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

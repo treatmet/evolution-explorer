@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:23.509Z",
+  "value": {
+    "usageKey": 5215461,
+    "canonicalName": "Hydrolagus colliei",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5215461",
+      "url": "https://api.gbif.org/v1/species/match?name=Hydrolagus%20colliei",
+      "retrievedAt": "2026-08-29T04:51:23.509Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

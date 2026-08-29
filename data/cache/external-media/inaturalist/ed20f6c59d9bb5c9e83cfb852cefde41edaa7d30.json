@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:53:24.630Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/28348393/medium.jpeg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/28348393/square.jpeg",
+    "title": "Soybean",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "122902",
+      "sourceUrl": "https://www.inaturalist.org/taxa/122902",
+      "attributionText": "no rights reserved, uploaded by 葉子",
+      "licenseCode": "cc0",
+      "licenseName": "Creative Commons Zero",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "122902",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Glycine%20max&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:53:24.629Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

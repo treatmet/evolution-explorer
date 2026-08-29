@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:51:02.880Z",
+  "value": {
+    "usageKey": 2429804,
+    "canonicalName": "Ascaphus truei",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2429804",
+      "url": "https://api.gbif.org/v1/species/match?name=Ascaphus%20truei",
+      "retrievedAt": "2026-08-29T04:51:02.880Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

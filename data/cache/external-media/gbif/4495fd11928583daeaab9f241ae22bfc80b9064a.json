@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:20.754Z",
+  "value": {
+    "usageKey": 5177263,
+    "canonicalName": "Squilla mantis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5177263",
+      "url": "https://api.gbif.org/v1/species/match?name=Squilla%20mantis",
+      "retrievedAt": "2026-08-29T10:49:20.754Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

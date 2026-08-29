@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:52:24.124Z",
+  "value": {
+    "usageKey": 5208133,
+    "canonicalName": "Symphysodon aequifasciatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5208133",
+      "url": "https://api.gbif.org/v1/species/match?name=Symphysodon%20aequifasciatus",
+      "retrievedAt": "2026-08-29T04:52:24.124Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

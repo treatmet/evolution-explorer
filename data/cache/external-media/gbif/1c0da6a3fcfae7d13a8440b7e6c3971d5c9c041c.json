@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:32.756Z",
+  "value": {
+    "usageKey": 2433670,
+    "canonicalName": "Enhydra lutris",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2433670",
+      "url": "https://api.gbif.org/v1/species/match?name=Enhydra%20lutris",
+      "retrievedAt": "2026-08-29T04:47:32.756Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

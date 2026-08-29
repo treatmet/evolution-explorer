@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:55:00.601Z",
+  "value": {
+    "usageKey": 3071171,
+    "canonicalName": "Hevea brasiliensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3071171",
+      "url": "https://api.gbif.org/v1/species/match?name=Hevea%20brasiliensis",
+      "retrievedAt": "2026-08-29T10:55:00.601Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:50:40.699Z",
+  "value": {
+    "usageKey": 2431491,
+    "canonicalName": "Plethodon cinereus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2431491",
+      "url": "https://api.gbif.org/v1/species/match?name=Plethodon%20cinereus",
+      "retrievedAt": "2026-08-29T04:50:40.699Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

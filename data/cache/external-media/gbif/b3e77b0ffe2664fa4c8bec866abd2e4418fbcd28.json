@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:07.146Z",
+  "value": {
+    "usageKey": 2440825,
+    "canonicalName": "Notoryctes typhlops",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2440825",
+      "url": "https://api.gbif.org/v1/species/match?name=Notoryctes%20typhlops",
+      "retrievedAt": "2026-08-29T04:48:07.146Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

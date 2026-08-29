@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:27.403Z",
+  "value": {
+    "usageKey": 5219243,
+    "canonicalName": "Vulpes vulpes",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5219243",
+      "url": "https://api.gbif.org/v1/species/match?name=Vulpes%20vulpes",
+      "retrievedAt": "2026-08-29T04:47:27.403Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

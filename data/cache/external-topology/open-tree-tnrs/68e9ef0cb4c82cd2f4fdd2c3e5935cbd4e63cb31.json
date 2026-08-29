@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:47.465Z",
+  "value": {
+    "ottId": 736900,
+    "matchedName": "Pinus ponderosa",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott736900",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:47.465Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

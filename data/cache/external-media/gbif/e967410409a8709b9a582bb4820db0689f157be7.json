@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:01.796Z",
+  "value": {
+    "usageKey": 5167813,
+    "canonicalName": "Chelifer cancroides",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "5167813",
+      "url": "https://api.gbif.org/v1/species/match?name=Chelifer%20cancroides",
+      "retrievedAt": "2026-08-29T10:52:01.796Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

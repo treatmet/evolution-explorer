@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:26.076Z",
+  "value": {
+    "usageKey": 7469057,
+    "canonicalName": "Monosiga",
+    "rank": "GENUS",
+    "confidence": 94,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7469057",
+      "url": "https://api.gbif.org/v1/species/match?name=Monosiga%20brevicollis",
+      "retrievedAt": "2026-08-29T10:50:26.076Z",
+      "note": "GBIF confidence 94"
+    }
+  }
+}

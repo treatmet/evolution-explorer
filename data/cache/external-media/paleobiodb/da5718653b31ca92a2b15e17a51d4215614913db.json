@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T10:49:13.727Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Carcinus%20maenas&show=attr",
+      "retrievedAt": "2026-08-29T10:49:13.727Z"
+    }
+  }
+}

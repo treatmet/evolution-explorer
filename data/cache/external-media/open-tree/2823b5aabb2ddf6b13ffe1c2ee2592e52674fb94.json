@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T04:48:19.111Z",
+  "value": {
+    "ottId": 238431,
+    "canonicalName": "Desmodus rotundus",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott238431",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T04:48:19.111Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

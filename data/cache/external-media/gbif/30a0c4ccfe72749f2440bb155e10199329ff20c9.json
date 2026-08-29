@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:33.490Z",
+  "value": {
+    "usageKey": 6678,
+    "canonicalName": "Piperaceae",
+    "rank": "FAMILY",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "6678",
+      "url": "https://api.gbif.org/v1/species/match?name=Piper%20methysticum",
+      "retrievedAt": "2026-08-29T10:52:33.490Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

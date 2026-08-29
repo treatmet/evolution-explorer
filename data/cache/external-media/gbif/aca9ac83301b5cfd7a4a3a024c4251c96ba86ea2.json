@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:11.911Z",
+  "value": {
+    "usageKey": 1716462,
+    "canonicalName": "Gryllus campestris",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1716462",
+      "url": "https://api.gbif.org/v1/species/match?name=Gryllus%20campestris",
+      "retrievedAt": "2026-08-29T10:51:11.911Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

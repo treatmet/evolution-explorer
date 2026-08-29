@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:57:02.273Z",
+  "value": {
+    "usageKey": 4965553,
+    "canonicalName": "Quetzalcoatlus northropi",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4965553",
+      "url": "https://api.gbif.org/v1/species/match?name=Quetzalcoatlus%20northropi",
+      "retrievedAt": "2026-08-29T10:57:02.273Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

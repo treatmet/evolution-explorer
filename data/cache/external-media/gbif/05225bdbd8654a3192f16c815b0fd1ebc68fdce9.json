@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:13.060Z",
+  "value": {
+    "usageKey": 7279683,
+    "canonicalName": "Rafflesia arnoldi",
+    "rank": "SPECIES",
+    "confidence": 96,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "7279683",
+      "url": "https://api.gbif.org/v1/species/match?name=Rafflesia%20arnoldii",
+      "retrievedAt": "2026-08-29T10:54:13.060Z",
+      "note": "GBIF confidence 96"
+    }
+  }
+}

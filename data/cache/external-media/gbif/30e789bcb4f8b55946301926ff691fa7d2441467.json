@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:52:59.041Z",
+  "value": {
+    "usageKey": 3020791,
+    "canonicalName": "Prunus avium",
+    "rank": "SPECIES",
+    "confidence": 98,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3020791",
+      "url": "https://api.gbif.org/v1/species/match?name=Prunus%20avium",
+      "retrievedAt": "2026-08-29T10:52:59.041Z",
+      "note": "GBIF confidence 98"
+    }
+  }
+}

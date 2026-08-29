@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:51:46.250Z",
+  "value": {
+    "usageKey": 2181959,
+    "canonicalName": "Dermatophagoides pteronyssinus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2181959",
+      "url": "https://api.gbif.org/v1/species/match?name=Dermatophagoides%20pteronyssinus",
+      "retrievedAt": "2026-08-29T10:51:46.250Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

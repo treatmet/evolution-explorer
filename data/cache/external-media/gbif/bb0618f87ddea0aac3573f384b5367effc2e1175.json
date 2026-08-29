@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:41.695Z",
+  "value": {
+    "usageKey": 2703459,
+    "canonicalName": "Oryza sativa",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2703459",
+      "url": "https://api.gbif.org/v1/species/match?name=Oryza%20sativa",
+      "retrievedAt": "2026-08-29T10:54:41.695Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

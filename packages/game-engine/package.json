@@ -1,0 +1,16 @@
+{
+  "name": "@evo-tree/game-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@evo-tree/domain": "0.1.0"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  }
+}

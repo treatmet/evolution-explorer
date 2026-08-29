@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:47:19.455Z",
+  "value": {
+    "usageKey": 2436525,
+    "canonicalName": "Nasalis larvatus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2436525",
+      "url": "https://api.gbif.org/v1/species/match?name=Nasalis%20larvatus",
+      "retrievedAt": "2026-08-29T04:47:19.455Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

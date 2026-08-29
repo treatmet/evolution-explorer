@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:57.622Z",
+  "value": {
+    "usageKey": 3189882,
+    "canonicalName": "Acer palmatum",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3189882",
+      "url": "https://api.gbif.org/v1/species/match?name=Acer%20palmatum",
+      "retrievedAt": "2026-08-29T10:54:57.622Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

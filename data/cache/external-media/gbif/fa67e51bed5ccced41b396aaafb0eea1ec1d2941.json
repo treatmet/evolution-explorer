@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:13.797Z",
+  "value": {
+    "usageKey": 2259549,
+    "canonicalName": "Tubastraea coccinea",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2259549",
+      "url": "https://api.gbif.org/v1/species/match?name=Tubastraea%20coccinea",
+      "retrievedAt": "2026-08-29T10:50:13.797Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

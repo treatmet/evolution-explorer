@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:53:01.428Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/340356965/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/340356965/square.jpg",
+    "title": "Plum",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "63735",
+      "sourceUrl": "https://www.inaturalist.org/taxa/63735",
+      "attributionText": "(c) Ввласенко, some rights reserved (CC BY-SA)",
+      "licenseCode": "cc-by-sa",
+      "licenseName": "Creative Commons Attribution ShareAlike",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "63735",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Prunus%20domestica&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:53:01.428Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

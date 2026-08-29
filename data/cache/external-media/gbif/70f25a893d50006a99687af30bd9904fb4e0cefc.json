@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:24.572Z",
+  "value": {
+    "usageKey": 3033363,
+    "canonicalName": "Ranunculus acris",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "3033363",
+      "url": "https://api.gbif.org/v1/species/match?name=Ranunculus%20acris",
+      "retrievedAt": "2026-08-29T10:54:24.572Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

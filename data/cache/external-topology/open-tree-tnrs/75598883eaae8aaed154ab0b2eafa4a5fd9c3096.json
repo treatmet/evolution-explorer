@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T11:38:16.541Z",
+  "value": {
+    "ottId": 854201,
+    "matchedName": "Anguilla anguilla",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott854201",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T11:38:16.541Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

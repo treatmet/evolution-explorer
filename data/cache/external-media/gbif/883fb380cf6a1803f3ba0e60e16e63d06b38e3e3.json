@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:11.100Z",
+  "value": {
+    "usageKey": 1,
+    "canonicalName": "Animalia",
+    "rank": "KINGDOM",
+    "confidence": 92,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "1",
+      "url": "https://api.gbif.org/v1/species/match?name=Ancyloceras%20vancouverense",
+      "retrievedAt": "2026-08-29T10:49:11.100Z",
+      "note": "GBIF confidence 92"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "cachedAt": "2026-08-29T10:55:53.572Z",
+  "value": {
+    "likelyExtinct": false,
+    "provenance": {
+      "sourceId": "paleobiodb-taxa-list",
+      "sourceType": "paleobiodb",
+      "url": "https://paleobiodb.org/data1.2/taxa/list.json?name=Globigerina%20bulloides&show=attr",
+      "retrievedAt": "2026-08-29T10:55:53.572Z"
+    }
+  }
+}

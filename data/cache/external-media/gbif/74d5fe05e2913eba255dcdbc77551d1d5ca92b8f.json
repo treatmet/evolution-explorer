@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:54:30.565Z",
+  "value": {
+    "usageKey": 2762680,
+    "canonicalName": "Musa acuminata",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2762680",
+      "url": "https://api.gbif.org/v1/species/match?name=Musa%20acuminata",
+      "retrievedAt": "2026-08-29T10:54:30.565Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

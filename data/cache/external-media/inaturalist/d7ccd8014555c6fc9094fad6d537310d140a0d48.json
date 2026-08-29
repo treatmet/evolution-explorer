@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:52:25.364Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/533128/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/533128/square.jpg",
+    "title": "Oscar",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "208885",
+      "sourceUrl": "https://www.inaturalist.org/taxa/208885",
+      "attributionText": "(c) Amything, some rights reserved (CC BY-SA)",
+      "licenseCode": "cc-by-sa",
+      "licenseName": "Creative Commons Attribution ShareAlike",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "208885",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Astronotus%20ocellatus&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:52:25.364Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

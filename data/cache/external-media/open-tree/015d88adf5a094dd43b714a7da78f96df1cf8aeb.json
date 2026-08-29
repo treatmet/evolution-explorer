@@ -1,0 +1,16 @@
+{
+  "cachedAt": "2026-08-29T10:49:58.487Z",
+  "value": {
+    "ottId": 920160,
+    "canonicalName": "Holothuria atra",
+    "score": 1,
+    "provenance": {
+      "sourceId": "open-tree-tnrs",
+      "sourceType": "open-tree",
+      "externalId": "ott920160",
+      "url": "https://api.opentreeoflife.org/v3/tnrs/match_names",
+      "retrievedAt": "2026-08-29T10:49:58.487Z",
+      "note": "OpenTree TNRS score 1"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T04:50:25.332Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/286627672/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/286627672/square.jpg",
+    "title": "Eastern Coralsnake",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "73867",
+      "sourceUrl": "https://www.inaturalist.org/taxa/73867",
+      "attributionText": "no rights reserved, uploaded by Daniel Estabrooks",
+      "licenseCode": "cc0",
+      "licenseName": "Creative Commons Zero",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "73867",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Micrurus%20fulvius&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T04:50:25.332Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}

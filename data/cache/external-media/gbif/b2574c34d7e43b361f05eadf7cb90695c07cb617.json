@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:53:32.916Z",
+  "value": {
+    "usageKey": 2930262,
+    "canonicalName": "Solanum tuberosum",
+    "rank": "SPECIES",
+    "confidence": 97,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2930262",
+      "url": "https://api.gbif.org/v1/species/match?name=Solanum%20tuberosum",
+      "retrievedAt": "2026-08-29T10:53:32.916Z",
+      "note": "GBIF confidence 97"
+    }
+  }
+}

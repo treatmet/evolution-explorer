@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:50:00.827Z",
+  "value": {
+    "usageKey": 4281830,
+    "canonicalName": "Balanoglossus clavigerus",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "4281830",
+      "url": "https://api.gbif.org/v1/species/match?name=Balanoglossus%20clavigerus",
+      "retrievedAt": "2026-08-29T10:50:00.827Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

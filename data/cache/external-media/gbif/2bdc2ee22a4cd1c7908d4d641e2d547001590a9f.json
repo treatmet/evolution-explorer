@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T04:48:44.233Z",
+  "value": {
+    "usageKey": 2498036,
+    "canonicalName": "Anser anser",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2498036",
+      "url": "https://api.gbif.org/v1/species/match?name=Anser%20anser",
+      "retrievedAt": "2026-08-29T04:48:44.233Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

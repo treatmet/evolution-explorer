@@ -1,0 +1,17 @@
+{
+  "cachedAt": "2026-08-29T10:49:24.936Z",
+  "value": {
+    "usageKey": 2226409,
+    "canonicalName": "Lysmata amboinensis",
+    "rank": "SPECIES",
+    "confidence": 99,
+    "provenance": {
+      "sourceId": "gbif-species-match",
+      "sourceType": "gbif",
+      "externalId": "2226409",
+      "url": "https://api.gbif.org/v1/species/match?name=Lysmata%20amboinensis",
+      "retrievedAt": "2026-08-29T10:49:24.936Z",
+      "note": "GBIF confidence 99"
+    }
+  }
+}

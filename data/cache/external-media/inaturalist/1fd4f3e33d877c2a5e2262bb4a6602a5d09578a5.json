@@ -1,0 +1,29 @@
+{
+  "cachedAt": "2026-08-29T10:54:19.664Z",
+  "value": {
+    "kind": "extant-photo",
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/497000036/medium.jpg",
+    "thumbnailUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/497000036/square.jpg",
+    "title": "rapeseed",
+    "confidence": "medium",
+    "attribution": {
+      "providerId": "inaturalist",
+      "sourceRecordId": "75869",
+      "sourceUrl": "https://www.inaturalist.org/taxa/75869",
+      "attributionText": "(c) Pavel Kacl, some rights reserved (CC BY), uploaded by Pavel Kacl",
+      "licenseCode": "cc-by",
+      "licenseName": "Creative Commons Attribution",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "provenance": [
+      {
+        "sourceId": "inaturalist-taxa",
+        "sourceType": "other",
+        "externalId": "75869",
+        "url": "https://api.inaturalist.org/v1/taxa?q=Brassica%20oleracea&per_page=3&is_active=true",
+        "retrievedAt": "2026-08-29T10:54:19.664Z",
+        "note": "Filtered to free-use license codes."
+      }
+    ]
+  }
+}
