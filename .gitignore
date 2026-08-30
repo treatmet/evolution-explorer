@@ -7,3 +7,7 @@ coverage/
 apps/web/node_modules/
 apps/web/dist/
 apps/web/package-lock.json
+apps/web/public/data/candidate/*
+apps/web/public/data/cache/*
+apps/web/public/data/approved/*
+
