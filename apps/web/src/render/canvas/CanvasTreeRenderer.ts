@@ -26,6 +26,7 @@ export class CanvasTreeRenderer implements TreeRenderer {
     viewportHeight: 1
   };
   private lastFrameMs = 0;
+  private labelHitRects: Array<{ nodeId: string; rect: Rect }> = [];
 
   mount(canvas: HTMLCanvasElement): void {
     const context = canvas.getContext('2d');
@@ -69,6 +70,7 @@ export class CanvasTreeRenderer implements TreeRenderer {
       1,
       ...this.nodes.map((node) => node.worldX)
     );
+    this.labelHitRects = [];
   }
 
   setCamera(camera: CameraState): void {
@@ -78,10 +80,21 @@ export class CanvasTreeRenderer implements TreeRenderer {
   }
 
   hitTest(screenX: number, screenY: number): string | null {
+    for (let index = this.labelHitRects.length - 1; index >= 0; index -= 1) {
+      const entry = this.labelHitRects[index];
+      if (entry && pointInRect(screenX, screenY, entry.rect)) {
+        return entry.nodeId;
+      }
+    }
+
     let bestDistance = Number.POSITIVE_INFINITY;
     let bestId: string | null = null;
 
     for (const node of this.nodes) {
+      if (!this.shouldDrawNode(node)) {
+        continue;
+      }
+
       const x = this.worldToScreenX(node.worldX);
       const y = this.worldToScreenY(node.renderedWorldY);
       const dx = x - screenX;
@@ -126,6 +139,7 @@ export class CanvasTreeRenderer implements TreeRenderer {
     this.context = null;
     this.canvas = null;
     this.lastFrameMs = 0;
+    this.labelHitRects = [];
   }
 
   private interpolateRenderedY(dtMs: number): void {
@@ -230,6 +244,10 @@ export class CanvasTreeRenderer implements TreeRenderer {
     ctx.save();
 
     for (const node of this.nodes) {
+      if (!this.shouldDrawNode(node)) {
+        continue;
+      }
+
       const x = this.worldToScreenX(node.worldX);
       const y = this.worldToScreenY(node.renderedWorldY);
 
@@ -274,6 +292,7 @@ export class CanvasTreeRenderer implements TreeRenderer {
     ctx.font = `${fontPx}px Space Grotesk, sans-serif`;
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
+    this.labelHitRects = [];
 
     const candidates = this.nodes
       .filter((node) => this.shouldShowLabel(node))
@@ -291,8 +310,16 @@ export class CanvasTreeRenderer implements TreeRenderer {
 
     const gridSize = 42;
     const grid = new Map<string, Rect[]>();
+    const labelUseCounts = new Map<string, number>();
+    const maxRepeatsPerLabel = this.maxLabelRepeatsForZoom();
 
     for (const candidate of candidates) {
+      const labelKey = candidate.node.label.trim().toLowerCase();
+      const usedCount = labelUseCounts.get(labelKey) ?? 0;
+      if (!candidate.node.isCurrent && !candidate.node.isHovered && usedCount >= maxRepeatsPerLabel) {
+        continue;
+      }
+
       const textWidth = ctx.measureText(candidate.node.label).width;
       const textHeight = fontPx + 4;
 
@@ -331,6 +358,8 @@ export class CanvasTreeRenderer implements TreeRenderer {
             : '#d6e7ea';
 
         ctx.fillText(candidate.node.label, box.x + 5, box.y + box.height / 2);
+        this.labelHitRects.push({ nodeId: candidate.node.id, rect: box });
+        labelUseCounts.set(labelKey, usedCount + 1);
         break;
       }
     }
@@ -358,6 +387,48 @@ export class CanvasTreeRenderer implements TreeRenderer {
     }
 
     return true;
+  }
+
+  private shouldDrawNode(node: RenderNode): boolean {
+    if (node.isCurrent || node.isHovered || node.isOnVisitedPath) {
+      return true;
+    }
+
+    const isInternal = node.childIds.length > 0;
+
+    if (this.camera.zoom < 0.08) {
+      return node.semanticImportance >= 11 && isInternal;
+    }
+
+    if (this.camera.zoom < 0.13) {
+      return node.semanticImportance >= 9 && isInternal;
+    }
+
+    if (this.camera.zoom < 0.2) {
+      return node.semanticImportance >= 7 && isInternal;
+    }
+
+    if (this.camera.zoom < 0.32) {
+      return node.semanticImportance >= 5 || isInternal;
+    }
+
+    return true;
+  }
+
+  private maxLabelRepeatsForZoom(): number {
+    if (this.camera.zoom < 0.25) {
+      return 1;
+    }
+
+    if (this.camera.zoom < 0.7) {
+      return 2;
+    }
+
+    if (this.camera.zoom < 1.2) {
+      return 3;
+    }
+
+    return 5;
   }
 
   private worldToScreenX(worldX: number): number {
@@ -407,6 +478,10 @@ function rectFitsViewport(rect: Rect, width: number, height: number): boolean {
     rect.x + rect.width <= width &&
     rect.y + rect.height <= height
   );
+}
+
+function pointInRect(x: number, y: number, rect: Rect): boolean {
+  return x >= rect.x && x <= rect.x + rect.width && y >= rect.y && y <= rect.y + rect.height;
 }
 
 function canPlaceRect(rect: Rect, grid: Map<string, Rect[]>, gridSize: number): boolean {

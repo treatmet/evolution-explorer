@@ -39,6 +39,7 @@ import {
   type RuntimeNodeMediaRecord,
   type RuntimeTargetSpecies
 } from './data/runtimeDataset';
+import { buildPlayableScientificTree } from './data/buildPlayableScientificTree';
 
 const targetMetadata: TargetDifficultyMetadata[] = [
   { speciesId: 'homo-sapiens', familiarityScore: 0.98 },
@@ -217,6 +218,34 @@ function fitCameraToBounds(
   };
 }
 
+function buildPathFromRoot(tree: ScientificPhylogeny, nodeId: string): string[] {
+  const path: string[] = [];
+  const seen = new Set<string>();
+  let cursorId: string | null = nodeId;
+
+  while (cursorId && !seen.has(cursorId)) {
+    path.push(cursorId);
+    seen.add(cursorId);
+
+    const cursorNode = tree.nodesById[cursorId];
+    cursorId = cursorNode?.parentId ?? null;
+  }
+
+  if (path.length === 0 || path[path.length - 1] !== tree.rootId) {
+    path.push(tree.rootId);
+  }
+
+  return path.reverse();
+}
+
+function buildNavigationHistoryFromPath(path: ReadonlyArray<string>, selectedAtIso: string) {
+  return path.slice(1).map((toNodeId, index) => ({
+    fromNodeId: path[index] ?? '',
+    toNodeId,
+    selectedAtIso
+  }));
+}
+
 function App() {
   const [scientificTree, setScientificTree] = useState<ScientificPhylogeny>(
     fixtureScientificPhylogeny
@@ -288,8 +317,14 @@ function App() {
     ]
   );
 
+  const playableTreeResult = useMemo(
+    () => buildPlayableScientificTree(scientificTree),
+    [scientificTree]
+  );
+  const playableTree = playableTreeResult.tree;
+
   const [session, setSession] = useState<GameSessionState>(() =>
-    createInitialSession(scientificTree.rootId, configuredDifficulty)
+    createInitialSession(playableTree.rootId, configuredDifficulty)
   );
 
   useEffect(() => {
@@ -322,12 +357,13 @@ function App() {
         );
 
         const nextTree = result.artifact.scientificPhylogeny ?? fixtureScientificPhylogeny;
+        const nextPlayableTree = buildPlayableScientificTree(nextTree).tree;
         setTargetCatalogById(targetCatalog);
         setNodeMediaByNodeId(mediaNodes);
         setMediaAssetsById(mediaAssets);
         setRuntimeTargetMetadataOverrides(targetMetadata);
         setScientificTree(nextTree);
-        setSession((previous) => createInitialSession(nextTree.rootId, previous.difficulty));
+        setSession((previous) => createInitialSession(nextPlayableTree.rootId, previous.difficulty));
         setHoveredNodeId(null);
         hasAutoFitRef.current = false;
         setErrorText(null);
@@ -367,20 +403,20 @@ function App() {
   );
 
   const targetNode = session.target
-    ? scientificTree.nodesById[session.target.targetId] ?? null
+    ? playableTree.nodesById[session.target.targetId] ?? null
     : null;
 
   const targetCatalogTarget = session.target
     ? targetCatalogById[session.target.targetId] ?? null
     : null;
 
-  const currentNode = scientificTree.nodesById[session.currentNodeId] ?? null;
+  const currentNode = playableTree.nodesById[session.currentNodeId] ?? null;
 
   const availableChoiceIds =
-    session.phase === 'active' ? getAvailableChoices(session, scientificTree) : [];
+    session.phase === 'active' ? getAvailableChoices(session, playableTree) : [];
 
   const availableChoiceNodes = availableChoiceIds
-    .map((choiceId) => scientificTree.nodesById[choiceId])
+    .map((choiceId) => playableTree.nodesById[choiceId])
     .filter((node): node is PhyloNode => Boolean(node));
 
   const currentNodeTraits = getDecisionTraits(currentNode);
@@ -388,19 +424,25 @@ function App() {
     session.phase === 'active' &&
     session.backtrackingEnabled &&
     session.visitedNodeIds.length > 1;
+  const canExploreByClick =
+    session.phase === 'configure-difficulty' ||
+    session.phase === 'selecting-target' ||
+    session.phase === 'results';
 
   const targetFamiliarityPercent = Math.round(configuredDifficulty.targetFamiliarity * 100);
 
-  const scientificNodeCount = Object.keys(scientificTree.nodesById).length;
-  const endpointCount = Object.values(scientificTree.nodesById).filter(
+  const scientificNodeCount = Object.keys(playableTree.nodesById).length;
+  const rawScientificNodeCount = Object.keys(scientificTree.nodesById).length;
+  const skippedNodeCount = Math.max(0, rawScientificNodeCount - scientificNodeCount);
+  const endpointCount = Object.values(playableTree.nodesById).filter(
     (node) => node.isGameEndpoint
   ).length;
-  const targetEligibleCount = Object.values(scientificTree.nodesById).filter(
+  const targetEligibleCount = Object.values(playableTree.nodesById).filter(
     (node) => node.isTargetEligible
   ).length;
 
   const nodeDisplayName = (nodeId: string): string =>
-    nodeName(scientificTree, nodeId, targetCatalogById);
+    nodeName(playableTree, nodeId, targetCatalogById);
 
   const targetTitle =
     targetNode?.commonName ??
@@ -424,14 +466,14 @@ function App() {
 
   const renderModel = useMemo(
     () =>
-      buildRenderModel(scientificTree, {
+      buildRenderModel(playableTree, {
         currentNodeId: session.currentNodeId,
         hoveredNodeId,
         visitedNodeIds: session.visitedNodeIds,
         focusNodeId: session.currentNodeId,
         focusStrength: 0.52
       }),
-    [hoveredNodeId, scientificTree, session.currentNodeId, session.visitedNodeIds]
+    [hoveredNodeId, playableTree, session.currentNodeId, session.visitedNodeIds]
   );
 
   const renderBoundsRef = useRef(renderModel.bounds);
@@ -448,7 +490,7 @@ function App() {
   function zoomAt(screenX: number, screenY: number, factor: number): void {
     const camera = cameraRef.current;
     const previousZoom = camera.zoom;
-    const nextZoom = Math.max(0.05, Math.min(3.5, previousZoom * factor));
+    const nextZoom = Math.max(0.05, Math.min(16, previousZoom * factor));
 
     const worldX = (screenX - camera.viewportWidth / 2) / previousZoom + camera.x;
     const worldY = (screenY - camera.viewportHeight / 2) / previousZoom + camera.y;
@@ -466,12 +508,12 @@ function App() {
   function startRunWithConfiguredDifficulty() {
     try {
       const initialSession = createInitialSession(
-        scientificTree.rootId,
+        playableTree.rootId,
         configuredDifficulty
       );
       const selectingSession = finalizeDifficulty(initialSession, configuredDifficulty);
       const targetId = selectTargetFromTree(
-        scientificTree,
+        playableTree,
         configuredDifficulty,
         runtimeTargetMetadata
       );
@@ -486,7 +528,7 @@ function App() {
   function selectBranch(choiceId: string) {
     try {
       setSession((previous) =>
-        chooseBranch(previous, scientificTree, choiceId)
+        chooseBranch(previous, playableTree, choiceId)
       );
       setErrorText(null);
     } catch (error) {
@@ -494,9 +536,31 @@ function App() {
     }
   }
 
+  function jumpToNode(nodeId: string) {
+    if (!playableTree.nodesById[nodeId]) {
+      return;
+    }
+
+    const selectedAtIso = new Date().toISOString();
+    setSession((previous) => {
+      if (previous.phase === 'active') {
+        return previous;
+      }
+
+      const nextVisitedNodeIds = buildPathFromRoot(playableTree, nodeId);
+      return {
+        ...previous,
+        currentNodeId: nodeId,
+        visitedNodeIds: nextVisitedNodeIds,
+        navigationHistory: buildNavigationHistoryFromPath(nextVisitedNodeIds, selectedAtIso)
+      };
+    });
+    setErrorText(null);
+  }
+
   function scoreNow() {
     try {
-      setSession((previous) => quitAndScoreNow(previous, scientificTree));
+      setSession((previous) => quitAndScoreNow(previous, playableTree));
       setErrorText(null);
     } catch (error) {
       setErrorText(error instanceof Error ? error.message : 'Unable to score current node.');
@@ -513,7 +577,7 @@ function App() {
       setSession((previous) => {
         const reset = retrySession(previous, { preserveTarget: false });
         const targetId = selectTargetFromTree(
-          scientificTree,
+          playableTree,
           configuredDifficulty,
           runtimeTargetMetadata
         );
@@ -729,14 +793,21 @@ function App() {
     const screenX = event.clientX - rect.left;
     const screenY = event.clientY - rect.top;
 
-    if (
-      gesture.movementPx < 6 &&
-      session.phase === 'active' &&
-      rendererRef.current
-    ) {
+    if (gesture.movementPx < 6 && rendererRef.current) {
       const hitNodeId = rendererRef.current.hitTest(screenX, screenY);
-      if (hitNodeId && availableChoiceIds.includes(hitNodeId)) {
+      if (!hitNodeId) {
+        gesture.pointers.delete(event.pointerId);
+
+        if (gesture.pointers.size < 2) {
+          gesture.lastPinch = null;
+        }
+        return;
+      }
+
+      if (session.phase === 'active' && availableChoiceIds.includes(hitNodeId)) {
         selectBranch(hitNodeId);
+      } else if (canExploreByClick) {
+        jumpToNode(hitNodeId);
       }
     }
 
@@ -933,6 +1004,10 @@ function App() {
             </>
           ) : null}
 
+          {canExploreByClick ? (
+            <p className="muted">Exploration mode: click any visible node in the tree to jump there.</p>
+          ) : null}
+
           {session.phase === 'results' && session.results ? (
             <div className="results-box">
               <p className="label">Results</p>
@@ -992,6 +1067,9 @@ function App() {
             <li>Runtime dataset version: {runtimeDataStatus.datasetVersion}</li>
             <li>Compiled target catalog entries: {runtimeDataStatus.targetCatalogCount}</li>
             <li>Target-eligible nodes in active scientific tree: {targetEligibleCount}</li>
+            <li>Renderable hydrated nodes: {scientificNodeCount} (compacted away: {skippedNodeCount})</li>
+            <li>Merged duplicate clade nodes: {playableTreeResult.mergedNodeCount}</li>
+            <li>Nodes with inferred fallback traits: {playableTreeResult.inferredTraitNodeCount}</li>
             <li>Resolved media assets in artifact: {runtimeDataStatus.mediaAssetCount}</li>
             <li>Nodes with media mapping: {runtimeDataStatus.mediaNodeCount}</li>
             <li>Pending reconstruction queue entries: {runtimeDataStatus.reconstructionQueueCount}</li>

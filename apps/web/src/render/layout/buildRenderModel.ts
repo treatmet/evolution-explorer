@@ -36,7 +36,8 @@ interface RenderModelResult {
   bounds: RenderModelBounds;
 }
 
-const LEAF_VERTICAL_SPACING = 90;
+const LEAF_VERTICAL_SPACING = 1;
+const TARGET_VERTICAL_TO_TIME_RATIO = 0.42;
 
 export function buildRenderModel(
   tree: ScientificPhylogeny,
@@ -170,8 +171,33 @@ function computeStaticMetrics(
     return metric;
   };
 
-  buildNode(tree.rootId);
+  const rootMetric = buildNode(tree.rootId);
+  if (rootMetric) {
+    normalizeVerticalScale(metrics, rootMetric, maxAgeMa);
+  }
+
   return metrics;
+}
+
+function normalizeVerticalScale(
+  metricsById: Record<string, StaticNodeMetrics>,
+  rootMetric: StaticNodeMetrics,
+  maxAgeMa: number
+): void {
+  const currentSpan = Math.max(1, rootMetric.subtreeMaxY - rootMetric.subtreeMinY);
+  const targetSpan = Math.max(220, maxAgeMa * TARGET_VERTICAL_TO_TIME_RATIO);
+  const scale = Math.min(1, targetSpan / currentSpan);
+
+  if (scale >= 0.999) {
+    return;
+  }
+
+  const centerY = (rootMetric.subtreeMinY + rootMetric.subtreeMaxY) / 2;
+  for (const metric of Object.values(metricsById)) {
+    metric.baseWorldY = (metric.baseWorldY - centerY) * scale + centerY;
+    metric.subtreeMinY = (metric.subtreeMinY - centerY) * scale + centerY;
+    metric.subtreeMaxY = (metric.subtreeMaxY - centerY) * scale + centerY;
+  }
 }
 
 function resolveAgeForX(tree: ScientificPhylogeny, nodeId: string): number {

@@ -16,8 +16,11 @@ npm run dev:web
 ```bash
 npm run data:refresh
 npm run data:promote
-npm run data:refresh:media
+npm run data:refresh:media -- --progress-interval-percent=5
 npm run data:promote:media
+npm run dev:web
+
+
 ```
 
 Runtime data behavior:
