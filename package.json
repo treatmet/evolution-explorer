@@ -16,10 +16,7 @@
     "test:e2e": "playwright test",
     "lint": "npm run lint --workspaces --if-present",
     "dev:web": "npm --workspace @evo-tree/web run dev",
-    "data:refresh": "npm --workspace @evo-tree/data-refresh run refresh",
-    "data:promote": "npm --workspace @evo-tree/data-refresh run promote",
-    "data:refresh:media": "npm --workspace @evo-tree/data-refresh run refresh:media",
-    "data:promote:media": "npm --workspace @evo-tree/data-refresh run promote:media"
+    "data:refresh": "npm --workspace @evo-tree/data-refresh run refresh"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.1",

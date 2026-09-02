@@ -4,10 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "refresh": "tsx src/index.ts",
-    "promote": "tsx src/index.ts --promote-approved",
-    "refresh:media": "tsx src/index.ts --media-online",
-    "promote:media": "tsx src/index.ts --promote-approved --media-online",
+    "refresh": "tsx src/index.ts --media-online",
     "build": "tsc -b",
     "lint": "tsc -p tsconfig.json --noEmit"
   },

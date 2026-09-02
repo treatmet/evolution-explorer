@@ -7,6 +7,7 @@ import { TxtSpeciesListAdapter, type TargetSourceAdapter } from './adapters';
 import { enrichMediaForScientificTree } from '../media/enrichMedia';
 import type { MediaEnrichmentOptions } from '../media/types';
 import { buildOpenTreeScientificPhylogeny } from './buildOpenTreeScientificPhylogeny';
+import { pruneLowConfidenceUnaryNodes } from './pruneLowConfidenceUnaryNodes';
 import type {
   DatasetArtifact,
   DatasetDiff,
@@ -57,7 +58,8 @@ export async function runSourceRefresh(
     ...(options.mediaUserAgent ? { userAgent: options.mediaUserAgent } : {})
   };
   const topologyResult = await buildOpenTreeScientificPhylogeny(targets, topologyOptions);
-  const compiledScientificPhylogeny = topologyResult.scientificPhylogeny;
+  const pruneResult = pruneLowConfidenceUnaryNodes(topologyResult.scientificPhylogeny);
+  const compiledScientificPhylogeny = pruneResult.tree;
 
   const mediaOptions: Partial<MediaEnrichmentOptions> & Pick<MediaEnrichmentOptions, 'cacheDir'> = {
     cacheDir: paths.cacheDir,
@@ -125,31 +127,24 @@ export async function runSourceRefresh(
     'utf8'
   );
 
-  let promotedToApproved = false;
-  let approvedArtifactPath: string | null = null;
+  const approvedFileName = `dataset-${datasetVersion}.json`;
+  const approvedArtifactPath = join(paths.approvedDir, approvedFileName);
 
-  if (options.promoteToApproved) {
-    const approvedFileName = `dataset-${datasetVersion}.json`;
-    approvedArtifactPath = join(paths.approvedDir, approvedFileName);
+  const approvedArtifact: DatasetArtifact = {
+    ...candidate,
+    manifest: {
+      ...candidate.manifest,
+      validationStatus: 'approved'
+    }
+  };
 
-    const approvedArtifact: DatasetArtifact = {
-      ...candidate,
-      manifest: {
-        ...candidate.manifest,
-        validationStatus: 'approved'
-      }
-    };
+  await writeJson(approvedArtifactPath, approvedArtifact);
 
-    await writeJson(approvedArtifactPath, approvedArtifact);
-
-    await writeJson(join(paths.approvedDir, 'latest.json'), {
-      datasetVersion,
-      fileName: approvedFileName,
-      generatedAt
-    } satisfies LatestPointer);
-
-    promotedToApproved = true;
-  }
+  await writeJson(join(paths.approvedDir, 'latest.json'), {
+    datasetVersion,
+    fileName: approvedFileName,
+    generatedAt
+  } satisfies LatestPointer);
 
   return {
     summary: {
@@ -179,13 +174,14 @@ export async function runSourceRefresh(
           0
         )
       },
-      promotedToApproved,
+      promotedToApproved: true,
       approvedArtifactPath,
       warnings: [
-        topologyResult.usedOpenTreeTopology
-          ? `Scientific phylogeny compiled from OpenTree induced subtree for ${topologyResult.resolvedTargetCount} target placements.`
-          : 'Scientific phylogeny fell back to unresolved catalog topology because OpenTree topology was unavailable.',
+        `Scientific phylogeny compiled from OpenTree induced subtree for ${topologyResult.resolvedTargetCount} target placements.`,
         `Targets unresolved in OpenTree placement: ${topologyResult.unresolvedTargetCount}.`,
+        pruneResult.prunedNodeCount > 0
+          ? `Pruned ${pruneResult.prunedNodeCount} unary low-confidence/navigation internal nodes before artifact publication.`
+          : 'No unary low-confidence/navigation internal nodes required pruning.',
         'External media/taxonomy enrichment runs with cache-first provider adapters and provenance capture.',
         ...topologyResult.warnings,
         ...mediaEnrichment.result.warnings

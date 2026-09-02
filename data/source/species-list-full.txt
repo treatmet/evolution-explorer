@@ -1,0 +1,1001 @@
+Scientific name | Common name | Brief descriptor
+Homo sapiens | Human | Tool-using bipedal great ape with cumulative culture
+Pan troglodytes | Chimpanzee | Highly social African ape and close human relative
+Pan paniscus | Bonobo | Matriarchal great ape known for social bonding
+Gorilla gorilla | Western gorilla | Massive forest-dwelling African great ape
+Pongo pygmaeus | Bornean orangutan | Arboreal red-haired great ape of Borneo
+Hylobates lar | Lar gibbon | Fast-swinging lesser ape with loud duet calls
+Macaca mulatta | Rhesus macaque | Adaptable Old World monkey widely used in research
+Papio anubis | Olive baboon | Terrestrial troop-living African monkey
+Mandrillus sphinx | Mandrill | Colorful and powerfully built rainforest monkey
+Nasalis larvatus | Proboscis monkey | Long-nosed mangrove monkey and strong swimmer
+Cebus capucinus | White-faced capuchin | Intelligent tool-using New World monkey
+Ateles geoffroyi | Geoffroy's spider monkey | Long-limbed canopy specialist with prehensile tail
+Alouatta seniculus | Red howler monkey | Loud-voiced leaf-eating South American primate
+Callithrix jacchus | Common marmoset | Tiny clawed monkey that feeds on tree gums
+Daubentonia madagascariensis | Aye-aye | Nocturnal lemur with elongated tapping finger
+Lemur catta | Ring-tailed lemur | Social terrestrial lemur with striped tail
+Indri indri | Indri | Large tailless lemur famous for haunting songs
+Loris tardigradus | Red slender loris | Slow nocturnal primate specialized for insects
+Tarsius tarsier | Spectral tarsier | Huge-eyed leaping primate of Southeast Asia
+Galeopterus variegatus | Sunda colugo | Gliding mammal and close primate relative
+Canis lupus | Gray wolf | Cooperative pack-hunting wild canid
+Canis lupus familiaris | Domestic dog | Domesticated canid diversified into hundreds of breeds
+Vulpes vulpes | Red fox | Widespread adaptable small canid
+Lycaon pictus | African wild dog | Endurance-hunting canid with highly coordinated packs
+Ursus arctos | Brown bear | Large omnivorous bear including grizzly populations
+Ursus maritimus | Polar bear | Arctic marine bear specialized for hunting seals
+Ailuropoda melanoleuca | Giant panda | Bamboo-specialist bear with enlarged wrist bone
+Procyon lotor | Raccoon | Dexterous nocturnal omnivore thriving near humans
+Mustela putorius furo | Domestic ferret | Domesticated mustelid used for hunting and companionship
+Gulo gulo | Wolverine | Powerful cold-adapted mustelid with outsized strength
+Lutra lutra | Eurasian otter | Semiaquatic mustelid adapted for river hunting
+Enhydra lutris | Sea otter | Tool-using marine mustelid and kelp-forest keystone
+Mephitis mephitis | Striped skunk | Black-and-white carnivore with defensive scent spray
+Felis catus | Domestic cat | Domesticated small feline and efficient ambush predator
+Felis silvestris | European wildcat | Solitary forest cat closely related to domestic cats
+Panthera leo | Lion | Social big cat living in prides
+Panthera tigris | Tiger | Largest living cat and solitary striped predator
+Panthera pardus | Leopard | Highly adaptable spotted big cat and skilled climber
+Panthera onca | Jaguar | Powerful American cat capable of crushing bites
+Acinonyx jubatus | Cheetah | Fastest terrestrial animal and pursuit-hunting cat
+Puma concolor | Cougar | Wide-ranging American mountain lion
+Lynx canadensis | Canada lynx | Snow-adapted cat with oversized paws
+Crocuta crocuta | Spotted hyena | Bone-crushing social carnivore with female dominance
+Suricata suricatta | Meerkat | Cooperative desert mongoose with sentinel behavior
+Herpestes ichneumon | Egyptian mongoose | Snake-fighting carnivore of Africa and Iberia
+Elephas maximus | Asian elephant | Social forest elephant with dexterous trunk
+Loxodonta africana | African bush elephant | Largest living land animal
+Procavia capensis | Rock hyrax | Small hoofed-looking relative of elephants
+Trichechus manatus | West Indian manatee | Slow herbivorous aquatic mammal
+Dugong dugon | Dugong | Seagrass-grazing marine mammal with fluked tail
+Equus ferus caballus | Domestic horse | Domesticated running ungulate central to human transport
+Equus quagga | Plains zebra | Striped African grazer with herd defenses
+Equus africanus asinus | Domestic donkey | Sure-footed domesticated equid adapted to arid lands
+Tapirus terrestris | South American tapir | Forest browser with short flexible proboscis
+Diceros bicornis | Black rhinoceros | Hook-lipped browsing rhinoceros
+Ceratotherium simum | White rhinoceros | Broad-mouthed grazing rhinoceros
+Sus scrofa | Wild boar | Intelligent omnivorous pig with global range
+Sus scrofa domesticus | Domestic pig | Domesticated pig bred for diverse agricultural roles
+Hippopotamus amphibius | Hippopotamus | Semiaquatic African herbivore with formidable jaws
+Camelus dromedarius | Dromedary camel | One-humped desert-adapted domestic camel
+Camelus bactrianus | Bactrian camel | Two-humped cold-desert camel
+Lama glama | Llama | Domesticated South American pack camelid
+Vicugna pacos | Alpaca | Domesticated camelid bred for fine fiber
+Giraffa camelopardalis | Giraffe | Tallest living animal with elongated neck and legs
+Okapia johnstoni | Okapi | Striped forest giraffid of the Congo
+Cervus canadensis | Elk | Large deer known for bugling and antlers
+Alces alces | Moose | Largest deer with broad palmate antlers
+Rangifer tarandus | Reindeer | Arctic deer in which both sexes grow antlers
+Odocoileus virginianus | White-tailed deer | Common American deer with signaling tail
+Bos taurus | Domestic cattle | Domesticated bovine used for milk meat and labor
+Bison bison | American bison | Massive herd-forming grazer of North America
+Syncerus caffer | African buffalo | Powerful herd bovine known for collective defense
+Capra aegagrus hircus | Domestic goat | Agile domesticated browser of rocky terrain
+Ovis aries | Domestic sheep | Wool-bearing domesticated ruminant
+Ovibos moschatus | Muskox | Shaggy Arctic bovine with defensive circles
+Antilocapra americana | Pronghorn | Fast North American ungulate with unique horns
+Connochaetes taurinus | Blue wildebeest | Migratory African antelope of vast herds
+Gazella dorcas | Dorcas gazelle | Small desert antelope adapted to scarce water
+Saiga tatarica | Saiga antelope | Steppe antelope with enlarged filtering nose
+Bradypus variegatus | Brown-throated sloth | Slow arboreal leaf-eater with algae-rich fur
+Myrmecophaga tridactyla | Giant anteater | Toothless insectivore with long sticky tongue
+Dasypus novemcinctus | Nine-banded armadillo | Armored digging mammal often bearing identical quadruplets
+Orycteropus afer | Aardvark | Burrowing nocturnal termite specialist
+Manis javanica | Sunda pangolin | Scaled mammal that rolls into a defensive ball
+Ornithorhynchus anatinus | Platypus | Egg-laying venomous mammal with electroreceptive bill
+Tachyglossus aculeatus | Short-beaked echidna | Spiny egg-laying mammal that eats ants
+Macropus giganteus | Eastern gray kangaroo | Large hopping marsupial with powerful tail
+Vombatus ursinus | Common wombat | Burrowing marsupial producing cube-shaped droppings
+Phascolarctos cinereus | Koala | Eucalyptus-specialist arboreal marsupial
+Sarcophilus harrisii | Tasmanian devil | Stocky scavenging marsupial with powerful bite
+Didelphis virginiana | Virginia opossum | North American marsupial known for defensive immobility
+Petaurus breviceps | Sugar glider | Small gliding marsupial of Australia and New Guinea
+Notoryctes typhlops | Southern marsupial mole | Blind sand-swimming desert marsupial
+Balaenoptera musculus | Blue whale | Largest animal known to have lived
+Megaptera novaeangliae | Humpback whale | Acrobatic baleen whale with complex songs
+Physeter macrocephalus | Sperm whale | Deep-diving toothed whale with giant brain
+Orcinus orca | Killer whale | Apex dolphin with culturally distinct hunting traditions
+Tursiops truncatus | Common bottlenose dolphin | Intelligent social dolphin using echolocation
+Monodon monoceros | Narwhal | Arctic whale with elongated spiral tusk
+Delphinapterus leucas | Beluga whale | Vocal white Arctic whale with flexible neck
+Odobenus rosmarus | Walrus | Tusked Arctic pinniped feeding on seafloor prey
+Mirounga leonina | Southern elephant seal | Largest seal and extreme deep diver
+Pteropus vampyrus | Large flying fox | Giant fruit bat and long-distance pollinator
+Desmodus rotundus | Common vampire bat | Blood-feeding bat with anticoagulant saliva
+Rhinolophus ferrumequinum | Greater horseshoe bat | Echolocating bat with elaborate noseleaf
+Erinaceus europaeus | European hedgehog | Spiny insectivore that curls into a ball
+Talpa europaea | European mole | Subterranean mammal with shovel-like forefeet
+Sorex araneus | Common shrew | Tiny hypermetabolic insectivore with venomous saliva
+Hydrochoerus hydrochaeris | Capybara | Largest living rodent and social semiaquatic grazer
+Castor canadensis | North American beaver | Dam-building rodent and ecosystem engineer
+Hystrix cristata | Crested porcupine | Large quilled rodent of Africa and Eurasia
+Cavia porcellus | Domestic guinea pig | Domesticated South American rodent
+Mus musculus | House mouse | Globally distributed commensal rodent and model organism
+Rattus norvegicus | Brown rat | Intelligent adaptable rodent closely associated with humans
+Sciurus carolinensis | Eastern gray squirrel | Tree-dwelling seed cacher common in cities
+Marmota monax | Groundhog | Burrowing marmot famous for seasonal hibernation
+Lepus americanus | Snowshoe hare | Boreal hare with seasonally changing coat
+Oryctolagus cuniculus | European rabbit | Social burrowing lagomorph and domestic ancestor
+Ochotona princeps | American pika | Heat-sensitive mountain lagomorph storing hay piles
+Struthio camelus | Common ostrich | Largest living bird and fastest-running bird
+Dromaius novaehollandiae | Emu | Large flightless Australian bird with powerful legs
+Casuarius casuarius | Southern cassowary | Helmeted rainforest bird with dangerous claws
+Apteryx australis | Southern brown kiwi | Nocturnal flightless bird with nostrils at bill tip
+Rhea americana | Greater rhea | Large flightless grassland bird of South America
+Aptenodytes forsteri | Emperor penguin | Largest penguin and Antarctic winter breeder
+Spheniscus demersus | African penguin | Warm-water penguin with donkey-like bray
+Diomedea exulans | Wandering albatross | Oceanic bird with the largest wingspan
+Fulmarus glacialis | Northern fulmar | Tube-nosed seabird that ejects stomach oil
+Puffinus puffinus | Manx shearwater | Long-distance migratory seabird using dynamic soaring
+Fratercula arctica | Atlantic puffin | Colorful-billed diving seabird nesting in burrows
+Uria aalge | Common murre | Cliff-nesting seabird that flies underwater
+Larus argentatus | European herring gull | Opportunistic coastal gull thriving near humans
+Sterna hirundo | Common tern | Graceful plunge-diving migratory seabird
+Fregata magnificens | Magnificent frigatebird | Aerial pirate with huge throat pouch
+Pelecanus occidentalis | Brown pelican | Coastal plunge-diver with expandable bill pouch
+Morus bassanus | Northern gannet | High-speed ocean plunge-diving seabird
+Phalacrocorax carbo | Great cormorant | Dark aquatic bird that pursues fish underwater
+Phoenicopterus roseus | Greater flamingo | Filter-feeding wader colored by carotenoids
+Ardea herodias | Great blue heron | Tall stealth-hunting wetland bird
+Egretta garzetta | Little egret | Slender white wader with active fishing style
+Balaeniceps rex | Shoebill | Huge swamp bird with shoe-shaped bill
+Ciconia ciconia | White stork | Long-distance migrant associated with human settlements
+Leptoptilos crumenifer | Marabou stork | Massive scavenging stork with bare head
+Threskiornis aethiopicus | African sacred ibis | Curved-billed wetland bird revered in ancient Egypt
+Platalea ajaja | Roseate spoonbill | Pink wader sweeping a spoon-shaped bill
+Anser anser | Greylag goose | Ancestor of most domestic geese
+Branta canadensis | Canada goose | Large adaptable goose with black neck
+Cygnus olor | Mute swan | Large territorial swan with orange bill
+Anas platyrhynchos | Mallard | Widespread dabbling duck and domestic duck ancestor
+Aix galericulata | Mandarin duck | Ornate East Asian perching duck
+Somateria mollissima | Common eider | Arctic sea duck producing insulating down
+Mergus merganser | Common merganser | Streamlined fish-eating diving duck
+Gallus gallus | Red junglefowl | Wild ancestor of the domestic chicken
+Gallus gallus domesticus | Domestic chicken | Globally abundant domesticated gamebird
+Meleagris gallopavo | Wild turkey | Large North American gamebird with elaborate display
+Pavo cristatus | Indian peafowl | Peacock species with spectacular iridescent train
+Numida meleagris | Helmeted guineafowl | Flock-forming African bird with casque
+Coturnix japonica | Japanese quail | Small domesticated gamebird and research species
+Phasianus colchicus | Common pheasant | Colorful ground bird introduced worldwide
+Opisthocomus hoazin | Hoatzin | Leaf-eating tropical bird with clawed chicks
+Columba livia | Rock pigeon | Cliff-dwelling ancestor of domestic pigeons
+Streptopelia decaocto | Eurasian collared dove | Rapidly expanding pale dove
+Zenaida macroura | Mourning dove | Fast-flying dove with plaintive call
+Otidiphaps nobilis | Pheasant pigeon | Large ground-dwelling pigeon of New Guinea
+Psittacus erithacus | African gray parrot | Exceptional vocal learner and problem solver
+Ara macao | Scarlet macaw | Large colorful rainforest parrot with strong bill
+Cacatua galerita | Sulphur-crested cockatoo | Intelligent white parrot with yellow crest
+Melopsittacus undulatus | Budgerigar | Small nomadic Australian parrot widely kept as pet
+Strigops habroptilus | Kakapo | Nocturnal flightless parrot with lek breeding
+Nestor notabilis | Kea | Alpine parrot renowned for curiosity and intelligence
+Tyto alba | Barn owl | Heart-faced nocturnal hunter with silent flight
+Bubo bubo | Eurasian eagle-owl | One of the largest owls
+Athene cunicularia | Burrowing owl | Long-legged owl nesting underground
+Strix varia | Barred owl | Forest owl with distinctive hooting phrase
+Haliaeetus leucocephalus | Bald eagle | Fish-eating North American sea eagle
+Aquila chrysaetos | Golden eagle | Powerful mountain raptor hunting medium-sized prey
+Harpia harpyja | Harpy eagle | Massive rainforest eagle with enormous talons
+Pandion haliaetus | Osprey | Globally distributed raptor specialized for catching fish
+Falco peregrinus | Peregrine falcon | Fastest animal during hunting dives
+Falco tinnunculus | Common kestrel | Small falcon that hovers while hunting
+Sagittarius serpentarius | Secretarybird | Long-legged terrestrial raptor that hunts snakes
+Cathartes aura | Turkey vulture | Soaring scavenger with keen sense of smell
+Gymnogyps californianus | California condor | Giant endangered New World vulture
+Gypaetus barbatus | Bearded vulture | Bone-eating mountain vulture that drops carcass parts
+Corvus corax | Common raven | Highly intelligent corvid with complex social behavior
+Corvus brachyrhynchos | American crow | Adaptable tool-using urban corvid
+Pica pica | Eurasian magpie | Bold black-and-white corvid attracted to novel objects
+Cyanocitta cristata | Blue jay | Loud blue North American corvid and seed disperser
+Garrulus glandarius | Eurasian jay | Acorn-caching forest bird
+Paradisaea apoda | Greater bird-of-paradise | New Guinea bird with elaborate courtship plumage
+Ptilonorhynchus violaceus | Satin bowerbird | Male decorates a bower to attract mates
+Menura novaehollandiae | Superb lyrebird | Master vocal mimic with ornate tail
+Pipra filicauda | Wire-tailed manakin | Tiny rainforest bird with coordinated courtship dances
+Turdus migratorius | American robin | Familiar orange-breasted thrush
+Sialia sialis | Eastern bluebird | Cavity-nesting blue and rust-colored songbird
+Erithacus rubecula | European robin | Territorial small songbird with orange face
+Luscinia megarhynchos | Common nightingale | Plain bird celebrated for rich nocturnal song
+Toxostoma rufum | Brown thrasher | Long-tailed mimic with extensive song repertoire
+Mimus polyglottos | Northern mockingbird | Urban songbird that imitates many sounds
+Sturnus vulgaris | European starling | Murmuration-forming invasive songbird
+Gracula religiosa | Common hill myna | Glossy Asian starling and skilled vocal mimic
+Passer domesticus | House sparrow | Human-associated songbird spread worldwide
+Taeniopygia guttata | Zebra finch | Social Australian finch used in vocal-learning research
+Serinus canaria | Atlantic canary | Wild ancestor of domesticated singing canaries
+Cardinalis cardinalis | Northern cardinal | Bright red crested North American songbird
+Spinus tristis | American goldfinch | Yellow seed-eating finch with bouncing flight
+Geospiza fortis | Medium ground finch | Darwin's finch showing rapid beak evolution
+Setophaga petechia | Yellow warbler | Small insect-eating migratory songbird
+Troglodytes aedon | House wren | Tiny energetic cavity-nesting songbird
+Hirundo rustica | Barn swallow | Fork-tailed aerial insect hunter
+Apus apus | Common swift | Aerial bird spending most of its life in flight
+Archilochus colubris | Ruby-throated hummingbird | Tiny hovering nectar feeder and long-distance migrant
+Calypte anna | Anna's hummingbird | Iridescent hummingbird adapted to urban gardens
+Ramphastos toco | Toco toucan | Large-billed fruit-eating tropical bird
+Alcedo atthis | Common kingfisher | Jewel-colored river bird diving for fish
+Megaceryle alcyon | Belted kingfisher | Rattling North American fish-catching bird
+Merops apiaster | European bee-eater | Colorful aerial hunter of stinging insects
+Buceros rhinoceros | Rhinoceros hornbill | Large rainforest bird with prominent casque
+Upupa epops | Eurasian hoopoe | Crested bird probing soil with curved bill
+Picus viridis | European green woodpecker | Ground-feeding woodpecker specializing in ants
+Dryocopus pileatus | Pileated woodpecker | Large crested woodpecker excavating dead trees
+Melanerpes formicivorus | Acorn woodpecker | Cooperative bird storing acorns in communal granaries
+Cuculus canorus | Common cuckoo | Brood parasite laying eggs in other birds' nests
+Geococcyx californianus | Greater roadrunner | Fast-running desert cuckoo that hunts reptiles
+Caprimulgus europaeus | European nightjar | Camouflaged nocturnal aerial insectivore
+Steatornis caripensis | Oilbird | Echolocating nocturnal fruit-eating cave bird
+Grus japonensis | Red-crowned crane | Tall East Asian crane with elaborate pair dances
+Balearica regulorum | Gray crowned crane | African crane with golden crown feathers
+Otis tarda | Great bustard | Heavy grassland bird and one of the largest flying birds
+Charadrius vociferus | Killdeer | Ground-nesting shorebird using broken-wing distraction displays
+Haematopus ostralegus | Eurasian oystercatcher | Bold shorebird with red bill for opening shellfish
+Scolopax rusticola | Eurasian woodcock | Woodland wader with eyes high on its head
+Jacana spinosa | Northern jacana | Long-toed wetland bird walking on floating vegetation
+Crocodylus niloticus | Nile crocodile | Large African ambush predator with powerful bite
+Alligator mississippiensis | American alligator | Broad-snouted wetland crocodilian of the southeastern United States
+Gavialis gangeticus | Gharial | Long-snouted fish-eating crocodilian
+Sphenodon punctatus | Tuatara | Ancient-looking reptile and sole surviving rhynchocephalian
+Chelonia mydas | Green sea turtle | Migratory marine turtle that becomes largely herbivorous
+Dermochelys coriacea | Leatherback sea turtle | Largest turtle with flexible shell and deep-diving ability
+Chelonoidis niger | Galápagos giant tortoise | Long-lived island tortoise with giant body
+Testudo graeca | Spur-thighed tortoise | Terrestrial Mediterranean tortoise
+Chelydra serpentina | Common snapping turtle | Aggressive freshwater turtle with strong jaws
+Pelodiscus sinensis | Chinese softshell turtle | Flat leathery-shelled aquatic turtle
+Varanus komodoensis | Komodo dragon | Largest living lizard and venomous island predator
+Varanus niloticus | Nile monitor | Large semiaquatic African monitor lizard
+Iguana iguana | Green iguana | Arboreal herbivorous tropical lizard
+Amblyrhynchus cristatus | Marine iguana | Ocean-foraging Galápagos lizard that eats algae
+Chamaeleo chamaeleon | Common chameleon | Color-changing lizard with independently moving eyes
+Basiliscus basiliscus | Common basilisk | Tropical lizard able to sprint across water
+Draco volans | Common flying dragon | Rib-supported gliding lizard
+Moloch horridus | Thorny devil | Spiny Australian lizard that channels water through skin grooves
+Heloderma suspectum | Gila monster | Venomous desert lizard with beadlike scales
+Pogona vitticeps | Central bearded dragon | Australian display lizard widely kept as a pet
+Eublepharis macularius | Leopard gecko | Eyelidded ground gecko with detachable tail
+Gekko gecko | Tokay gecko | Large vocal climbing gecko with adhesive toe pads
+Anolis carolinensis | Green anole | Color-shifting American lizard with throat fan
+Sceloporus occidentalis | Western fence lizard | Common spiny lizard of western North America
+Phrynosoma cornutum | Texas horned lizard | Ant-eating lizard that can squirt blood from its eyes
+Tiliqua scincoides | Common blue-tongued skink | Heavy-bodied lizard with vivid defensive tongue
+Anguis fragilis | Slow worm | Legless burrowing lizard often mistaken for a snake
+Python reticulatus | Reticulated python | World's longest snake and powerful constrictor
+Python regius | Ball python | Small African constrictor that coils defensively
+Boa constrictor | Boa constrictor | Large New World ambush constrictor
+Eunectes murinus | Green anaconda | Heaviest living snake and semiaquatic predator
+Ophiophagus hannah | King cobra | Longest venomous snake and specialist snake-eater
+Naja naja | Indian cobra | Hooded venomous snake prominent in South Asian culture
+Dendroaspis polylepis | Black mamba | Fast highly venomous African elapid
+Bungarus caeruleus | Common krait | Nocturnal South Asian snake with potent neurotoxic venom
+Micrurus fulvius | Eastern coral snake | Brightly banded venomous snake with fixed front fangs
+Crotalus atrox | Western diamondback rattlesnake | Large pit viper with warning rattle
+Bothrops asper | Fer-de-lance | Widespread tropical American pit viper
+Bitis gabonica | Gaboon viper | Heavy viper with enormous fangs and cryptic pattern
+Vipera berus | Common European adder | Cold-tolerant venomous snake of Eurasia
+Thamnophis sirtalis | Common garter snake | Widespread live-bearing North American snake
+Heterodon platirhinos | Eastern hognose snake | Toad-eating snake famous for dramatic death-feigning
+Lampropeltis getula | Common kingsnake | Nonvenomous constrictor resistant to pit-viper venom
+Pantherophis guttatus | Corn snake | Colorful rodent-eating snake widely kept as a pet
+Chrysopelea paradisi | Paradise flying snake | Arboreal snake that glides by flattening its body
+Hydrophis platurus | Yellow-bellied sea snake | Fully marine venomous snake with paddle-shaped tail
+Xenopeltis unicolor | Sunbeam snake | Burrowing snake with intensely iridescent scales
+Ambystoma mexicanum | Axolotl | Permanently aquatic salamander capable of extensive regeneration
+Andrias japonicus | Japanese giant salamander | Huge river salamander with wrinkled skin
+Cryptobranchus alleganiensis | Hellbender | Giant flattened salamander of clean rocky streams
+Salamandra salamandra | Fire salamander | Black-and-yellow toxic terrestrial salamander
+Plethodon cinereus | Red-backed salamander | Lungless woodland salamander breathing through its skin
+Necturus maculosus | Mudpuppy | Aquatic salamander retaining feathery external gills
+Siren lacertina | Greater siren | Eel-like aquatic salamander lacking hind limbs
+Proteus anguinus | Olm | Blind cave salamander with extreme longevity
+Rana temporaria | Common frog | Widespread European brown frog
+Lithobates catesbeianus | American bullfrog | Large aquatic frog with booming call
+Pelophylax lessonae | Pool frog | Green European frog associated with sunny ponds
+Hyla arborea | European tree frog | Small climbing frog with adhesive toe pads
+Agalychnis callidryas | Red-eyed tree frog | Iconic tropical frog with vivid eyes and flank colors
+Dendrobates tinctorius | Dyeing poison dart frog | Brightly colored toxic rainforest frog
+Phyllobates terribilis | Golden poison frog | One of the most toxic vertebrates
+Oophaga pumilio | Strawberry poison dart frog | Tiny variable-colored frog with parental care
+Rhinella marina | Cane toad | Large toxic toad introduced widely outside its native range
+Bufo bufo | Common toad | Warty European amphibian with defensive toxins
+Pelobates fuscus | Common spadefoot | Burrowing toad-like amphibian with digging spades
+Breviceps adspersus | Bushveld rain frog | Round burrowing frog unable to jump well
+Nasikabatrachus sahyadrensis | Purple frog | Deep-burrowing Indian frog with piglike snout
+Pipa pipa | Surinam toad | Flattened aquatic frog that broods young in back skin
+Xenopus laevis | African clawed frog | Fully aquatic frog and major laboratory model
+Ceratophrys ornata | Argentine horned frog | Wide-mouthed ambush predator nicknamed Pac-Man frog
+Leptodactylus pentadactylus | Smoky jungle frog | Large tropical frog with defensive secretions
+Alytes obstetricans | Common midwife toad | Male carries strings of eggs around his legs
+Bombina orientalis | Oriental fire-bellied toad | Small toxic amphibian displaying bright belly
+Ascaphus truei | Coastal tailed frog | Stream frog with internal fertilization adaptation
+Ichthyophis glutinosus | Ceylon caecilian | Limbless burrowing amphibian with sensory tentacles
+Typhlonectes natans | Rubber eel | Fully aquatic caecilian that gives live birth
+Latimeria chalumnae | West Indian Ocean coelacanth | Living lobe-finned fish once thought extinct
+Neoceratodus forsteri | Australian lungfish | Air-breathing lobe-finned fish with ancient lineage
+Petromyzon marinus | Sea lamprey | Jawless parasitic fish with toothed suction disc
+Eptatretus stoutii | Pacific hagfish | Jawless scavenger producing enormous quantities of slime
+Carcharodon carcharias | Great white shark | Large endothermic shark and marine apex predator
+Rhincodon typus | Whale shark | Largest living fish and gentle filter feeder
+Sphyrna mokarran | Great hammerhead | Large shark with wide sensory-enhancing head
+Galeocerdo cuvier | Tiger shark | Broad-diet tropical shark capable of eating unusual prey
+Carcharhinus leucas | Bull shark | Robust shark able to enter freshwater
+Isurus oxyrinchus | Shortfin mako | Extremely fast open-ocean shark
+Chlamydoselachus anguineus | Frilled shark | Deep-sea eel-like shark with primitive appearance
+Mitsukurina owstoni | Goblin shark | Deep-sea shark with protrusible jaws
+Cetorhinus maximus | Basking shark | Huge plankton-filtering shark
+Pristis pristis | Largetooth sawfish | Ray with toothed rostrum used to slash prey
+Manta birostris | Giant oceanic manta ray | Huge intelligent plankton-feeding ray
+Dasyatis pastinaca | Common stingray | Bottom-dwelling ray armed with venomous tail spine
+Torpedo marmorata | Marbled electric ray | Ray capable of producing strong electric shocks
+Raja clavata | Thornback ray | Flattened seafloor skate laying rectangular egg cases
+Hydrolagus colliei | Spotted ratfish | Cartilaginous chimaera with rabbitlike teeth
+Acipenser sturio | European sturgeon | Ancient armored fish producing caviar
+Polyodon spathula | American paddlefish | Long-snouted plankton-feeding freshwater fish
+Lepisosteus osseus | Longnose gar | Armored air-gulping predatory fish
+Amia calva | Bowfin | Primitive ray-finned fish tolerant of low oxygen
+Anguilla anguilla | European eel | Catadromous fish migrating to the Sargasso Sea
+Electrophorus electricus | Electric eel | Air-breathing knifefish generating powerful electric discharges
+Conger conger | European conger | Large marine eel living in rocky crevices
+Muraena helena | Mediterranean moray | Ambush eel using a second set of throat jaws
+Clupea harengus | Atlantic herring | Schooling forage fish central to marine food webs
+Sardina pilchardus | European pilchard | Small schooling oily fish harvested as sardines
+Engraulis encrasicolus | European anchovy | Tiny plankton-feeding schooling fish
+Salmo salar | Atlantic salmon | Migratory fish returning from sea to natal rivers
+Oncorhynchus mykiss | Rainbow trout | Cold-water salmonid widely introduced and farmed
+Esox lucius | Northern pike | Long-bodied freshwater ambush predator
+Thymallus thymallus | European grayling | Stream salmonid with sail-like dorsal fin
+Danio rerio | Zebrafish | Striped minnow and major developmental biology model
+Cyprinus carpio | Common carp | Large adaptable freshwater fish domesticated as koi
+Carassius auratus | Goldfish | Domesticated carp bred into many ornamental forms
+Pimephales promelas | Fathead minnow | Small hardy baitfish and toxicology model
+Catostomus commersonii | White sucker | Bottom-feeding North American freshwater fish
+Arapaima gigas | Arapaima | Giant air-breathing Amazonian fish
+Scleropages formosus | Asian arowana | Surface-feeding bonytongue prized in aquaria
+Pygocentrus nattereri | Red-bellied piranha | Schooling South American fish with sharp interlocking teeth
+Colossoma macropomum | Tambaqui | Large fruit-eating Amazonian fish and seed disperser
+Silurus glanis | Wels catfish | Giant European catfish and opportunistic predator
+Ictalurus punctatus | Channel catfish | Whiskered North American fish widely farmed
+Pangasianodon gigas | Mekong giant catfish | Enormous migratory river catfish
+Synodontis nigriventris | Upside-down catfish | African catfish that routinely swims belly-up
+Poecilia reticulata | Guppy | Live-bearing ornamental fish with rapid evolution
+Xiphophorus hellerii | Green swordtail | Livebearer whose males carry elongated tail swords
+Gambusia affinis | Western mosquitofish | Tiny invasive livebearer introduced for mosquito control
+Hippocampus kuda | Common seahorse | Upright fish with male pregnancy and grasping tail
+Phycodurus eques | Leafy seadragon | Seahorse relative with elaborate leaflike camouflage
+Gasterosteus aculeatus | Three-spined stickleback | Small armored fish central to evolutionary studies
+Syngnathus acus | Greater pipefish | Slender seahorse relative with male brooding
+Gadus morhua | Atlantic cod | Major cold-water food fish with historic economic importance
+Melanogrammus aeglefinus | Haddock | North Atlantic bottom fish with dark shoulder mark
+Lophius piscatorius | Anglerfish | Large bottom ambusher using a lure-like dorsal spine
+Himantolophus groenlandicus | Footballfish | Deep-sea anglerfish with bioluminescent lure
+Anoplogaster cornuta | Common fangtooth | Deep-sea fish with enormous teeth for its size
+Chauliodus sloani | Sloane's viperfish | Deep-sea predator with fangs and luminous organs
+Macropinna microstoma | Barreleye | Deep-sea fish with transparent head and rotating tubular eyes
+Regalecus glesne | Giant oarfish | Extremely long ribbonlike deep-ocean fish
+Mola mola | Ocean sunfish | Huge flattened fish that basks near the surface
+Takifugu rubripes | Japanese pufferfish | Inflating fish containing potent tetrodotoxin
+Diodon holocanthus | Long-spine porcupinefish | Inflating reef fish with erectable spines
+Balistes capriscus | Gray triggerfish | Strong-jawed reef fish with locking dorsal spine
+Acanthurus coeruleus | Blue tang | Algae-grazing reef fish with scalpel-like tail spine
+Amphiprion ocellaris | Ocellaris clownfish | Anemone-dwelling reef fish with sex-changing hierarchy
+Pomacanthus imperator | Emperor angelfish | Boldly patterned coral-reef fish changing color with age
+Chaetodon auriga | Threadfin butterflyfish | Thin-bodied reef fish picking small prey from corals
+Zanclus cornutus | Moorish idol | Distinctive reef fish with elongated dorsal filament
+Pterois volitans | Red lionfish | Venomous-spined reef predator and Atlantic invader
+Synanceia verrucosa | Reef stonefish | Masterfully camouflaged fish with highly venomous spines
+Scorpaena scrofa | Red scorpionfish | Cryptic bottom fish with venomous dorsal spines
+Thunnus thynnus | Atlantic bluefin tuna | High-speed warm-bodied ocean predator
+Xiphias gladius | Swordfish | Fast pelagic fish with swordlike upper jaw
+Istiophorus platypterus | Indo-Pacific sailfish | Extremely fast fish with huge sail-like dorsal fin
+Scomber scombrus | Atlantic mackerel | Streamlined schooling ocean fish
+Sphyraena barracuda | Great barracuda | Long toothy reef-associated ambush predator
+Coryphaena hippurus | Mahi-mahi | Fast-growing colorful open-ocean predator
+Perca fluviatilis | European perch | Striped freshwater predator with spiny dorsal fin
+Sander vitreus | Walleye | Low-light freshwater predator with reflective eyes
+Micropterus salmoides | Largemouth bass | Popular sport fish with cavernous mouth
+Oreochromis niloticus | Nile tilapia | Hardy cichlid widely farmed for food
+Symphysodon aequifasciatus | Blue discus | Disk-shaped Amazonian cichlid with parental mucus feeding
+Astronotus ocellatus | Oscar | Large intelligent South American aquarium cichlid
+Betta splendens | Siamese fighting fish | Air-breathing ornamental fish with elaborate fins
+Osphronemus goramy | Giant gourami | Large labyrinth fish capable of breathing air
+Periophthalmus barbarus | Atlantic mudskipper | Amphibious goby that walks and feeds on mudflats
+Oxudercinae | Mudskippers | Amphibious gobies using fins to move on land
+Gobius niger | Black goby | Bottom-dwelling coastal fish with fused pelvic suction disc
+Solea solea | Common sole | Flatfish lying on one side with both eyes migrated upward
+Hippoglossus hippoglossus | Atlantic halibut | Giant predatory flatfish
+Paralichthys dentatus | Summer flounder | Left-eyed ambush flatfish of Atlantic coasts
+Octopus vulgaris | Common octopus | Intelligent camouflage-changing mollusk with eight flexible arms
+Enteroctopus dofleini | Giant Pacific octopus | Largest octopus and powerful den predator
+Hapalochlaena lunulata | Greater blue-ringed octopus | Tiny venomous octopus with brilliant warning rings
+Vampyroteuthis infernalis | Vampire squid | Deep-sea cephalopod using glowing arm tips and mucus
+Architeuthis dux | Giant squid | Enormous deep-ocean squid with long feeding tentacles
+Mesonychoteuthis hamiltoni | Colossal squid | Heavy Antarctic squid with rotating tentacle hooks
+Sepia officinalis | Common cuttlefish | Color-shifting cephalopod with internal cuttlebone
+Nautilus pompilius | Chambered nautilus | Shelled cephalopod controlling buoyancy with gas chambers
+Spirula spirula | Ram's horn squid | Small deep-water cephalopod with coiled internal shell
+Aplysia californica | California sea hare | Large grazing sea slug used in neuroscience
+Glaucus atlanticus | Blue dragon | Floating nudibranch that stores stinging cells from prey
+Chromodoris lochi | Loch's chromodoris | Brightly colored tropical nudibranch with chemical defenses
+Elysia chlorotica | Eastern emerald elysia | Sea slug retaining functional chloroplasts from algae
+Limax maximus | Leopard slug | Large spotted land slug with aerial mating behavior
+Cornu aspersum | Garden snail | Familiar land snail with coiled shell and rasping radula
+Achatina fulica | Giant African land snail | Huge invasive terrestrial snail
+Haliotis rufescens | Red abalone | Large ear-shaped marine snail with iridescent shell
+Conus geographus | Geography cone | Predatory snail firing a venomous harpoon tooth
+Cypraea tigris | Tiger cowrie | Glossy-shelled tropical marine snail
+Littorina littorea | Common periwinkle | Intertidal grazing snail tolerant of exposure
+Patella vulgata | Common limpet | Cone-shelled mollusk clinging tightly to wave-swept rocks
+Pomacea canaliculata | Golden apple snail | Large freshwater snail and invasive crop pest
+Lymnaea stagnalis | Great pond snail | Air-breathing freshwater snail used in neurobiology
+Pinctada margaritifera | Black-lip pearl oyster | Tropical bivalve producing dark cultured pearls
+Crassostrea gigas | Pacific oyster | Reef-forming filter feeder widely farmed
+Mytilus edulis | Blue mussel | Byssus-attached coastal bivalve forming dense beds
+Tridacna gigas | Giant clam | Largest bivalve and host to photosynthetic symbionts
+Pecten maximus | Great scallop | Swimming bivalve with rows of simple eyes
+Ensis leei | Atlantic jackknife clam | Long narrow burrowing clam
+Teredo navalis | Naval shipworm | Wood-boring bivalve with wormlike body
+Dentalium elephantinum | Elephant tusk shell | Scaphopod mollusk living buried in seafloor sediment
+Chaetoderma nitidulum | Shiny chaetoderma | Shell-less wormlike mollusk covered in spicules
+Lepidochitona cinerea | Common chiton | Eight-plated grazing mollusk clinging to rocks
+Katharina tunicata | Black katy chiton | Large leathery chiton of Pacific shores
+Doryteuthis pealeii | Longfin inshore squid | Fast color-changing squid common on Atlantic coasts
+Loligo vulgaris | European squid | Schooling coastal squid with rapid jet propulsion
+Todarodes pacificus | Japanese flying squid | Migratory squid capable of gliding above water
+Argonauta argo | Greater argonaut | Pelagic octopus whose female makes a paper-thin eggcase
+Ancyloceras vancouverense | Ancyloceras ammonite | Extinct heteromorph ammonite with uncoiled shell
+Homarus americanus | American lobster | Large clawed crustacean with indeterminate growth
+Panulirus argus | Caribbean spiny lobster | Clawless reef lobster with long antennae
+Procambarus clarkii | Red swamp crayfish | Burrowing freshwater crustacean and global invader
+Callinectes sapidus | Blue crab | Swimming crab with paddle-shaped rear legs
+Carcinus maenas | European green crab | Aggressive invasive shore crab
+Macrocheira kaempferi | Japanese spider crab | Arthropod with the greatest leg span
+Birgus latro | Coconut crab | Largest terrestrial arthropod and powerful climber
+Pagurus bernhardus | Common hermit crab | Crab protecting soft abdomen in borrowed shells
+Limulus polyphemus | Atlantic horseshoe crab | Ancient marine chelicerate with blue blood
+Triops cancriformis | Tadpole shrimp | Temporary-pool crustacean with ancient body plan
+Daphnia magna | Water flea | Transparent freshwater planktonic crustacean
+Artemia salina | Brine shrimp | Salt-tolerant crustacean whose dormant cysts survive drying
+Euphausia superba | Antarctic krill | Swarming crustacean supporting Southern Ocean food webs
+Ligia oceanica | Sea slater | Shore-dwelling isopod transitional between land and sea
+Armadillidium vulgare | Common pill bug | Terrestrial crustacean that rolls into a ball
+Bathynomus giganteus | Giant isopod | Huge deep-sea scavenger related to pill bugs
+Cymothoa exigua | Tongue-eating louse | Parasitic isopod replacing a fish's tongue
+Squilla mantis | Mantis shrimp | Spearing crustacean with fast raptorial strikes
+Odontodactylus scyllarus | Peacock mantis shrimp | Colorful smashers with exceptional vision
+Balanus glandula | Acorn barnacle | Sessile crustacean cemented to wave-washed surfaces
+Lepas anatifera | Goose barnacle | Stalked filter feeder attached to floating objects
+Copepoda | Copepods | Tiny abundant crustaceans central to aquatic food webs
+Calanus finmarchicus | North Atlantic copepod | Lipid-rich plankton sustaining fish and whales
+Penaeus monodon | Giant tiger prawn | Large striped shrimp widely farmed
+Lysmata amboinensis | Cleaner shrimp | Reef shrimp removing parasites from fish clients
+Alpheus heterochaelis | Bigclaw snapping shrimp | Shrimp producing cavitation shock waves with one claw
+Stenopus hispidus | Banded coral shrimp | Long-antennaed reef cleaner with red-and-white bands
+Palaemon serratus | Common prawn | Transparent coastal shrimp with toothed rostrum
+Nebalia bipes | Common nebalia | Leaflike crustacean representing an ancient malacostracan branch
+Peripatus juliformis | Velvet worm | Soft-bodied terrestrial predator firing sticky slime
+Euperipatoides rowelli | Australian velvet worm | Social onychophoran hunting with adhesive jets
+Tardigrada | Tardigrades | Microscopic eight-legged animals surviving extreme dormancy
+Hypsibius exemplaris | Model water bear | Laboratory tardigrade capable of cryptobiosis
+Milnesium tardigradum | Milnesium water bear | Predatory tardigrade with robust claws
+Lumbricus terrestris | Common earthworm | Soil-mixing segmented worm and ecosystem engineer
+Eisenia fetida | Red wiggler | Composting earthworm thriving in organic waste
+Hirudo medicinalis | Medicinal leech | Blood-feeding annelid producing anticoagulant hirudin
+Riftia pachyptila | Giant tube worm | Vent annelid nourished by chemosynthetic bacteria
+Arenicola marina | Lugworm | Burrowing marine worm leaving coiled sand casts
+Nereis diversicolor | Ragworm | Active predatory polychaete of estuaries
+Aphrodita aculeata | Sea mouse | Iridescent bristled marine annelid
+Tomopteris helgolandica | Tomopteris | Transparent planktonic worm producing yellow bioluminescence
+Osedax rubiplumus | Bone-eating worm | Whale-fall annelid dissolving bones without a mouth
+Siboglinum fiordicum | Beard worm | Gutless tube worm relying on bacterial symbionts
+Chaetopterus variopedatus | Parchment tube worm | Filter-feeding annelid that makes a mucus net
+Bonellia viridis | Green spoon worm | Marine worm with extreme environmentally determined sexual dimorphism
+Sipunculus nudus | Peanut worm | Unsegmented burrower with retractable introvert
+Priapulus caudatus | Priapulid worm | Burrowing marine predator with toothed eversible throat
+Caenorhabditis elegans | C. elegans | Tiny nematode with completely mapped cell lineage
+Ascaris lumbricoides | Giant intestinal roundworm | Human parasite with complex migratory larvae
+Trichinella spiralis | Trichina worm | Parasite encysting in mammalian muscle
+Ancylostoma duodenale | Old World hookworm | Blood-feeding intestinal nematode
+Wuchereria bancrofti | Filarial worm | Mosquito-borne nematode causing lymphatic disease
+Enterobius vermicularis | Pinworm | Common human intestinal parasite
+Meloidogyne incognita | Root-knot nematode | Plant parasite inducing nutrient-rich root galls
+Romanomermis culicivorax | Mosquito mermithid | Nematode parasitizing mosquito larvae
+Dugesia tigrina | Tiger planarian | Flatworm famous for whole-body regeneration
+Schmidtea mediterranea | Mediterranean planarian | Regenerative flatworm rich in adult stem cells
+Taenia solium | Pork tapeworm | Segmented parasite cycling between pigs and humans
+Echinococcus granulosus | Hydatid tapeworm | Tiny tapeworm forming large cysts in intermediate hosts
+Schistosoma mansoni | Blood fluke | Dioecious parasitic flatworm living in blood vessels
+Fasciola hepatica | Liver fluke | Leaf-shaped parasite of livestock and humans
+Bipalium kewense | Hammerhead worm | Predatory land planarian with broad crescent head
+Macrostomum lignano | Free-living flatworm | Transparent model flatworm with rapid regeneration
+Rotaria rotatoria | Bdelloid rotifer | Microscopic animal reproducing without known males
+Brachionus plicatilis | Brackish-water rotifer | Tiny wheel-bearing filter feeder used in aquaculture
+Acanthocephalus lucii | Thorny-headed worm | Intestinal parasite anchoring with hooked proboscis
+Gordius aquaticus | Horsehair worm | Long parasite manipulating insect hosts toward water
+Bugula neritina | Brown bryozoan | Colonial filter feeder forming branching marine tufts
+Membranipora membranacea | Lacy crust bryozoan | Colonial animal encrusting kelp blades
+Phoronopsis viridis | Green phoronid | Tube-dwelling lophophorate with horseshoe feeding crown
+Lingula anatina | Lamp shell | Burrowing brachiopod with ancient shell form
+Terebratulina retusa | Northern lamp shell | Stalk-attached brachiopod filtering seawater
+Strongylocentrotus purpuratus | Purple sea urchin | Kelp-grazing echinoderm with movable spines
+Diadema antillarum | Long-spined sea urchin | Reef grazer with exceptionally long black spines
+Echinus esculentus | European edible sea urchin | Large round urchin of rocky seabeds
+Clypeaster subdepressus | Sand dollar | Flattened burrowing urchin adapted to sandy bottoms
+Asterias rubens | Common starfish | Five-armed predator that everts its stomach
+Pisaster ochraceus | Ochre sea star | Intertidal keystone predator controlling mussels
+Crown-of-thorns starfish | Crown-of-thorns starfish | Coral-eating sea star capable of reef outbreaks
+Ophiothrix fragilis | Common brittle star | Fast-moving echinoderm with flexible arms
+Gorgonocephalus eucnemis | Basket star | Deep-water brittle star with repeatedly branching arms
+Holothuria atra | Black sea cucumber | Sediment-feeding echinoderm recycling reef nutrients
+Parastichopus californicus | Giant red sea cucumber | Large Pacific detritivore with soft leathery body
+Crinoidea | Feather stars | Echinoderms with feathery suspension-feeding arms
+Antedon bifida | Rosy feather star | Free-moving crinoid gripping surfaces with cirri
+Balanoglossus clavigerus | Acorn worm | Burrowing hemichordate with proboscis collar and trunk
+Rhabdopleura compacta | Pterobranch | Tiny colonial hemichordate living in tubes
+Branchiostoma lanceolatum | European lancelet | Fishlike chordate lacking skull and vertebrae
+Ciona intestinalis | Vase tunicate | Sessile filter feeder with free-swimming chordate larva
+Salpa fusiformis | Common salp | Transparent jet-propelled tunicate forming chains
+Pyrosoma atlanticum | Pyrosome | Bioluminescent colonial tunicate forming hollow tubes
+Oikopleura dioica | Larvacean | Planktonic tunicate filtering water through disposable mucus houses
+Botryllus schlosseri | Golden star tunicate | Colonial tunicate capable of vascular fusion
+Hydra vulgaris | Freshwater hydra | Tiny cnidarian with remarkable regenerative ability
+Aurelia aurita | Moon jelly | Translucent jellyfish with four horseshoe-shaped gonads
+Cyanea capillata | Lion's mane jellyfish | Giant cold-water jelly with very long tentacles
+Chironex fleckeri | Australian box jelly | Fast-swimming jellyfish with extremely potent venom
+Turritopsis dohrnii | Immortal jellyfish | Jellyfish capable of reverting to a juvenile stage
+Physalia physalis | Portuguese man o' war | Floating siphonophore colony with long stinging tentacles
+Velella velella | By-the-wind sailor | Surface-drifting colonial cnidarian with sail
+Nanomia bijuga | Deep-sea siphonophore | Colonial predator coordinating specialized zooids
+Nematostella vectensis | Starlet sea anemone | Small estuarine anemone and developmental model
+Actinia equina | Beadlet anemone | Intertidal anemone that retracts into a red blob
+Stichodactyla gigantea | Giant carpet anemone | Large reef anemone hosting clownfish
+Acropora cervicornis | Staghorn coral | Fast-growing branching Caribbean reef coral
+Acropora palmata | Elkhorn coral | Broad-branched Caribbean reef builder
+Orbicella faveolata | Mountainous star coral | Massive long-lived Caribbean reef coral
+Fungia fungites | Mushroom coral | Solitary free-living disk-shaped coral
+Tubastraea coccinea | Orange cup coral | Nonphotosynthetic coral forming bright orange colonies
+Corallium rubrum | Precious red coral | Slow-growing coral used historically in jewelry
+Gorgonia ventalina | Common sea fan | Flexible branching soft coral filtering currents
+Pennatula phosphorea | Sea pen | Colonial cnidarian resembling a feather planted in sediment
+Renilla reniformis | Sea pansy | Bioluminescent colonial soft coral
+Metridium senile | Plumose anemone | Feathery cold-water anemone forming dense clones
+Mnemiopsis leidyi | Sea walnut | Comb jelly and voracious invasive plankton predator
+Pleurobrachia pileus | Sea gooseberry | Spherical comb jelly with long sticky tentacles
+Beroe cucumis | Beroe comb jelly | Tentacleless comb jelly swallowing other ctenophores
+Euplokamis dunlapae | Euplokamis comb jelly | Ctenophore with rapidly coiling tentilla
+Spongia officinalis | Bath sponge | Fibrous marine sponge traditionally harvested for cleaning
+Euplectella aspergillum | Venus' flower basket | Glass sponge with intricate silica skeleton
+Xestospongia muta | Giant barrel sponge | Massive long-lived reef sponge filtering huge water volumes
+Cliona celata | Boring sponge | Sponge excavating limestone and shells
+Oscarella carmela | Homoscleromorph sponge | Thin encrusting sponge with simple body organization
+Trichoplax adhaerens | Trichoplax | Tiny flat animal with no organs or neurons
+Hoilungia hongkongensis | Hoilungia | Placozoan species with extremely simple crawling body
+Monosiga brevicollis | Choanoflagellate | Single-celled collar flagellate close to animal ancestry
+Salpingoeca rosetta | Rosette choanoflagellate | Microbe forming colonies in response to bacterial signals
+Apis mellifera | Western honey bee | Eusocial pollinator communicating with waggle dances
+Bombus terrestris | Buff-tailed bumblebee | Large fuzzy social pollinator capable of buzz pollination
+Xylocopa virginica | Eastern carpenter bee | Solitary bee excavating nests in wood
+Megachile rotundata | Alfalfa leafcutter bee | Solitary bee lining nests with cut leaf circles
+Vespa mandarinia | Northern giant hornet | Largest hornet and predator of other social insects
+Vespula vulgaris | Common wasp | Eusocial yellowjacket with annual colonies
+Polistes dominula | European paper wasp | Social wasp building exposed paper combs
+Solenopsis invicta | Red imported fire ant | Aggressive invasive ant with painful sting
+Atta cephalotes | Leafcutter ant | Fungus-farming ant cutting and carrying leaves
+Camponotus pennsylvanicus | Black carpenter ant | Large ant nesting in damp wood
+Oecophylla smaragdina | Asian weaver ant | Arboreal ant stitching leaves with larval silk
+Eciton burchellii | Army ant | Nomadic swarm-raiding ant with massive colonies
+Myrmecia gulosa | Giant bull ant | Large Australian ant with excellent vision and sting
+Formica rufa | Red wood ant | Mound-building forest ant spraying formic acid
+Lasius niger | Black garden ant | Common aphid-tending ant of Europe
+Danaus plexippus | Monarch butterfly | Long-distance migrant whose caterpillars eat milkweed
+Papilio machaon | Old World swallowtail | Large butterfly with tailed hindwings
+Morpho menelaus | Blue morpho | Rainforest butterfly with brilliant structural blue wings
+Heliconius erato | Red postman | Toxic butterfly with mimicry and pollen feeding
+Vanessa cardui | Painted lady | Cosmopolitan migratory butterfly
+Pieris brassicae | Large white | Cabbage-feeding butterfly and agricultural pest
+Biston betularia | Peppered moth | Classic example of industrial melanism
+Actias luna | Luna moth | Large green silk moth with long hindwing tails
+Attacus atlas | Atlas moth | Giant moth with snake-head wingtip patterns
+Bombyx mori | Domestic silkworm | Fully domesticated moth producing commercial silk
+Manduca sexta | Tobacco hornworm | Large sphinx moth model with hovering flight
+Galleria mellonella | Greater wax moth | Beehive moth used as an infection model
+Drosophila melanogaster | Common fruit fly | Foundational genetic model organism
+Musca domestica | Housefly | Cosmopolitan filth-feeding fly with rapid reproduction
+Anopheles gambiae | African malaria mosquito | Major vector of human malaria
+Aedes aegypti | Yellow fever mosquito | Urban mosquito vectoring several viral diseases
+Tipula paludosa | European crane fly | Long-legged fly with soil-dwelling larvae
+Tabanus bovinus | Pale giant horsefly | Large blood-feeding fly with slicing mouthparts
+Lucilia sericata | Common green bottle fly | Metallic carrion fly used in maggot therapy
+Glossina morsitans | Tsetse fly | Blood-feeding fly transmitting African trypanosomes
+Culex pipiens | Common house mosquito | Widespread mosquito and vector of several pathogens
+Tenebrio molitor | Mealworm beetle | Darkling beetle larva widely used as feed
+Dynastes hercules | Hercules beetle | Giant rhinoceros beetle with enormous male horn
+Lucanus cervus | Stag beetle | Large beetle with antler-like male mandibles
+Coccinella septempunctata | Seven-spot ladybird | Aphid-eating red beetle with black spots
+Photinus pyralis | Common eastern firefly | Beetle using species-specific bioluminescent flashes
+Scarabaeus sacer | Sacred scarab | Dung-rolling beetle revered in ancient Egypt
+Goliathus goliatus | Goliath beetle | One of the heaviest adult insects
+Bombardier beetles | Bombardier beetles | Beetles spraying a hot pulsed chemical defense
+Agrilus planipennis | Emerald ash borer | Metallic invasive beetle killing ash trees
+Leptinotarsa decemlineata | Colorado potato beetle | Striped crop pest rapidly evolving pesticide resistance
+Gryllus campestris | Field cricket | Chirping ground insect using sound for courtship
+Locusta migratoria | Migratory locust | Grasshopper switching into swarm-forming phase
+Schistocerca gregaria | Desert locust | Long-distance agricultural pest forming vast swarms
+Gryllotalpa gryllotalpa | European mole cricket | Burrowing cricket with shovel-like forelegs
+Carausius morosus | Indian stick insect | Camouflaged twig-mimicking insect
+Phyllium giganteum | Giant leaf insect | Broad flattened insect resembling a living leaf
+Mantis religiosa | European mantis | Ambush predator with folded raptorial forelegs
+Idolomantis diabolica | Devil's flower mantis | Ornate floral mimic and insect predator
+Blatta orientalis | Oriental cockroach | Dark robust cockroach adapted to human structures
+Periplaneta americana | American cockroach | Large fast-running cosmopolitan cockroach
+Mastotermes darwiniensis | Giant northern termite | Primitive termite with cockroach-like traits
+Macrotermes bellicosus | African mound-building termite | Fungus-growing termite constructing huge ventilated mounds
+Forficula auricularia | European earwig | Pincer-tailed insect with maternal care
+Libellula quadrimaculata | Four-spotted chaser | Fast aerial dragonfly with aquatic predatory nymph
+Calopteryx splendens | Banded demoiselle | Metallic damselfly with fluttering courtship display
+Ephemera danica | Green drake mayfly | Aquatic juvenile followed by brief winged adulthood
+Perla marginata | Stonefly | Clean-stream insect with aquatic oxygen-sensitive nymph
+Lepisma saccharinum | Silverfish | Wingless household insect feeding on starches
+Thermobia domestica | Firebrat | Heat-loving wingless insect of warm buildings
+Machilis germanica | Jumping bristletail | Primitive wingless insect able to leap
+Pediculus humanus capitis | Head louse | Human-specific blood-feeding ectoparasite
+Pulex irritans | Human flea | Laterally flattened jumping blood-feeding insect
+Cimex lectularius | Bed bug | Nocturnal blood-feeding insect hiding in crevices
+Frankliniella occidentalis | Western flower thrips | Tiny plant-feeding insect and crop virus vector
+Acyrthosiphon pisum | Pea aphid | Sap-feeding insect reproducing clonally for many generations
+Magicicada septendecim | Seventeen-year cicada | Periodical insect emerging synchronously after long underground development
+Cicada orni | Ash cicada | Loud Mediterranean cicada producing sound with tymbals
+Gerris lacustris | Common pond skater | True bug walking on water surface tension
+Belostoma flumineum | Giant water bug | Aquatic predator whose males guard eggs
+Triatoma infestans | Kissing bug | Blood-feeding assassin bug vectoring Chagas disease
+Dactylopius coccus | Cochineal insect | Scale insect cultivated for crimson dye
+Ixodes scapularis | Blacklegged tick | Hard tick transmitting Lyme disease pathogens
+Dermacentor variabilis | American dog tick | Widespread hard tick parasitizing mammals
+Sarcoptes scabiei | Itch mite | Burrowing skin parasite causing scabies
+Dermatophagoides pteronyssinus | European house dust mite | Microscopic household mite feeding on shed skin
+Tetranychus urticae | Two-spotted spider mite | Tiny plant pest spinning protective silk webs
+Latrodectus mactans | Southern black widow | Glossy venomous spider with red hourglass
+Loxosceles reclusa | Brown recluse | Secretive spider with medically significant venom
+Araneus diadematus | Cross orb-weaver | Garden spider constructing circular capture webs
+Argiope aurantia | Yellow garden spider | Large orb-weaver with zigzag web decoration
+Nephila pilipes | Giant golden orb-weaver | Huge web-building spider producing golden silk
+Phidippus audax | Bold jumping spider | Visually acute hunter capable of precise leaps
+Portia fimbriata | Fringed jumping spider | Spider-eating strategist using flexible hunting tactics
+Dolomedes triton | Six-spotted fishing spider | Semiaquatic spider running on water and catching fish
+Theraphosa blondi | Goliath birdeater | One of the largest spiders by mass
+Aphonopelma chalcodes | Desert blond tarantula | Long-lived burrowing desert spider
+Damon diadema | Giant tailless whip scorpion | Flattened arachnid with long sensory legs
+Mastigoproctus giganteus | Giant vinegaroon | Whip scorpion spraying acetic acid defense
+Euscorpius italicus | Italian scorpion | Small European scorpion with grasping pincers
+Androctonus australis | Fat-tailed scorpion | Desert scorpion with potent neurotoxic venom
+Chelifer cancroides | House pseudoscorpion | Tiny tailless arachnid hunting mites indoors
+Leiobunum vittatum | Eastern harvestman | Long-legged arachnid with fused body segments
+Lithobius forficatus | Brown centipede | Fast venomous soil predator with one leg pair per segment
+Scolopendra gigantea | Amazonian giant centipede | Huge venomous predator capable of catching vertebrates
+Archispirostreptus gigas | Giant African millipede | Large detritivore with hundreds of legs
+Narceus americanus | American giant millipede | Forest decomposer curling into a defensive coil
+Scutigera coleoptrata | House centipede | Long-legged indoor predator of household arthropods
+Sequoiadendron giganteum | Giant sequoia | Massive long-lived conifer and largest tree by volume
+Sequoia sempervirens | Coast redwood | Tallest living tree species
+Pinus longaeva | Great Basin bristlecone pine | Extremely long-lived high-elevation conifer
+Pinus pinea | Stone pine | Mediterranean pine producing edible pine nuts
+Pinus ponderosa | Ponderosa pine | Tall western North American pine with thick orange bark
+Picea abies | Norway spruce | Conical evergreen widely used as a Christmas tree
+Pseudotsuga menziesii | Douglas fir | Towering conifer important in western forests
+Abies balsamea | Balsam fir | Fragrant boreal conifer used for Christmas trees
+Larix decidua | European larch | Deciduous conifer that drops its needles each winter
+Taxus baccata | European yew | Toxic long-lived conifer with red fleshy arils
+Ginkgo biloba | Ginkgo | Ancient seed plant with fan-shaped leaves
+Cycas revoluta | Sago palm | Cycad with palm-like crown and toxic seeds
+Welwitschia mirabilis | Welwitschia | Namib Desert plant growing only two persistent leaves
+Ephedra sinica | Chinese ephedra | Jointed gymnosperm producing stimulant alkaloids
+Araucaria araucana | Monkey puzzle tree | Spiny South American conifer with ancient lineage
+Wollemia nobilis | Wollemi pine | Rare Australian conifer discovered in 1994
+Nymphaea alba | White water lily | Floating-leaved aquatic flowering plant
+Nelumbo nucifera | Sacred lotus | Aquatic plant with self-cleaning leaves and long-lived seeds
+Amborella trichopoda | Amborella | Sole living species of the earliest-diverging flowering-plant lineage
+Magnolia grandiflora | Southern magnolia | Evergreen tree with huge fragrant flowers
+Liriodendron tulipifera | Tulip tree | Tall tree with tulip-shaped flowers and distinctive leaves
+Persea americana | Avocado | Tropical tree producing oil-rich fruits
+Cinnamomum verum | True cinnamon | Evergreen tree whose inner bark yields cinnamon
+Piper nigrum | Black pepper | Tropical vine producing peppercorn spice
+Aristolochia gigantea | Giant Dutchman's pipe | Vine with enormous carrion-scented trap flowers
+Piper methysticum | Kava | Pacific shrub used to make a ceremonial drink
+Quercus robur | English oak | Long-lived broadleaf tree supporting rich wildlife
+Quercus virginiana | Southern live oak | Spreading evergreen oak draped with epiphytes
+Fagus grandifolia | American beech | Smooth-barked forest tree with edible nuts
+Betula papyrifera | Paper birch | White-barked northern tree with peeling bark
+Alnus glutinosa | Black alder | Wetland tree forming nitrogen-fixing root nodules
+Corylus avellana | Common hazel | Shrub producing edible hazelnuts
+Juglans regia | English walnut | Tree producing large edible nuts and valuable timber
+Carya illinoinensis | Pecan | North American hickory producing rich edible nuts
+Castanea dentata | American chestnut | Formerly dominant eastern tree devastated by blight
+Ulmus americana | American elm | Vase-shaped city tree heavily affected by Dutch elm disease
+Celtis occidentalis | Common hackberry | Hardy tree with berry-like fruits
+Morus alba | White mulberry | Silkworm food tree with sweet aggregate fruits
+Ficus carica | Common fig | Ancient cultivated tree with enclosed flower structures
+Ficus benghalensis | Banyan | Fig tree spreading by pillar-like aerial roots
+Urtica dioica | Stinging nettle | Herb armed with hollow irritating hairs
+Cannabis sativa | Cannabis | Wind-pollinated plant cultivated for fiber seed and cannabinoids
+Humulus lupulus | Common hop | Climbing plant whose cones flavor beer
+Rosa canina | Dog rose | Thorny wild rose with vitamin-rich hips
+Rosa chinensis | China rose | Major ancestor of modern repeat-flowering garden roses
+Fragaria × ananassa | Garden strawberry | Hybrid crop producing fleshy aggregate fruits
+Rubus idaeus | Red raspberry | Bramble producing hollow-centered aggregate berries
+Malus domestica | Domestic apple | Cultivated fruit tree with thousands of varieties
+Pyrus communis | European pear | Orchard tree producing sweet pomes
+Prunus persica | Peach | Stone-fruit tree domesticated in China
+Prunus avium | Sweet cherry | Tree producing edible red or dark drupes
+Prunus dulcis | Almond | Tree cultivated for edible seeds inside hard pits
+Prunus domestica | European plum | Orchard tree with diverse sweet stone fruits
+Cydonia oblonga | Quince | Aromatic hard fruit used in preserves
+Eriobotrya japonica | Loquat | Evergreen tree producing orange spring fruits
+Vitis vinifera | Grapevine | Climbing vine source of wine grapes and raisins
+Citrus sinensis | Sweet orange | Hybrid citrus tree producing familiar oranges
+Citrus limon | Lemon | Acidic yellow citrus fruit crop
+Citrus reticulata | Mandarin orange | Small easy-peeling citrus species
+Theobroma cacao | Cacao | Tropical understory tree whose seeds make chocolate
+Coffea arabica | Arabica coffee | Mountain shrub producing most high-quality coffee beans
+Camellia sinensis | Tea plant | Evergreen shrub whose leaves make tea
+Gossypium hirsutum | Upland cotton | Major fiber crop producing seed hairs
+Linum usitatissimum | Flax | Fiber and oilseed crop used to make linen
+Helianthus annuus | Common sunflower | Tall composite flower with seed-rich head
+Taraxacum officinale | Common dandelion | Wind-dispersed rosette herb with milky latex
+Bellis perennis | Common daisy | Low perennial with composite flower heads
+Achillea millefolium | Common yarrow | Aromatic herb with finely divided leaves
+Artemisia annua | Sweet wormwood | Herb producing antimalarial artemisinin
+Lactuca sativa | Lettuce | Domesticated leafy vegetable
+Cynara cardunculus | Artichoke | Thistle relative cultivated for immature flower heads
+Cirsium vulgare | Spear thistle | Spiny purple-flowered biennial
+Echinacea purpurea | Purple coneflower | Prairie perennial with prominent central cone
+Solidago canadensis | Canada goldenrod | Tall yellow-flowered plant spreading by rhizomes
+Dahlia pinnata | Garden dahlia | Tuberous ornamental with highly diverse flower forms
+Tagetes erecta | African marigold | Bright yellow-orange ornamental and ceremonial flower
+Chrysanthemum × morifolium | Florist's chrysanthemum | Cultivated autumn-flowering ornamental
+Pisum sativum | Garden pea | Climbing legume central to Mendel's genetics
+Phaseolus vulgaris | Common bean | Domesticated legume including kidney and green beans
+Glycine max | Soybean | Protein-rich legume and major global crop
+Arachis hypogaea | Peanut | Legume whose fertilized pods develop underground
+Medicago sativa | Alfalfa | Deep-rooted forage legume and nitrogen fixer
+Trifolium repens | White clover | Creeping lawn legume with clonal growth
+Acacia dealbata | Silver wattle | Fast-growing Australian tree with yellow puffball flowers
+Mimosa pudica | Sensitive plant | Herb folding its leaves rapidly when touched
+Delonix regia | Royal poinciana | Tropical tree with brilliant red-orange flowers
+Prosopis glandulosa | Honey mesquite | Drought-tolerant thorny tree with sweet pods
+Caesalpinia pulcherrima | Peacock flower | Tropical shrub with flamboyant red and yellow blooms
+Solanum lycopersicum | Tomato | Domesticated nightshade producing fleshy red fruits
+Solanum tuberosum | Potato | Andean crop producing starch-rich underground tubers
+Capsicum annuum | Chili pepper | Nightshade with fruits ranging from sweet to pungent
+Nicotiana tabacum | Cultivated tobacco | Domesticated plant rich in nicotine
+Atropa belladonna | Deadly nightshade | Toxic herb containing tropane alkaloids
+Datura stramonium | Jimsonweed | Hallucinogenic toxic plant with spiny seed capsules
+Petunia × atkinsiana | Garden petunia | Hybrid ornamental with trumpet-shaped flowers
+Ipomoea batatas | Sweet potato | Tropical vine with edible storage roots
+Ipomoea purpurea | Common morning glory | Twining vine with daily opening trumpet flowers
+Olea europaea | Olive | Long-lived Mediterranean tree producing oil-rich fruits
+Fraxinus americana | White ash | North American hardwood threatened by emerald ash borer
+Syringa vulgaris | Common lilac | Fragrant spring-flowering shrub
+Jasminum officinale | Common jasmine | Climbing shrub with intensely fragrant white flowers
+Mentha spicata | Spearmint | Aromatic spreading herb rich in carvone
+Ocimum basilicum | Basil | Culinary herb with fragrant leaves
+Salvia officinalis | Common sage | Woody Mediterranean herb with aromatic gray leaves
+Lavandula angustifolia | English lavender | Fragrant purple-flowered Mediterranean shrub
+Rosmarinus officinalis | Rosemary | Needle-leaved aromatic herb of dry climates
+Thymus vulgaris | Common thyme | Low woody herb with strongly aromatic leaves
+Sesamum indicum | Sesame | Ancient oilseed crop with capsules that split open
+Digitalis purpurea | Common foxglove | Tall toxic flower source of cardiac glycosides
+Plantago major | Broadleaf plantain | Tough rosette weed thriving on compacted soil
+Antirrhinum majus | Snapdragon | Ornamental whose flowers open like a mouth when squeezed
+Penstemon digitalis | Foxglove beardtongue | Native North American tubular-flowered perennial
+Aloe vera | Aloe vera | Succulent medicinal plant storing gel in fleshy leaves
+Agave tequilana | Blue agave | Rosette succulent used to produce tequila
+Yucca brevifolia | Joshua tree | Mojave Desert yucca pollinated by specialized moths
+Asparagus officinalis | Asparagus | Perennial vegetable harvested as young shoots
+Allium cepa | Onion | Bulb-forming crop with pungent sulfur compounds
+Allium sativum | Garlic | Clonal bulb crop with strong antimicrobial compounds
+Tulipa gesneriana | Garden tulip | Spring bulb bred into many colorful cultivars
+Lilium candidum | Madonna lily | White trumpet-flowered bulb plant
+Narcissus pseudonarcissus | Wild daffodil | Spring bulb with yellow trumpet-shaped corona
+Iris germanica | Bearded iris | Rhizomatous ornamental with elaborate falls and standards
+Vanilla planifolia | Vanilla orchid | Climbing orchid whose cured pods provide vanilla
+Phalaenopsis amabilis | Moon orchid | Epiphytic orchid with long-lasting white flowers
+Ophrys apifera | Bee orchid | Orchid whose flower mimics a female bee
+Dionaea muscipula | Venus flytrap | Carnivorous plant snapping shut on insect prey
+Drosera rotundifolia | Round-leaved sundew | Carnivorous bog plant with sticky tentacled leaves
+Nepenthes rajah | Rajah pitcher plant | Giant pitcher plant trapping insects and small vertebrates
+Sarracenia purpurea | Purple pitcher plant | North American carnivore with rain-filled leaf traps
+Rafflesia arnoldii | Corpse flower | Giant parasitic flower smelling of rotting flesh
+Amorphophallus titanum | Titan arum | Huge inflorescence producing carrion odor and heat
+Cuscuta campestris | Field dodder | Leafless parasitic vine tapping host vascular tissue
+Viscum album | European mistletoe | Evergreen hemiparasite spread by birds
+Striga hermonthica | Purple witchweed | Root parasite devastating cereal crops
+Arabidopsis thaliana | Thale cress | Small weed and premier plant genetics model
+Brassica oleracea | Wild cabbage | Species domesticated into kale broccoli cabbage and cauliflower
+Brassica rapa | Field mustard | Crop species including turnip bok choy and napa cabbage
+Raphanus sativus | Radish | Root vegetable with pungent glucosinolates
+Papaver somniferum | Opium poppy | Flowering crop producing edible seeds and opiate alkaloids
+Eschscholzia californica | California poppy | Orange-flowered drought-adapted state flower
+Aquilegia canadensis | Red columbine | Nectar-spurred woodland flower pollinated by hummingbirds
+Ranunculus acris | Meadow buttercup | Glossy yellow-flowered grassland herb
+Clematis vitalba | Old man's beard | Vigorous climbing vine with feathery seed heads
+Ceratophyllum demersum | Hornwort | Rootless submerged aquatic flowering plant
+Zostera marina | Eelgrass | Marine flowering plant forming underwater meadows
+Lemna minor | Common duckweed | Tiny floating flowering plant reproducing rapidly
+Wolffia globosa | Asian watermeal | One of the smallest flowering plants
+Musa acuminata | Wild banana | Major ancestor of edible bananas
+Musa × paradisiaca | Plantain | Starchy domesticated banana hybrid cooked as staple food
+Cocos nucifera | Coconut palm | Coastal palm producing buoyant ocean-dispersed fruits
+Phoenix dactylifera | Date palm | Desert palm cultivated for sweet fruits
+Elaeis guineensis | African oil palm | High-yield tropical oil crop
+Washingtonia robusta | Mexican fan palm | Tall slender ornamental palm
+Ananas comosus | Pineapple | Bromeliad producing a fused multiple fruit
+Tillandsia usneoides | Spanish moss | Rootless epiphytic bromeliad absorbing water from air
+Puya raimondii | Queen of the Andes | Giant bromeliad flowering once after decades
+Zea mays | Maize | Domesticated grass transformed from teosinte
+Triticum aestivum | Bread wheat | Hexaploid cereal central to global agriculture
+Oryza sativa | Asian rice | Flood-tolerant cereal feeding billions
+Hordeum vulgare | Barley | Ancient cereal used for food malt and animal feed
+Avena sativa | Oat | Cool-season cereal with nutrient-rich grains
+Secale cereale | Rye | Cold-tolerant cereal used in bread and whiskey
+Saccharum officinarum | Sugarcane | Giant grass storing sucrose in its stems
+Bambusa vulgaris | Common bamboo | Fast-growing woody grass with hollow culms
+Poa pratensis | Kentucky bluegrass | Rhizomatous turf and pasture grass
+Cenchrus purpureus | Elephant grass | Extremely tall tropical forage grass
+Typha latifolia | Broadleaf cattail | Wetland monocot with dense brown flower spikes
+Juncus effusus | Soft rush | Wetland plant with cylindrical stems
+Cyperus papyrus | Papyrus | Tall sedge historically used to make writing material
+Carex pendula | Pendulous sedge | Large woodland sedge with hanging flower spikes
+Eichhornia crassipes | Water hyacinth | Floating aquatic plant and severe invasive weed
+Victoria amazonica | Giant Amazon water lily | Aquatic plant with enormous ribbed floating leaves
+Eucalyptus regnans | Mountain ash | Tallest flowering plant species
+Adansonia digitata | African baobab | Massive water-storing tree with swollen trunk
+Acer saccharum | Sugar maple | North American tree tapped for maple syrup
+Acer palmatum | Japanese maple | Small tree prized for delicate divided leaves
+Populus tremuloides | Quaking aspen | Clonal tree with leaves trembling on flattened stalks
+Salix babylonica | Weeping willow | Streamside tree with long drooping branches
+Hevea brasiliensis | Rubber tree | Tropical tree producing commercial latex
+Manihot esculenta | Cassava | Drought-tolerant root crop requiring toxin removal
+Ricinus communis | Castor bean | Fast-growing plant whose seeds contain ricin and castor oil
+Euphorbia pulcherrima | Poinsettia | Ornamental with bright red modified leaves
+Carnegiea gigantea | Saguaro cactus | Giant columnar cactus iconic to the Sonoran Desert
+Opuntia ficus-indica | Prickly pear | Paddle-stem cactus producing edible fruits
+Echinocactus grusonii | Golden barrel cactus | Round ribbed cactus densely covered in golden spines
+Lophophora williamsii | Peyote | Small spineless cactus containing mescaline
+Schlumbergera truncata | Thanksgiving cactus | Epiphytic cactus with flattened jointed stems
+Saccharomyces cerevisiae | Baker's yeast | Single-celled fungus used in bread beer and genetics
+Schizosaccharomyces pombe | Fission yeast | Rod-shaped yeast dividing by medial fission
+Candida albicans | Candida yeast | Opportunistic human-associated fungus switching growth forms
+Cryptococcus neoformans | Cryptococcus | Encapsulated yeast capable of causing meningitis
+Aspergillus niger | Black aspergillus | Filamentous mold used industrially to make citric acid
+Aspergillus flavus | Yellow aspergillus | Crop-associated mold capable of producing aflatoxin
+Penicillium chrysogenum | Penicillin mold | Filamentous fungus historically used to produce penicillin
+Penicillium roqueforti | Blue cheese mold | Fungus creating veins and flavor in blue cheeses
+Rhizopus stolonifer | Black bread mold | Fast-growing zygomycete producing dark sporangia
+Mucor mucedo | Pin mold | Common saprotrophic mold with upright spore cases
+Neurospora crassa | Red bread mold | Filamentous fungus central to biochemical genetics
+Claviceps purpurea | Ergot fungus | Grass parasite producing toxic alkaloid-filled sclerotia
+Cordyceps militaris | Scarlet caterpillarclub | Orange fungus parasitizing insect pupae
+Ophiocordyceps unilateralis | Zombie-ant fungus | Parasite manipulating ant behavior before death
+Trichophyton rubrum | Athlete's foot fungus | Dermatophyte digesting keratin in skin and nails
+Batrachochytrium dendrobatidis | Amphibian chytrid | Aquatic fungus driving global amphibian declines
+Allomyces macrogynus | Allomyces | Aquatic fungus with alternating haploid and diploid generations
+Pilobolus crystallinus | Dung cannon fungus | Fungus explosively launching spore packets toward light
+Amanita muscaria | Fly agaric | Iconic red-and-white psychoactive mushroom
+Amanita phalloides | Death cap | Deadly mushroom containing liver-destroying amatoxins
+Agaricus bisporus | Button mushroom | Widely cultivated mushroom including cremini and portobello forms
+Pleurotus ostreatus | Oyster mushroom | Wood-decaying edible fungus capable of trapping nematodes
+Lentinula edodes | Shiitake | East Asian edible mushroom grown on hardwood
+Boletus edulis | Porcini | Large prized edible bolete with pores instead of gills
+Cantharellus cibarius | Golden chanterelle | Yellow edible mushroom with blunt ridges
+Morchella esculenta | Morel | Honeycombed spring mushroom prized as food
+Tuber melanosporum | Black truffle | Underground aromatic fungus dispersed by animals
+Phallus impudicus | Common stinkhorn | Carrion-scented mushroom spreading spores via flies
+Hydnellum peckii | Bleeding tooth fungus | Tooth fungus exuding red droplets when young
+Hericium erinaceus | Lion's mane mushroom | White cascading tooth fungus growing on wood
+Armillaria ostoyae | Honey fungus | Root parasite forming some of Earth's largest organisms
+Fomitopsis betulina | Birch polypore | Shelf fungus specializing on birch trees
+Ganoderma lucidum | Reishi | Glossy bracket fungus used in traditional medicine
+Laetiporus sulphureus | Chicken of the woods | Bright orange edible shelf fungus
+Geastrum triplex | Collared earthstar | Puffball relative opening into star-shaped rays
+Lycoperdon perlatum | Common puffball | Fungus releasing spores through an apical pore
+Physarum polycephalum | Many-headed slime mold | Network-forming amoebozoan solving spatial problems
+Dictyostelium discoideum | Social amoeba | Cells aggregate into a multicellular fruiting body
+Amoeba proteus | Giant amoeba | Large shape-shifting freshwater amoeba using pseudopods
+Entamoeba histolytica | Dysentery amoeba | Human intestinal parasite capable of tissue invasion
+Naegleria fowleri | Brain-eating amoeba | Warm-water amoeba rarely infecting the human nervous system
+Acanthamoeba castellanii | Acanthamoeba | Free-living amoeba with spiny projections and resistant cysts
+Foraminifera | Foraminiferans | Amoeboid protists building intricate mineral shells
+Globigerina bulloides | Planktonic foraminifer | Ocean drifter whose shells record past climates
+Radiolaria | Radiolarians | Marine protists with elaborate glasslike silica skeletons
+Actinosphaerium eichhornii | Sun animalcule | Large freshwater heliozoan with radiating stiff pseudopods
+Paramecium caudatum | Paramecium | Ciliated freshwater protist covered in coordinated hairs
+Stentor coeruleus | Blue trumpet animalcule | Giant ciliate shaped like a trumpet and able to regenerate
+Vorticella convallaria | Vorticella | Bell-shaped ciliate retracting on a coiled stalk
+Tetrahymena thermophila | Tetrahymena | Ciliate model with separate germline and somatic nuclei
+Euplotes eurystomus | Euplotes | Flattened ciliate walking on fused bundles of cilia
+Giardia duodenalis | Giardia | Flagellated intestinal parasite with two nuclei
+Trichomonas vaginalis | Trichomonad | Anaerobic human parasite lacking conventional mitochondria
+Trypanosoma brucei | African trypanosome | Tsetse-transmitted flagellate evading immunity by antigen switching
+Trypanosoma cruzi | Chagas parasite | Kissing-bug-transmitted protist infecting muscle and nerve cells
+Leishmania major | Leishmania | Sand-fly-transmitted intracellular parasite
+Euglena gracilis | Euglena | Photosynthetic flagellate with flexible pellicle and eyespot
+Noctiluca scintillans | Sea sparkle | Large bioluminescent dinoflagellate causing glowing waves
+Symbiodinium microadriaticum | Coral symbiont | Photosynthetic dinoflagellate living inside reef animals
+Alexandrium catenella | Toxic dinoflagellate | Bloom-forming plankton producing paralytic shellfish toxins
+Emiliania huxleyi | Coccolithophore | Oceanic alga covered in calcium carbonate plates
+Phaeocystis antarctica | Antarctic colonial alga | Southern Ocean phytoplankton forming gelatinous colonies
+Chlamydomonas reinhardtii | Chlamydomonas | Two-flagellated green alga and photosynthesis model
+Volvox carteri | Volvox | Spherical green-algal colony with reproductive specialization
+Chlorella vulgaris | Chlorella | Tiny nonmotile green alga cultivated for biomass
+Ulva lactuca | Sea lettuce | Sheetlike green seaweed common on nutrient-rich coasts
+Caulerpa taxifolia | Killer alga | Giant single-celled green seaweed and invasive species
+Macrocystis pyrifera | Giant kelp | Huge brown alga forming underwater forests
+Sargassum natans | Floating sargassum | Pelagic brown alga creating open-ocean habitat
+Fucus vesiculosus | Bladder wrack | Intertidal brown alga with paired air bladders
+Laminaria digitata | Oarweed | Large kelp anchored to rocky North Atlantic shores
+Porphyra umbilicalis | Nori laver | Thin red alga related to edible nori
+Chondrus crispus | Irish moss | Red seaweed source of carrageenan
+Galdieria sulphuraria | Acid-loving red alga | Heat- and acid-tolerant alga from volcanic habitats
+Diatoma vulgare | Zigzag diatom | Silica-shelled alga forming linked colonies
+Thalassiosira pseudonana | Marine diatom | Tiny photosynthetic plankter with glasslike cell wall
+Navicula cryptocephala | Boat-shaped diatom | Motile benthic alga gliding along surfaces
+Prochlorococcus marinus | Prochlorococcus | Tiny cyanobacterium performing a major share of ocean photosynthesis
+Synechococcus elongatus | Synechococcus | Photosynthetic cyanobacterium with a circadian clock
+Anabaena variabilis | Anabaena | Filamentous cyanobacterium with nitrogen-fixing heterocysts
+Nostoc commune | Star jelly cyanobacterium | Gelatinous terrestrial cyanobacterial colony surviving desiccation
+Escherichia coli | E. coli | Versatile gut bacterium and foundational laboratory model
+Bacillus subtilis | Hay bacillus | Spore-forming soil bacterium and model gram-positive microbe
+Staphylococcus aureus | Golden staph | Skin-associated bacterium capable of serious opportunistic infections
+Streptococcus pneumoniae | Pneumococcus | Encapsulated respiratory bacterium causing pneumonia
+Mycobacterium tuberculosis | Tuberculosis bacterium | Slow-growing intracellular pathogen with waxy cell wall
+Vibrio cholerae | Cholera bacterium | Curved aquatic bacterium producing severe secretory diarrhea
+Deinococcus radiodurans | Radiation-resistant bacterium | Microbe exceptionally tolerant of radiation and desiccation
+Thermus aquaticus | Thermus aquaticus | Hot-spring bacterium source of heat-stable Taq polymerase
+Helicobacter pylori | H. pylori | Spiral stomach bacterium associated with ulcers
+Borrelia burgdorferi | Lyme disease spirochete | Tick-borne corkscrew-shaped bacterium
+Clostridium botulinum | Botulism bacterium | Anaerobic spore-former producing botulinum neurotoxin
+Rhizobium leguminosarum | Rhizobium | Root-nodule bacterium fixing nitrogen for legumes
+Nitrosomonas europaea | Ammonia-oxidizing bacterium | Chemolithotroph converting ammonia to nitrite
+Bdellovibrio bacteriovorus | Predatory bacterium | Tiny bacterium invading and consuming other bacteria
+Myxococcus xanthus | Social bacterium | Cooperative predator forming multicellular fruiting bodies
+Halobacterium salinarum | Salt-loving archaeon | Purple-pigmented archaeon thriving in saturated brines
+Methanobrevibacter smithii | Human-gut methanogen | Archaeon consuming hydrogen and producing methane
+Methanocaldococcus jannaschii | Hydrothermal-vent methanogen | Hyperthermophilic archaeon from deep-sea vents
+Sulfolobus acidocaldarius | Sulfolobus | Heat- and acid-loving archaeon from volcanic springs
+Pyrococcus furiosus | Furious fireball archaeon | Hyperthermophile growing near the boiling point of water
+Nanoarchaeum equitans | Nanoarchaeum | Tiny archaeal symbiont attached to another archaeon
+Candidatus Prometheoarchaeum syntrophicum | Prometheoarchaeum | Asgard archaeon illuminating eukaryotic origins
+Marine picoplankton | Marine picoplankton | Informal endpoint for ultratiny oceanic photosynthetic cells
+Uncultured DPANN archaea | DPANN archaea | Diverse ultrasmall archaea often dependent on microbial hosts
+Tyrannosaurus rex | Tyrannosaurus rex | Giant bone-crushing theropod predator of Late Cretaceous North America
+Triceratops horridus | Triceratops | Three-horned ceratopsian herbivore with a broad neck frill
+Stegosaurus stenops | Stegosaurus | Plate-backed Jurassic herbivore with a spiked tail
+Brachiosaurus altithorax | Brachiosaurus | Tall-shouldered long-necked sauropod browser
+Velociraptor mongoliensis | Velociraptor | Feathered sickle-clawed predator from Cretaceous Mongolia
+Spinosaurus aegyptiacus | Spinosaurus | Sail-backed semiaquatic theropod specialized for fish
+Ankylosaurus magniventris | Ankylosaurus | Heavily armored herbivore with a massive tail club
+Parasaurolophus walkeri | Parasaurolophus | Duck-billed dinosaur with a long resonating head crest
+Archaeopteryx lithographica | Archaeopteryx | Feathered Jurassic dinosaur with wings teeth and long tail
+Quetzalcoatlus northropi | Quetzalcoatlus | Giraffe-sized azhdarchid pterosaur and giant flier
+Mosasaurus hoffmannii | Mosasaurus | Huge marine lizard ruling Late Cretaceous seas
+Ichthyosaurus communis | Ichthyosaurus | Dolphin-shaped marine reptile with enormous eyes
+Dimetrodon grandis | Dimetrodon | Sail-backed Permian synapsid predating dinosaurs
+Inostrancevia alexandri | Inostrancevia | Saber-toothed Permian gorgonopsian predator
+Smilodon fatalis | Saber-toothed cat | Muscular ambush feline with extremely long canine teeth
+Mammuthus primigenius | Woolly mammoth | Shaggy cold-adapted elephant of the Ice Age
+Mammut americanum | American mastodon | Browsing proboscidean with conical-cusped teeth
+Megatherium americanum | Giant ground sloth | Elephant-sized terrestrial sloth of South America
+Doedicurus clavicaudatus | Doedicurus | Armored glyptodont with a clubbed tail
+Thylacinus cynocephalus | Thylacine | Recently extinct striped marsupial predator of Tasmania
+Raphus cucullatus | Dodo | Flightless island pigeon driven extinct by humans and introduced animals
+Dinornis robustus | South Island giant moa | Enormous flightless browsing bird of New Zealand
+Aepyornis maximus | Elephant bird | Giant flightless Malagasy bird that laid enormous eggs
+Hesperornis regalis | Hesperornis | Toothed flightless diving bird of Cretaceous seas
+Dunkleosteus terrelli | Dunkleosteus | Giant armored Devonian fish with self-sharpening jaw plates
+Otodus megalodon | Megalodon | Enormous extinct shark that hunted marine mammals
+Tiktaalik roseae | Tiktaalik | Lobe-finned fish with a mobile neck and limb-like fins
+Eusthenopteron foordi | Eusthenopteron | Devonian lobe-finned fish close to early tetrapods
+Anomalocaris canadensis | Anomalocaris | Large Cambrian swimming predator with grasping appendages
+Opabinia regalis | Opabinia | Five-eyed Cambrian animal with a flexible proboscis
+Hallucigenia sparsa | Hallucigenia | Tiny Cambrian lobopodian with dorsal spines and clawed legs
+Wiwaxia corrugata | Wiwaxia | Armored Cambrian seafloor grazer with scales and long spines
+Aegirocassis benmoulae | Aegirocassis | Giant Ordovician filter-feeding radiodont arthropod
+Dickinsonia costata | Dickinsonia | Ediacaran seafloor organism with quilted oval body

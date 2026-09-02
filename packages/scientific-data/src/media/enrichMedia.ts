@@ -21,7 +21,7 @@ const DEFAULT_MAX_TARGETS = 180;
 const DEFAULT_TIMEOUT_MS = 9000;
 const DEFAULT_RETRIES = 2;
 const RECONSTRUCTION_PROMPT_VERSION = 'm6.1';
-const RECONSTRUCTION_GENERATION_MODEL = 'queued-manifest';
+const RECONSTRUCTION_GENERATION_MODEL = 'inline-svg-v1';
 
 export async function enrichMediaForScientificTree(
   scientificTree: ScientificPhylogeny,
@@ -175,20 +175,34 @@ export async function enrichMediaForScientificTree(
     const queueEntry = buildReconstructionQueueEntry(node, workingTree, generatedAt);
     reconstructionQueue.push(queueEntry);
 
-    if (!node.reconstruction) {
-      node.reconstruction = {
-        assetId: `reconstruction-${node.id}`,
-        url: `pending://reconstruction/${node.id}`,
-        generationModel: RECONSTRUCTION_GENERATION_MODEL,
-        prompt: queueEntry.prompt,
-        promptVersion: queueEntry.promptVersion,
-        reviewStatus: 'pending-review',
-        scientificConfidence: node.navigationOnly ? 'speculative' : 'low',
-        evidenceBasis: queueEntry.evidenceBasis,
-        sourceNodeIds: [node.id],
-        createdAt: generatedAt
-      };
+    const reconstructionAsset = buildGeneratedReconstructionAsset(node, queueEntry, generatedAt);
+    assetsById[reconstructionAsset.assetId] = reconstructionAsset;
+
+    const nodeMedia = nodeMediaByNodeId[node.id] ?? {
+      nodeId: node.id,
+      primaryAssetId: null,
+      assetIds: []
+    };
+    if (!nodeMedia.assetIds.includes(reconstructionAsset.assetId)) {
+      nodeMedia.assetIds.push(reconstructionAsset.assetId);
     }
+    if (!nodeMedia.primaryAssetId) {
+      nodeMedia.primaryAssetId = reconstructionAsset.assetId;
+    }
+    nodeMediaByNodeId[node.id] = nodeMedia;
+
+    node.reconstruction = {
+      assetId: reconstructionAsset.assetId,
+      url: reconstructionAsset.url,
+      generationModel: RECONSTRUCTION_GENERATION_MODEL,
+      prompt: queueEntry.prompt,
+      promptVersion: queueEntry.promptVersion,
+      reviewStatus: 'generated',
+      scientificConfidence: node.navigationOnly ? 'speculative' : 'low',
+      evidenceBasis: queueEntry.evidenceBasis,
+      sourceNodeIds: [node.id],
+      createdAt: generatedAt
+    };
   }
 
   const providerSnapshots = Object.values(providerStats).map((entry) => ({
@@ -794,10 +808,72 @@ function buildReconstructionQueueEntry(
     prompt,
     promptVersion: RECONSTRUCTION_PROMPT_VERSION,
     generationModel: RECONSTRUCTION_GENERATION_MODEL,
-    status: 'pending-review',
+    status: 'generated',
     evidenceBasis,
     requestedAt
   };
+}
+
+function buildGeneratedReconstructionAsset(
+  node: PhyloNode,
+  queueEntry: ReconstructionQueueEntry,
+  generatedAt: string
+): MediaAssetRecord {
+  const assetId = `reconstruction-${node.id}`;
+  const url = buildReconstructionDataUrl(node);
+
+  return {
+    assetId,
+    nodeId: node.id,
+    kind: 'reconstruction',
+    url,
+    title: `Reconstruction: ${node.displayName}`,
+    confidence: node.navigationOnly ? 'low' : 'medium',
+    retrievedAt: generatedAt,
+    attribution: {
+      providerId: 'generated-reconstruction',
+      sourceRecordId: node.id,
+      attributionText: 'Generated lineage reconstruction from descendant summary metadata.',
+      licenseCode: 'cc0',
+      licenseName: 'CC0 1.0',
+      licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/'
+    },
+    provenance: [
+      ...node.provenance,
+      buildSourceReference({
+        sourceId: 'reconstruction-generator',
+        sourceType: 'curated',
+        note: `Generated inline reconstruction from prompt version ${queueEntry.promptVersion}.`
+      })
+    ]
+  };
+}
+
+function buildReconstructionDataUrl(node: PhyloNode): string {
+  const title = escapeSvgText(node.displayName);
+  const subtitle = escapeSvgText(node.navigationOnly ? 'Speculative lineage cluster' : 'Inferred ancestral lineage');
+  const svg =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">' +
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+    '<stop offset="0%" stop-color="#0f2f2b"/><stop offset="100%" stop-color="#1f4f48"/>' +
+    '</linearGradient></defs>' +
+    '<rect width="640" height="360" fill="url(#g)"/>' +
+    '<circle cx="120" cy="120" r="80" fill="#2f7d6f" opacity="0.3"/>' +
+    '<circle cx="520" cy="260" r="110" fill="#94d2bd" opacity="0.2"/>' +
+    `<text x="40" y="190" fill="#f1faee" font-family="Georgia,serif" font-size="34">${title}</text>` +
+    `<text x="40" y="230" fill="#d9f2ea" font-family="Georgia,serif" font-size="19">${subtitle}</text>` +
+    '</svg>';
+
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+
+function escapeSvgText(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function collectDescendantNames(

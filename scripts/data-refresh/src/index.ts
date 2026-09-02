@@ -9,7 +9,6 @@ interface LatestPointer {
 }
 
 interface CliOptions {
-  promoteToApproved: boolean;
   mediaOnline: boolean;
   mediaTargetLimit?: number | undefined;
   mediaTimeoutMs?: number | undefined;
@@ -24,7 +23,6 @@ async function refreshData(options: CliOptions) {
   const approvedDir = resolve(workspaceRoot, 'data/approved');
 
   const refreshOptions = {
-    promoteToApproved: options.promoteToApproved,
     mediaOnline: options.mediaOnline,
     ...(options.mediaTargetLimit !== undefined
       ? { mediaTargetLimit: options.mediaTargetLimit }
@@ -101,23 +99,12 @@ function hasBooleanFlag(name: string): boolean {
   return fromEnv === 'true' || fromEnv === '1';
 }
 
-function inferMediaOnlineFromLifecycle(): boolean {
-  const event = process.env.npm_lifecycle_event;
-  return event === 'refresh:media' || event === 'promote:media';
-}
-
-function inferProgressFromLifecycle(): boolean {
-  const event = process.env.npm_lifecycle_event;
-  return event === 'refresh:media' || event === 'promote:media';
-}
-
 const options: CliOptions = {
-  promoteToApproved: hasBooleanFlag('--promote-approved'),
-  mediaOnline: hasBooleanFlag('--media-online') || inferMediaOnlineFromLifecycle(),
+  mediaOnline: true,
   mediaTargetLimit: parseOptionalNumberFlag('--media-target-limit'),
   mediaTimeoutMs: parseOptionalNumberFlag('--media-timeout-ms'),
   mediaRetries: parseOptionalNumberFlag('--media-retries'),
-  progress: hasBooleanFlag('--progress') || inferProgressFromLifecycle(),
+  progress: hasBooleanFlag('--progress'),
   progressIntervalPercent: parseOptionalNumberFlag('--progress-interval-percent')
 };
 

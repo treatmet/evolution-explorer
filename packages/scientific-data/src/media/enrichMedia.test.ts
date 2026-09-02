@@ -112,7 +112,10 @@ describe('enrichMediaForScientificTree', () => {
     expect(result.media.providerSnapshots.some((provider) => provider.providerId === 'openverse')).toBe(
       true
     );
-    expect(enrichedTree.nodesById['luca']?.reconstruction?.reviewStatus).toBe('pending-review');
+    expect(enrichedTree.nodesById['luca']?.reconstruction?.reviewStatus).toBe('generated');
+    const reconstructionAssetId = enrichedTree.nodesById['luca']?.reconstruction?.assetId;
+    expect(reconstructionAssetId).toBeTruthy();
+    expect(reconstructionAssetId ? result.media.assetsById[reconstructionAssetId] : undefined).toBeTruthy();
     expect(result.warnings.some((warning) => warning.includes('offline mode'))).toBe(true);
   });
 });

@@ -2,7 +2,12 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 
-import type { PhyloNode, ScientificPhylogeny, SourceReference } from '@evo-tree/domain';
+import type {
+  PhylogeneticTrait,
+  PhyloNode,
+  ScientificPhylogeny,
+  SourceReference
+} from '@evo-tree/domain';
 
 import type { TargetSpecies } from '../types';
 
@@ -90,36 +95,21 @@ export async function buildOpenTreeScientificPhylogeny(
   const resolvedTargetCount = resolvedTargets.length;
 
   if (resolvedTargetCount < 2) {
-    warnings.push('OpenTree topology unavailable for this run; using unresolved catalog topology fallback.');
-    return {
-      scientificPhylogeny: buildFallbackCatalogTree(
-        targets,
-        options.datasetVersion,
-        fallbackTreeOptions(options.maxChildrenPerNavigationNode)
-      ),
-      usedOpenTreeTopology: false,
-      resolvedTargetCount,
-      unresolvedTargetCount: targets.length - resolvedTargetCount,
-      warnings
-    };
+    throw new Error(
+      `OpenTree topology unavailable: only ${resolvedTargetCount} target(s) resolved to OTT IDs. ` +
+        'At least 2 resolved targets are required to generate a runtime tree.'
+    );
   }
 
   const uniqueOttIds = [...new Set(resolvedTargets.map((entry) => entry.ottId).filter(isNumber))];
   const inducedSets = await fetchOpenTreeInducedSubtreeSets(uniqueOttIds, lookupOptions);
 
   if (inducedSets.newicks.length === 0) {
-    warnings.push('OpenTree induced subtree was unavailable; using unresolved catalog topology fallback.');
-    return {
-      scientificPhylogeny: buildFallbackCatalogTree(
-        targets,
-        options.datasetVersion,
-        fallbackTreeOptions(options.maxChildrenPerNavigationNode)
-      ),
-      usedOpenTreeTopology: false,
-      resolvedTargetCount,
-      unresolvedTargetCount: targets.length - resolvedTargetCount,
-      warnings: [...warnings, ...inducedSets.warnings]
-    };
+    const fallbackWarning = inducedSets.warnings.join(' ');
+    throw new Error(
+      'OpenTree topology unavailable: induced subtree request returned no usable topology.' +
+        (fallbackWarning ? ` ${fallbackWarning}` : '')
+    );
   }
   warnings.push(...inducedSets.warnings);
 
@@ -177,18 +167,9 @@ export async function buildOpenTreeScientificPhylogeny(
   }
 
   if (rootChildIds.length === 0) {
-    warnings.push('OpenTree topology produced no usable mapped endpoints; using unresolved catalog topology fallback.');
-    return {
-      scientificPhylogeny: buildFallbackCatalogTree(
-        targets,
-        options.datasetVersion,
-        fallbackTreeOptions(options.maxChildrenPerNavigationNode)
-      ),
-      usedOpenTreeTopology: false,
-      resolvedTargetCount,
-      unresolvedTargetCount,
-      warnings
-    };
+    throw new Error(
+      'OpenTree topology produced no usable mapped endpoints after materialization. Tree generation aborted.'
+    );
   }
 
   const rootNode = nodesById[ROOT_ID];
@@ -568,6 +549,8 @@ function hydrateInternalLineageMetadata(nodesById: Record<string, PhyloNode>, ro
       lineageProvenance.push(...childSummary.lineageProvenance);
     }
 
+    const extantDescendantCount = extantCounts.reduce((sum, value) => sum + value, 0);
+
     if (nodeId !== rootId) {
       const mergedProvenance = mergeProvenance(
         node.provenance,
@@ -579,6 +562,19 @@ function hydrateInternalLineageMetadata(nodesById: Record<string, PhyloNode>, ro
           ? `Clade of ${representativeNames.slice(0, 2).join(' + ')}`
           : node.displayName;
 
+      const lineageTraits =
+        node.traits.length > 0
+          ? node.traits
+          : [
+              buildInferredLineageSummaryTrait({
+                node,
+                displayName: nextDisplayName,
+                representativeNames,
+                extantDescendantCount,
+                mergedProvenance
+              })
+            ];
+
       nodesById[nodeId] = {
         ...node,
         displayName: nextDisplayName,
@@ -587,11 +583,11 @@ function hydrateInternalLineageMetadata(nodesById: Record<string, PhyloNode>, ro
           mergedProvenance.some((source) => source.sourceType === 'open-tree') ? 'medium' : node.confidence,
         divergenceAgeMa: node.divergenceAgeMa ?? estimateAgeByDepth(depth),
         rank: node.rank ?? 'clade',
-        provenance: mergedProvenance
+        provenance: mergedProvenance,
+        traits: lineageTraits
       };
     }
 
-    const extantDescendantCount = extantCounts.reduce((sum, value) => sum + value, 0);
     return {
       extantDescendantCount,
       representativeNames: uniqueValues(representativeNames).slice(0, 6),
@@ -600,6 +596,31 @@ function hydrateInternalLineageMetadata(nodesById: Record<string, PhyloNode>, ro
   };
 
   visit(rootId, 1);
+}
+
+function buildInferredLineageSummaryTrait(options: {
+  node: PhyloNode;
+  displayName: string;
+  representativeNames: string[];
+  extantDescendantCount: number;
+  mergedProvenance: SourceReference[];
+}): PhylogeneticTrait {
+  const examples = uniqueValues(options.representativeNames).slice(0, 3);
+  const confidence = options.mergedProvenance.some((source) => source.sourceType === 'open-tree')
+    ? 'medium'
+    : 'low';
+
+  return {
+    id: `inferred-lineage-summary-${options.node.id}`,
+    name: `Lineage summary: ${options.displayName}`,
+    description:
+      options.extantDescendantCount > 0
+        ? `Inferred lineage anchored by ${options.displayName} with sampled descendants ${examples.join(', ') || 'none'} and ${options.extantDescendantCount} extant descendant endpoints represented in this compiled tree.`
+        : `Inferred lineage anchored by ${options.displayName} with sampled descendants ${examples.join(', ') || 'none'} and no extant descendant endpoints currently represented in this compiled tree.`,
+    traitType: 'inferred',
+    confidence,
+    provenance: options.mergedProvenance
+  };
 }
 
 function mergeProvenance(

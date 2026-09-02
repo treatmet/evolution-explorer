@@ -126,4 +126,25 @@ describe('buildOpenTreeScientificPhylogeny', () => {
     expect(human?.taxonId).toBe('ott:770315');
     expect(human?.provenance.some((source) => source.sourceType === 'open-tree')).toBe(true);
   });
+
+  it('throws when OpenTree topology cannot be resolved', async () => {
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async () => {
+      return new Response(JSON.stringify({ results: [{ matches: [] }] }), {
+        status: 200,
+        headers: { 'content-type': 'application/json' }
+      });
+    });
+
+    const cacheDir = await mkdtemp(join(tmpdir(), 'evo-tree-opentree-topology-fail-'));
+
+    await expect(
+      buildOpenTreeScientificPhylogeny(targets, {
+        datasetVersion: 'compiled-test-fail',
+        cacheDir,
+        online: true,
+        retries: 0,
+        timeoutMs: 4000
+      })
+    ).rejects.toThrow('OpenTree topology unavailable');
+  });
 });

@@ -43,7 +43,6 @@ export interface RefreshPaths {
 }
 
 export interface RefreshOptions {
-  promoteToApproved?: boolean;
   now?: Date;
   mediaOnline?: boolean;
   mediaTargetLimit?: number;

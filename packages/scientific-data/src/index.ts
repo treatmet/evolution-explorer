@@ -6,6 +6,7 @@ export * from './compiler/types';
 export * from './compiler/adapters';
 export * from './compiler/buildCatalogScientificPhylogeny';
 export * from './compiler/buildOpenTreeScientificPhylogeny';
+export * from './compiler/pruneLowConfidenceUnaryNodes';
 export * from './compiler/refreshPipeline';
 export * from './media/types';
 export * from './media/enrichMedia';

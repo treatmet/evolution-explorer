@@ -47,6 +47,22 @@ const targetMetadata: TargetDifficultyMetadata[] = [
   { speciesId: 'panthera-tigris', familiarityScore: 0.8 }
 ];
 
+const PRIORITY_CLADE_LABELS = [
+  'Eukaryota',
+  'Opisthokonta',
+  'Nucletmycea',
+  'Fungi',
+  'Metazoa',
+  'Animalia',
+  'Chloroplastida',
+  'Plantae',
+  'Bilateria',
+  'Deuterostomia',
+  'Chordata',
+  'Mammalia',
+  'Primates'
+];
+
 interface GesturePoint {
   x: number;
   y: number;
@@ -115,7 +131,13 @@ function getDecisionTraits(node: PhyloNode | null): string[] {
     return [];
   }
 
-  return node.traits.slice(0, 3).map((trait) => trait.name);
+  return node.traits
+    .map((trait) => trait.name)
+    .filter(
+      (traitName) =>
+        !traitName.startsWith('Lineage summary:') && !traitName.startsWith('Lineage anchor:')
+    )
+    .slice(0, 3);
 }
 
 function describeChoiceHint(node: PhyloNode): string {
@@ -227,7 +249,7 @@ function buildPathFromRoot(tree: ScientificPhylogeny, nodeId: string): string[] 
     path.push(cursorId);
     seen.add(cursorId);
 
-    const cursorNode = tree.nodesById[cursorId];
+    const cursorNode: PhyloNode | undefined = tree.nodesById[cursorId];
     cursorId = cursorNode?.parentId ?? null;
   }
 
@@ -275,6 +297,8 @@ function App() {
 
   const [masterDifficultyPercent, setMasterDifficultyPercent] = useState(55);
   const [advancedOpen, setAdvancedOpen] = useState(false);
+  const [difficultyPanelOpen, setDifficultyPanelOpen] = useState(false);
+  const [statusPanelOpen, setStatusPanelOpen] = useState(false);
   const [manualDepth, setManualDepth] = useState<number | null>(null);
   const [manualMaxChoices, setManualMaxChoices] = useState<number | null>(null);
   const [manualFamiliarity, setManualFamiliarity] = useState<number | null>(null);
@@ -318,7 +342,12 @@ function App() {
   );
 
   const playableTreeResult = useMemo(
-    () => buildPlayableScientificTree(scientificTree),
+    () =>
+      buildPlayableScientificTree(scientificTree, {
+        priorityClades: {
+          labels: PRIORITY_CLADE_LABELS
+        }
+      }),
     [scientificTree]
   );
   const playableTree = playableTreeResult.tree;
@@ -357,7 +386,11 @@ function App() {
         );
 
         const nextTree = result.artifact.scientificPhylogeny ?? fixtureScientificPhylogeny;
-        const nextPlayableTree = buildPlayableScientificTree(nextTree).tree;
+        const nextPlayableTree = buildPlayableScientificTree(nextTree, {
+          priorityClades: {
+            labels: PRIORITY_CLADE_LABELS
+          }
+        }).tree;
         setTargetCatalogById(targetCatalog);
         setNodeMediaByNodeId(mediaNodes);
         setMediaAssetsById(mediaAssets);
@@ -424,6 +457,7 @@ function App() {
     session.phase === 'active' &&
     session.backtrackingEnabled &&
     session.visitedNodeIds.length > 1;
+  const isActiveGame = session.phase === 'active';
   const canExploreByClick =
     session.phase === 'configure-difficulty' ||
     session.phase === 'selecting-target' ||
@@ -434,9 +468,6 @@ function App() {
   const scientificNodeCount = Object.keys(playableTree.nodesById).length;
   const rawScientificNodeCount = Object.keys(scientificTree.nodesById).length;
   const skippedNodeCount = Math.max(0, rawScientificNodeCount - scientificNodeCount);
-  const endpointCount = Object.values(playableTree.nodesById).filter(
-    (node) => node.isGameEndpoint
-  ).length;
   const targetEligibleCount = Object.values(playableTree.nodesById).filter(
     (node) => node.isTargetEligible
   ).length;
@@ -464,6 +495,28 @@ function App() {
   const targetImageUrl = targetPrimaryAsset?.thumbnailUrl ?? targetPrimaryAsset?.url;
   const targetImageAttribution = targetPrimaryAsset?.attribution.attributionText;
 
+  const nodeImageById = useMemo(() => {
+    const next: Record<string, string> = {};
+
+    for (const node of Object.values(playableTree.nodesById)) {
+      const nodeMedia = nodeMediaByNodeId[node.id];
+      const primaryAssetId = nodeMedia?.primaryAssetId;
+      if (!primaryAssetId) {
+        continue;
+      }
+
+      const asset = mediaAssetsById[primaryAssetId];
+      const imageUrl = asset?.thumbnailUrl ?? asset?.url;
+      if (!imageUrl) {
+        continue;
+      }
+
+      next[node.id] = imageUrl;
+    }
+
+    return next;
+  }, [mediaAssetsById, nodeMediaByNodeId, playableTree]);
+
   const renderModel = useMemo(
     () =>
       buildRenderModel(playableTree, {
@@ -471,9 +524,10 @@ function App() {
         hoveredNodeId,
         visitedNodeIds: session.visitedNodeIds,
         focusNodeId: session.currentNodeId,
-        focusStrength: 0.52
+        focusStrength: 0.24,
+        nodeImageById
       }),
-    [hoveredNodeId, playableTree, session.currentNodeId, session.visitedNodeIds]
+    [hoveredNodeId, nodeImageById, playableTree, session.currentNodeId, session.visitedNodeIds]
   );
 
   const renderBoundsRef = useRef(renderModel.bounds);
@@ -590,20 +644,40 @@ function App() {
     }
   }
 
-  function exploreFromHere() {
-    setSession((previous) => {
-      if (previous.phase !== 'results' || !previous.results) {
-        return previous;
-      }
+  function pickNewTarget() {
+    if (session.phase === 'configure-difficulty' || session.phase === 'selecting-target') {
+      startRunWithConfiguredDifficulty();
+      return;
+    }
 
-      return {
-        ...previous,
-        phase: 'active',
-        results: null
-      };
-    });
-    setErrorText(null);
+    retryWithNewTarget();
   }
+
+  function focusCameraOnCurrentNode() {
+    const currentRenderNode = renderModel.nodes.find((node) => node.id === session.currentNodeId);
+    if (!currentRenderNode) {
+      return;
+    }
+
+    const camera = cameraRef.current;
+    const nextCamera: CameraState = {
+      ...camera,
+      x: currentRenderNode.worldX,
+      y: currentRenderNode.fisheyeTargetY,
+      zoom: Math.max(camera.zoom, 0.92)
+    };
+
+    setRendererCamera(nextCamera);
+  }
+
+  useEffect(() => {
+    if (!isActiveGame) {
+      return;
+    }
+
+    setDifficultyPanelOpen(false);
+    setAdvancedOpen(false);
+  }, [isActiveGame]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -832,108 +906,220 @@ function App() {
           onPointerLeave={() => setHoveredNodeId(null)}
           aria-label="Evolution tree canvas"
         ></canvas>
-        <div className="timeline-overlay" aria-hidden="true"></div>
 
-        <section className="target-card panel" aria-label="Target card">
-          <p className="label">Target</p>
-          <div className="target-header">
-            <div className="target-avatar" aria-hidden="true">
-              {targetImageUrl ? (
-                <img className="target-avatar-image" src={targetImageUrl} alt="" />
-              ) : (
-                avatarText(targetTitle)
-              )}
+        <section className="top-hud panel" aria-label="Inline control bar">
+          <div className="top-hud-row">
+            <div className="top-hud-left">
+              <div className="hud-chip" title={targetScientificName} aria-label="Current target species">
+                <span className="hud-chip-icon target-chip-icon" aria-hidden="true">
+                  {targetImageUrl ? (
+                    <img className="target-avatar-image" src={targetImageUrl} alt="" />
+                  ) : (
+                    avatarText(targetTitle)
+                  )}
+                </span>
+                <span className="hud-chip-label">Target</span>
+                <span className="hud-chip-value">{targetTitle}</span>
+              </div>
+
+              <div className="hud-item">
+                <button
+                  type="button"
+                  className="hud-chip hud-chip-button"
+                  onClick={() => {
+                    if (!isActiveGame) {
+                      setDifficultyPanelOpen((value) => !value);
+                    }
+                  }}
+                  aria-expanded={difficultyPanelOpen}
+                  aria-controls="difficulty-flyout"
+                  aria-label="Difficulty quick control"
+                  disabled={isActiveGame}
+                  title={isActiveGame ? 'Difficulty is locked during active runs.' : 'Open difficulty options'}
+                >
+                  <span className="hud-chip-icon" aria-hidden="true">D</span>
+                  <span className="hud-chip-label">Difficulty</span>
+                  <span className="hud-chip-value">{masterDifficultyPercent}%</span>
+                </button>
+
+                {difficultyPanelOpen && !isActiveGame ? (
+                  <section id="difficulty-flyout" className="hud-flyout panel" aria-label="Difficulty controls">
+                    <div className="row">
+                      <h2>Difficulty</h2>
+                      <button
+                        type="button"
+                        className="ghost"
+                        onClick={() => setAdvancedOpen((value) => !value)}
+                        aria-expanded={advancedOpen}
+                      >
+                        {advancedOpen ? 'Hide advanced' : 'Show advanced'}
+                      </button>
+                    </div>
+
+                    <label htmlFor="masterDifficulty">Master difficulty: {masterDifficultyPercent}%</label>
+                    <input
+                      id="masterDifficulty"
+                      type="range"
+                      min={0}
+                      max={100}
+                      value={masterDifficultyPercent}
+                      onChange={(event) => setMasterDifficultyPercent(Number(event.target.value))}
+                    />
+
+                    {advancedOpen ? (
+                      <div className="advanced-grid">
+                        <label htmlFor="evolutionDepth">
+                          Evolution Depth: {configuredDifficulty.evolutionDepth}
+                        </label>
+                        <input
+                          id="evolutionDepth"
+                          type="range"
+                          min={8}
+                          max={40}
+                          value={configuredDifficulty.evolutionDepth}
+                          onChange={(event) => setManualDepth(Number(event.target.value))}
+                        />
+
+                        <label htmlFor="targetFamiliarity">
+                          Target Familiarity: {targetFamiliarityPercent}%
+                        </label>
+                        <input
+                          id="targetFamiliarity"
+                          type="range"
+                          min={0}
+                          max={100}
+                          value={targetFamiliarityPercent}
+                          onChange={(event) => setManualFamiliarity(Number(event.target.value))}
+                        />
+
+                        <label htmlFor="maxChoicesPerDecision">
+                          Maximum Choices per Decision: {configuredDifficulty.maxChoicesPerDecision}
+                        </label>
+                        <input
+                          id="maxChoicesPerDecision"
+                          type="range"
+                          min={2}
+                          max={8}
+                          value={configuredDifficulty.maxChoicesPerDecision}
+                          onChange={(event) => setManualMaxChoices(Number(event.target.value))}
+                        />
+
+                        <label className="checkbox-row" htmlFor="backtrackingEnabled">
+                          <input
+                            id="backtrackingEnabled"
+                            type="checkbox"
+                            checked={backtrackingEnabled}
+                            onChange={(event) => setBacktrackingEnabled(event.target.checked)}
+                          />
+                          Backtracking enabled
+                        </label>
+                      </div>
+                    ) : null}
+
+                  </section>
+                ) : null}
+              </div>
+
+              <div className="hud-item">
+                <button
+                  type="button"
+                  className="hud-icon-button"
+                  onClick={() => setStatusPanelOpen((value) => !value)}
+                  aria-expanded={statusPanelOpen}
+                  aria-controls="layer-boundaries-flyout"
+                  aria-label="Toggle Layer Boundaries information"
+                  title="Layer boundaries information"
+                >
+                  i
+                </button>
+
+                {statusPanelOpen ? (
+                  <section
+                    id="layer-boundaries-flyout"
+                    className="hud-flyout panel status-flyout"
+                    aria-label="Layer Boundaries"
+                  >
+                    <div className="row">
+                      <p className="label">Layer Boundaries</p>
+
+                    </div>
+                    <ul>
+                      <li>Source Data: species-list parser + TXT repository</li>
+                      <li>
+                        Scientific Phylogeny: {runtimeDataStatus.source === 'approved' ? 'approved runtime artifact' : 'fixture fallback'} + domain algorithms
+                      </li>
+                      <li>Game Session: traversal, retry, backtracking, terminal and quit scoring</li>
+                      <li>Game Projection: identity map until high-degree navigation grouping milestone</li>
+                      <li>Render Model: Canvas2D renderer with culling, LOD, labels, fisheye</li>
+                      <li>Runtime dataset version: {runtimeDataStatus.datasetVersion}</li>
+                      <li>Compiled target catalog entries: {runtimeDataStatus.targetCatalogCount}</li>
+                      <li>Target-eligible nodes in active scientific tree: {targetEligibleCount}</li>
+                      <li>Renderable hydrated nodes: {scientificNodeCount} (compacted away: {skippedNodeCount})</li>
+                      <li>Merged duplicate clade nodes: {playableTreeResult.mergedNodeCount}</li>
+                      <li>Nodes with inferred fallback traits: {playableTreeResult.inferredTraitNodeCount}</li>
+                      <li>Resolved media assets in artifact: {runtimeDataStatus.mediaAssetCount}</li>
+                      <li>Nodes with media mapping: {runtimeDataStatus.mediaNodeCount}</li>
+                      <li>Pending reconstruction queue entries: {runtimeDataStatus.reconstructionQueueCount}</li>
+                      <li>Media provider failures during build: {runtimeDataStatus.mediaProviderFailureCount}</li>
+                    </ul>
+
+                    {runtimeDataStatus.warning ? (
+                      <p className="tiny">Runtime dataset note: {runtimeDataStatus.warning}</p>
+                    ) : null}
+
+                    {targetImageAttribution ? (
+                      <p className="tiny">Target media attribution: {targetImageAttribution}</p>
+                    ) : null}
+
+                    <p className="tiny">
+                      Current node: {nodeDisplayName(session.currentNodeId)} | Path length: {session.visitedNodeIds.length}
+                    </p>
+                  </section>
+                ) : null}
+              </div>
             </div>
-            <div>
-              <h1 className="target-name">{targetTitle}</h1>
-              <p className="muted target-latin">
-                {targetScientificName}
-              </p>
+
+            <div className="top-hud-right">
+              <div className="actions-row top-actions-row" aria-label="Top action menu">
+                <button type="button" className="ghost" onClick={pickNewTarget}>
+                  New Target
+                </button>
+
+                {session.phase === 'active' ? (
+                  <>
+                    <button
+                      type="button"
+                      className="ghost"
+                      onClick={() => setSession((previous) => backtrack(previous))}
+                      disabled={!canBacktrack}
+                    >
+                      Backtrack
+                    </button>
+                    <button type="button" className="ghost danger" onClick={scoreNow}>
+                      Quit / Score Now
+                    </button>
+                  </>
+                ) : null}
+
+                {session.phase === 'results' && session.results ? (
+                  <>
+                    <button type="button" className="ghost" onClick={retryWithSameTarget}>
+                      Try Again
+                    </button>
+                  </>
+                ) : null}
+              </div>
+
+              <button
+                type="button"
+                className="hud-icon-button target-focus-button"
+                onClick={focusCameraOnCurrentNode}
+                aria-label={`Focus camera on ${currentNode?.displayName ?? 'current node'}`}
+                title="Focus camera on active node"
+              >
+                <span className="target-focus-glyph" aria-hidden="true"></span>
+              </button>
             </div>
-          </div>
-          <p className="tiny">Session phase: {session.phase}</p>
-          {targetImageAttribution ? (
-            <p className="tiny">Media attribution: {targetImageAttribution}</p>
-          ) : null}
-        </section>
-
-        <section className="difficulty-card panel" aria-label="Difficulty controls">
-          <div className="row">
-            <h2>Difficulty</h2>
-            <button
-              type="button"
-              className="ghost"
-              onClick={() => setAdvancedOpen((value) => !value)}
-              aria-expanded={advancedOpen}
-            >
-              {advancedOpen ? 'Hide advanced' : 'Show advanced'}
-            </button>
-          </div>
-
-          <label htmlFor="masterDifficulty">Master difficulty: {masterDifficultyPercent}%</label>
-          <input
-            id="masterDifficulty"
-            type="range"
-            min={0}
-            max={100}
-            value={masterDifficultyPercent}
-            onChange={(event) => setMasterDifficultyPercent(Number(event.target.value))}
-          />
-
-          {advancedOpen ? (
-            <div className="advanced-grid">
-              <label htmlFor="evolutionDepth">
-                Evolution Depth: {configuredDifficulty.evolutionDepth}
-              </label>
-              <input
-                id="evolutionDepth"
-                type="range"
-                min={8}
-                max={40}
-                value={configuredDifficulty.evolutionDepth}
-                onChange={(event) => setManualDepth(Number(event.target.value))}
-              />
-
-              <label htmlFor="targetFamiliarity">
-                Target Familiarity: {targetFamiliarityPercent}%
-              </label>
-              <input
-                id="targetFamiliarity"
-                type="range"
-                min={0}
-                max={100}
-                value={targetFamiliarityPercent}
-                onChange={(event) => setManualFamiliarity(Number(event.target.value))}
-              />
-
-              <label htmlFor="maxChoicesPerDecision">
-                Maximum Choices per Decision: {configuredDifficulty.maxChoicesPerDecision}
-              </label>
-              <input
-                id="maxChoicesPerDecision"
-                type="range"
-                min={2}
-                max={8}
-                value={configuredDifficulty.maxChoicesPerDecision}
-                onChange={(event) => setManualMaxChoices(Number(event.target.value))}
-              />
-
-              <label className="checkbox-row" htmlFor="backtrackingEnabled">
-                <input
-                  id="backtrackingEnabled"
-                  type="checkbox"
-                  checked={backtrackingEnabled}
-                  onChange={(event) => setBacktrackingEnabled(event.target.checked)}
-                />
-                Backtracking enabled
-              </label>
-            </div>
-          ) : null}
-
-          <div className="actions-row">
-            <button type="button" className="ghost" onClick={startRunWithConfiguredDifficulty}>
-              Lock Difficulty + Select Target
-            </button>
           </div>
         </section>
 
@@ -953,13 +1139,7 @@ function App() {
                 </span>
               ))}
             </div>
-          ) : (
-            <p className="tiny">Trait curation for this node is pending in the current runtime dataset.</p>
-          )}
-          <p>
-            {scientificNodeCount} nodes and {endpointCount} endpoints are available from the
-            current runtime scientific tree.
-          </p>
+          ) : null}
 
           {session.phase === 'active' ? (
             <>
@@ -980,32 +1160,7 @@ function App() {
                   </button>
                 ))}
               </div>
-
-              <p className="label">Action Menu</p>
-              <div className="actions-row">
-                <button
-                  type="button"
-                  className="ghost"
-                  onClick={() => setSession((previous) => backtrack(previous))}
-                  disabled={!canBacktrack}
-                >
-                  Backtrack
-                </button>
-                <button type="button" className="ghost" onClick={scoreNow}>
-                  Quit / Score Now
-                </button>
-                <button type="button" className="ghost" onClick={retryWithSameTarget}>
-                  Retry Same Target
-                </button>
-                <button type="button" className="ghost" onClick={retryWithNewTarget}>
-                  Retry New Target
-                </button>
-              </div>
             </>
-          ) : null}
-
-          {canExploreByClick ? (
-            <p className="muted">Exploration mode: click any visible node in the tree to jump there.</p>
           ) : null}
 
           {session.phase === 'results' && session.results ? (
@@ -1036,53 +1191,10 @@ function App() {
                 Genomic similarity: {session.results.genomicSimilarity.status} ({session.results.genomicSimilarity.confidence})
               </p>
               <p className="tiny">{session.results.genomicSimilarity.provenanceNote}</p>
-              <p className="label">Action Menu</p>
-              <div className="actions-row">
-                <button type="button" className="ghost" onClick={retryWithSameTarget}>
-                  Try Again
-                </button>
-                <button type="button" className="ghost" onClick={retryWithNewTarget}>
-                  New Target
-                </button>
-                <button type="button" className="ghost" onClick={exploreFromHere}>
-                  Explore from Here
-                </button>
-              </div>
             </div>
           ) : null}
 
           {errorText ? <p className="error-text">{errorText}</p> : null}
-        </section>
-
-        <section className="status-card panel" aria-label="Architecture status">
-          <p className="label">Layer Boundaries</p>
-          <ul>
-            <li>Source Data: species-list parser + TXT repository</li>
-            <li>
-              Scientific Phylogeny: {runtimeDataStatus.source === 'approved' ? 'approved runtime artifact' : 'fixture fallback'} + domain algorithms
-            </li>
-            <li>Game Session: traversal, retry, backtracking, terminal and quit scoring</li>
-            <li>Game Projection: identity map until high-degree navigation grouping milestone</li>
-            <li>Render Model: Canvas2D renderer with culling, LOD, labels, fisheye</li>
-            <li>Runtime dataset version: {runtimeDataStatus.datasetVersion}</li>
-            <li>Compiled target catalog entries: {runtimeDataStatus.targetCatalogCount}</li>
-            <li>Target-eligible nodes in active scientific tree: {targetEligibleCount}</li>
-            <li>Renderable hydrated nodes: {scientificNodeCount} (compacted away: {skippedNodeCount})</li>
-            <li>Merged duplicate clade nodes: {playableTreeResult.mergedNodeCount}</li>
-            <li>Nodes with inferred fallback traits: {playableTreeResult.inferredTraitNodeCount}</li>
-            <li>Resolved media assets in artifact: {runtimeDataStatus.mediaAssetCount}</li>
-            <li>Nodes with media mapping: {runtimeDataStatus.mediaNodeCount}</li>
-            <li>Pending reconstruction queue entries: {runtimeDataStatus.reconstructionQueueCount}</li>
-            <li>Media provider failures during build: {runtimeDataStatus.mediaProviderFailureCount}</li>
-          </ul>
-
-          {runtimeDataStatus.warning ? (
-            <p className="tiny">Runtime dataset note: {runtimeDataStatus.warning}</p>
-          ) : null}
-
-          <p className="tiny">
-            Current node: {nodeDisplayName(session.currentNodeId)} | Path length: {session.visitedNodeIds.length}
-          </p>
         </section>
       </main>
     </div>

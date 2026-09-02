@@ -12,7 +12,7 @@ function makeTreeWithExtinctTerminal(): ScientificPhylogeny {
       root: {
         id: 'root',
         parentId: null,
-        childIds: ['extinct-tip', 'extant-tip'],
+        childIds: ['extinct-branch', 'extant-tip'],
         kind: 'ancestral',
         displayName: 'Root',
         isGameEndpoint: false,
@@ -24,9 +24,24 @@ function makeTreeWithExtinctTerminal(): ScientificPhylogeny {
         confidence: 'high',
         provenance: []
       },
+      'extinct-branch': {
+        id: 'extinct-branch',
+        parentId: 'root',
+        childIds: ['extinct-tip'],
+        kind: 'unnamed-clade',
+        displayName: 'Extinct branch',
+        isGameEndpoint: false,
+        isTargetEligible: false,
+        navigationOnly: false,
+        extant: false,
+        divergenceAgeMa: 150,
+        traits: [],
+        confidence: 'medium',
+        provenance: []
+      },
       'extinct-tip': {
         id: 'extinct-tip',
-        parentId: 'root',
+        parentId: 'extinct-branch',
         childIds: [],
         kind: 'named-taxon',
         displayName: 'Extinct tip',
@@ -60,7 +75,7 @@ function makeTreeWithExtinctTerminal(): ScientificPhylogeny {
 }
 
 describe('buildRenderModel', () => {
-  it('maps geological time to X with older nodes on the left', () => {
+  it('places descendants to the right of their parent by depth', () => {
     const tree = makeTreeWithExtinctTerminal();
     const model = buildRenderModel(tree, {
       currentNodeId: 'root',
@@ -75,7 +90,7 @@ describe('buildRenderModel', () => {
     expect((root?.worldX ?? 0) < (extant?.worldX ?? 0)).toBe(true);
   });
 
-  it('stops extinct terminal nodes at extinction age', () => {
+  it('aligns extant terminal species at the far-right end depth', () => {
     const tree = makeTreeWithExtinctTerminal();
     const model = buildRenderModel(tree, {
       currentNodeId: 'root',
@@ -83,10 +98,12 @@ describe('buildRenderModel', () => {
       visitedNodeIds: ['root']
     });
 
+    const extinctBranch = model.nodes.find((node) => node.id === 'extinct-branch');
     const extinct = model.nodes.find((node) => node.id === 'extinct-tip');
     const extant = model.nodes.find((node) => node.id === 'extant-tip');
 
-    expect(extinct && extant).toBeTruthy();
-    expect((extinct?.worldX ?? 0) < (extant?.worldX ?? 0)).toBe(true);
+    expect(extinctBranch && extinct && extant).toBeTruthy();
+    expect((extinctBranch?.worldX ?? 0) < (extinct?.worldX ?? 0)).toBe(true);
+    expect((extinct?.worldX ?? 0)).toBe(extant?.worldX ?? 0);
   });
 });

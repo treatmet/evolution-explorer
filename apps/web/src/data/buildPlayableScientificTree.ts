@@ -8,24 +8,54 @@ import type {
 
 const NON_INFORMATIVE_LABELS = new Set(['mrca', 'unnamed clade', 'unnamed-clade']);
 const OPEN_TREE_PLACEHOLDER_LABEL = /^h\d+(?:-\d+)?$/i;
+const DEFAULT_PRIORITY_CLADE_LABELS = [
+  'eukaryota',
+  'opisthokonta',
+  'nucletmycea',
+  'fungi',
+  'metazoa',
+  'animalia',
+  'chloroplastida',
+  'plantae',
+  'bilateria',
+  'deuterostomia',
+  'chordata',
+  'mammalia'
+];
+
+export interface PriorityCladeConfig {
+  enabled?: boolean;
+  labels?: ReadonlyArray<string>;
+}
+
+export interface BuildPlayableScientificTreeOptions {
+  priorityClades?: PriorityCladeConfig;
+}
 
 export interface PlayableScientificTreeResult {
   tree: ScientificPhylogeny;
   skippedNodeCount: number;
   mergedNodeCount: number;
   inferredTraitNodeCount: number;
+  resolvedNonInformativeNodeCount: number;
+  splicedNonInformativeNodeCount: number;
 }
 
 export function buildPlayableScientificTree(
-  sourceTree: ScientificPhylogeny
+  sourceTree: ScientificPhylogeny,
+  options: BuildPlayableScientificTreeOptions = {}
 ): PlayableScientificTreeResult {
   const sourceRoot = sourceTree.nodesById[sourceTree.rootId];
+  const priorityCladeKeys = buildPriorityCladeSet(options.priorityClades);
+
   if (!sourceRoot) {
     return {
       tree: sourceTree,
       skippedNodeCount: 0,
       mergedNodeCount: 0,
-      inferredTraitNodeCount: 0
+      inferredTraitNodeCount: 0,
+      resolvedNonInformativeNodeCount: 0,
+      splicedNonInformativeNodeCount: 0
     };
   }
 
@@ -52,7 +82,7 @@ export function buildPlayableScientificTree(
     );
 
     const isLeafAfterCompression = compressedChildIds.length === 0;
-    const keepNode = forceKeep || shouldKeepNode(node, isLeafAfterCompression);
+    const keepNode = forceKeep || shouldKeepNode(node, isLeafAfterCompression, priorityCladeKeys);
 
     if (!keepNode) {
       skippedNodeCount += 1;
@@ -84,11 +114,18 @@ export function buildPlayableScientificTree(
       tree: sourceTree,
       skippedNodeCount,
       mergedNodeCount: 0,
-      inferredTraitNodeCount
+      inferredTraitNodeCount,
+      resolvedNonInformativeNodeCount: 0,
+      splicedNonInformativeNodeCount: 0
     };
   }
 
-  const mergedNodeCount = normalizeDuplicateClades(nodesById, rootId);
+  const stageOneResult = normalizeDuplicateClades(nodesById, rootId, priorityCladeKeys);
+  const splicedNonInformativeNodeCount = spliceUnresolvedNonInformativeNodes(
+    nodesById,
+    rootId,
+    priorityCladeKeys
+  );
   const normalizedNodesById = rebuildFromRoot(nodesById, rootId);
 
   return {
@@ -97,15 +134,26 @@ export function buildPlayableScientificTree(
       rootId,
       nodesById: normalizedNodesById
     },
-    skippedNodeCount: skippedNodeCount + mergedNodeCount,
-    mergedNodeCount,
-    inferredTraitNodeCount
+    skippedNodeCount:
+      skippedNodeCount + stageOneResult.mergedNodeCount + splicedNonInformativeNodeCount,
+    mergedNodeCount: stageOneResult.mergedNodeCount,
+    inferredTraitNodeCount,
+    resolvedNonInformativeNodeCount: stageOneResult.resolvedNonInformativeNodeCount,
+    splicedNonInformativeNodeCount
   };
 }
 
-function shouldKeepNode(node: PhyloNode, isLeaf: boolean): boolean {
+function shouldKeepNode(
+  node: PhyloNode,
+  isLeaf: boolean,
+  priorityCladeKeys: ReadonlySet<string>
+): boolean {
   if (node.navigationOnly) {
     return false;
+  }
+
+  if (isPriorityCladeNode(node, priorityCladeKeys)) {
+    return true;
   }
 
   const hasInformativeIdentity =
@@ -147,6 +195,48 @@ function isInformativeLabel(value: string | undefined): boolean {
   }
 
   return true;
+}
+
+function isNonInformativeLabel(value: string | undefined): boolean {
+  return !isInformativeLabel(value);
+}
+
+function isNodeNonInformative(node: PhyloNode): boolean {
+  return (
+    isNonInformativeLabel(node.displayName) &&
+    isNonInformativeLabel(node.scientificName) &&
+    isNonInformativeLabel(node.commonName)
+  );
+}
+
+function buildPriorityCladeSet(config: PriorityCladeConfig | undefined): Set<string> {
+  if (config?.enabled === false) {
+    return new Set<string>();
+  }
+
+  const keys = new Set<string>();
+  const labels = config?.labels ?? DEFAULT_PRIORITY_CLADE_LABELS;
+
+  for (const label of labels) {
+    const normalized = normalizeLabel(label);
+    if (normalized) {
+      keys.add(normalized);
+    }
+  }
+
+  return keys;
+}
+
+function isPriorityCladeNode(node: PhyloNode, priorityCladeKeys: ReadonlySet<string>): boolean {
+  if (priorityCladeKeys.size === 0) {
+    return false;
+  }
+
+  const labels = [node.displayName, node.scientificName, node.commonName]
+    .map((value) => normalizeLabel(value))
+    .filter((value): value is string => Boolean(value));
+
+  return labels.some((label) => priorityCladeKeys.has(label));
 }
 
 function hydrateTraits(node: PhyloNode, isLeaf: boolean): PhylogeneticTrait[] {
@@ -194,8 +284,13 @@ function uniqueValues(values: ReadonlyArray<string>): string[] {
   return [...new Set(values)];
 }
 
-function normalizeDuplicateClades(nodesById: Record<string, PhyloNode>, rootId: string): number {
+function normalizeDuplicateClades(
+  nodesById: Record<string, PhyloNode>,
+  rootId: string,
+  priorityCladeKeys: ReadonlySet<string>
+): { mergedNodeCount: number; resolvedNonInformativeNodeCount: number } {
   let mergedNodeCount = 0;
+  let resolvedNonInformativeNodeCount = 0;
 
   const visit = (nodeId: string): void => {
     const node = nodesById[nodeId];
@@ -271,7 +366,15 @@ function normalizeDuplicateClades(nodesById: Record<string, PhyloNode>, rootId: 
       }
 
       const child = nodesById[onlyChildId];
-      if (!child || !canCollapseUnaryChain(node, child)) {
+      if (!child) {
+        break;
+      }
+
+      if (isNodeNonInformative(node) && promoteChildIdentityOntoParent(node, child)) {
+        resolvedNonInformativeNodeCount += 1;
+      }
+
+      if (!canCollapseDecisionChain(node, child, priorityCladeKeys)) {
         break;
       }
 
@@ -289,7 +392,134 @@ function normalizeDuplicateClades(nodesById: Record<string, PhyloNode>, rootId: 
   };
 
   visit(rootId);
-  return mergedNodeCount;
+  return {
+    mergedNodeCount,
+    resolvedNonInformativeNodeCount
+  };
+}
+
+function promoteChildIdentityOntoParent(parent: PhyloNode, child: PhyloNode): boolean {
+  if (!isNodeNonInformative(parent)) {
+    return false;
+  }
+
+  const nextDisplayName =
+    firstInformativeLabel(child.displayName) ??
+    firstInformativeLabel(child.scientificName) ??
+    firstInformativeLabel(child.commonName);
+
+  if (!nextDisplayName) {
+    return false;
+  }
+
+  parent.displayName = nextDisplayName;
+
+  const childScientificName = firstInformativeLabel(child.scientificName);
+  if (childScientificName !== undefined) {
+    parent.scientificName = childScientificName;
+  }
+
+  const childCommonName = firstInformativeLabel(child.commonName);
+  if (childCommonName !== undefined) {
+    parent.commonName = childCommonName;
+  }
+
+  if (child.rank) {
+    parent.rank = child.rank;
+  }
+
+  if (child.taxonId) {
+    parent.taxonId = child.taxonId;
+  }
+
+  return true;
+}
+
+function firstInformativeLabel(value: string | undefined): string | undefined {
+  return isInformativeLabel(value) ? value : undefined;
+}
+
+function spliceUnresolvedNonInformativeNodes(
+  nodesById: Record<string, PhyloNode>,
+  rootId: string,
+  priorityCladeKeys: ReadonlySet<string>
+): number {
+  let splicedNodeCount = 0;
+  let changed = true;
+
+  while (changed) {
+    changed = false;
+
+    for (const nodeId of Object.keys(nodesById)) {
+      const node = nodesById[nodeId];
+      if (!node) {
+        continue;
+      }
+
+      if (node.id === rootId || node.childIds.length === 0) {
+        continue;
+      }
+
+      const parentId = node.parentId ?? findParentIdByChild(nodesById, node.id);
+      if (!parentId) {
+        continue;
+      }
+
+      if (isPriorityCladeNode(node, priorityCladeKeys) || !isNodeNonInformative(node)) {
+        continue;
+      }
+
+      const parent = nodesById[parentId];
+      if (!parent) {
+        continue;
+      }
+
+      const liftedChildIds = uniqueValues(
+        node.childIds.filter(
+          (childId) => childId !== node.id && childId !== parent.id && Boolean(nodesById[childId])
+        )
+      );
+
+      parent.childIds = uniqueValues(
+        parent.childIds
+          .flatMap((childId) => (childId === node.id ? liftedChildIds : [childId]))
+          .filter((childId) => childId !== node.id && childId !== parent.id && Boolean(nodesById[childId]))
+      );
+
+      parent.provenance = mergeSourceReferences(parent.provenance, node.provenance);
+      parent.traits = mergeTraits(parent.traits, node.traits);
+      parent.confidence = bestConfidence(parent.confidence, node.confidence);
+
+      for (const childId of liftedChildIds) {
+        const child = nodesById[childId];
+        if (!child) {
+          continue;
+        }
+
+        child.parentId = parent.id;
+        child.provenance = mergeSourceReferences(child.provenance, node.provenance);
+      }
+
+      delete nodesById[node.id];
+      splicedNodeCount += 1;
+      changed = true;
+    }
+  }
+
+  return splicedNodeCount;
+}
+
+function findParentIdByChild(
+  nodesById: Record<string, PhyloNode>,
+  childNodeId: string
+): string | undefined {
+  for (const [candidateId, candidate] of Object.entries(nodesById)) {
+    if (candidate.childIds.includes(childNodeId)) {
+      return candidateId;
+    }
+  }
+
+  return undefined;
 }
 
 function rebuildFromRoot(
@@ -391,7 +621,11 @@ function selectCanonicalNodeId(
   return ranked[0] ?? ids[0] ?? '';
 }
 
-function canCollapseUnaryChain(parent: PhyloNode, child: PhyloNode): boolean {
+function canCollapseDecisionChain(
+  parent: PhyloNode,
+  child: PhyloNode,
+  priorityCladeKeys: ReadonlySet<string>
+): boolean {
   if (child.childIds.length === 0) {
     return false;
   }
@@ -400,14 +634,24 @@ function canCollapseUnaryChain(parent: PhyloNode, child: PhyloNode): boolean {
     return false;
   }
 
-  const parentKey = duplicateMergeKey(parent);
-  const childKey = duplicateMergeKey(child);
+  const parentIsPriority = isPriorityCladeNode(parent, priorityCladeKeys);
+  const childIsPriority = isPriorityCladeNode(child, priorityCladeKeys);
 
-  if (!parentKey || !childKey) {
+  if (parentIsPriority && childIsPriority && !samePrimaryLabel(parent, child)) {
     return false;
   }
 
-  return parentKey === childKey;
+  if (childIsPriority && !isNodeNonInformative(parent) && !samePrimaryLabel(parent, child)) {
+    return false;
+  }
+
+  return true;
+}
+
+function samePrimaryLabel(left: PhyloNode, right: PhyloNode): boolean {
+  const leftLabel = normalizeLabel(left.displayName);
+  const rightLabel = normalizeLabel(right.displayName);
+  return Boolean(leftLabel && rightLabel && leftLabel === rightLabel);
 }
 
 function mergeTraits(

@@ -16,6 +16,7 @@ export interface BuildRenderModelOptions {
   visitedNodeIds: ReadonlyArray<string>;
   focusNodeId?: string | null;
   focusStrength?: number;
+  nodeImageById?: Readonly<Record<string, string>>;
 }
 
 interface StaticNodeMetrics {
@@ -36,15 +37,16 @@ interface RenderModelResult {
   bounds: RenderModelBounds;
 }
 
-const LEAF_VERTICAL_SPACING = 1;
-const TARGET_VERTICAL_TO_TIME_RATIO = 0.42;
+const BASE_LAYER_HORIZONTAL_SPACING = 320;
+const TARGET_TREE_ASPECT_RATIO = 2.2;
+const MIN_LEAF_VERTICAL_SPACING = 4;
+const MAX_LEAF_VERTICAL_SPACING = 220;
 
 export function buildRenderModel(
   tree: ScientificPhylogeny,
   options: BuildRenderModelOptions
 ): RenderModelResult {
-  const maxAgeMa = computeMaxAgeMa(tree);
-  const metricsById = computeStaticMetrics(tree, maxAgeMa);
+  const metricsById = computeStaticMetrics(tree);
 
   const visitedSet = new Set(options.visitedNodeIds);
 
@@ -67,6 +69,8 @@ export function buildRenderModel(
       label: metric.label,
       labelPriority: computeLabelPriority(metric.semanticImportance, isCurrent, isHovered),
       semanticImportance: metric.semanticImportance,
+      ...(options.nodeImageById?.[metric.id] ? { imageUrl: options.nodeImageById[metric.id] } : {}),
+      fallbackMonogram: monogramFromLabel(metric.label),
       isCurrent,
       isHovered,
       isOnVisitedPath
@@ -86,22 +90,38 @@ export function buildRenderModel(
   };
 }
 
-function computeMaxAgeMa(tree: ScientificPhylogeny): number {
-  const rootAge = tree.nodesById[tree.rootId]?.divergenceAgeMa ?? 0;
-  const maxNodeAge = Object.values(tree.nodesById).reduce((max, node) => {
-    const age = node.divergenceAgeMa ?? node.extinctionAgeMa ?? 0;
-    return Math.max(max, age);
-  }, 0);
-
-  return Math.max(1, rootAge, maxNodeAge);
-}
-
-function computeStaticMetrics(
-  tree: ScientificPhylogeny,
-  maxAgeMa: number
-): Record<string, StaticNodeMetrics> {
+function computeStaticMetrics(tree: ScientificPhylogeny): Record<string, StaticNodeMetrics> {
   const metrics: Record<string, StaticNodeMetrics> = {};
+  const nodeDepthById = new Map<string, number>();
+  const alignedDepthById = new Map<string, number>();
   const leafYById: Record<string, number> = {};
+
+  const layoutStats = gatherLayoutStats(tree, tree.rootId, 0, nodeDepthById);
+  const layerHorizontalSpacing = computeLayerHorizontalSpacing(
+    layoutStats.maxDepth,
+    layoutStats.leafCount
+  );
+  const leafVerticalSpacing = computeLeafVerticalSpacing(
+    layoutStats.maxDepth,
+    layoutStats.leafCount,
+    layerHorizontalSpacing
+  );
+
+  for (const [nodeId, depth] of nodeDepthById.entries()) {
+    const node = tree.nodesById[nodeId];
+    if (!node) {
+      alignedDepthById.set(nodeId, depth);
+      continue;
+    }
+
+    if (node.childIds.length === 0 && node.extant) {
+      alignedDepthById.set(nodeId, layoutStats.maxLeafDepth);
+      continue;
+    }
+
+    alignedDepthById.set(nodeId, depth);
+  }
+
   let leafCounter = 0;
 
   const assignLeafPositions = (nodeId: string): void => {
@@ -111,7 +131,7 @@ function computeStaticMetrics(
     }
 
     if (node.childIds.length === 0) {
-      leafYById[nodeId] = leafCounter * LEAF_VERTICAL_SPACING;
+      leafYById[nodeId] = leafCounter * leafVerticalSpacing;
       leafCounter += 1;
       return;
     }
@@ -151,8 +171,8 @@ function computeStaticMetrics(
       ? 1
       : childMetrics.reduce((sum, child) => sum + child.descendantLeafCount, 0);
 
-    const ageForX = resolveAgeForX(tree, nodeId);
-    const worldX = maxAgeMa - ageForX;
+    const alignedDepth = alignedDepthById.get(nodeId) ?? 0;
+    const worldX = alignedDepth * layerHorizontalSpacing;
 
     const metric: StaticNodeMetrics = {
       id: node.id,
@@ -173,7 +193,7 @@ function computeStaticMetrics(
 
   const rootMetric = buildNode(tree.rootId);
   if (rootMetric) {
-    normalizeVerticalScale(metrics, rootMetric, maxAgeMa);
+    normalizeVerticalScale(metrics, rootMetric, layoutStats.maxDepth, layerHorizontalSpacing);
   }
 
   return metrics;
@@ -182,13 +202,14 @@ function computeStaticMetrics(
 function normalizeVerticalScale(
   metricsById: Record<string, StaticNodeMetrics>,
   rootMetric: StaticNodeMetrics,
-  maxAgeMa: number
+  maxDepth: number,
+  layerHorizontalSpacing: number
 ): void {
   const currentSpan = Math.max(1, rootMetric.subtreeMaxY - rootMetric.subtreeMinY);
-  const targetSpan = Math.max(220, maxAgeMa * TARGET_VERTICAL_TO_TIME_RATIO);
-  const scale = Math.min(1, targetSpan / currentSpan);
+  const targetSpan = Math.max(220, (maxDepth * layerHorizontalSpacing) / TARGET_TREE_ASPECT_RATIO);
+  const scale = targetSpan / currentSpan;
 
-  if (scale >= 0.999) {
+  if (Math.abs(scale - 1) < 0.01) {
     return;
   }
 
@@ -200,25 +221,81 @@ function normalizeVerticalScale(
   }
 }
 
-function resolveAgeForX(tree: ScientificPhylogeny, nodeId: string): number {
+function gatherLayoutStats(
+  tree: ScientificPhylogeny,
+  nodeId: string,
+  depth: number,
+  nodeDepthById: Map<string, number>
+): {
+  maxDepth: number;
+  maxLeafDepth: number;
+  leafCount: number;
+} {
   const node = tree.nodesById[nodeId];
   if (!node) {
-    return 0;
+    return {
+      maxDepth: depth,
+      maxLeafDepth: depth,
+      leafCount: 0
+    };
   }
 
-  if (node.childIds.length === 0 && !node.extant && node.extinctionAgeMa !== undefined) {
-    return node.extinctionAgeMa;
+  nodeDepthById.set(nodeId, depth);
+
+  if (node.childIds.length === 0) {
+    return {
+      maxDepth: depth,
+      maxLeafDepth: depth,
+      leafCount: 1
+    };
   }
 
-  if (node.divergenceAgeMa !== undefined) {
-    return node.divergenceAgeMa;
+  let maxDepth = depth;
+  let maxLeafDepth = depth;
+  let leafCount = 0;
+
+  for (const childId of node.childIds) {
+    const stats = gatherLayoutStats(tree, childId, depth + 1, nodeDepthById);
+    maxDepth = Math.max(maxDepth, stats.maxDepth);
+    maxLeafDepth = Math.max(maxLeafDepth, stats.maxLeafDepth);
+    leafCount += stats.leafCount;
   }
 
-  if (node.extinctionAgeMa !== undefined) {
-    return node.extinctionAgeMa;
+  return {
+    maxDepth,
+    maxLeafDepth,
+    leafCount
+  };
+}
+
+function computeLayerHorizontalSpacing(maxDepth: number, leafCount: number): number {
+  const depthTuning = clamp(0.9, 1.45, 1.15 + Math.log2(maxDepth + 1) * 0.06);
+  const leafTuning =
+    leafCount <= 24
+      ? 1.25
+      : leafCount <= 80
+        ? 1.08
+        : leafCount <= 260
+          ? 1
+          : 0.92;
+
+  return Math.round(BASE_LAYER_HORIZONTAL_SPACING * depthTuning * leafTuning);
+}
+
+function computeLeafVerticalSpacing(
+  maxDepth: number,
+  leafCount: number,
+  layerHorizontalSpacing: number
+): number {
+  if (leafCount <= 1) {
+    return MAX_LEAF_VERTICAL_SPACING;
   }
 
-  return 0;
+  const targetWidth = Math.max(1, maxDepth * layerHorizontalSpacing);
+  const targetHeight = targetWidth / TARGET_TREE_ASPECT_RATIO;
+  const spacing = targetHeight / Math.max(1, leafCount - 1);
+
+  return clamp(MIN_LEAF_VERTICAL_SPACING, MAX_LEAF_VERTICAL_SPACING, spacing);
 }
 
 function computeSemanticImportance(
@@ -263,6 +340,22 @@ function average(values: number[]): number {
   return sum / values.length;
 }
 
+function monogramFromLabel(label: string): string {
+  const compact = label.trim();
+  if (!compact) {
+    return '?';
+  }
+
+  const words = compact.split(/\s+/).filter(Boolean);
+  if (words.length === 1) {
+    return words[0]?.slice(0, 2).toUpperCase() ?? '?';
+  }
+
+  const first = words[0]?.[0] ?? '';
+  const second = words[1]?.[0] ?? '';
+  return `${first}${second}`.toUpperCase();
+}
+
 function computeBounds(nodes: ReadonlyArray<RenderNode>): RenderModelBounds {
   if (nodes.length === 0) {
     return {
@@ -291,4 +384,8 @@ function computeBounds(nodes: ReadonlyArray<RenderNode>): RenderModelBounds {
     minY,
     maxY
   };
+}
+
+function clamp(min: number, max: number, value: number): number {
+  return Math.max(min, Math.min(max, value));
 }

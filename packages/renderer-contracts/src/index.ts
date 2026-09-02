@@ -25,6 +25,8 @@ export interface RenderNode {
   label: string;
   labelPriority: number;
   semanticImportance: number;
+  imageUrl?: string;
+  fallbackMonogram?: string;
   isCurrent: boolean;
   isHovered: boolean;
   isOnVisitedPath: boolean;
