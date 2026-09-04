@@ -106,4 +106,18 @@ describe('buildRenderModel', () => {
     expect((extinctBranch?.worldX ?? 0) < (extinct?.worldX ?? 0)).toBe(true);
     expect((extinct?.worldX ?? 0)).toBe(extant?.worldX ?? 0);
   });
+
+  it('renders only nodes included in the active visibility path', () => {
+    const tree = makeTreeWithExtinctTerminal();
+    const model = buildRenderModel(tree, {
+      currentNodeId: 'extinct-branch',
+      hoveredNodeId: null,
+      visitedNodeIds: ['root', 'extinct-branch'],
+      visibleNodeIds: ['root', 'extinct-branch']
+    });
+
+    expect(new Set(model.nodes.map((node) => node.id))).toEqual(
+      new Set(['root', 'extinct-branch'])
+    );
+  });
 });

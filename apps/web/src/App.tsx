@@ -240,6 +240,29 @@ function fitCameraToBounds(
   };
 }
 
+function fitCameraToFocus(
+  bounds: RenderModelBounds,
+  focusX: number,
+  focusY: number,
+  viewportWidth: number,
+  viewportHeight: number
+): CameraState {
+  const paddingX = 120;
+  const paddingY = 120;
+  const horizontalExtent = Math.max(Math.abs(bounds.minX - focusX), Math.abs(bounds.maxX - focusX), 1);
+  const verticalExtent = Math.max(Math.abs(bounds.minY - focusY), Math.abs(bounds.maxY - focusY), 1);
+  const zoomX = (viewportWidth / 2 - paddingX) / horizontalExtent;
+  const zoomY = (viewportHeight / 2 - paddingY) / verticalExtent;
+
+  return {
+    x: focusX,
+    y: focusY,
+    zoom: Math.max(0.06, Math.min(2.5, zoomX, zoomY)),
+    viewportWidth,
+    viewportHeight
+  };
+}
+
 function buildPathFromRoot(tree: ScientificPhylogeny, nodeId: string): string[] {
   const path: string[] = [];
   const seen = new Set<string>();
@@ -266,6 +289,12 @@ function buildNavigationHistoryFromPath(path: ReadonlyArray<string>, selectedAtI
     toNodeId,
     selectedAtIso
   }));
+}
+
+function easeInOutCubic(progress: number): number {
+  return progress < 0.5
+    ? 4 * progress * progress * progress
+    : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 }
 
 function App() {
@@ -316,7 +345,9 @@ function App() {
     viewportHeight: 1
   });
   const animationFrameRef = useRef<number | null>(null);
+  const cameraAnimationFrameRef = useRef<number | null>(null);
   const hasAutoFitRef = useRef(false);
+  const lastFocusedSessionKeyRef = useRef<string | null>(null);
   const gestureRef = useRef<GestureState>({
     pointers: new Map(),
     lastPinch: null,
@@ -462,6 +493,7 @@ function App() {
     session.phase === 'configure-difficulty' ||
     session.phase === 'selecting-target' ||
     session.phase === 'results';
+  const hasStartedGame = session.phase === 'active' || session.phase === 'results';
 
   const targetFamiliarityPercent = Math.round(configuredDifficulty.targetFamiliarity * 100);
 
@@ -523,11 +555,20 @@ function App() {
         currentNodeId: session.currentNodeId,
         hoveredNodeId,
         visitedNodeIds: session.visitedNodeIds,
+        ...(hasStartedGame ? { visibleNodeIds: session.visitedNodeIds } : {}),
         focusNodeId: session.currentNodeId,
         focusStrength: 0.24,
         nodeImageById
       }),
-    [hoveredNodeId, nodeImageById, playableTree, session.currentNodeId, session.visitedNodeIds]
+    [
+      hoveredNodeId,
+      hasStartedGame,
+      isActiveGame,
+      nodeImageById,
+      playableTree,
+      session.currentNodeId,
+      session.visitedNodeIds
+    ]
   );
 
   const renderBoundsRef = useRef(renderModel.bounds);
@@ -539,6 +580,35 @@ function App() {
   function setRendererCamera(nextCamera: CameraState): void {
     cameraRef.current = nextCamera;
     rendererRef.current?.setCamera(nextCamera);
+  }
+
+  function animateCameraTo(targetCamera: CameraState): void {
+    if (cameraAnimationFrameRef.current !== null) {
+      cancelAnimationFrame(cameraAnimationFrameRef.current);
+    }
+
+    const startCamera = cameraRef.current;
+    const startedAt = performance.now();
+    const durationMs = 720;
+
+    const animate = (nowMs: number): void => {
+      const progress = Math.min(1, (nowMs - startedAt) / durationMs);
+      const easedProgress = easeInOutCubic(progress);
+      setRendererCamera({
+        ...targetCamera,
+        x: startCamera.x + (targetCamera.x - startCamera.x) * easedProgress,
+        y: startCamera.y + (targetCamera.y - startCamera.y) * easedProgress,
+        zoom: startCamera.zoom + (targetCamera.zoom - startCamera.zoom) * easedProgress
+      });
+
+      if (progress < 1) {
+        cameraAnimationFrameRef.current = requestAnimationFrame(animate);
+      } else {
+        cameraAnimationFrameRef.current = null;
+      }
+    };
+
+    cameraAnimationFrameRef.current = requestAnimationFrame(animate);
   }
 
   function zoomAt(screenX: number, screenY: number, factor: number): void {
@@ -671,6 +741,34 @@ function App() {
   }
 
   useEffect(() => {
+    if (!hasStartedGame || !rendererRef.current) {
+      return;
+    }
+
+    const focusKey = `${session.phase}:${session.currentNodeId}`;
+    if (lastFocusedSessionKeyRef.current === focusKey) {
+      return;
+    }
+
+    const currentRenderNode = renderModel.nodes.find((node) => node.id === session.currentNodeId);
+    if (!currentRenderNode) {
+      return;
+    }
+
+    const camera = cameraRef.current;
+    animateCameraTo(
+      fitCameraToFocus(
+        renderModel.bounds,
+        currentRenderNode.worldX,
+        currentRenderNode.fisheyeTargetY,
+        camera.viewportWidth,
+        camera.viewportHeight
+      )
+    );
+    lastFocusedSessionKeyRef.current = focusKey;
+  }, [hasStartedGame, renderModel, session.currentNodeId, session.phase]);
+
+  useEffect(() => {
     if (!isActiveGame) {
       return;
     }
@@ -700,6 +798,11 @@ function App() {
       if (animationFrameRef.current !== null) {
         cancelAnimationFrame(animationFrameRef.current);
         animationFrameRef.current = null;
+      }
+
+      if (cameraAnimationFrameRef.current !== null) {
+        cancelAnimationFrame(cameraAnimationFrameRef.current);
+        cameraAnimationFrameRef.current = null;
       }
 
       renderer.destroy();
