@@ -1140,7 +1140,7 @@ function App() {
                 <span key={traitName} className="trait-chip">
                   {traitName}
                 </span>
-              ))}
+              ))} 
             </div>
           ) : null}
 
