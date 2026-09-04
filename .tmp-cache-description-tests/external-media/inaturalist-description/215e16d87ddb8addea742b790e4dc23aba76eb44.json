@@ -1,0 +1,14 @@
+{
+  "cachedAt": "2026-09-04T01:49:56.830Z",
+  "value": {
+    "summary": "Eukaryotes are organisms whose cells have a membrane-bound nucleus.",
+    "provenance": {
+      "sourceId": "inaturalist-taxa-description",
+      "sourceType": "other",
+      "externalId": "48211",
+      "url": "https://api.inaturalist.org/v1/taxa?q=Eukaryota&per_page=3&is_active=true",
+      "retrievedAt": "2026-09-04T01:49:56.830Z",
+      "note": "Taxon summary supplied by the iNaturalist taxa API."
+    }
+  }
+}

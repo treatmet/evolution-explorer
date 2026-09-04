@@ -74,8 +74,9 @@ export interface MediaEnrichmentResult {
 }
 
 export interface MediaEnrichmentProgress {
-  processedTargets: number;
-  totalTargets: number;
+  phase: 'target-media' | 'node-descriptions';
+  processedItems: number;
+  totalItems: number;
   percent: number;
 }
 
@@ -88,7 +89,9 @@ export interface MediaEnrichmentOptions {
   userAgent?: string;
   now?: Date;
   onProgress?: ((update: MediaEnrichmentProgress) => void) | undefined;
+  onStage?: ((message: string) => void) | undefined;
   progressIntervalPercent?: number | undefined;
+  descriptionMaxChars?: number | undefined;
 }
 
 export interface TaxonomyMatch {

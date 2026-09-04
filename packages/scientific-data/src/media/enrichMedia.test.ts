@@ -1,4 +1,8 @@
-import { describe, expect, it } from 'vitest';
+import { mkdtemp } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import type { ScientificPhylogeny } from '@evo-tree/domain';
 
@@ -79,6 +83,10 @@ function makeTree(): ScientificPhylogeny {
   };
 }
 
+afterEach(() => {
+  vi.restoreAllMocks();
+});
+
 const targets: TargetSpecies[] = [
   {
     id: 'homo-sapiens',
@@ -117,5 +125,136 @@ describe('enrichMediaForScientificTree', () => {
     expect(reconstructionAssetId).toBeTruthy();
     expect(reconstructionAssetId ? result.media.assetsById[reconstructionAssetId] : undefined).toBeTruthy();
     expect(result.warnings.some((warning) => warning.includes('offline mode'))).toBe(true);
+  });
+
+  it('hydrates selectable internal node descriptions from Wikipedia summaries', async () => {
+    const tree = makeTree();
+    const internalNode = tree.nodesById['branch-1'];
+    if (!internalNode) {
+      throw new Error('Expected internal test node.');
+    }
+    internalNode.displayName = 'Eukaryota';
+    internalNode.scientificName = 'Eukaryota';
+    internalNode.kind = 'named-taxon';
+    internalNode.navigationOnly = false;
+
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input);
+
+      if (url.includes('en.wikipedia.org') && url.includes('Eukaryota')) {
+        return new Response(
+          JSON.stringify({
+            type: 'standard',
+            pageid: 24536543,
+            extract: 'Eukaryotes are organisms whose cells have a membrane-bound nucleus.',
+            content_urls: {
+              desktop: { page: 'https://en.wikipedia.org/wiki/Eukaryote' }
+            }
+          }),
+          { status: 200, headers: { 'content-type': 'application/json' } }
+        );
+      }
+
+      if (url.includes('api.inaturalist.org')) {
+        return new Response(JSON.stringify({ results: [] }), {
+          status: 200,
+          headers: { 'content-type': 'application/json' }
+        });
+      }
+
+      if (url.includes('paleobiodb.org')) {
+        return new Response(JSON.stringify({ records: [] }), {
+          status: 200,
+          headers: { 'content-type': 'application/json' }
+        });
+      }
+
+      if (url.includes('api.phylopic.org')) {
+        return new Response(JSON.stringify({ _embedded: { images: [] } }), {
+          status: 200,
+          headers: { 'content-type': 'application/json' }
+        });
+      }
+
+      return new Response(JSON.stringify({}), {
+        status: 200,
+        headers: { 'content-type': 'application/json' }
+      });
+    });
+
+    const { tree: enrichedTree } = await enrichMediaForScientificTree(tree, targets, {
+      cacheDir: '.tmp-cache-description-tests',
+      online: true,
+      maxTargets: 1,
+      retries: 0
+    });
+
+    const eukaryota = enrichedTree.nodesById['branch-1'];
+    expect(eukaryota?.description).toBe(
+      'Eukaryotes are organisms whose cells have a membrane-bound nucleus.'
+    );
+    expect(
+      eukaryota?.provenance.some(
+        (source) => source.sourceId === 'wikipedia-page-summary'
+      )
+    ).toBe(true);
+  });
+
+  it('limits descriptions to complete sentences within the configured character count', async () => {
+    const tree = makeTree();
+    const internalNode = tree.nodesById['branch-1'];
+    if (!internalNode) {
+      throw new Error('Expected internal test node.');
+    }
+    internalNode.displayName = 'Bacteria';
+    internalNode.scientificName = 'Bacteria';
+    internalNode.kind = 'named-taxon';
+    internalNode.navigationOnly = false;
+
+    const bacteriaSummary =
+      "Bacteria are ubiquitous, mostly free-living organisms often consisting of one biological cell. They constitute a large domain of prokaryotic microorganisms. Typically a few micrometres in length, bacteria were among the first life forms to appear on Earth, and are present in most of its habitats. Bacteria inhabit the air, soil, water, acidic hot springs, radioactive waste, and the deep biosphere of Earth's crust. Bacteria play a vital role in many stages of the nutrient cycle by recycling nutrients and the fixation of nitrogen from the atmosphere. The study of bacteria is known as bacteriology, a branch of microbiology.";
+
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input);
+      if (url.includes('en.wikipedia.org') && url.includes('Bacteria')) {
+        return new Response(
+          JSON.stringify({
+            type: 'standard',
+            pageid: 4260,
+            extract: bacteriaSummary
+          }),
+          { status: 200, headers: { 'content-type': 'application/json' } }
+        );
+      }
+
+      const emptyPayload = url.includes('paleobiodb.org')
+        ? { records: [] }
+        : url.includes('api.phylopic.org')
+          ? { _embedded: { images: [] } }
+          : { results: [] };
+      return new Response(JSON.stringify(emptyPayload), {
+        status: 200,
+        headers: { 'content-type': 'application/json' }
+      });
+    });
+
+    const progressPhases: string[] = [];
+    const cacheDir = await mkdtemp(join(tmpdir(), 'evo-tree-description-limit-'));
+    const { tree: enrichedTree } = await enrichMediaForScientificTree(tree, targets, {
+      cacheDir,
+      online: true,
+      maxTargets: 1,
+      retries: 0,
+      descriptionMaxChars: 500,
+      onProgress: ({ phase }) => progressPhases.push(phase)
+    });
+
+    const description = enrichedTree.nodesById['branch-1']?.description;
+    expect(description).toBeTruthy();
+    expect(description?.length).toBeLessThanOrEqual(500);
+    expect(description).toMatch(/[.!?]$/);
+    expect(bacteriaSummary.startsWith(description ?? '')).toBe(true);
+    expect(description).not.toContain('The study of bacteria');
+    expect(progressPhases).toContain('node-descriptions');
   });
 });

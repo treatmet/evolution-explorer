@@ -30,13 +30,20 @@ export async function runSourceRefresh(
 ): Promise<RefreshResult> {
   const now = options.now ?? new Date();
   const effectiveAdapter = adapter ?? new TxtSpeciesListAdapter(paths.sourceSpeciesListPath);
+  const logStage = (message: string): void => {
+    if (options.progress) {
+      console.log(`[data:refresh] ${message}`);
+    }
+  };
 
+  logStage('Initializing output directories');
   await Promise.all([
     mkdir(paths.cacheDir, { recursive: true }),
     mkdir(paths.candidateDir, { recursive: true }),
     mkdir(paths.approvedDir, { recursive: true })
   ]);
 
+  logStage('Loading and validating source species list');
   const targets = await effectiveAdapter.loadTargets();
   if (targets.length === 0) {
     throw new Error('Source compiler cannot build a dataset from zero targets.');
@@ -47,7 +54,9 @@ export async function runSourceRefresh(
   const progressEnabled = options.progress ?? false;
   const progressIntervalPercent = Math.max(1, options.progressIntervalPercent ?? 5);
 
+  logStage(`Loaded ${targets.length} targets; writing source snapshot`);
   const snapshot = await writeSourceSnapshot(paths.cacheDir, effectiveAdapter, targets, generatedAt);
+  logStage('Reading the latest approved baseline');
   const baselineApproved = await readLatestArtifact(paths.approvedDir);
   const topologyOptions = {
     datasetVersion: `compiled-${datasetVersion}`,
@@ -57,9 +66,12 @@ export async function runSourceRefresh(
     ...(options.mediaRetries !== undefined ? { retries: options.mediaRetries } : {}),
     ...(options.mediaUserAgent ? { userAgent: options.mediaUserAgent } : {})
   };
+  logStage('Resolving targets and building OpenTree topology');
   const topologyResult = await buildOpenTreeScientificPhylogeny(targets, topologyOptions);
+  logStage(`OpenTree topology built with ${Object.keys(topologyResult.scientificPhylogeny.nodesById).length} nodes`);
   const pruneResult = pruneLowConfidenceUnaryNodes(topologyResult.scientificPhylogeny);
   const compiledScientificPhylogeny = pruneResult.tree;
+  logStage(`Topology pruning complete; removed ${pruneResult.prunedNodeCount} nodes`);
 
   const mediaOptions: Partial<MediaEnrichmentOptions> & Pick<MediaEnrichmentOptions, 'cacheDir'> = {
     cacheDir: paths.cacheDir,
@@ -68,11 +80,16 @@ export async function runSourceRefresh(
     ...(options.mediaTimeoutMs !== undefined ? { timeoutMs: options.mediaTimeoutMs } : {}),
     ...(options.mediaRetries !== undefined ? { retries: options.mediaRetries } : {}),
     ...(options.mediaUserAgent ? { userAgent: options.mediaUserAgent } : {}),
+    ...(options.descriptionMaxChars !== undefined
+      ? { descriptionMaxChars: options.descriptionMaxChars }
+      : {}),
     ...(progressEnabled
       ? {
-          onProgress: ({ processedTargets, totalTargets, percent }) => {
+          onStage: (message: string) => logStage(message),
+          onProgress: ({ phase, processedItems, totalItems, percent }) => {
+            const label = phase === 'target-media' ? 'target media' : 'node descriptions';
             console.log(
-              `[data:refresh] media enrichment ${percent}% (${processedTargets}/${totalTargets})`
+              `[data:refresh] ${label} ${percent}% (${processedItems}/${totalItems})`
             );
           }
         }
@@ -83,6 +100,7 @@ export async function runSourceRefresh(
     now
   };
 
+  logStage('Starting scientific metadata enrichment');
   const mediaEnrichment = await enrichMediaForScientificTree(
     compiledScientificPhylogeny,
     targets,
@@ -107,6 +125,7 @@ export async function runSourceRefresh(
 
   const candidateFileName = `dataset-${datasetVersion}.json`;
   const candidateArtifactPath = join(paths.candidateDir, candidateFileName);
+  logStage(`Writing candidate artifact ${candidateFileName}`);
   await writeJson(candidateArtifactPath, candidate);
 
   await writeJson(join(paths.candidateDir, 'latest.json'), {
@@ -115,6 +134,7 @@ export async function runSourceRefresh(
     generatedAt
   } satisfies LatestPointer);
 
+  logStage('Computing candidate diff and report');
   const diff = computeDatasetDiff(baselineApproved?.targets ?? [], candidate.targets);
 
   const diffJsonPath = join(paths.candidateDir, `diff-${datasetVersion}.json`);
@@ -138,6 +158,7 @@ export async function runSourceRefresh(
     }
   };
 
+  logStage(`Publishing approved artifact ${approvedFileName}`);
   await writeJson(approvedArtifactPath, approvedArtifact);
 
   await writeJson(join(paths.approvedDir, 'latest.json'), {
@@ -145,6 +166,7 @@ export async function runSourceRefresh(
     fileName: approvedFileName,
     generatedAt
   } satisfies LatestPointer);
+  logStage('Approved artifact publication complete');
 
   return {
     summary: {

@@ -1126,6 +1126,9 @@ function App() {
         <section className="decision-card panel" aria-label="Decision lens preview">
           <p className="label">Decision Lens</p>
           <h2>{currentNode?.displayName ?? 'Unknown node'}</h2>
+          {currentNode?.description ? (
+            <p className="decision-description">{currentNode.description}</p>
+          ) : null}
           <div className="metric-row">
             <span className="metric-chip">Age: {describeNodeAge(currentNode)}</span>
             <span className="metric-chip">Confidence: {currentNode?.confidence ?? 'unresolved'}</span>

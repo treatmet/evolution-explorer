@@ -53,6 +53,7 @@ export interface PhyloNode {
   childIds: string[];
   kind: PhyloNodeKind;
   displayName: string;
+  description?: string;
   scientificName?: string;
   commonName?: string;
   rank?: string;

@@ -13,6 +13,7 @@ interface CliOptions {
   mediaTargetLimit?: number | undefined;
   mediaTimeoutMs?: number | undefined;
   mediaRetries?: number | undefined;
+  descriptionMaxChars?: number | undefined;
   progress: boolean;
   progressIntervalPercent?: number | undefined;
 }
@@ -29,6 +30,9 @@ async function refreshData(options: CliOptions) {
       : {}),
     ...(options.mediaTimeoutMs !== undefined ? { mediaTimeoutMs: options.mediaTimeoutMs } : {}),
     ...(options.mediaRetries !== undefined ? { mediaRetries: options.mediaRetries } : {}),
+    ...(options.descriptionMaxChars !== undefined
+      ? { descriptionMaxChars: options.descriptionMaxChars }
+      : {}),
     progress: options.progress,
     ...(options.progressIntervalPercent !== undefined
       ? { progressIntervalPercent: options.progressIntervalPercent }
@@ -47,8 +51,17 @@ async function refreshData(options: CliOptions) {
   );
 
   const webPublicDataRoot = resolve(workspaceRoot, 'apps/web/public/data');
+  if (options.progress) {
+    console.log('[data:refresh] Mirroring candidate artifact to the web runtime');
+  }
   await mirrorLatestDataset(candidateDir, join(webPublicDataRoot, 'candidate'));
+  if (options.progress) {
+    console.log('[data:refresh] Mirroring approved artifact to the web runtime');
+  }
   await mirrorLatestDataset(approvedDir, join(webPublicDataRoot, 'approved'));
+  if (options.progress) {
+    console.log('[data:refresh] Runtime artifact mirroring complete');
+  }
 
   return result.summary;
 }
@@ -104,6 +117,7 @@ const options: CliOptions = {
   mediaTargetLimit: parseOptionalNumberFlag('--media-target-limit'),
   mediaTimeoutMs: parseOptionalNumberFlag('--media-timeout-ms'),
   mediaRetries: parseOptionalNumberFlag('--media-retries'),
+  descriptionMaxChars: parseOptionalNumberFlag('--description-max-chars'),
   progress: hasBooleanFlag('--progress'),
   progressIntervalPercent: parseOptionalNumberFlag('--progress-interval-percent')
 };

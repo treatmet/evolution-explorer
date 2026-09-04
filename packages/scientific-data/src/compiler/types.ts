@@ -51,6 +51,7 @@ export interface RefreshOptions {
   mediaUserAgent?: string;
   progress?: boolean;
   progressIntervalPercent?: number;
+  descriptionMaxChars?: number;
 }
 
 export interface RefreshSummary {

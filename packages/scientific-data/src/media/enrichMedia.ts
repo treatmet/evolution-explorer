@@ -20,6 +20,8 @@ import type {
 const DEFAULT_MAX_TARGETS = 180;
 const DEFAULT_TIMEOUT_MS = 9000;
 const DEFAULT_RETRIES = 2;
+const DEFAULT_DESCRIPTION_MAX_CHARS = 500;
+const DESCRIPTION_LOOKUP_CONCURRENCY = 6;
 const RECONSTRUCTION_PROMPT_VERSION = 'm6.1';
 const RECONSTRUCTION_GENERATION_MODEL = 'inline-svg-v1';
 
@@ -44,6 +46,7 @@ export async function enrichMediaForScientificTree(
     'open-tree',
     'paleobiodb',
     'inaturalist',
+    'wikipedia-summary',
     'phylopic',
     'openverse'
   ]);
@@ -54,29 +57,33 @@ export async function enrichMediaForScientificTree(
     1,
     Math.min(25, Math.round(options.progressIntervalPercent ?? 5))
   );
-  let nextProgressReportAtPercent = 0;
+  const descriptionMaxChars = Math.max(
+    1,
+    Math.round(options.descriptionMaxChars ?? DEFAULT_DESCRIPTION_MAX_CHARS)
+  );
 
-  const emitProgress = (processedTargets: number): void => {
-    if (!options.onProgress || selectedTargets.length === 0) {
-      return;
-    }
+  const createProgressEmitter = (
+    phase: MediaEnrichmentProgress['phase'],
+    totalItems: number
+  ): ((processedItems: number) => void) => {
+    let nextReportAtPercent = 0;
+    return (processedItems: number): void => {
+      if (!options.onProgress || totalItems === 0) {
+        return;
+      }
 
-    const percent = Math.floor((processedTargets / selectedTargets.length) * 100);
-    if (processedTargets < selectedTargets.length && percent < nextProgressReportAtPercent) {
-      return;
-    }
+      const percent = Math.floor((processedItems / totalItems) * 100);
+      if (processedItems < totalItems && percent < nextReportAtPercent) {
+        return;
+      }
 
-    const update: MediaEnrichmentProgress = {
-      processedTargets,
-      totalTargets: selectedTargets.length,
-      percent
+      options.onProgress({ phase, processedItems, totalItems, percent });
+      while (nextReportAtPercent <= percent) {
+        nextReportAtPercent += progressIntervalPercent;
+      }
     };
-    options.onProgress(update);
-
-    while (nextProgressReportAtPercent <= percent) {
-      nextProgressReportAtPercent += progressIntervalPercent;
-    }
   };
+  const emitTargetProgress = createProgressEmitter('target-media', selectedTargets.length);
 
   if (targetLimit < targets.length) {
     warnings.push(
@@ -86,7 +93,8 @@ export async function enrichMediaForScientificTree(
 
   const taxonomyMetadata: TargetDifficultyMetadata[] = [];
 
-  emitProgress(0);
+  options.onStage?.(`Enriching ${selectedTargets.length} target nodes with taxonomy and media`);
+  emitTargetProgress(0);
 
   for (let targetIndex = 0; targetIndex < selectedTargets.length; targetIndex += 1) {
     const target = selectedTargets[targetIndex];
@@ -97,7 +105,7 @@ export async function enrichMediaForScientificTree(
     const node = workingTree.nodesById[target.id];
     if (!node) {
       warnings.push(`Target ${target.id} missing from scientific tree; skipped media enrichment.`);
-      emitProgress(targetIndex + 1);
+      emitTargetProgress(targetIndex + 1);
       continue;
     }
 
@@ -164,9 +172,63 @@ export async function enrichMediaForScientificTree(
       nodeMediaByNodeId[node.id] = nodeMedia;
     }
 
-    emitProgress(targetIndex + 1);
+    emitTargetProgress(targetIndex + 1);
   }
 
+  const descriptionNodes = Object.values(workingTree.nodesById).filter(
+    (node) => !node.navigationOnly && !node.description && isDescriptionLookupCandidate(node)
+  );
+  const emitDescriptionProgress = createProgressEmitter(
+    'node-descriptions',
+    descriptionNodes.length
+  );
+  options.onStage?.(
+    `Hydrating descriptions for ${descriptionNodes.length} selectable nodes (maximum ${descriptionMaxChars} characters, ${DESCRIPTION_LOOKUP_CONCURRENCY} concurrent requests)`
+  );
+  emitDescriptionProgress(0);
+
+  let processedDescriptionCount = 0;
+  for (
+    let batchStart = 0;
+    batchStart < descriptionNodes.length;
+    batchStart += DESCRIPTION_LOOKUP_CONCURRENCY
+  ) {
+    const batch = descriptionNodes.slice(
+      batchStart,
+      batchStart + DESCRIPTION_LOOKUP_CONCURRENCY
+    );
+    await Promise.all(
+      batch.map(async (node) => {
+        const description = await lookupWikipediaDescription(
+          node.scientificName ?? node.displayName,
+          {
+            cacheDir: options.cacheDir,
+            online,
+            timeoutMs: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,
+            retries: options.retries ?? DEFAULT_RETRIES,
+            userAgent: options.userAgent,
+            providerStats
+          }
+        );
+
+        if (description) {
+          const limitedSummary = limitDescriptionToCompleteSentences(
+            description.summary,
+            descriptionMaxChars
+          );
+          if (limitedSummary) {
+            node.description = limitedSummary;
+          }
+          node.provenance = mergeProvenance(node.provenance, [description.provenance]);
+        }
+
+        processedDescriptionCount += 1;
+        emitDescriptionProgress(processedDescriptionCount);
+      })
+    );
+  }
+
+  options.onStage?.('Generating internal-node reconstruction metadata');
   for (const node of Object.values(workingTree.nodesById)) {
     if (node.childIds.length === 0) {
       continue;
@@ -204,6 +266,7 @@ export async function enrichMediaForScientificTree(
       createdAt: generatedAt
     };
   }
+  options.onStage?.(`Generated ${reconstructionQueue.length} internal-node reconstructions`);
 
   const providerSnapshots = Object.values(providerStats).map((entry) => ({
     providerId: entry.providerId,
@@ -591,6 +654,87 @@ async function lookupINaturalistImage(
   });
 }
 
+interface WikipediaDescription {
+  summary: string;
+  provenance: SourceReference;
+}
+
+async function lookupWikipediaDescription(
+  name: string,
+  options: ExternalLookupOptions
+): Promise<WikipediaDescription | null> {
+  return loadCachedOrFetch<WikipediaDescription | null>({
+    providerId: 'wikipedia-summary',
+    cacheDir: options.cacheDir,
+    key: name,
+    online: options.online,
+    fetcher: async () => {
+      const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`;
+      const response = await fetchJson<Record<string, unknown>>(url, options);
+      const summary = stringOrUndefined(response['extract'])?.replace(/\s+/g, ' ').trim();
+      if (!summary || response['type'] === 'disambiguation') {
+        return null;
+      }
+
+      const pageId = numericOrUndefined(response['pageid']);
+      const contentUrls = response['content_urls'];
+      const desktop =
+        contentUrls && typeof contentUrls === 'object'
+          ? (contentUrls as Record<string, unknown>)['desktop']
+          : undefined;
+      const pageUrl =
+        desktop && typeof desktop === 'object'
+          ? stringOrUndefined((desktop as Record<string, unknown>)['page'])
+          : undefined;
+
+      return {
+        summary,
+        provenance: buildSourceReference({
+          sourceId: 'wikipedia-page-summary',
+          sourceType: 'other',
+          externalId: pageId !== undefined ? String(pageId) : undefined,
+          url: pageUrl ?? url,
+          retrievedAt: new Date().toISOString(),
+          note: 'Introductory taxon summary supplied by the Wikipedia REST API.'
+        })
+      };
+    },
+    providerStats: options.providerStats
+  });
+}
+
+function isDescriptionLookupCandidate(node: PhyloNode): boolean {
+  const label = (node.scientificName ?? node.displayName).trim();
+  return !(
+    /^mrca\b/i.test(label) ||
+    /^h\d+(?:-\d+)?$/i.test(label) ||
+    /^openTree clade\b/i.test(label) ||
+    /^clade of\b/i.test(label)
+  );
+}
+
+function limitDescriptionToCompleteSentences(
+  description: string,
+  maxChars: number
+): string | undefined {
+  const normalized = description.replace(/\s+/g, ' ').trim();
+  if (normalized.length <= maxChars) {
+    return normalized;
+  }
+
+  const sentences = normalized.match(/[^.!?]+[.!?]+(?:["')\]]+)?/g) ?? [];
+  let limited = '';
+  for (const sentence of sentences) {
+    const candidate = `${limited}${limited ? ' ' : ''}${sentence.trim()}`;
+    if (candidate.length > maxChars) {
+      break;
+    }
+    limited = candidate;
+  }
+
+  return limited || undefined;
+}
+
 async function lookupPhyloPicSilhouette(
   name: string,
   options: ExternalLookupOptions
@@ -737,6 +881,7 @@ function applyTaxonomyToNode(
 ): void {
   node.scientificName = target.scientificName;
   node.commonName = target.commonName;
+  node.description = target.briefDescriptor;
 
   if (taxonomy.canonicalName && !node.displayName) {
     node.displayName = taxonomy.canonicalName;

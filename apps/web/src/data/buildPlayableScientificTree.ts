@@ -94,12 +94,14 @@ export function buildPlayableScientificTree(
     if (node.traits.length === 0 && traits.length > 0) {
       inferredTraitNodeCount += 1;
     }
+    const description = node.description ?? traits[0]?.description;
 
     nodesById[node.id] = {
       ...node,
       parentId: null,
       childIds: compressedChildIds,
-      traits
+      traits,
+      ...(description ? { description } : {})
     };
 
     visiting.delete(nodeId);
@@ -346,6 +348,9 @@ function normalizeDuplicateClades(
         canonical.childIds = uniqueValues([...canonical.childIds, ...duplicate.childIds]);
         canonical.traits = mergeTraits(canonical.traits, duplicate.traits);
         canonical.provenance = mergeSourceReferences(canonical.provenance, duplicate.provenance);
+        if (!canonical.description && duplicate.description) {
+          canonical.description = duplicate.description;
+        }
         canonical.extant = canonical.extant || duplicate.extant;
         canonical.isGameEndpoint = canonical.isGameEndpoint || duplicate.isGameEndpoint;
         canonical.isTargetEligible = canonical.isTargetEligible || duplicate.isTargetEligible;
@@ -381,6 +386,9 @@ function normalizeDuplicateClades(
       node.childIds = uniqueValues(child.childIds);
       node.traits = mergeTraits(node.traits, child.traits);
       node.provenance = mergeSourceReferences(node.provenance, child.provenance);
+      if (!node.description && child.description) {
+        node.description = child.description;
+      }
       node.extant = node.extant || child.extant;
       node.isGameEndpoint = node.isGameEndpoint || child.isGameEndpoint;
       node.isTargetEligible = node.isTargetEligible || child.isTargetEligible;
@@ -413,6 +421,9 @@ function promoteChildIdentityOntoParent(parent: PhyloNode, child: PhyloNode): bo
   }
 
   parent.displayName = nextDisplayName;
+  if (!parent.description && child.description) {
+    parent.description = child.description;
+  }
 
   const childScientificName = firstInformativeLabel(child.scientificName);
   if (childScientificName !== undefined) {

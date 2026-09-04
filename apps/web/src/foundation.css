@@ -225,6 +225,13 @@ body {
   width: min(660px, calc(100% - 32px));
 }
 
+.decision-description {
+  color: #c2d5d8;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin: 0.35rem 0 0.55rem;
+}
+
 .row {
   display: flex;
   align-items: center;
