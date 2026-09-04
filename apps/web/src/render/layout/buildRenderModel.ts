@@ -14,6 +14,7 @@ export interface BuildRenderModelOptions {
   currentNodeId: string;
   hoveredNodeId: string | null;
   visitedNodeIds: ReadonlyArray<string>;
+  visibleNodeIds?: ReadonlyArray<string>;
   focusNodeId?: string | null;
   focusStrength?: number;
   nodeImageById?: Readonly<Record<string, string>>;
@@ -49,8 +50,11 @@ export function buildRenderModel(
   const metricsById = computeStaticMetrics(tree);
 
   const visitedSet = new Set(options.visitedNodeIds);
+  const visibleSet = options.visibleNodeIds ? new Set(options.visibleNodeIds) : null;
 
-  const baseNodes: RenderNode[] = Object.values(metricsById).map((metric) => {
+  const baseNodes: RenderNode[] = Object.values(metricsById)
+    .filter((metric) => visibleSet === null || visibleSet.has(metric.id))
+    .map((metric) => {
     const isCurrent = metric.id === options.currentNodeId;
     const isHovered = metric.id === options.hoveredNodeId;
     const isOnVisitedPath = visitedSet.has(metric.id);
@@ -75,7 +79,7 @@ export function buildRenderModel(
       isHovered,
       isOnVisitedPath
     };
-  });
+    });
 
   const fisheyeNodes = applySemanticFisheye(
     baseNodes,
