@@ -1,4 +1,5 @@
 import type {
+  DescriptionSegment,
   PhylogeneticTrait,
   PhyloNode,
   ScientificConfidence,
@@ -95,13 +96,15 @@ export function buildPlayableScientificTree(
       inferredTraitNodeCount += 1;
     }
     const description = node.description ?? traits[0]?.description;
+    const descriptionSegments = pickDescriptionSegments(node, description);
 
     nodesById[node.id] = {
       ...node,
       parentId: null,
       childIds: compressedChildIds,
       traits,
-      ...(description ? { description } : {})
+      ...(description ? { description } : {}),
+      ...(descriptionSegments ? { descriptionSegments } : {})
     };
 
     visiting.delete(nodeId);
@@ -350,6 +353,9 @@ function normalizeDuplicateClades(
         canonical.provenance = mergeSourceReferences(canonical.provenance, duplicate.provenance);
         if (!canonical.description && duplicate.description) {
           canonical.description = duplicate.description;
+          if (duplicate.descriptionSegments) {
+            canonical.descriptionSegments = duplicate.descriptionSegments;
+          }
         }
         canonical.extant = canonical.extant || duplicate.extant;
         canonical.isGameEndpoint = canonical.isGameEndpoint || duplicate.isGameEndpoint;
@@ -388,6 +394,9 @@ function normalizeDuplicateClades(
       node.provenance = mergeSourceReferences(node.provenance, child.provenance);
       if (!node.description && child.description) {
         node.description = child.description;
+        if (child.descriptionSegments) {
+          node.descriptionSegments = child.descriptionSegments;
+        }
       }
       node.extant = node.extant || child.extant;
       node.isGameEndpoint = node.isGameEndpoint || child.isGameEndpoint;
@@ -423,6 +432,9 @@ function promoteChildIdentityOntoParent(parent: PhyloNode, child: PhyloNode): bo
   parent.displayName = nextDisplayName;
   if (!parent.description && child.description) {
     parent.description = child.description;
+    if (child.descriptionSegments) {
+      parent.descriptionSegments = child.descriptionSegments;
+    }
   }
 
   const childScientificName = firstInformativeLabel(child.scientificName);
@@ -448,6 +460,17 @@ function promoteChildIdentityOntoParent(parent: PhyloNode, child: PhyloNode): bo
 
 function firstInformativeLabel(value: string | undefined): string | undefined {
   return isInformativeLabel(value) ? value : undefined;
+}
+
+function pickDescriptionSegments(
+  node: PhyloNode,
+  description: string | undefined
+): DescriptionSegment[] | undefined {
+  if (!node.descriptionSegments || node.description !== description) {
+    return undefined;
+  }
+
+  return node.descriptionSegments;
 }
 
 function spliceUnresolvedNonInformativeNodes(

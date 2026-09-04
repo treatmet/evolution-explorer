@@ -109,6 +109,30 @@ function installTopologyAndMediaFetchMock(): void {
       });
     }
 
+    if (url.includes('en.wikipedia.org/api/rest_v1/page/summary/')) {
+      return new Response(
+        JSON.stringify({
+          type: 'standard',
+          title: 'Test clade',
+          pageid: 99,
+          extract: 'A test clade description referencing a clade.'
+        }),
+        { status: 200, headers: { 'content-type': 'application/json' } }
+      );
+    }
+
+    if (url.includes('en.wikipedia.org/w/api.php')) {
+      return new Response(
+        JSON.stringify({
+          parse: {
+            title: 'Test clade',
+            text: '<p>A test clade description referencing a <a href="/wiki/Clade" title="Clade">clade</a>.</p>'
+          }
+        }),
+        { status: 200, headers: { 'content-type': 'application/json' } }
+      );
+    }
+
     throw new Error(`Unexpected URL in test fetch mock: ${url}`);
   });
 }

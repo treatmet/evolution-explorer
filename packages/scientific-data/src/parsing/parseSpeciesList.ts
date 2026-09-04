@@ -19,7 +19,31 @@ export function toSpeciesId(scientificName: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
+export interface SpeciesListRowIssue {
+  lineNumber: number;
+  content: string;
+  reason: string;
+}
+
+export interface SpeciesListParseResult {
+  targets: TargetSpecies[];
+  issues: SpeciesListRowIssue[];
+}
+
 export function parseSpeciesListText(rawText: string): TargetSpecies[] {
+  const { targets, issues } = parseSpeciesListTextWithDiagnostics(rawText);
+
+  const firstIssue = issues[0];
+  if (firstIssue) {
+    throw new Error(
+      `Invalid species-list row at line ${firstIssue.lineNumber}: ${firstIssue.reason}`
+    );
+  }
+
+  return targets;
+}
+
+export function parseSpeciesListTextWithDiagnostics(rawText: string): SpeciesListParseResult {
   const lines = rawText
     .split(/\r?\n/)
     .map((line) => line.trim())
@@ -34,14 +58,21 @@ export function parseSpeciesListText(rawText: string): TargetSpecies[] {
     throw new Error(`species-list header mismatch. Expected: "${speciesListHeader}".`);
   }
 
-  const parsedRows = lines.slice(1).map((line, index) => {
+  const issues: SpeciesListRowIssue[] = [];
+  const parsedRows: TargetSpecies[] = [];
+  const seenIds = new Set<string>();
+
+  lines.slice(1).forEach((line, index) => {
     const lineNumber = index + 2;
     const parts = line.split('|').map((part) => part.trim());
 
     if (parts.length !== 3) {
-      throw new Error(
-        `Invalid species-list row at line ${lineNumber}: expected 3 pipe-separated fields.`
-      );
+      issues.push({
+        lineNumber,
+        content: line,
+        reason: `expected 3 pipe-separated fields but found ${parts.length}`
+      });
+      return;
     }
 
     const candidate = {
@@ -52,40 +83,52 @@ export function parseSpeciesListText(rawText: string): TargetSpecies[] {
 
     const parsed = SourceTargetSpeciesSchema.safeParse(candidate);
     if (!parsed.success) {
-      throw new Error(
-        `Invalid species-list row at line ${lineNumber}: ${parsed.error.issues
-          .map((issue) => issue.message)
-          .join('; ')}`
-      );
+      issues.push({
+        lineNumber,
+        content: line,
+        reason: parsed.error.issues.map((issue) => issue.message).join('; ')
+      });
+      return;
     }
 
     const normalizedName = normalizeScientificName(parsed.data.scientificName);
+    const id = toSpeciesId(normalizedName);
 
-    return {
-      ...parsed.data,
-      id: toSpeciesId(normalizedName),
-      scientificNameNormalized: normalizedName
-    };
-  });
-
-  const listValidation = SourceTargetSpeciesListSchema.safeParse(parsedRows);
-  if (!listValidation.success) {
-    throw new Error(`species-list validation failed: ${listValidation.error.message}`);
-  }
-
-  const ids = new Set<string>();
-  for (const row of parsedRows) {
-    if (ids.has(row.id)) {
-      throw new Error(`Duplicate species id generated from scientific names: ${row.id}`);
+    if (seenIds.has(id)) {
+      issues.push({
+        lineNumber,
+        content: line,
+        reason: `duplicate species id generated from scientific names: ${id}`
+      });
+      return;
     }
 
-    ids.add(row.id);
+    seenIds.add(id);
+    parsedRows.push({
+      ...parsed.data,
+      id,
+      scientificNameNormalized: normalizedName
+    });
+  });
+
+  if (parsedRows.length > 0) {
+    const listValidation = SourceTargetSpeciesListSchema.safeParse(parsedRows);
+    if (!listValidation.success) {
+      throw new Error(`species-list validation failed: ${listValidation.error.message}`);
+    }
   }
 
-  return parsedRows;
+  return { targets: parsedRows, issues };
 }
 
 export async function parseSpeciesListFile(filePath: string): Promise<TargetSpecies[]> {
   const raw = await readFile(filePath, 'utf8');
   return parseSpeciesListText(raw);
+}
+
+export async function parseSpeciesListFileWithDiagnostics(
+  filePath: string
+): Promise<SpeciesListParseResult> {
+  const raw = await readFile(filePath, 'utf8');
+  return parseSpeciesListTextWithDiagnostics(raw);
 }

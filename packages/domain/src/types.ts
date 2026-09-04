@@ -32,6 +32,12 @@ export interface PhylogeneticTrait {
   provenance: SourceReference[];
 }
 
+export interface DescriptionSegment {
+  text: string;
+  href?: string;
+  articleTitle?: string;
+}
+
 export interface ReconstructionMedia {
   assetId: string;
   url: string;
@@ -54,6 +60,7 @@ export interface PhyloNode {
   kind: PhyloNodeKind;
   displayName: string;
   description?: string;
+  descriptionSegments?: DescriptionSegment[];
   scientificName?: string;
   commonName?: string;
   rank?: string;

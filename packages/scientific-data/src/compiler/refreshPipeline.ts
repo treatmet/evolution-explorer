@@ -35,6 +35,14 @@ export async function runSourceRefresh(
       console.log(`[data:refresh] ${message}`);
     }
   };
+  const loggedWarnings = new Set<string>();
+  const logWarning = (message: string): void => {
+    if (loggedWarnings.has(message)) {
+      return;
+    }
+    loggedWarnings.add(message);
+    console.warn(`[data:refresh] WARNING: ${message}`);
+  };
 
   logStage('Initializing output directories');
   await Promise.all([
@@ -43,8 +51,26 @@ export async function runSourceRefresh(
     mkdir(paths.approvedDir, { recursive: true })
   ]);
 
+  const sourceWarnings: string[] = [];
+
   logStage('Loading and validating source species list');
-  const targets = await effectiveAdapter.loadTargets();
+  const loaded = effectiveAdapter.loadTargetsWithDiagnostics
+    ? await effectiveAdapter.loadTargetsWithDiagnostics()
+    : { targets: await effectiveAdapter.loadTargets(), issues: [] };
+  const targets = loaded.targets;
+
+  for (const issue of loaded.issues) {
+    const message = `species-list line ${issue.lineNumber} could not be parsed (${issue.reason}): "${issue.content}"`;
+    logWarning(message);
+    sourceWarnings.push(message);
+  }
+
+  if (loaded.issues.length > 0) {
+    sourceWarnings.push(
+      `Skipped ${loaded.issues.length} unparseable species-list row(s); they are absent from this dataset.`
+    );
+  }
+
   if (targets.length === 0) {
     throw new Error('Source compiler cannot build a dataset from zero targets.');
   }
@@ -64,14 +90,47 @@ export async function runSourceRefresh(
     online: options.mediaOnline ?? false,
     ...(options.mediaTimeoutMs !== undefined ? { timeoutMs: options.mediaTimeoutMs } : {}),
     ...(options.mediaRetries !== undefined ? { retries: options.mediaRetries } : {}),
-    ...(options.mediaUserAgent ? { userAgent: options.mediaUserAgent } : {})
+    ...(options.mediaUserAgent ? { userAgent: options.mediaUserAgent } : {}),
+    onStage: (message: string) => logStage(message),
+    onWarning: (message: string) => logWarning(message)
   };
-  logStage('Resolving targets and building OpenTree topology');
+  logStage('Resolving target names against OpenTree and building topology');
   const topologyResult = await buildOpenTreeScientificPhylogeny(targets, topologyOptions);
   logStage(`OpenTree topology built with ${Object.keys(topologyResult.scientificPhylogeny.nodesById).length} nodes`);
   const pruneResult = pruneLowConfidenceUnaryNodes(topologyResult.scientificPhylogeny);
   const compiledScientificPhylogeny = pruneResult.tree;
   logStage(`Topology pruning complete; removed ${pruneResult.prunedNodeCount} nodes`);
+
+  const resolutionRecords = topologyResult.resolutionRecords;
+  const countByStatus = (status: string): number =>
+    resolutionRecords.filter((record) => record.status === status).length;
+
+  const topologyResolutionReportPath = join(
+    paths.candidateDir,
+    `topology-resolution-${datasetVersion}.json`
+  );
+  await writeJson(topologyResolutionReportPath, {
+    datasetVersion,
+    generatedAt,
+    online: options.mediaOnline ?? false,
+    endpoints: {
+      nameResolution: 'https://api.opentreeoflife.org/v3/tnrs/match_names',
+      inducedSubtree: 'https://api.opentreeoflife.org/v3/tree_of_life/induced_subtree'
+    },
+    summary: {
+      totalTargets: targets.length,
+      matched: countByStatus('matched'),
+      unmatched: countByStatus('unmatched'),
+      lookupFailed: countByStatus('lookup-failed'),
+      skippedOffline: countByStatus('skipped-offline'),
+      placedInTopology: resolutionRecords.filter((record) => record.placedInTopology).length,
+      inducedSubtreeChunkCount: topologyResult.inducedSubtreeChunkCount,
+      usedAdaptiveChunking: topologyResult.usedAdaptiveChunking
+    },
+    sourceRowIssues: loaded.issues,
+    resolutions: resolutionRecords
+  });
+  logStage(`Wrote topology resolution report topology-resolution-${datasetVersion}.json`);
 
   const mediaOptions: Partial<MediaEnrichmentOptions> & Pick<MediaEnrichmentOptions, 'cacheDir'> = {
     cacheDir: paths.cacheDir,
@@ -168,6 +227,36 @@ export async function runSourceRefresh(
   } satisfies LatestPointer);
   logStage('Approved artifact publication complete');
 
+  const providerFailures = mediaEnrichment.result.media.providerSnapshots.filter(
+    (provider) => provider.failures > 0
+  );
+
+  const warnings: string[] = [
+    ...sourceWarnings,
+    ...topologyResult.warnings,
+    ...mediaEnrichment.result.warnings,
+    ...providerFailures.map(
+      (provider) =>
+        `Provider "${provider.providerId}" failed ${provider.failures} of ${provider.requests} request(s): ${
+          provider.notes.join('; ') || 'no error detail captured'
+        }`
+    )
+  ];
+
+  const notes: string[] = [
+    `Compiled OpenTree induced topology for ${topologyResult.resolvedTargetCount} of ${targets.length} targets.`,
+    `Targets unresolved in OpenTree placement: ${topologyResult.unresolvedTargetCount}.`,
+    pruneResult.prunedNodeCount > 0
+      ? `Pruned ${pruneResult.prunedNodeCount} unary low-confidence/navigation internal nodes before publication.`
+      : 'No unary low-confidence/navigation internal nodes required pruning.',
+    'External media/taxonomy enrichment ran with cache-first provider adapters and provenance capture.',
+    `Topology resolution report: ${topologyResolutionReportPath}`
+  ];
+
+  for (const warning of warnings) {
+    logWarning(warning);
+  }
+
   return {
     summary: {
       sourceCount: targets.length,
@@ -198,16 +287,9 @@ export async function runSourceRefresh(
       },
       promotedToApproved: true,
       approvedArtifactPath,
-      warnings: [
-        `Scientific phylogeny compiled from OpenTree induced subtree for ${topologyResult.resolvedTargetCount} target placements.`,
-        `Targets unresolved in OpenTree placement: ${topologyResult.unresolvedTargetCount}.`,
-        pruneResult.prunedNodeCount > 0
-          ? `Pruned ${pruneResult.prunedNodeCount} unary low-confidence/navigation internal nodes before artifact publication.`
-          : 'No unary low-confidence/navigation internal nodes required pruning.',
-        'External media/taxonomy enrichment runs with cache-first provider adapters and provenance capture.',
-        ...topologyResult.warnings,
-        ...mediaEnrichment.result.warnings
-      ]
+      topologyResolutionReportPath,
+      warnings,
+      notes
     },
     candidate,
     baselineApproved,

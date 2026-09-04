@@ -26,6 +26,21 @@ interface BuildOpenTreeScientificPhylogenyOptions {
   retries?: number | undefined;
   userAgent?: string | undefined;
   maxChildrenPerNavigationNode?: number | undefined;
+  onStage?: ((message: string) => void) | undefined;
+  onWarning?: ((message: string) => void) | undefined;
+}
+
+export type TargetResolutionStatus = 'matched' | 'unmatched' | 'lookup-failed' | 'skipped-offline';
+
+export interface TargetResolutionRecord {
+  targetId: string;
+  scientificName: string;
+  status: TargetResolutionStatus;
+  ottId?: number | undefined;
+  matchedName?: string | undefined;
+  score?: number | undefined;
+  error?: string | undefined;
+  placedInTopology: boolean;
 }
 
 export interface OpenTreeScientificPhylogenyResult {
@@ -34,13 +49,19 @@ export interface OpenTreeScientificPhylogenyResult {
   resolvedTargetCount: number;
   unresolvedTargetCount: number;
   warnings: string[];
+  resolutionRecords: TargetResolutionRecord[];
+  inducedSubtreeChunkCount: number;
+  usedAdaptiveChunking: boolean;
 }
 
 interface TargetOttResolution {
   targetId: string;
+  scientificName: string;
+  status: TargetResolutionStatus;
   ottId?: number | undefined;
   matchedName?: string | undefined;
   score?: number | undefined;
+  error?: string | undefined;
   provenance?: SourceReference | undefined;
 }
 
@@ -68,6 +89,12 @@ interface ExternalLookupOptions {
   userAgent?: string | undefined;
 }
 
+interface TnrsLookupOutcome {
+  match: OpenTreeTnrsMatch | null;
+  error?: string | undefined;
+  skippedOffline: boolean;
+}
+
 interface CachedLookupRecord<T> {
   cachedAt: string;
   value: T;
@@ -90,9 +117,35 @@ export async function buildOpenTreeScientificPhylogeny(
     ...(options.userAgent ? { userAgent: options.userAgent } : {})
   };
 
-  const resolutions = await resolveTargetsToOttIds(targets, lookupOptions);
+  const resolutions = await resolveTargetsToOttIds(targets, lookupOptions, options.onWarning);
   const resolvedTargets = resolutions.filter((entry) => entry.ottId !== undefined);
   const resolvedTargetCount = resolvedTargets.length;
+
+  const failedLookups = resolutions.filter((entry) => entry.status === 'lookup-failed');
+  const unmatchedNames = resolutions.filter((entry) => entry.status === 'unmatched');
+  const offlineSkips = resolutions.filter((entry) => entry.status === 'skipped-offline');
+
+  if (failedLookups.length > 0) {
+    warnings.push(
+      `OpenTree name resolution failed for ${failedLookups.length} target(s): ${failedLookups
+        .map((entry) => `${entry.scientificName} (${entry.error ?? 'unknown error'})`)
+        .join('; ')}`
+    );
+  }
+
+  if (unmatchedNames.length > 0) {
+    warnings.push(
+      `OpenTree returned no name match for ${unmatchedNames.length} target(s): ${unmatchedNames
+        .map((entry) => entry.scientificName)
+        .join('; ')}`
+    );
+  }
+
+  if (offlineSkips.length > 0) {
+    warnings.push(
+      `OpenTree name resolution skipped for ${offlineSkips.length} target(s) because the run was offline with no cached match.`
+    );
+  }
 
   if (resolvedTargetCount < 2) {
     throw new Error(
@@ -102,6 +155,9 @@ export async function buildOpenTreeScientificPhylogeny(
   }
 
   const uniqueOttIds = [...new Set(resolvedTargets.map((entry) => entry.ottId).filter(isNumber))];
+  options.onStage?.(
+    `Requesting OpenTree induced subtree for ${uniqueOttIds.length} resolved OTT identifiers`
+  );
   const inducedSets = await fetchOpenTreeInducedSubtreeSets(uniqueOttIds, lookupOptions);
 
   if (inducedSets.newicks.length === 0) {
@@ -191,12 +247,38 @@ export async function buildOpenTreeScientificPhylogeny(
     nodesById
   };
 
+  const resolutionRecords: TargetResolutionRecord[] = resolutions.map((resolution) => ({
+    targetId: resolution.targetId,
+    scientificName: resolution.scientificName,
+    status: resolution.status,
+    ottId: resolution.ottId,
+    matchedName: resolution.matchedName,
+    score: resolution.score,
+    error: resolution.error,
+    placedInTopology: context.usedTargetIds.has(resolution.targetId)
+  }));
+
+  const matchedButUnplaced = resolutionRecords.filter(
+    (record) => record.status === 'matched' && !record.placedInTopology
+  );
+
+  if (matchedButUnplaced.length > 0) {
+    warnings.push(
+      `OpenTree resolved but did not place ${matchedButUnplaced.length} target(s) in the induced topology: ${matchedButUnplaced
+        .map((record) => record.scientificName)
+        .join('; ')}`
+    );
+  }
+
   return {
     scientificPhylogeny: tree,
     usedOpenTreeTopology: true,
     resolvedTargetCount,
     unresolvedTargetCount,
-    warnings
+    warnings,
+    resolutionRecords,
+    inducedSubtreeChunkCount: inducedSets.newicks.length,
+    usedAdaptiveChunking: inducedSets.usedAdaptiveChunking
   };
 }
 
@@ -778,19 +860,44 @@ function buildFallbackCatalogTree(
 
 async function resolveTargetsToOttIds(
   targets: ReadonlyArray<TargetSpecies>,
-  options: ExternalLookupOptions
+  options: ExternalLookupOptions,
+  onWarning?: ((message: string) => void) | undefined
 ): Promise<TargetOttResolution[]> {
   const resolutions: TargetOttResolution[] = [];
 
   for (const target of targets) {
-    const tnrsMatch = await lookupOpenTreeTnrs(target.scientificName, options);
+    const outcome = await lookupOpenTreeTnrs(target.scientificName, options);
+    const match = outcome.match;
+
+    const status: TargetResolutionStatus = outcome.error
+      ? 'lookup-failed'
+      : outcome.skippedOffline
+        ? 'skipped-offline'
+        : match?.ottId !== undefined
+          ? 'matched'
+          : 'unmatched';
+
+    if (status === 'lookup-failed') {
+      onWarning?.(
+        `OpenTree name resolution failed for "${target.scientificName}": ${outcome.error}`
+      );
+    } else if (status === 'unmatched') {
+      onWarning?.(`OpenTree returned no name match for "${target.scientificName}"`);
+    } else if (status === 'skipped-offline') {
+      onWarning?.(
+        `OpenTree name resolution skipped for "${target.scientificName}" (offline, no cached match)`
+      );
+    }
 
     resolutions.push({
       targetId: target.id,
-      ...(tnrsMatch?.ottId !== undefined ? { ottId: tnrsMatch.ottId } : {}),
-      ...(tnrsMatch?.matchedName ? { matchedName: tnrsMatch.matchedName } : {}),
-      ...(tnrsMatch?.score !== undefined ? { score: tnrsMatch.score } : {}),
-      ...(tnrsMatch?.provenance ? { provenance: tnrsMatch.provenance } : {})
+      scientificName: target.scientificName,
+      status,
+      ...(match?.ottId !== undefined ? { ottId: match.ottId } : {}),
+      ...(match?.matchedName ? { matchedName: match.matchedName } : {}),
+      ...(match?.score !== undefined ? { score: match.score } : {}),
+      ...(outcome.error ? { error: outcome.error } : {}),
+      ...(match?.provenance ? { provenance: match.provenance } : {})
     });
   }
 
@@ -811,12 +918,21 @@ interface OpenTreeInducedSubtreeResponse {
 async function lookupOpenTreeTnrs(
   name: string,
   options: ExternalLookupOptions
-): Promise<OpenTreeTnrsMatch | null> {
-  return loadCachedOrFetch<OpenTreeTnrsMatch | null>({
+): Promise<TnrsLookupOutcome> {
+  let error: string | undefined;
+  let skippedOffline = false;
+
+  const match = await loadCachedOrFetch<OpenTreeTnrsMatch | null>({
     cacheDir: options.cacheDir,
     cacheNamespace: 'open-tree-tnrs',
     key: name,
     online: options.online,
+    onFailure: (message) => {
+      error = message;
+    },
+    onOffline: () => {
+      skippedOffline = true;
+    },
     fetcher: async () => {
       const url = 'https://api.opentreeoflife.org/v3/tnrs/match_names';
       const response = await fetchJson<Record<string, unknown>>(
@@ -870,11 +986,18 @@ async function lookupOpenTreeTnrs(
       };
     }
   });
+
+  return {
+    match,
+    ...(error !== undefined ? { error } : {}),
+    skippedOffline
+  };
 }
 
 async function fetchOpenTreeInducedSubtree(
   ottIds: ReadonlyArray<number>,
-  options: ExternalLookupOptions
+  options: ExternalLookupOptions,
+  onFailure?: ((message: string) => void) | undefined
 ): Promise<OpenTreeInducedSubtreeResponse | null> {
   const cacheKey = ottIds.map((id) => String(id)).sort().join(',');
 
@@ -883,6 +1006,7 @@ async function fetchOpenTreeInducedSubtree(
     cacheNamespace: 'open-tree-induced-subtree',
     key: cacheKey,
     online: options.online,
+    ...(onFailure ? { onFailure } : {}),
     fetcher: async () => {
       const url = 'https://api.opentreeoflife.org/v3/tree_of_life/induced_subtree';
       const response = await fetchJson<Record<string, unknown>>(
@@ -908,29 +1032,40 @@ async function fetchOpenTreeInducedSubtree(
 async function fetchOpenTreeInducedSubtreeSets(
   ottIds: ReadonlyArray<number>,
   options: ExternalLookupOptions
-): Promise<{ newicks: string[]; warnings: string[] }> {
+): Promise<{ newicks: string[]; warnings: string[]; usedAdaptiveChunking: boolean }> {
   const warnings: string[] = [];
   const sortedOttIds = [...ottIds].sort((a, b) => a - b);
 
-  const fullTree = await fetchOpenTreeInducedSubtree(sortedOttIds, options);
+  let fullTreeError: string | undefined;
+  const fullTree = await fetchOpenTreeInducedSubtree(sortedOttIds, options, (message) => {
+    fullTreeError = message;
+  });
   if (fullTree?.newick) {
     return {
       newicks: [fullTree.newick],
-      warnings
+      warnings,
+      usedAdaptiveChunking: false
     };
   }
+
+  warnings.push(
+    `OpenTree full induced subtree request did not return a usable topology${
+      fullTreeError ? ` (${fullTreeError})` : ''
+    }; falling back to adaptive chunking.`
+  );
 
   const newicks = await fetchOpenTreeInducedSubtreesAdaptive(sortedOttIds, options);
 
   if (newicks.length > 0) {
     warnings.push(
-      `OpenTree full induced subtree was unavailable; compiled ${newicks.length} adaptive chunked induced subtrees.`
+      `OpenTree full induced subtree was unavailable; compiled ${newicks.length} adaptive chunked induced subtrees. Deep relationships between chunks are not resolved.`
     );
   }
 
   return {
     newicks,
-    warnings
+    warnings,
+    usedAdaptiveChunking: newicks.length > 0
   };
 }
 
@@ -969,6 +1104,8 @@ interface CachedLookupOptions<T> {
   key: string;
   online: boolean;
   fetcher: () => Promise<T>;
+  onFailure?: ((message: string) => void) | undefined;
+  onOffline?: (() => void) | undefined;
 }
 
 async function loadCachedOrFetch<T>(options: CachedLookupOptions<T>): Promise<T> {
@@ -979,6 +1116,7 @@ async function loadCachedOrFetch<T>(options: CachedLookupOptions<T>): Promise<T>
   }
 
   if (!options.online) {
+    options.onOffline?.();
     return null as T;
   }
 
@@ -989,7 +1127,8 @@ async function loadCachedOrFetch<T>(options: CachedLookupOptions<T>): Promise<T>
       value
     });
     return value;
-  } catch {
+  } catch (error) {
+    options.onFailure?.(error instanceof Error ? error.message : 'unknown error');
     return null as T;
   }
 }

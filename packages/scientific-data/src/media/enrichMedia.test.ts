@@ -183,7 +183,7 @@ describe('enrichMediaForScientificTree', () => {
     });
 
     const { tree: enrichedTree } = await enrichMediaForScientificTree(tree, targets, {
-      cacheDir: '.tmp-cache-description-tests',
+      cacheDir: await mkdtemp(join(tmpdir(), 'evo-tree-description-')),
       online: true,
       maxTargets: 1,
       retries: 0
@@ -198,6 +198,80 @@ describe('enrichMediaForScientificTree', () => {
         (source) => source.sourceId === 'wikipedia-page-summary'
       )
     ).toBe(true);
+  });
+
+  it('embeds Wikipedia lead-section hyperlinks into description segments', async () => {
+    const tree = makeTree();
+    const internalNode = tree.nodesById['branch-1'];
+    if (!internalNode) {
+      throw new Error('Expected internal test node.');
+    }
+    internalNode.displayName = 'Opisthokont';
+    internalNode.scientificName = 'Opisthokont';
+    internalNode.kind = 'named-taxon';
+    internalNode.navigationOnly = false;
+
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input);
+
+      if (url.includes('/api/rest_v1/page/summary/')) {
+        return new Response(
+          JSON.stringify({
+            type: 'standard',
+            title: 'Opisthokont',
+            pageid: 1234,
+            extract:
+              'The opisthokonts are a broad group of eukaryotes, including both the animal and fungus kingdoms.'
+          }),
+          { status: 200, headers: { 'content-type': 'application/json' } }
+        );
+      }
+
+      if (url.includes('/w/api.php') && url.includes('action=parse')) {
+        return new Response(
+          JSON.stringify({
+            parse: {
+              title: 'Opisthokont',
+              text:
+                '<p>The <b>opisthokonts</b> are a broad group of ' +
+                '<a href="/wiki/Eukaryote" title="Eukaryote">eukaryotes</a>, including both the ' +
+                '<a href="/wiki/Animal" title="Animal">animal</a> and ' +
+                '<a href="/wiki/Fungus" title="Fungus">fungus</a> kingdoms. ' +
+                '<a href="/wiki/File:Example.jpg"><img src="x"/></a></p>'
+            }
+          }),
+          { status: 200, headers: { 'content-type': 'application/json' } }
+        );
+      }
+
+      const emptyPayload = url.includes('paleobiodb.org')
+        ? { records: [] }
+        : url.includes('api.phylopic.org')
+          ? { _embedded: { images: [] } }
+          : { results: [] };
+      return new Response(JSON.stringify(emptyPayload), {
+        status: 200,
+        headers: { 'content-type': 'application/json' }
+      });
+    });
+
+    const { tree: enrichedTree } = await enrichMediaForScientificTree(tree, targets, {
+      cacheDir: await mkdtemp(join(tmpdir(), 'evo-tree-links-')),
+      online: true,
+      maxTargets: 1,
+      retries: 0
+    });
+
+    const segments = enrichedTree.nodesById['branch-1']?.descriptionSegments;
+    expect(segments).toBeDefined();
+
+    const linked = (segments ?? []).filter((segment) => segment.href);
+    expect(linked.map((segment) => segment.text)).toEqual(['eukaryotes', 'animal', 'fungus']);
+    expect(linked[0]?.href).toBe('https://en.wikipedia.org/wiki/Eukaryote');
+    expect(linked[0]?.articleTitle).toBe('Eukaryote');
+
+    const rebuilt = (segments ?? []).map((segment) => segment.text).join('');
+    expect(rebuilt).toBe(enrichedTree.nodesById['branch-1']?.description);
   });
 
   it('limits descriptions to complete sentences within the configured character count', async () => {

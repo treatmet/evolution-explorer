@@ -2,7 +2,13 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 
-import type { PhyloNode, ScientificPhylogeny, SourceReference, TargetDifficultyMetadata } from '@evo-tree/domain';
+import type {
+  DescriptionSegment,
+  PhyloNode,
+  ScientificPhylogeny,
+  SourceReference,
+  TargetDifficultyMetadata
+} from '@evo-tree/domain';
 
 import type { TargetSpecies } from '../types';
 import type {
@@ -47,6 +53,7 @@ export async function enrichMediaForScientificTree(
     'paleobiodb',
     'inaturalist',
     'wikipedia-summary',
+    'wikipedia-links',
     'phylopic',
     'openverse'
   ]);
@@ -199,17 +206,17 @@ export async function enrichMediaForScientificTree(
     );
     await Promise.all(
       batch.map(async (node) => {
-        const description = await lookupWikipediaDescription(
-          node.scientificName ?? node.displayName,
-          {
-            cacheDir: options.cacheDir,
-            online,
-            timeoutMs: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,
-            retries: options.retries ?? DEFAULT_RETRIES,
-            userAgent: options.userAgent,
-            providerStats
-          }
-        );
+        const lookupName = node.scientificName ?? node.displayName;
+        const lookupOptions = {
+          cacheDir: options.cacheDir,
+          online,
+          timeoutMs: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,
+          retries: options.retries ?? DEFAULT_RETRIES,
+          userAgent: options.userAgent,
+          providerStats
+        };
+
+        const description = await lookupWikipediaDescription(lookupName, lookupOptions);
 
         if (description) {
           const limitedSummary = limitDescriptionToCompleteSentences(
@@ -218,6 +225,15 @@ export async function enrichMediaForScientificTree(
           );
           if (limitedSummary) {
             node.description = limitedSummary;
+
+            const links = await lookupWikipediaLeadLinks(
+              description.articleTitle ?? lookupName,
+              lookupOptions
+            );
+            const segments = buildDescriptionSegments(limitedSummary, links);
+            if (segments) {
+              node.descriptionSegments = segments;
+            }
           }
           node.provenance = mergeProvenance(node.provenance, [description.provenance]);
         }
@@ -656,10 +672,33 @@ async function lookupINaturalistImage(
 
 interface WikipediaDescription {
   summary: string;
+  articleTitle?: string | undefined;
   provenance: SourceReference;
 }
 
 async function lookupWikipediaDescription(
+  name: string,
+  options: ExternalLookupOptions
+): Promise<WikipediaDescription | null> {
+  for (const candidate of wikipediaTitleCandidates(name)) {
+    const found = await lookupWikipediaDescriptionByTitle(candidate, options);
+    if (found) {
+      return found;
+    }
+  }
+
+  return null;
+}
+
+// OpenTree labels carry qualifiers such as "Vertebrata (subphylum in Deuterostomia)".
+function wikipediaTitleCandidates(name: string): string[] {
+  const trimmed = name.trim();
+  const withoutQualifier = trimmed.replace(/\s*\([^)]*\)\s*$/, '').trim();
+
+  return [...new Set([withoutQualifier, trimmed].filter((value) => value.length > 0))];
+}
+
+async function lookupWikipediaDescriptionByTitle(
   name: string,
   options: ExternalLookupOptions
 ): Promise<WikipediaDescription | null> {
@@ -670,7 +709,10 @@ async function lookupWikipediaDescription(
     online: options.online,
     fetcher: async () => {
       const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`;
-      const response = await fetchJson<Record<string, unknown>>(url, options);
+      const response = await fetchJsonAllowingMissing<Record<string, unknown>>(url, options);
+      if (!response) {
+        return null;
+      }
       const summary = stringOrUndefined(response['extract'])?.replace(/\s+/g, ' ').trim();
       if (!summary || response['type'] === 'disambiguation') {
         return null;
@@ -689,6 +731,7 @@ async function lookupWikipediaDescription(
 
       return {
         summary,
+        articleTitle: stringOrUndefined(response['title']),
         provenance: buildSourceReference({
           sourceId: 'wikipedia-page-summary',
           sourceType: 'other',
@@ -733,6 +776,179 @@ function limitDescriptionToCompleteSentences(
   }
 
   return limited || undefined;
+}
+
+interface WikipediaLeadLink {
+  phrase: string;
+  articleTitle: string;
+  href: string;
+}
+
+const WIKIPEDIA_ANCHOR_PATTERN = /<a\b[^>]*href="\/wiki\/([^"#?]+)"[^>]*>([\s\S]*?)<\/a>/g;
+
+async function lookupWikipediaLeadLinks(
+  articleTitle: string,
+  options: ExternalLookupOptions
+): Promise<WikipediaLeadLink[]> {
+  const links = await loadCachedOrFetch<WikipediaLeadLink[] | null>({
+    providerId: 'wikipedia-links',
+    cacheDir: options.cacheDir,
+    key: articleTitle,
+    online: options.online,
+    fetcher: async () => {
+      const url =
+        'https://en.wikipedia.org/w/api.php?action=parse&prop=text&section=0&redirects=1' +
+        `&format=json&formatversion=2&page=${encodeURIComponent(articleTitle)}`;
+      const response = await fetchJsonAllowingMissing<Record<string, unknown>>(url, options);
+      if (!response) {
+        return null;
+      }
+
+      const parse = response['parse'];
+      const html =
+        parse && typeof parse === 'object'
+          ? stringOrUndefined((parse as Record<string, unknown>)['text'])
+          : undefined;
+
+      if (!html) {
+        return null;
+      }
+
+      return extractWikipediaLeadLinks(html);
+    },
+    providerStats: options.providerStats
+  });
+
+  return links ?? [];
+}
+
+function extractWikipediaLeadLinks(html: string): WikipediaLeadLink[] {
+  const byPhrase = new Map<string, WikipediaLeadLink>();
+
+  for (const match of html.matchAll(WIKIPEDIA_ANCHOR_PATTERN)) {
+    const rawTitle = match[1];
+    const rawInner = match[2];
+    if (!rawTitle || !rawInner || rawInner.includes('<img')) {
+      continue;
+    }
+
+    const articleTitle = decodeWikiTitle(rawTitle);
+    // Namespaced links such as File:, Help: and Category: are not article links.
+    if (!articleTitle || articleTitle.includes(':')) {
+      continue;
+    }
+
+    const phrase = decodeHtmlText(rawInner.replace(/<[^>]+>/g, '')).trim();
+    if (phrase.length < 3 || /^\d+$/.test(phrase)) {
+      continue;
+    }
+
+    const key = phrase.toLowerCase();
+    if (byPhrase.has(key)) {
+      continue;
+    }
+
+    byPhrase.set(key, {
+      phrase,
+      articleTitle,
+      href: `https://en.wikipedia.org/wiki/${rawTitle}`
+    });
+  }
+
+  return [...byPhrase.values()];
+}
+
+function buildDescriptionSegments(
+  description: string,
+  links: ReadonlyArray<WikipediaLeadLink>
+): DescriptionSegment[] | undefined {
+  if (links.length === 0) {
+    return undefined;
+  }
+
+  const lowerDescription = description.toLowerCase();
+  const claimed: { start: number; end: number; link: WikipediaLeadLink }[] = [];
+  const orderedLinks = [...links].sort((a, b) => b.phrase.length - a.phrase.length);
+
+  for (const link of orderedLinks) {
+    const needle = link.phrase.toLowerCase();
+    let searchFrom = 0;
+
+    while (searchFrom <= lowerDescription.length - needle.length) {
+      const start = lowerDescription.indexOf(needle, searchFrom);
+      if (start === -1) {
+        break;
+      }
+
+      const end = start + needle.length;
+      const overlaps = claimed.some((range) => start < range.end && end > range.start);
+
+      if (!overlaps && isWholeWordMatch(description, start, end)) {
+        claimed.push({ start, end, link });
+        break;
+      }
+
+      searchFrom = start + 1;
+    }
+  }
+
+  if (claimed.length === 0) {
+    return undefined;
+  }
+
+  claimed.sort((a, b) => a.start - b.start);
+
+  const segments: DescriptionSegment[] = [];
+  let cursor = 0;
+
+  for (const range of claimed) {
+    if (range.start > cursor) {
+      segments.push({ text: description.slice(cursor, range.start) });
+    }
+
+    segments.push({
+      text: description.slice(range.start, range.end),
+      href: range.link.href,
+      articleTitle: range.link.articleTitle
+    });
+
+    cursor = range.end;
+  }
+
+  if (cursor < description.length) {
+    segments.push({ text: description.slice(cursor) });
+  }
+
+  return segments;
+}
+
+function isWholeWordMatch(value: string, start: number, end: number): boolean {
+  const before = start > 0 ? value[start - 1] : undefined;
+  const after = end < value.length ? value[end] : undefined;
+  const isWordCharacter = (character: string | undefined): boolean =>
+    character !== undefined && /[A-Za-z0-9]/.test(character);
+
+  return !isWordCharacter(before) && !isWordCharacter(after);
+}
+
+function decodeWikiTitle(rawTitle: string): string {
+  try {
+    return decodeURIComponent(rawTitle).replace(/_/g, ' ');
+  } catch {
+    return rawTitle.replace(/_/g, ' ');
+  }
+}
+
+function decodeHtmlText(value: string): string {
+  return value
+    .replace(/&#(\d+);/g, (_, code: string) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code: string) => String.fromCodePoint(Number.parseInt(code, 16)))
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&');
 }
 
 async function lookupPhyloPicSilhouette(
@@ -1069,6 +1285,9 @@ function cloneTree(tree: ScientificPhylogeny): ScientificPhylogeny {
             provenance: [...trait.provenance]
           })),
           provenance: [...node.provenance],
+          ...(node.descriptionSegments
+            ? { descriptionSegments: node.descriptionSegments.map((segment) => ({ ...segment })) }
+            : {}),
           ...(node.reconstruction ? { reconstruction: { ...node.reconstruction } } : {})
         }
       ])
@@ -1205,6 +1424,23 @@ function delay(ms: number): Promise<void> {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
+}
+
+// A missing article is a legitimate absence, not a provider malfunction.
+async function fetchJsonAllowingMissing<T>(
+  url: string,
+  options: Pick<ExternalLookupOptions, 'timeoutMs' | 'retries' | 'userAgent'>,
+  init?: RequestInit
+): Promise<T | null> {
+  try {
+    return await fetchJson<T>(url, options, init);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : '';
+    if (message.includes('HTTP 404')) {
+      return null;
+    }
+    throw error;
+  }
 }
 
 function parseRetryAfterMs(retryAfterHeader: string | null): number | undefined {

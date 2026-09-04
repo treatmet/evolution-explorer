@@ -232,6 +232,60 @@ body {
   margin: 0.35rem 0 0.55rem;
 }
 
+.description-link-wrapper {
+  position: relative;
+}
+
+.description-link {
+  color: #7fd7ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(127, 215, 255, 0.45);
+}
+
+.description-link:hover,
+.description-link:focus-visible {
+  color: #aee7ff;
+  border-bottom-color: #aee7ff;
+}
+
+.description-preview {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: block;
+  width: 288px;
+  padding: 0.6rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid rgba(160, 212, 223, 0.34);
+  background: rgba(9, 24, 30, 0.97);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+  color: #d7edf0;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  text-align: left;
+  pointer-events: auto;
+}
+
+.description-preview-title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.description-preview-image {
+  float: right;
+  width: 74px;
+  height: auto;
+  margin: 0 0 0.35rem 0.45rem;
+  border-radius: 6px;
+}
+
+.description-preview-extract {
+  display: block;
+}
+
 .row {
   display: flex;
   align-items: center;

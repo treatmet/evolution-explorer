@@ -77,7 +77,9 @@ export interface RefreshSummary {
   };
   promotedToApproved: boolean;
   approvedArtifactPath: string | null;
+  topologyResolutionReportPath: string;
   warnings: string[];
+  notes: string[];
 }
 
 export interface RefreshResult {

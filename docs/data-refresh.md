@@ -38,6 +38,16 @@ Output files:
 - `data/candidate/latest.json`
 - `data/candidate/diff-YYYY.MM.DD.N.json`
 - `data/candidate/report-YYYY.MM.DD.N.md`
+- `data/candidate/topology-resolution-YYYY.MM.DD.N.json`
+
+The topology resolution report records, for every source target, the OpenTree TNRS status
+(`matched`, `unmatched`, `lookup-failed`, `skipped-offline`), the matched OTT id and name, the
+match score, any API error message, and whether the target was placed in the induced topology.
+It also records unparseable species-list rows and whether adaptive chunking was needed.
+
+The run summary separates `warnings` from `notes`. `warnings` contains only conditions that need
+attention (unparseable rows, name-resolution failures, unplaced targets, chunking fallback,
+provider failures, offline degradation). `notes` carries informational counts.
 
 Runtime mirror files for the web app:
 

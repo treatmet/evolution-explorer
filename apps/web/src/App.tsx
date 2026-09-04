@@ -40,6 +40,7 @@ import {
   type RuntimeTargetSpecies
 } from './data/runtimeDataset';
 import { buildPlayableScientificTree } from './data/buildPlayableScientificTree';
+import { LinkedDescription } from './components/LinkedDescription';
 
 const targetMetadata: TargetDifficultyMetadata[] = [
   { speciesId: 'homo-sapiens', familiarityScore: 0.98 },
@@ -1127,7 +1128,12 @@ function App() {
           <p className="label">Decision Lens</p>
           <h2>{currentNode?.displayName ?? 'Unknown node'}</h2>
           {currentNode?.description ? (
-            <p className="decision-description">{currentNode.description}</p>
+            <LinkedDescription
+              description={currentNode.description}
+              {...(currentNode.descriptionSegments
+                ? { segments: currentNode.descriptionSegments }
+                : {})}
+            />
           ) : null}
           <div className="metric-row">
             <span className="metric-chip">Age: {describeNodeAge(currentNode)}</span>
@@ -1142,7 +1148,7 @@ function App() {
                 </span>
               ))} 
             </div>
-          ) : null}
+          ) : null} 
 
           {session.phase === 'active' ? (
             <>

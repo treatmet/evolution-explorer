@@ -1,4 +1,8 @@
-import { parseSpeciesListFile } from '../parsing/parseSpeciesList';
+import {
+  parseSpeciesListFile,
+  parseSpeciesListFileWithDiagnostics,
+  type SpeciesListParseResult
+} from '../parsing/parseSpeciesList';
 import type { TargetSpecies } from '../types';
 
 export interface TargetSourceAdapter {
@@ -6,6 +10,7 @@ export interface TargetSourceAdapter {
   sourceType: string;
   sourcePath: string;
   loadTargets(): Promise<TargetSpecies[]>;
+  loadTargetsWithDiagnostics?(): Promise<SpeciesListParseResult>;
 }
 
 export class TxtSpeciesListAdapter implements TargetSourceAdapter {
@@ -19,5 +24,9 @@ export class TxtSpeciesListAdapter implements TargetSourceAdapter {
 
   async loadTargets(): Promise<TargetSpecies[]> {
     return parseSpeciesListFile(this.sourcePath);
+  }
+
+  async loadTargetsWithDiagnostics(): Promise<SpeciesListParseResult> {
+    return parseSpeciesListFileWithDiagnostics(this.sourcePath);
   }
 }
