@@ -1,4 +1,4 @@
-# EVO-TREE
+# EVOLUTION-EXPLORER
 
 Milestone 1 foundation for a scientifically grounded phylogenetic navigation game.
 
