@@ -723,6 +723,11 @@ function App() {
     retryWithNewTarget();
   }
 
+  function returnToExplore() {
+    setSession((previous) => createInitialSession(previous.scientificRootId, previous.difficulty));
+    setErrorText(null);
+  }
+
   function focusCameraOnCurrentNode() {
     const currentRenderNode = renderModel.nodes.find((node) => node.id === session.currentNodeId);
     if (!currentRenderNode) {
@@ -741,7 +746,24 @@ function App() {
   }
 
   useEffect(() => {
-    if (!hasStartedGame || !rendererRef.current) {
+    if (!rendererRef.current) {
+      return;
+    }
+
+    if (!hasStartedGame) {
+      if (lastFocusedSessionKeyRef.current === 'explore') {
+        return;
+      }
+
+      const camera = cameraRef.current;
+      animateCameraTo(
+        fitCameraToBounds(
+          renderModel.bounds,
+          camera.viewportWidth,
+          camera.viewportHeight
+        )
+      );
+      lastFocusedSessionKeyRef.current = 'explore';
       return;
     }
 
@@ -1013,6 +1035,15 @@ function App() {
         <section className="top-hud panel" aria-label="Inline control bar">
           <div className="top-hud-row">
             <div className="top-hud-left">
+              <div
+                className="hud-chip mode-indicator"
+                aria-label={`Current mode: ${hasStartedGame ? 'Game' : 'Explore'}`}
+              >
+                <span className="hud-chip-icon" aria-hidden="true">{hasStartedGame ? 'G' : 'E'}</span>
+                <span className="hud-chip-label">Mode</span>
+                <span className="hud-chip-value">{hasStartedGame ? 'Game' : 'Explore'}</span>
+              </div>
+
               <div className="hud-chip" title={targetScientificName} aria-label="Current target species">
                 <span className="hud-chip-icon target-chip-icon" aria-hidden="true">
                   {targetImageUrl ? (
@@ -1185,7 +1216,7 @@ function App() {
             <div className="top-hud-right">
               <div className="actions-row top-actions-row" aria-label="Top action menu">
                 <button type="button" className="ghost" onClick={pickNewTarget}>
-                  New Target
+                  {hasStartedGame ? 'New Target' : 'Start Game'}
                 </button>
 
                 {session.phase === 'active' ? (
@@ -1208,6 +1239,9 @@ function App() {
                   <>
                     <button type="button" className="ghost" onClick={retryWithSameTarget}>
                       Try Again
+                    </button>
+                    <button type="button" className="ghost" onClick={returnToExplore}>
+                      Return to Explore
                     </button>
                   </>
                 ) : null}
