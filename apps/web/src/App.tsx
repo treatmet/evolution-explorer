@@ -1146,7 +1146,7 @@ function App() {
 
           {session.phase === 'active' ? (
             <>
-              <p className="muted">Choose a branch. Correct lineage remains hidden during play.</p>
+              <p className="muted">Choose a branch.</p>
               <div className="choice-grid">
                 {availableChoiceNodes.map((choiceNode) => (
                   <button
