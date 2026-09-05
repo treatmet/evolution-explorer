@@ -10,3 +10,6 @@ export * from './compiler/pruneLowConfidenceUnaryNodes';
 export * from './compiler/refreshPipeline';
 export * from './media/types';
 export * from './media/enrichMedia';
+export * from './naming/normalizeNodeNames';
+export * from './naming/pluralize';
+export * from './naming/morphology';

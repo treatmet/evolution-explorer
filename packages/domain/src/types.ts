@@ -38,6 +38,28 @@ export interface DescriptionSegment {
   articleTitle?: string;
 }
 
+export interface DescriptionSource {
+  articleTitle: string;
+  url: string;
+}
+
+export type NodeNameForm = 'singular' | 'plural' | 'clade';
+
+export type NodeNameProvenance =
+  | 'seed'
+  | 'curated'
+  | 'wikipedia-vernacular'
+  | 'morphological-rule'
+  | 'clade-fallback'
+  | 'collision-fallback';
+
+export interface NodeNames {
+  singular: string;
+  plural: string;
+  clade: string;
+  provenance: NodeNameProvenance;
+}
+
 export interface ReconstructionMedia {
   assetId: string;
   url: string;
@@ -59,8 +81,10 @@ export interface PhyloNode {
   childIds: string[];
   kind: PhyloNodeKind;
   displayName: string;
+  names?: NodeNames;
   description?: string;
   descriptionSegments?: DescriptionSegment[];
+  descriptionSource?: DescriptionSource;
   scientificName?: string;
   commonName?: string;
   rank?: string;

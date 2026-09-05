@@ -232,6 +232,12 @@ body {
   margin: 0.35rem 0 0.55rem;
 }
 
+.decision-description-source {
+  color: #8fa9ad;
+  font-size: 0.72rem;
+  margin: -0.3rem 0 0.5rem;
+}
+
 .description-link-wrapper {
   position: relative;
 }

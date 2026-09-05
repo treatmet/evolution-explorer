@@ -1,5 +1,4 @@
 import type {
-  DescriptionSegment,
   PhylogeneticTrait,
   PhyloNode,
   ScientificConfidence,
@@ -95,16 +94,12 @@ export function buildPlayableScientificTree(
     if (node.traits.length === 0 && traits.length > 0) {
       inferredTraitNodeCount += 1;
     }
-    const description = node.description ?? traits[0]?.description;
-    const descriptionSegments = pickDescriptionSegments(node, description);
 
     nodesById[node.id] = {
       ...node,
       parentId: null,
       childIds: compressedChildIds,
-      traits,
-      ...(description ? { description } : {}),
-      ...(descriptionSegments ? { descriptionSegments } : {})
+      traits
     };
 
     visiting.delete(nodeId);
@@ -132,6 +127,7 @@ export function buildPlayableScientificTree(
     priorityCladeKeys
   );
   const normalizedNodesById = rebuildFromRoot(nodesById, rootId);
+  applyFallbackDescriptions(normalizedNodesById);
 
   return {
     tree: {
@@ -352,10 +348,7 @@ function normalizeDuplicateClades(
         canonical.traits = mergeTraits(canonical.traits, duplicate.traits);
         canonical.provenance = mergeSourceReferences(canonical.provenance, duplicate.provenance);
         if (!canonical.description && duplicate.description) {
-          canonical.description = duplicate.description;
-          if (duplicate.descriptionSegments) {
-            canonical.descriptionSegments = duplicate.descriptionSegments;
-          }
+          adoptDescription(canonical, duplicate);
         }
         canonical.extant = canonical.extant || duplicate.extant;
         canonical.isGameEndpoint = canonical.isGameEndpoint || duplicate.isGameEndpoint;
@@ -393,10 +386,7 @@ function normalizeDuplicateClades(
       node.traits = mergeTraits(node.traits, child.traits);
       node.provenance = mergeSourceReferences(node.provenance, child.provenance);
       if (!node.description && child.description) {
-        node.description = child.description;
-        if (child.descriptionSegments) {
-          node.descriptionSegments = child.descriptionSegments;
-        }
+        adoptDescription(node, child);
       }
       node.extant = node.extant || child.extant;
       node.isGameEndpoint = node.isGameEndpoint || child.isGameEndpoint;
@@ -430,11 +420,12 @@ function promoteChildIdentityOntoParent(parent: PhyloNode, child: PhyloNode): bo
   }
 
   parent.displayName = nextDisplayName;
-  if (!parent.description && child.description) {
-    parent.description = child.description;
-    if (child.descriptionSegments) {
-      parent.descriptionSegments = child.descriptionSegments;
-    }
+  if (child.names) {
+    parent.names = child.names;
+  }
+  // The parent now carries the child's identity, so the child's description is the matching one.
+  if (child.description) {
+    adoptDescription(parent, child);
   }
 
   const childScientificName = firstInformativeLabel(child.scientificName);
@@ -462,15 +453,38 @@ function firstInformativeLabel(value: string | undefined): string | undefined {
   return isInformativeLabel(value) ? value : undefined;
 }
 
-function pickDescriptionSegments(
-  node: PhyloNode,
-  description: string | undefined
-): DescriptionSegment[] | undefined {
-  if (!node.descriptionSegments || node.description !== description) {
-    return undefined;
+function adoptDescription(target: PhyloNode, source: PhyloNode): void {
+  if (!source.description) {
+    return;
   }
 
-  return node.descriptionSegments;
+  target.description = source.description;
+
+  if (source.descriptionSegments) {
+    target.descriptionSegments = source.descriptionSegments;
+  } else {
+    delete target.descriptionSegments;
+  }
+
+  if (source.descriptionSource) {
+    target.descriptionSource = source.descriptionSource;
+  } else {
+    delete target.descriptionSource;
+  }
+}
+
+// Runs last so a curated or API description is never shadowed by generated lineage text.
+function applyFallbackDescriptions(nodesById: Record<string, PhyloNode>): void {
+  for (const node of Object.values(nodesById)) {
+    if (node.description) {
+      continue;
+    }
+
+    const fallback = node.traits[0]?.description;
+    if (fallback) {
+      node.description = fallback;
+    }
+  }
 }
 
 function spliceUnresolvedNonInformativeNodes(

@@ -52,6 +52,7 @@ export interface RefreshOptions {
   progress?: boolean;
   progressIntervalPercent?: number;
   descriptionMaxChars?: number;
+  nameOverrides?: Record<string, { singular?: string; plural?: string; clade?: string }>;
 }
 
 export interface RefreshSummary {

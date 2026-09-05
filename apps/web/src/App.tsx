@@ -4,7 +4,7 @@ import type {
   ScientificPhylogeny,
   TargetDifficultyMetadata
 } from '@evo-tree/domain';
-import { fixtureScientificPhylogeny } from '@evo-tree/domain';
+import { fixtureScientificPhylogeny, resolveNodeLabel } from '@evo-tree/domain';
 import {
   assignTarget,
   backtrack,
@@ -41,6 +41,7 @@ import {
 } from './data/runtimeDataset';
 import { buildPlayableScientificTree } from './data/buildPlayableScientificTree';
 import { LinkedDescription } from './components/LinkedDescription';
+import { DEFAULT_NAME_FORM } from './config/naming';
 
 const targetMetadata: TargetDifficultyMetadata[] = [
   { speciesId: 'homo-sapiens', familiarityScore: 0.98 },
@@ -93,7 +94,7 @@ function nodeName(
 ): string {
   const treeNode = tree.nodesById[nodeId];
   if (treeNode) {
-    return treeNode.displayName;
+    return resolveNodeLabel(treeNode, DEFAULT_NAME_FORM);
   }
 
   const catalogTarget = targetCatalogById[nodeId];
@@ -102,6 +103,19 @@ function nodeName(
   }
 
   return nodeId;
+}
+
+function matchesNodeLabel(node: PhyloNode, articleTitle: string): boolean {
+  const normalize = (value: string): string =>
+    value
+      .toLowerCase()
+      .replace(/\s*\([^)]*\)\s*$/, '')
+      .replace(/[^a-z]/g, '');
+
+  const article = normalize(articleTitle);
+  return [node.displayName, node.scientificName, node.commonName, node.names?.singular]
+    .filter((value): value is string => Boolean(value))
+    .some((value) => normalize(value) === article);
 }
 
 function describeNodeAge(node: PhyloNode | null): string {
@@ -510,6 +524,7 @@ function App() {
 
   const targetTitle =
     targetNode?.commonName ??
+    targetNode?.names?.singular ??
     targetNode?.displayName ??
     targetCatalogTarget?.commonName ??
     targetCatalogTarget?.scientificName ??
@@ -559,7 +574,8 @@ function App() {
         ...(hasStartedGame ? { visibleNodeIds: session.visitedNodeIds } : {}),
         focusNodeId: session.currentNodeId,
         focusStrength: 0.24,
-        nodeImageById
+        nodeImageById,
+        nameForm: DEFAULT_NAME_FORM
       }),
     [
       hoveredNodeId,
@@ -1252,7 +1268,9 @@ function App() {
                 type="button"
                 className="hud-icon-button target-focus-button"
                 onClick={focusCameraOnCurrentNode}
-                aria-label={`Focus camera on ${currentNode?.displayName ?? 'current node'}`}
+                aria-label={`Focus camera on ${
+                  currentNode ? resolveNodeLabel(currentNode, DEFAULT_NAME_FORM) : 'current node'
+                }`}
                 title="Focus camera on active node"
               >
                 <span className="target-focus-glyph" aria-hidden="true"></span>
@@ -1263,12 +1281,19 @@ function App() {
 
         <section className="decision-card panel" aria-label="Decision lens preview">
           <p className="label">Decision Lens</p>
-          <h2>{currentNode?.displayName ?? 'Unknown node'}</h2>
+          <h2>{currentNode ? resolveNodeLabel(currentNode, DEFAULT_NAME_FORM) : 'Unknown node'}</h2>
           {currentNode?.description ? (
             <LinkedDescription
               description={currentNode.description}
               {...(currentNode.descriptionSegments
                 ? { segments: currentNode.descriptionSegments }
+                : {})}
+              {...(currentNode.descriptionSource &&
+              !matchesNodeLabel(currentNode, currentNode.descriptionSource.articleTitle)
+                ? {
+                    sourceLabel: currentNode.descriptionSource.articleTitle,
+                    sourceUrl: currentNode.descriptionSource.url
+                  }
                 : {})}
             />
           ) : null}
@@ -1298,7 +1323,9 @@ function App() {
                     className="choice"
                     onClick={() => selectBranch(choiceNode.id)}
                   >
-                    <span className="choice-title">{choiceNode.displayName}</span>
+                    <span className="choice-title">
+                      {resolveNodeLabel(choiceNode, DEFAULT_NAME_FORM)}
+                    </span>
                     <span className="choice-subtle">
                       {choiceNode.scientificName ?? (choiceNode.extant ? 'Extant lineage' : 'Extinct lineage')}
                     </span>

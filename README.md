@@ -19,6 +19,18 @@ npm run dev:web
 
 
 ```
+## APIs Used
+| Provider               | Scope                        | Purpose and decisions                                                                                                  |
+|------------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| OpenTree TNRS          | Every source target          | Rechecks OTT ID and canonical name; first approximate match wins.                                                      |
+| GBIF Species Match     | Every source target          | Supplies canonical name, rank, usage key, and confidence. GBIF taxon ID takes precedence over OTT ID during enrichment. |
+| Paleobiology Database  | Every source target          | Determines extinct status from `ext`/`extant`; uses `lma`/`lna`/`fma`/`fna` for extinction age.                        |
+| iNaturalist Taxa       | Extant source targets        | Finds the first freely licensed default photo among up to three taxon results.                                         |
+| PhyloPic               | Every source target          | Uses the first available silhouette, with low confidence.                                                              |
+| Openverse              | Extinct source targets only  | Searches for commercial-use JPG paleoart or silhouettes; the first result with a URL wins.                             |
+| Wikipedia REST Summary | Meaningful undescribed nodes | Supplies descriptions, capped at 500 characters without splitting sentences.                                          |
+
+
 
 Runtime data behavior:
 

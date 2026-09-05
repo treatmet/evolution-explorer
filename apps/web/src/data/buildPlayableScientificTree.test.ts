@@ -443,4 +443,126 @@ describe('buildPlayableScientificTree', () => {
     expect(result.tree.nodesById.fungi?.parentId).toBe('nucletmycea');
     expect(result.tree.nodesById.nucletmycea?.childIds).toEqual(['fungi']);
   });
+
+  it('keeps the real description when a placeholder adopts a child identity', () => {
+    const tree: ScientificPhylogeny = {
+      datasetVersion: 'test',
+      rootId: 'root',
+      nodesById: {
+        root: {
+          id: 'root',
+          parentId: null,
+          childIds: ['placeholder'],
+          kind: 'ancestral',
+          displayName: 'LUCA',
+          isGameEndpoint: false,
+          isTargetEligible: false,
+          navigationOnly: false,
+          extant: false,
+          divergenceAgeMa: 3900,
+          traits: [],
+          confidence: 'medium',
+          provenance: []
+        },
+        placeholder: {
+          id: 'placeholder',
+          parentId: 'root',
+          childIds: ['opisthokonta'],
+          kind: 'unnamed-clade',
+          displayName: 'mrca',
+          isGameEndpoint: false,
+          isTargetEligible: false,
+          navigationOnly: false,
+          extant: true,
+          divergenceAgeMa: 1200,
+          traits: [
+            {
+              id: 'placeholder-summary',
+              name: 'Lineage summary: mrca',
+              description: 'Inferred lineage anchored by mrca with sampled descendants.',
+              traitType: 'inferred',
+              confidence: 'low',
+              provenance: []
+            }
+          ],
+          confidence: 'medium',
+          provenance: []
+        },
+        opisthokonta: {
+          id: 'opisthokonta',
+          parentId: 'placeholder',
+          childIds: ['human', 'mold'],
+          kind: 'named-taxon',
+          displayName: 'Opisthokonta',
+          description: 'The opisthokonts are a broad group of eukaryotes.',
+          descriptionSegments: [
+            { text: 'The opisthokonts are a broad group of ' },
+            {
+              text: 'eukaryotes',
+              href: 'https://en.wikipedia.org/wiki/Eukaryote',
+              articleTitle: 'Eukaryote'
+            },
+            { text: '.' }
+          ],
+          isGameEndpoint: false,
+          isTargetEligible: false,
+          navigationOnly: false,
+          extant: true,
+          divergenceAgeMa: 1100,
+          traits: [],
+          confidence: 'medium',
+          provenance: []
+        },
+        human: {
+          id: 'human',
+          parentId: 'opisthokonta',
+          childIds: [],
+          kind: 'named-taxon',
+          displayName: 'Human',
+          isGameEndpoint: true,
+          isTargetEligible: true,
+          navigationOnly: false,
+          extant: true,
+          divergenceAgeMa: 0,
+          traits: [],
+          confidence: 'high',
+          provenance: []
+        },
+        mold: {
+          id: 'mold',
+          parentId: 'opisthokonta',
+          childIds: [],
+          kind: 'named-taxon',
+          displayName: 'Pin mold',
+          isGameEndpoint: true,
+          isTargetEligible: true,
+          navigationOnly: false,
+          extant: true,
+          divergenceAgeMa: 0,
+          traits: [],
+          confidence: 'high',
+          provenance: []
+        }
+      }
+    };
+
+    const result = buildPlayableScientificTree(tree, {
+      priorityClades: { labels: ['Opisthokonta'] }
+    });
+
+    const opisthokonta = Object.values(result.tree.nodesById).find(
+      (node) => node.displayName === 'Opisthokonta'
+    );
+
+    expect(opisthokonta).toBeDefined();
+    expect(opisthokonta?.description).toBe('The opisthokonts are a broad group of eukaryotes.');
+    expect(opisthokonta?.descriptionSegments?.some((segment) => segment.href)).toBe(true);
+  });
+
+  it('falls back to generated lineage text only when no description exists', () => {
+    const result = buildPlayableScientificTree(makeTreeWithPlaceholderInternal());
+
+    const mammalia = result.tree.nodesById['named-clade'];
+    expect(mammalia?.description).toBe(mammalia?.traits[0]?.description);
+  });
 });

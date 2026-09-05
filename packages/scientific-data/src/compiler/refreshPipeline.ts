@@ -5,6 +5,7 @@ import { basename, join, resolve } from 'node:path';
 import type { TargetSpecies } from '../types';
 import { TxtSpeciesListAdapter, type TargetSourceAdapter } from './adapters';
 import { enrichMediaForScientificTree } from '../media/enrichMedia';
+import { normalizeNodeNames } from '../naming/normalizeNodeNames';
 import type { MediaEnrichmentOptions } from '../media/types';
 import { buildOpenTreeScientificPhylogeny } from './buildOpenTreeScientificPhylogeny';
 import { pruneLowConfidenceUnaryNodes } from './pruneLowConfidenceUnaryNodes';
@@ -168,16 +169,26 @@ export async function runSourceRefresh(
 
   const scientificPhylogeny = mediaEnrichment.tree;
 
+  logStage('Normalizing node names into singular, plural, and clade forms');
+  const naming = normalizeNodeNames(scientificPhylogeny, targets, {
+    ...(options.nameOverrides ? { overrides: options.nameOverrides } : {}),
+    onWarning: (message: string) => logWarning(message)
+  });
+  const namedScientificPhylogeny = naming.tree;
+  logStage(
+    `Name normalization complete (${naming.collisionFallbackCount} sibling collision fallback(s))`
+  );
+
   const candidate: DatasetArtifact = {
     manifest: {
       datasetVersion,
       generatedAt,
       sourceSnapshots: [snapshot],
       speciesCount: targets.length,
-      nodeCount: Object.keys(scientificPhylogeny.nodesById).length,
+      nodeCount: Object.keys(namedScientificPhylogeny.nodesById).length,
       validationStatus: 'candidate'
     },
-    scientificPhylogeny,
+    scientificPhylogeny: namedScientificPhylogeny,
     targets,
     mediaEnrichment: mediaEnrichment.result.media
   };
@@ -235,6 +246,7 @@ export async function runSourceRefresh(
     ...sourceWarnings,
     ...topologyResult.warnings,
     ...mediaEnrichment.result.warnings,
+    ...naming.warnings,
     ...providerFailures.map(
       (provider) =>
         `Provider "${provider.providerId}" failed ${provider.failures} of ${provider.requests} request(s): ${

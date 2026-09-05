@@ -1,4 +1,5 @@
 import type { ScientificPhylogeny } from '@evo-tree/domain';
+import { resolveNodeLabel, type NodeNameForm } from '@evo-tree/domain';
 import type { RenderNode } from '@evo-tree/renderer-contracts';
 
 import { applySemanticFisheye } from './fisheye';
@@ -18,6 +19,7 @@ export interface BuildRenderModelOptions {
   focusNodeId?: string | null;
   focusStrength?: number;
   nodeImageById?: Readonly<Record<string, string>>;
+  nameForm?: NodeNameForm;
 }
 
 interface StaticNodeMetrics {
@@ -47,7 +49,7 @@ export function buildRenderModel(
   tree: ScientificPhylogeny,
   options: BuildRenderModelOptions
 ): RenderModelResult {
-  const metricsById = computeStaticMetrics(tree);
+  const metricsById = computeStaticMetrics(tree, options.nameForm);
 
   const visitedSet = new Set(options.visitedNodeIds);
   const visibleSet = options.visibleNodeIds ? new Set(options.visibleNodeIds) : null;
@@ -94,7 +96,10 @@ export function buildRenderModel(
   };
 }
 
-function computeStaticMetrics(tree: ScientificPhylogeny): Record<string, StaticNodeMetrics> {
+function computeStaticMetrics(
+  tree: ScientificPhylogeny,
+  nameForm?: NodeNameForm
+): Record<string, StaticNodeMetrics> {
   const metrics: Record<string, StaticNodeMetrics> = {};
   const nodeDepthById = new Map<string, number>();
   const alignedDepthById = new Map<string, number>();
@@ -187,7 +192,7 @@ function computeStaticMetrics(tree: ScientificPhylogeny): Record<string, StaticN
       subtreeMinY,
       subtreeMaxY,
       descendantLeafCount,
-      label: node.displayName,
+      label: resolveNodeLabel(node, nameForm),
       semanticImportance: computeSemanticImportance(nodeId, tree, descendantLeafCount)
     };
 

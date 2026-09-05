@@ -28,6 +28,8 @@ const DEFAULT_TIMEOUT_MS = 9000;
 const DEFAULT_RETRIES = 2;
 const DEFAULT_DESCRIPTION_MAX_CHARS = 500;
 const DESCRIPTION_LOOKUP_CONCURRENCY = 6;
+// Bump when the cached Wikipedia record shape changes, otherwise stale entries mask new fields.
+const WIKIPEDIA_CACHE_VERSION = 'v2';
 const RECONSTRUCTION_PROMPT_VERSION = 'm6.1';
 const RECONSTRUCTION_GENERATION_MODEL = 'inline-svg-v1';
 
@@ -195,6 +197,7 @@ export async function enrichMediaForScientificTree(
   emitDescriptionProgress(0);
 
   let processedDescriptionCount = 0;
+  const unresolvedDescriptionLabels: string[] = [];
   for (
     let batchStart = 0;
     batchStart < descriptionNodes.length;
@@ -226,6 +229,13 @@ export async function enrichMediaForScientificTree(
           if (limitedSummary) {
             node.description = limitedSummary;
 
+            if (description.articleTitle) {
+              node.descriptionSource = {
+                articleTitle: description.articleTitle,
+                url: description.articleUrl ?? ''
+              };
+            }
+
             const links = await lookupWikipediaLeadLinks(
               description.articleTitle ?? lookupName,
               lookupOptions
@@ -241,6 +251,34 @@ export async function enrichMediaForScientificTree(
         processedDescriptionCount += 1;
         emitDescriptionProgress(processedDescriptionCount);
       })
+    );
+  }
+
+  const misattributed = dropMisattributedDescriptions(descriptionNodes);
+  if (misattributed.length > 0) {
+    warnings.push(
+      `Dropped ${misattributed.length} description(s) that resolved to an encyclopedia article already claimed by a closer-matching clade: ${misattributed
+        .slice(0, 10)
+        .map((entry) => `${entry.label} -> ${entry.articleTitle}`)
+        .join('; ')}${misattributed.length > 10 ? ` (+${misattributed.length - 10} more)` : ''}`
+    );
+  }
+
+  for (const node of descriptionNodes) {
+    if (!node.description) {
+      unresolvedDescriptionLabels.push(node.scientificName ?? node.displayName);
+    }
+  }
+
+  if (unresolvedDescriptionLabels.length > 0) {
+    const preview = unresolvedDescriptionLabels.slice(0, 10).join('; ');
+    const remainder =
+      unresolvedDescriptionLabels.length > 10
+        ? ` (+${unresolvedDescriptionLabels.length - 10} more)`
+        : '';
+    warnings.push(
+      `No encyclopedia description resolved for ${unresolvedDescriptionLabels.length} selectable node(s); ` +
+        `these fall back to generated lineage text at runtime: ${preview}${remainder}`
     );
   }
 
@@ -673,6 +711,7 @@ async function lookupINaturalistImage(
 interface WikipediaDescription {
   summary: string;
   articleTitle?: string | undefined;
+  articleUrl?: string | undefined;
   provenance: SourceReference;
 }
 
@@ -691,11 +730,19 @@ async function lookupWikipediaDescription(
 }
 
 // OpenTree labels carry qualifiers such as "Vertebrata (subphylum in Deuterostomia)".
+// Wikipedia resolves most synonyms via redirects; the qualified forms rescue disambiguation pages.
 function wikipediaTitleCandidates(name: string): string[] {
   const trimmed = name.trim();
   const withoutQualifier = trimmed.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  const base = withoutQualifier || trimmed;
 
-  return [...new Set([withoutQualifier, trimmed].filter((value) => value.length > 0))];
+  return [
+    ...new Set(
+      [withoutQualifier, trimmed, `${base} (genus)`, `${base} (biology)`].filter(
+        (value) => value.length > 0
+      )
+    )
+  ];
 }
 
 async function lookupWikipediaDescriptionByTitle(
@@ -705,7 +752,7 @@ async function lookupWikipediaDescriptionByTitle(
   return loadCachedOrFetch<WikipediaDescription | null>({
     providerId: 'wikipedia-summary',
     cacheDir: options.cacheDir,
-    key: name,
+    key: `${WIKIPEDIA_CACHE_VERSION}:${name}`,
     online: options.online,
     fetcher: async () => {
       const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`;
@@ -732,6 +779,7 @@ async function lookupWikipediaDescriptionByTitle(
       return {
         summary,
         articleTitle: stringOrUndefined(response['title']),
+        articleUrl: pageUrl ?? url,
         provenance: buildSourceReference({
           sourceId: 'wikipedia-page-summary',
           sourceType: 'other',
@@ -744,6 +792,73 @@ async function lookupWikipediaDescriptionByTitle(
     },
     providerStats: options.providerStats
   });
+}
+
+// Distinct nested clades often redirect to one broad article; only the closest name may keep it.
+function dropMisattributedDescriptions(
+  nodes: ReadonlyArray<PhyloNode>
+): { label: string; articleTitle: string }[] {
+  const byArticle = new Map<string, PhyloNode[]>();
+
+  for (const node of nodes) {
+    const articleTitle = node.descriptionSource?.articleTitle;
+    if (!articleTitle) {
+      continue;
+    }
+
+    const key = articleTitle.toLowerCase();
+    const existing = byArticle.get(key) ?? [];
+    existing.push(node);
+    byArticle.set(key, existing);
+  }
+
+  const dropped: { label: string; articleTitle: string }[] = [];
+
+  for (const claimants of byArticle.values()) {
+    if (claimants.length < 2) {
+      continue;
+    }
+
+    const ranked = [...claimants].sort(
+      (left, right) => articleMatchScore(right) - articleMatchScore(left)
+    );
+
+    for (const node of ranked.slice(1)) {
+      dropped.push({
+        label: node.scientificName ?? node.displayName,
+        articleTitle: node.descriptionSource?.articleTitle ?? ''
+      });
+
+      delete node.description;
+      delete node.descriptionSegments;
+      delete node.descriptionSource;
+    }
+  }
+
+  return dropped;
+}
+
+function articleMatchScore(node: PhyloNode): number {
+  const label = normalizeForMatch(node.scientificName ?? node.displayName);
+  const article = normalizeForMatch(node.descriptionSource?.articleTitle ?? '');
+
+  if (label === article) {
+    return Number.MAX_SAFE_INTEGER;
+  }
+
+  let shared = 0;
+  while (shared < label.length && shared < article.length && label[shared] === article[shared]) {
+    shared += 1;
+  }
+
+  return shared;
+}
+
+function normalizeForMatch(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/\s*\([^)]*\)\s*$/, '')
+    .replace(/[^a-z]/g, '');
 }
 
 function isDescriptionLookupCandidate(node: PhyloNode): boolean {
@@ -793,7 +908,7 @@ async function lookupWikipediaLeadLinks(
   const links = await loadCachedOrFetch<WikipediaLeadLink[] | null>({
     providerId: 'wikipedia-links',
     cacheDir: options.cacheDir,
-    key: articleTitle,
+    key: `${WIKIPEDIA_CACHE_VERSION}:${articleTitle}`,
     online: options.online,
     fetcher: async () => {
       const url =
@@ -1288,6 +1403,7 @@ function cloneTree(tree: ScientificPhylogeny): ScientificPhylogeny {
           ...(node.descriptionSegments
             ? { descriptionSegments: node.descriptionSegments.map((segment) => ({ ...segment })) }
             : {}),
+          ...(node.descriptionSource ? { descriptionSource: { ...node.descriptionSource } } : {}),
           ...(node.reconstruction ? { reconstruction: { ...node.reconstruction } } : {})
         }
       ])

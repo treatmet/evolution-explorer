@@ -13,9 +13,16 @@ const previewCache = new Map<string, ArticlePreview | null>();
 interface LinkedDescriptionProps {
   description: string;
   segments?: ReadonlyArray<DescriptionSegment>;
+  sourceLabel?: string;
+  sourceUrl?: string;
 }
 
-export function LinkedDescription({ description, segments }: LinkedDescriptionProps) {
+export function LinkedDescription({
+  description,
+  segments,
+  sourceLabel,
+  sourceUrl
+}: LinkedDescriptionProps) {
   const [activeTitle, setActiveTitle] = useState<string | null>(null);
   const [preview, setPreview] = useState<ArticlePreview | null>(null);
   const hideTimerRef = useRef<number | null>(null);
@@ -77,11 +84,17 @@ export function LinkedDescription({ description, segments }: LinkedDescriptionPr
   }, []);
 
   if (!segments || segments.length === 0) {
-    return <p className="decision-description">{description}</p>;
+    return (
+      <>
+        <p className="decision-description">{description}</p>
+        <DescriptionAttribution label={sourceLabel} url={sourceUrl} />
+      </>
+    );
   }
 
   return (
-    <p className="decision-description">
+    <>
+      <p className="decision-description">
       {segments.map((segment, index) => {
         if (!segment.href || !segment.articleTitle) {
           return <span key={index}>{segment.text}</span>;
@@ -132,6 +145,27 @@ export function LinkedDescription({ description, segments }: LinkedDescriptionPr
           </span>
         );
       })}
+    </p>
+      <DescriptionAttribution label={sourceLabel} url={sourceUrl} />
+    </>
+  );
+}
+
+function DescriptionAttribution({ label, url }: { label?: string; url?: string }) {
+  if (!label) {
+    return null;
+  }
+
+  return (
+    <p className="decision-description-source">
+      Described by Wikipedia article{' '}
+      {url ? (
+        <a className="description-link" href={url} target="_blank" rel="noopener noreferrer">
+          {label}
+        </a>
+      ) : (
+        label
+      )}
     </p>
   );
 }
