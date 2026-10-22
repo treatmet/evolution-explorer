@@ -1,6 +1,8 @@
 # EVOLUTION-EXPLORER
 
-Milestone 1 foundation for a scientifically grounded phylogenetic navigation game.
+Foundation for a scientifically grounded phylogenetic navigation game.
+
+More detailed documentation found in /docs.
 
 ## Quick start
 
@@ -14,7 +16,7 @@ npm run dev:web
 ## Data refresh entrypoint
 
 ```bash
-npm run data:refresh
+npm run data
 npm run dev:web
 
 
