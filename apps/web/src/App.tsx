@@ -176,6 +176,11 @@ function describeChoiceHint(node: PhyloNode): string {
   return 'Lineage details pending curation';
 }
 
+function stripLineageSummary(description: string): string {
+  // Remove "Lineage summary: ..." text from the description
+  return description.replace(/\s*Lineage summary:.*$/i, '').trim();
+}
+
 function avatarText(raw: string): string {
   const compact = raw.replace(/[^A-Za-z\s]/g, '').trim();
   if (!compact) {
@@ -1280,7 +1285,6 @@ function App() {
         </section>
 
         <section className="decision-card panel" aria-label="Decision lens preview">
-          <p className="label">Decision Lens</p>
           <h2>{currentNode ? resolveNodeLabel(currentNode, DEFAULT_NAME_FORM) : 'Unknown node'}</h2>
           {currentNode?.description ? (
             <LinkedDescription
@@ -1326,10 +1330,27 @@ function App() {
                     <span className="choice-title">
                       {resolveNodeLabel(choiceNode, DEFAULT_NAME_FORM)}
                     </span>
-                    <span className="choice-subtle">
-                      {choiceNode.scientificName ?? (choiceNode.extant ? 'Extant lineage' : 'Extinct lineage')}
-                    </span>
-                    <span className="choice-hint">{describeChoiceHint(choiceNode)}</span>
+                    {choiceNode.description ? (
+                      <div className="choice-subtle">
+                        <LinkedDescription
+                          description={stripLineageSummary(choiceNode.description)}
+                          {...(choiceNode.descriptionSegments
+                            ? { segments: choiceNode.descriptionSegments }
+                            : {})}
+                          {...(choiceNode.descriptionSource &&
+                          !matchesNodeLabel(choiceNode, choiceNode.descriptionSource.articleTitle)
+                            ? {
+                                sourceLabel: choiceNode.descriptionSource.articleTitle,
+                                sourceUrl: choiceNode.descriptionSource.url
+                              }
+                            : {})}
+                        />
+                      </div>
+                    ) : (
+                      <span className="choice-subtle">
+                        {choiceNode.scientificName ?? (choiceNode.extant ? 'Extant lineage' : 'Extinct lineage')}
+                      </span>
+                    )}
                   </button>
                 ))}
               </div>
