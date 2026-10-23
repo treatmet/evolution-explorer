@@ -1,13 +1,10 @@
 import { z } from 'zod';
 
-export const speciesListHeader =
-  'Scientific name | Common name | Brief descriptor';
+export const speciesListHeader = 'Scientific name';
 
 export const SourceTargetSpeciesSchema = z.object({
-  scientificName: z.string().trim().min(1),
-  commonName: z.string().trim().min(1),
-  briefDescriptor: z.string().trim().min(1)
-});
+  scientificName: z.string().trim().min(1)
+}).strict();
 
 export const SourceTargetSpeciesListSchema = z.array(SourceTargetSpeciesSchema).min(1);
 

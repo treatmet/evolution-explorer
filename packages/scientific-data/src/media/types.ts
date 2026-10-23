@@ -5,6 +5,7 @@ import type {
 } from '@evo-tree/domain';
 
 export type MediaAssetKind =
+  | 'representative-image'
   | 'extant-photo'
   | 'extinct-illustration'
   | 'silhouette'
@@ -66,6 +67,18 @@ export interface MediaEnrichmentArtifact {
   nodeMediaByNodeId: Record<string, NodeMediaRecord>;
   reconstructionQueue: ReconstructionQueueEntry[];
   targetDifficultyMetadata: TargetDifficultyMetadata[];
+  coverage: {
+    targets: NodeHydrationCoverage;
+    intermediaries: NodeHydrationCoverage;
+  };
+}
+
+export interface NodeHydrationCoverage {
+  total: number;
+  withDescription: number;
+  withImage: number;
+  missingDescriptionNodeIds: string[];
+  missingImageNodeIds: string[];
 }
 
 export interface MediaEnrichmentResult {
@@ -74,7 +87,7 @@ export interface MediaEnrichmentResult {
 }
 
 export interface MediaEnrichmentProgress {
-  phase: 'target-media' | 'node-descriptions';
+  phase: 'target-media' | 'node-descriptions' | 'node-media';
   processedItems: number;
   totalItems: number;
   percent: number;
@@ -96,6 +109,7 @@ export interface MediaEnrichmentOptions {
 
 export interface TaxonomyMatch {
   canonicalName?: string | undefined;
+  commonName?: string | undefined;
   rank?: string | undefined;
   taxonId?: string | undefined;
   openTreeOttId?: number | undefined;

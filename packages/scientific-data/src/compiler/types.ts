@@ -69,6 +69,7 @@ export interface RefreshSummary {
     unchanged: number;
   };
   media: {
+    coverage: MediaEnrichmentArtifact['coverage'];
     online: boolean;
     assetCount: number;
     nodesWithMedia: number;

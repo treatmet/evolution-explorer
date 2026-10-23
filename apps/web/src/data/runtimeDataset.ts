@@ -10,8 +10,6 @@ export interface RuntimeTargetSpecies {
   id: string;
   scientificName: string;
   scientificNameNormalized: string;
-  commonName: string;
-  briefDescriptor: string;
 }
 
 export interface RuntimeDatasetArtifact {
@@ -54,7 +52,7 @@ export interface RuntimeNodeMediaRecord {
 export interface RuntimeMediaAssetRecord {
   assetId: string;
   nodeId: string;
-  kind: 'extant-photo' | 'extinct-illustration' | 'silhouette' | 'reconstruction';
+  kind: 'representative-image' | 'extant-photo' | 'extinct-illustration' | 'silhouette' | 'reconstruction';
   url: string;
   thumbnailUrl?: string;
   title?: string;

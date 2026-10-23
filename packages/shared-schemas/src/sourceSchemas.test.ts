@@ -5,21 +5,24 @@ import { SourceTargetSpeciesSchema } from './sourceSchemas';
 describe('SourceTargetSpeciesSchema', () => {
   it('accepts valid source rows', () => {
     const row = SourceTargetSpeciesSchema.parse({
-      scientificName: 'Panthera tigris',
-      commonName: 'Tiger',
-      briefDescriptor: 'Largest living cat'
+      scientificName: 'Panthera tigris'
     });
 
-    expect(row.commonName).toBe('Tiger');
+    expect(row.scientificName).toBe('Panthera tigris');
   });
 
-  it('rejects empty descriptors', () => {
+  it('rejects empty scientific names', () => {
     expect(() =>
       SourceTargetSpeciesSchema.parse({
-        scientificName: 'Panthera tigris',
-        commonName: 'Tiger',
-        briefDescriptor: ' '
+        scientificName: ' '
       })
     ).toThrow();
+  });
+
+  it('rejects authored hydration fields', () => {
+    expect(() => SourceTargetSpeciesSchema.parse({
+      scientificName: 'Panthera tigris',
+      briefDescriptor: 'Authored text'
+    })).toThrow();
   });
 });

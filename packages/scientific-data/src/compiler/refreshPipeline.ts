@@ -5,6 +5,7 @@ import { basename, join, resolve } from 'node:path';
 import type { TargetSpecies } from '../types';
 import { TxtSpeciesListAdapter, type TargetSourceAdapter } from './adapters';
 import { enrichMediaForScientificTree } from '../media/enrichMedia';
+import { externalizeReconstructionAssets } from '../media/externalizeReconstructions';
 import { normalizeNodeNames } from '../naming/normalizeNodeNames';
 import type { MediaEnrichmentOptions } from '../media/types';
 import { buildOpenTreeScientificPhylogeny } from './buildOpenTreeScientificPhylogeny';
@@ -147,7 +148,7 @@ export async function runSourceRefresh(
       ? {
           onStage: (message: string) => logStage(message),
           onProgress: ({ phase, processedItems, totalItems, percent }) => {
-            const label = phase === 'target-media' ? 'target media' : 'node descriptions';
+            const label = phase === 'target-media' ? 'target taxonomy' : phase === 'node-media' ? 'node media' : 'node descriptions';
             console.log(
               `[data:refresh] ${label} ${percent}% (${processedItems}/${totalItems})`
             );
@@ -168,6 +169,13 @@ export async function runSourceRefresh(
   );
 
   const scientificPhylogeny = mediaEnrichment.tree;
+
+  logStage('Externalizing reconstruction images');
+  const externalizedCount = await externalizeReconstructionAssets(mediaEnrichment.result.media.assetsById, {
+    outputDir: join(paths.approvedDir, 'media', datasetVersion),
+    publicUrlPrefix: `/data/approved/media/${datasetVersion}`
+  });
+  logStage(`Externalized ${externalizedCount} reconstruction image(s)`);
 
   logStage('Normalizing node names into singular, plural, and clade forms');
   const naming = normalizeNodeNames(scientificPhylogeny, targets, {
@@ -284,6 +292,7 @@ export async function runSourceRefresh(
         unchanged: diff.unchangedTargetIds.length
       },
       media: {
+        coverage: mediaEnrichment.result.media.coverage,
         online: options.mediaOnline ?? false,
         assetCount: Object.keys(mediaEnrichment.result.media.assetsById).length,
         nodesWithMedia: Object.keys(mediaEnrichment.result.media.nodeMediaByNodeId).length,
@@ -354,9 +363,7 @@ function isTargetEquivalent(a: TargetSpecies, b: TargetSpecies): boolean {
   return (
     a.id === b.id &&
     a.scientificName === b.scientificName &&
-    a.scientificNameNormalized === b.scientificNameNormalized &&
-    a.commonName === b.commonName &&
-    a.briefDescriptor === b.briefDescriptor
+    a.scientificNameNormalized === b.scientificNameNormalized
   );
 }
 

@@ -66,15 +66,11 @@ describe('normalizeNodeNames', () => {
       id: 'homo-sapiens',
       scientificName: 'Homo sapiens',
       scientificNameNormalized: 'Homo sapiens',
-      commonName: 'Human',
-      briefDescriptor: 'Tool-using great ape'
     },
     {
       id: 'tyrannosaurus-rex',
       scientificName: 'Tyrannosaurus rex',
       scientificNameNormalized: 'Tyrannosaurus rex',
-      commonName: 'Tyrannosaurus rex',
-      briefDescriptor: 'Giant theropod'
     }
   ];
 

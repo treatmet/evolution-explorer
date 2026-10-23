@@ -11,8 +11,6 @@ import type { DatasetArtifact, RefreshPaths } from './types';
 
 interface SourceRow {
   scientificName: string;
-  commonName: string;
-  briefDescriptor: string;
 }
 
 function installTopologyAndMediaFetchMock(): void {
@@ -96,7 +94,7 @@ function installTopologyAndMediaFetchMock(): void {
     }
 
     if (url.includes('api.phylopic.org')) {
-      return new Response(JSON.stringify({ _embedded: { images: [] } }), {
+      return new Response(JSON.stringify({ build: 560, _embedded: { items: [] } }), {
         status: 200,
         headers: { 'content-type': 'application/json' }
       });
@@ -166,8 +164,8 @@ async function createRefreshPaths(): Promise<RefreshPaths> {
 
 async function writeSpeciesList(filePath: string, rows: SourceRow[]): Promise<void> {
   const content = [
-    'Scientific name | Common name | Brief descriptor',
-    ...rows.map((row) => `${row.scientificName} | ${row.commonName} | ${row.briefDescriptor}`)
+    'Scientific name',
+    ...rows.map((row) => row.scientificName)
   ].join('\n');
 
   await writeFile(filePath, content, 'utf8');
@@ -187,13 +185,9 @@ describe('runSourceRefresh', () => {
     await writeSpeciesList(paths.sourceSpeciesListPath, [
       {
         scientificName: 'Panthera tigris',
-        commonName: 'Tiger',
-        briefDescriptor: 'Large striped cat'
       },
       {
         scientificName: 'Homo sapiens',
-        commonName: 'Human',
-        briefDescriptor: 'Modern human lineage'
       }
     ]);
 
@@ -205,7 +199,7 @@ describe('runSourceRefresh', () => {
     expect(result.summary.sourceCount).toBe(2);
     expect(result.summary.promotedToApproved).toBe(true);
     expect(result.summary.media.online).toBe(true);
-    expect(result.summary.media.reconstructionQueueCount).toBeGreaterThan(0);
+    expect(result.summary.media.reconstructionQueueCount).toBe(0);
 
     const candidate = await readJson<DatasetArtifact>(result.summary.candidateArtifactPath);
     expect(candidate.manifest.validationStatus).toBe('candidate');
@@ -216,8 +210,9 @@ describe('runSourceRefresh', () => {
     );
     expect(candidate.manifest.nodeCount).toBeGreaterThan(candidate.targets.length);
     expect(candidate.mediaEnrichment?.targetDifficultyMetadata.length).toBe(2);
-    expect(candidate.mediaEnrichment?.reconstructionQueue.length).toBeGreaterThan(0);
-    expect(candidate.mediaEnrichment?.reconstructionQueue[0]?.status).toBe('generated');
+    expect(candidate.mediaEnrichment?.coverage.targets.total).toBe(2);
+    expect(candidate.mediaEnrichment?.coverage.targets.missingImageNodeIds).toHaveLength(2);
+    expect(result.summary.media.coverage).toEqual(candidate.mediaEnrichment?.coverage);
 
     const report = await readFile(result.summary.diffReportPath, 'utf8');
     expect(report).toContain('Added targets: 2');
@@ -251,15 +246,11 @@ describe('runSourceRefresh', () => {
             id: 'panthera-tigris',
             scientificName: 'Panthera tigris',
             scientificNameNormalized: 'Panthera tigris',
-            commonName: 'Tiger',
-            briefDescriptor: 'Largest living cat'
           },
           {
             id: 'panthera-leo',
             scientificName: 'Panthera leo',
             scientificNameNormalized: 'Panthera leo',
-            commonName: 'Lion',
-            briefDescriptor: 'Social big cat'
           }
         ],
         {
@@ -271,15 +262,11 @@ describe('runSourceRefresh', () => {
           id: 'panthera-tigris',
           scientificName: 'Panthera tigris',
           scientificNameNormalized: 'Panthera tigris',
-          commonName: 'Tiger',
-          briefDescriptor: 'Largest living cat'
         },
         {
           id: 'panthera-leo',
           scientificName: 'Panthera leo',
           scientificNameNormalized: 'Panthera leo',
-          commonName: 'Lion',
-          briefDescriptor: 'Social big cat'
         }
       ]
     };
@@ -307,13 +294,9 @@ describe('runSourceRefresh', () => {
     await writeSpeciesList(paths.sourceSpeciesListPath, [
       {
         scientificName: 'Panthera tigris',
-        commonName: 'Tiger',
-        briefDescriptor: 'Striped apex predator'
       },
       {
         scientificName: 'Homo sapiens',
-        commonName: 'Human',
-        briefDescriptor: 'Modern human lineage'
       }
     ]);
 
@@ -327,10 +310,10 @@ describe('runSourceRefresh', () => {
 
     expect(result.summary.diff.added).toBe(1);
     expect(result.summary.diff.removed).toBe(1);
-    expect(result.summary.diff.changed).toBe(1);
+    expect(result.summary.diff.changed).toBe(0);
     expect(result.summary.promotedToApproved).toBe(true);
     expect(result.summary.approvedArtifactPath).toBeTruthy();
-    expect(result.summary.media.reconstructionQueueCount).toBeGreaterThan(0);
+    expect(result.summary.media.reconstructionQueueCount).toBe(0);
 
     const approvedLatest = await readJson<{
       datasetVersion: string;

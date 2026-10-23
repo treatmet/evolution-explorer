@@ -66,19 +66,17 @@ export function parseSpeciesListTextWithDiagnostics(rawText: string): SpeciesLis
     const lineNumber = index + 2;
     const parts = line.split('|').map((part) => part.trim());
 
-    if (parts.length !== 3) {
+    if (parts.length !== 1) {
       issues.push({
         lineNumber,
         content: line,
-        reason: `expected 3 pipe-separated fields but found ${parts.length}`
+        reason: `expected one scientific name without pipe-separated metadata but found ${parts.length} fields`
       });
       return;
     }
 
     const candidate = {
-      scientificName: parts[0],
-      commonName: parts[1],
-      briefDescriptor: parts[2]
+      scientificName: parts[0]
     };
 
     const parsed = SourceTargetSpeciesSchema.safeParse(candidate);
@@ -112,7 +110,9 @@ export function parseSpeciesListTextWithDiagnostics(rawText: string): SpeciesLis
   });
 
   if (parsedRows.length > 0) {
-    const listValidation = SourceTargetSpeciesListSchema.safeParse(parsedRows);
+    const listValidation = SourceTargetSpeciesListSchema.safeParse(
+      parsedRows.map(({ scientificName }) => ({ scientificName }))
+    );
     if (!listValidation.success) {
       throw new Error(`species-list validation failed: ${listValidation.error.message}`);
     }

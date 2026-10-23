@@ -1,5 +1,5 @@
 import { runSourceRefresh } from '@evo-tree/scientific-data';
-import { copyFile, mkdir, readFile } from 'node:fs/promises';
+import { copyFile, cp, mkdir, readFile, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 
 interface LatestPointer {
@@ -82,6 +82,15 @@ async function mirrorLatestDataset(sourceDir: string, targetDir: string): Promis
   await mkdir(targetDir, { recursive: true });
   await copyFile(latestPath, join(targetDir, 'latest.json'));
   await copyFile(sourceDatasetPath, join(targetDir, pointer.fileName));
+
+  const sourceMediaDir = join(sourceDir, 'media', pointer.datasetVersion);
+  const hasMedia = await stat(sourceMediaDir).then(
+    (entry) => entry.isDirectory(),
+    () => false
+  );
+  if (hasMedia) {
+    await cp(sourceMediaDir, join(targetDir, 'media', pointer.datasetVersion), { recursive: true });
+  }
 }
 
 function parseOptionalNumberFlag(name: string): number | undefined {

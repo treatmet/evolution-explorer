@@ -12,22 +12,16 @@ const targets: TargetSpecies[] = [
     id: 'homo-sapiens',
     scientificName: 'Homo sapiens',
     scientificNameNormalized: 'Homo sapiens',
-    commonName: 'Human',
-    briefDescriptor: 'Tool-using great ape'
   },
   {
     id: 'panthera-tigris',
     scientificName: 'Panthera tigris',
     scientificNameNormalized: 'Panthera tigris',
-    commonName: 'Tiger',
-    briefDescriptor: 'Large striped cat'
   },
   {
     id: 'unknown-target',
     scientificName: 'Unknown species',
     scientificNameNormalized: 'Unknown species',
-    commonName: 'Unknown',
-    briefDescriptor: 'Unknown'
   }
 ];
 

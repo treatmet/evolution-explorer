@@ -64,6 +64,7 @@ body {
 }
 
 .top-hud {
+  z-index: 3;
   top: 16px;
   left: 50%;
   transform: translateX(-50%);
@@ -160,7 +161,11 @@ body {
 }
 
 .status-flyout {
+  left: auto;
+  right: 0;
   width: min(560px, calc(100vw - 40px));
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 
 .hud-icon-button {
@@ -230,6 +235,68 @@ body {
   font-size: 0.84rem;
   line-height: 1.45;
   margin: 0.35rem 0 0.55rem;
+}
+
+.node-media {
+  margin: 0.5rem 0;
+}
+
+.decision-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.decision-title-row h2 {
+  margin: 0;
+}
+
+.wikipedia-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  flex-shrink: 0;
+  border: 1px solid #8fa9ad;
+  border-radius: 50%;
+  color: #ebf0f1;
+  font-family: Georgia, serif;
+  text-decoration: none;
+}
+
+.wikipedia-link:hover,
+.wikipedia-link:focus-visible {
+  border-color: #7fd7ff;
+  color: #7fd7ff;
+}
+
+.node-scientific-name {
+  margin: 0.15rem 0 0.4rem;
+  color: #8fa9ad;
+  font-size: 0.8rem;
+}
+
+.node-media img {
+  display: block;
+  max-width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+
+.media-attribution,
+.media-credits {
+  color: #8fa9ad;
+  font-size: 0.72rem;
+}
+
+.media-attribution a {
+  color: #7fd7ff;
+}
+
+.media-credits {
+  max-height: 180px;
+  overflow: auto;
 }
 
 .decision-description-source {

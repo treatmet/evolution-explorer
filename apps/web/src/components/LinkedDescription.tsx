@@ -151,14 +151,14 @@ export function LinkedDescription({
   );
 }
 
-function DescriptionAttribution({ label, url }: { label?: string; url?: string }) {
+function DescriptionAttribution({ label, url }: { label?: string | undefined; url?: string | undefined }) {
   if (!label) {
     return null;
   }
 
   return (
     <p className="decision-description-source">
-      Described by Wikipedia article{' '}
+      From Wikipedia contributors,{' '}
       {url ? (
         <a className="description-link" href={url} target="_blank" rel="noopener noreferrer">
           {label}
@@ -166,6 +166,11 @@ function DescriptionAttribution({ label, url }: { label?: string; url?: string }
       ) : (
         label
       )}
+      {' | '}
+      <a className="description-link" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
+        CC BY-SA 4.0
+      </a>
+      {' | Excerpt shortened for display.'}
     </p>
   );
 }

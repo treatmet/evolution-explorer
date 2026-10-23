@@ -23,13 +23,12 @@ import type {
   TaxonomyMatch
 } from './types';
 
-const DEFAULT_MAX_TARGETS = 180;
 const DEFAULT_TIMEOUT_MS = 9000;
 const DEFAULT_RETRIES = 2;
 const DEFAULT_DESCRIPTION_MAX_CHARS = 500;
 const DESCRIPTION_LOOKUP_CONCURRENCY = 6;
 // Bump when the cached Wikipedia record shape changes, otherwise stale entries mask new fields.
-const WIKIPEDIA_CACHE_VERSION = 'v2';
+const WIKIPEDIA_CACHE_VERSION = 'v3';
 const RECONSTRUCTION_PROMPT_VERSION = 'm6.1';
 const RECONSTRUCTION_GENERATION_MODEL = 'inline-svg-v1';
 
@@ -38,7 +37,7 @@ export async function enrichMediaForScientificTree(
   targets: ReadonlyArray<TargetSpecies>,
   options: Partial<MediaEnrichmentOptions> & Pick<MediaEnrichmentOptions, 'cacheDir'>
 ): Promise<{ tree: ScientificPhylogeny; result: MediaEnrichmentResult }> {
-  const maxTargets = Math.max(1, options.maxTargets ?? DEFAULT_MAX_TARGETS);
+  const maxTargets = Math.max(1, options.maxTargets ?? targets.length);
   const online = options.online ?? false;
   const now = options.now ?? new Date();
   const generatedAt = now.toISOString();
@@ -55,10 +54,19 @@ export async function enrichMediaForScientificTree(
     'paleobiodb',
     'inaturalist',
     'wikipedia-summary',
+    'wikimedia-commons',
     'wikipedia-links',
     'phylopic',
     'openverse'
   ]);
+  const lookupOptions: ExternalLookupOptions = {
+    cacheDir: options.cacheDir,
+    online,
+    timeoutMs: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,
+    retries: options.retries ?? DEFAULT_RETRIES,
+    userAgent: options.userAgent,
+    providerStats
+  };
 
   const targetLimit = Math.min(maxTargets, targets.length);
   const selectedTargets = targets.slice(0, targetLimit);
@@ -96,13 +104,13 @@ export async function enrichMediaForScientificTree(
 
   if (targetLimit < targets.length) {
     warnings.push(
-      `Media enrichment target limit applied: enriched ${targetLimit} of ${targets.length} targets. Use --media-target-limit to raise.`
+      `Target taxonomy limit applied: enriched ${targetLimit} of ${targets.length} targets. Named-node descriptions and images are not limited. Use --media-target-limit to raise.`
     );
   }
 
   const taxonomyMetadata: TargetDifficultyMetadata[] = [];
 
-  options.onStage?.(`Enriching ${selectedTargets.length} target nodes with taxonomy and media`);
+  options.onStage?.(`Enriching ${selectedTargets.length} target nodes with taxonomy`);
   emitTargetProgress(0);
 
   for (let targetIndex = 0; targetIndex < selectedTargets.length; targetIndex += 1) {
@@ -118,75 +126,22 @@ export async function enrichMediaForScientificTree(
       continue;
     }
 
-    const taxonomy = await resolveTaxonomy(target, {
-      cacheDir: options.cacheDir,
-      online,
-      timeoutMs: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,
-      retries: options.retries ?? DEFAULT_RETRIES,
-      userAgent: options.userAgent,
-      providerStats
-    });
+    const taxonomy = await resolveTaxonomy(target, lookupOptions);
 
     applyTaxonomyToNode(node, taxonomy, target);
-    taxonomyMetadata.push({
-      speciesId: target.id,
-      familiarityScore: estimateFamiliarityFromDescriptor(target)
-    });
-
-    const mediaCandidates = await resolveMediaCandidates(node, target, {
-      cacheDir: options.cacheDir,
-      online,
-      timeoutMs: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,
-      retries: options.retries ?? DEFAULT_RETRIES,
-      userAgent: options.userAgent,
-      providerStats
-    });
-
-    const nodeMedia: NodeMediaRecord = {
-      nodeId: node.id,
-      primaryAssetId: null,
-      assetIds: []
-    };
-
-    for (const candidate of mediaCandidates) {
-      const assetId = buildAssetId(node.id, candidate.kind, candidate.url);
-      if (assetsById[assetId]) {
-        nodeMedia.assetIds.push(assetId);
-        if (!nodeMedia.primaryAssetId) {
-          nodeMedia.primaryAssetId = assetId;
-        }
-        continue;
-      }
-
-      assetsById[assetId] = {
-        assetId,
-        nodeId: node.id,
-        kind: candidate.kind,
-        url: candidate.url,
-        thumbnailUrl: candidate.thumbnailUrl,
-        title: candidate.title,
-        confidence: candidate.confidence,
-        retrievedAt: generatedAt,
-        attribution: candidate.attribution,
-        provenance: candidate.provenance
-      };
-
-      nodeMedia.assetIds.push(assetId);
-      if (!nodeMedia.primaryAssetId) {
-        nodeMedia.primaryAssetId = assetId;
-      }
-    }
-
-    if (nodeMedia.assetIds.length > 0) {
-      nodeMediaByNodeId[node.id] = nodeMedia;
-    }
-
     emitTargetProgress(targetIndex + 1);
   }
 
   const descriptionNodes = Object.values(workingTree.nodesById).filter(
-    (node) => !node.navigationOnly && !node.description && isDescriptionLookupCandidate(node)
+    (node) => !node.navigationOnly && isDescriptionLookupCandidate(node)
   );
+  const articlesByNodeId = new Map<string, WikipediaDescription>();
+  // Rehydration must not retain authored or previously resolved content on a cache miss.
+  for (const node of descriptionNodes) {
+    delete node.description;
+    delete node.descriptionSource;
+    delete node.descriptionSegments;
+  }
   const emitDescriptionProgress = createProgressEmitter(
     'node-descriptions',
     descriptionNodes.length
@@ -210,18 +165,10 @@ export async function enrichMediaForScientificTree(
     await Promise.all(
       batch.map(async (node) => {
         const lookupName = node.scientificName ?? node.displayName;
-        const lookupOptions = {
-          cacheDir: options.cacheDir,
-          online,
-          timeoutMs: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,
-          retries: options.retries ?? DEFAULT_RETRIES,
-          userAgent: options.userAgent,
-          providerStats
-        };
-
         const description = await lookupWikipediaDescription(lookupName, lookupOptions);
 
         if (description) {
+          articlesByNodeId.set(node.id, description);
           const limitedSummary = limitDescriptionToCompleteSentences(
             description.summary,
             descriptionMaxChars
@@ -232,7 +179,11 @@ export async function enrichMediaForScientificTree(
             if (description.articleTitle) {
               node.descriptionSource = {
                 articleTitle: description.articleTitle,
-                url: description.articleUrl ?? ''
+                url: description.articleUrl ?? '',
+                licenseCode: 'cc-by-sa-4.0',
+                licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+                attributionText: 'Wikipedia contributors',
+                modified: limitedSummary !== description.summary
               };
             }
 
@@ -254,7 +205,16 @@ export async function enrichMediaForScientificTree(
     );
   }
 
-  const misattributed = dropMisattributedDescriptions(descriptionNodes);
+  const misattributed = dropMisattributedDescriptions(descriptionNodes, articlesByNodeId);
+  for (const dropped of misattributed) {
+    articlesByNodeId.delete(dropped.nodeId);
+  }
+  for (const node of descriptionNodes) {
+    const title = articlesByNodeId.get(node.id)?.articleTitle;
+    if (!node.commonName && title && normalizeForMatch(title) !== normalizeForMatch(node.scientificName ?? node.displayName)) {
+      node.commonName = title;
+    }
+  }
   if (misattributed.length > 0) {
     warnings.push(
       `Dropped ${misattributed.length} description(s) that resolved to an encyclopedia article already claimed by a closer-matching clade: ${misattributed
@@ -278,12 +238,57 @@ export async function enrichMediaForScientificTree(
         : '';
     warnings.push(
       `No encyclopedia description resolved for ${unresolvedDescriptionLabels.length} selectable node(s); ` +
-        `these fall back to generated lineage text at runtime: ${preview}${remainder}`
+        `endpoints display an explicit unavailable-description notice; intermediary nodes may use generated lineage text: ${preview}${remainder}`
     );
   }
 
-  options.onStage?.('Generating internal-node reconstruction metadata');
+  const emitMediaProgress = createProgressEmitter('node-media', descriptionNodes.length);
+  options.onStage?.(`Hydrating images for ${descriptionNodes.length} named nodes`);
+  emitMediaProgress(0);
+  let processedMediaCount = 0;
+  for (let start = 0; start < descriptionNodes.length; start += DESCRIPTION_LOOKUP_CONCURRENCY) {
+    await Promise.all(descriptionNodes.slice(start, start + DESCRIPTION_LOOKUP_CONCURRENCY).map(async (node) => {
+      const candidates = await resolveMediaCandidates(node, articlesByNodeId.get(node.id), lookupOptions);
+      for (const candidate of candidates) {
+        const assetId = buildAssetId(node.id, candidate.kind, candidate.url);
+        assetsById[assetId] = { ...candidate, assetId, nodeId: node.id, retrievedAt: generatedAt };
+        nodeMediaByNodeId[node.id] = { nodeId: node.id, primaryAssetId: assetId, assetIds: [assetId] };
+      }
+      processedMediaCount += 1;
+      emitMediaProgress(processedMediaCount);
+    }));
+  }
+  for (const target of targets) {
+    const node = workingTree.nodesById[target.id];
+    if (node) {
+      taxonomyMetadata.push({ speciesId: target.id, familiarityScore: estimateFamiliarity(node) });
+    }
+  }
+  const targetIds = new Set(targets.map((target) => target.id));
+  const coverageFor = (nodes: PhyloNode[]) => ({
+    total: nodes.length,
+    withDescription: nodes.filter((node) => Boolean(node.descriptionSource)).length,
+    withImage: nodes.filter((node) => Boolean(nodeMediaByNodeId[node.id])).length,
+    missingDescriptionNodeIds: nodes.filter((node) => !node.descriptionSource).map((node) => node.id),
+    missingImageNodeIds: nodes.filter((node) => !nodeMediaByNodeId[node.id]).map((node) => node.id)
+  });
+  const coverage = {
+    targets: coverageFor(descriptionNodes.filter((node) => targetIds.has(node.id))),
+    intermediaries: coverageFor(descriptionNodes.filter((node) => !targetIds.has(node.id)))
+  };
+  for (const [group, entry] of Object.entries(coverage)) {
+    options.onStage?.(`${group}: ${entry.withDescription}/${entry.total} descriptions; ${entry.withImage}/${entry.total} images`);
+    if (entry.missingImageNodeIds.length > 0) {
+      warnings.push(`No commercially reusable image resolved for ${entry.missingImageNodeIds.length} ${group}; see media.coverage.`);
+    }
+  }
+
+  options.onStage?.('Generating structural-placeholder image metadata');
   for (const node of Object.values(workingTree.nodesById)) {
+    if (!node.navigationOnly && isDescriptionLookupCandidate(node)) {
+      delete node.reconstruction;
+      continue;
+    }
     if (node.childIds.length === 0) {
       continue;
     }
@@ -347,6 +352,7 @@ export async function enrichMediaForScientificTree(
         assetsById,
         nodeMediaByNodeId,
         reconstructionQueue,
+        coverage,
         targetDifficultyMetadata: taxonomyMetadata
       },
       warnings
@@ -392,10 +398,11 @@ async function resolveTaxonomy(
   target: TargetSpecies,
   options: ExternalLookupOptions
 ): Promise<TaxonomyMatch> {
-  const [gbif, openTree, paleoBioDb] = await Promise.all([
+  const [gbif, openTree, paleoBioDb, inaturalist] = await Promise.all([
     lookupGbif(target.scientificName, options),
     lookupOpenTree(target.scientificName, options),
-    lookupPaleoBioDb(target.scientificName, options)
+    lookupPaleoBioDb(target.scientificName, options),
+    lookupINaturalistTaxa(target.scientificName, options)
   ]);
 
   const provenance: SourceReference[] = [];
@@ -408,9 +415,15 @@ async function resolveTaxonomy(
   if (paleoBioDb?.provenance) {
     provenance.push(paleoBioDb.provenance);
   }
+  if (inaturalist?.taxa.length) {
+    provenance.push(inaturalist.provenance);
+  }
 
   return {
     canonicalName: gbif?.canonicalName ?? openTree?.canonicalName,
+    commonName: inaturalist?.taxa
+      .map((taxon) => stringOrUndefined(taxon['preferred_common_name']))
+      .find((name) => Boolean(name)),
     rank: gbif?.rank,
     taxonId:
       gbif?.usageKey !== undefined
@@ -604,105 +617,256 @@ async function lookupPaleoBioDb(
 
 async function resolveMediaCandidates(
   node: PhyloNode,
-  target: TargetSpecies,
+  article: WikipediaDescription | undefined,
   options: ExternalLookupOptions
 ): Promise<MediaCandidate[]> {
-  const candidates: MediaCandidate[] = [];
-
-  if (node.extant) {
-    const extantImage = await lookupINaturalistImage(target.scientificName, options);
-    if (extantImage) {
-      candidates.push(extantImage);
+  const name = node.scientificName ?? node.displayName;
+  if (article) {
+    const image = await lookupWikipediaLeadPhoto(article, options);
+    if (image) {
+      return [image];
     }
   }
-
-  const silhouette = await lookupPhyloPicSilhouette(target.scientificName, options);
+  if (node.extant || node.childIds.length > 0) {
+    const image = await lookupINaturalistImage(name, options);
+    if (image) {
+      return [node.childIds.length > 0 ? { ...image, kind: 'representative-image', confidence: 'low' } : image];
+    }
+  }
+  const silhouette = await lookupPhyloPicSilhouette(name, options);
   if (silhouette) {
-    candidates.push(silhouette);
+    return [silhouette];
   }
-
-  if (!node.extant) {
-    const extinctIllustration = await lookupOpenVerseExtinctIllustration(
-      target.scientificName,
-      options
-    );
-    if (extinctIllustration) {
-      candidates.unshift(extinctIllustration);
+  if (!node.extant && node.childIds.length === 0) {
+    const illustration = await lookupOpenVerseExtinctIllustration(name, options);
+    if (illustration) {
+      return [illustration];
     }
   }
+  return [];
+}
 
-  return candidates;
+interface INaturalistTaxa {
+  taxa: Record<string, unknown>[];
+  provenance: SourceReference;
+}
+
+async function lookupINaturalistTaxa(
+  name: string,
+  options: ExternalLookupOptions
+): Promise<INaturalistTaxa | null> {
+  return loadCachedOrFetch<INaturalistTaxa | null>({
+    providerId: 'inaturalist',
+    cacheDir: options.cacheDir,
+    key: `inat-taxa-v1:${name}`,
+    online: options.online,
+    fetcher: async () => {
+      const url = `https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(name)}&per_page=10&is_active=true&locale=en`;
+      const response = await fetchJson<Record<string, unknown>>(url, options);
+      const taxa = asArray(response['results']).map(asRecord).filter(
+        (taxon) => normalizeTaxonName(stringOrUndefined(taxon['name']) ?? '') === normalizeTaxonName(name)
+      );
+      return {
+        taxa,
+        provenance: buildSourceReference({
+          sourceId: 'inaturalist-taxa',
+          sourceType: 'other',
+          url,
+          retrievedAt: new Date().toISOString(),
+          note: 'Exact scientific-name matches; English preferred common names and photo metadata.'
+        })
+      };
+    },
+    providerStats: options.providerStats
+  });
 }
 
 async function lookupINaturalistImage(
   name: string,
   options: ExternalLookupOptions
 ): Promise<MediaCandidate | null> {
-  return loadCachedOrFetch<MediaCandidate | null>({
-    providerId: 'inaturalist',
+  const result = await lookupINaturalistTaxa(name, options);
+  if (!result) {
+    return null;
+  }
+  for (const taxon of result.taxa) {
+    const photo = asRecord(taxon['default_photo']);
+    const licenseCode = (stringOrUndefined(photo['license_code']) ?? '').toLowerCase();
+    const imageUrl = stringOrUndefined(photo['medium_url']) ?? stringOrUndefined(photo['url']);
+    const attribution = stringOrUndefined(photo['attribution']);
+    if (
+      !imageUrl || !isAllowedLicenseCode(licenseCode) ||
+      (!attribution && licenseCode !== 'cc0' && licenseCode !== 'public domain')
+    ) {
+      continue;
+    }
+    const taxonId = numericOrUndefined(taxon['id']);
+    return {
+      kind: 'extant-photo',
+      url: imageUrl,
+      thumbnailUrl: stringOrUndefined(photo['square_url']),
+      title: stringOrUndefined(taxon['preferred_common_name']) ?? stringOrUndefined(taxon['name']),
+      confidence: 'medium',
+      attribution: {
+        providerId: 'inaturalist',
+        sourceRecordId: taxonId !== undefined ? String(taxonId) : undefined,
+        sourceUrl: taxonId !== undefined ? `https://www.inaturalist.org/taxa/${taxonId}` : undefined,
+        attributionText: attribution ?? 'Public-domain iNaturalist photo',
+        creatorName: undefined,
+        licenseCode,
+        licenseName: licenseNameFromCode(licenseCode),
+        licenseUrl: licenseUrlFromCode(licenseCode)
+      },
+      provenance: [{
+        ...result.provenance,
+        ...(taxonId !== undefined ? { externalId: String(taxonId) } : {}),
+        note: 'Exact taxon-name match; commercially reusable photo license required.'
+      }]
+    };
+  }
+  return null;
+}
+
+interface CommonsLicense {
+  code: string;
+  name: string;
+  url?: string | undefined;
+  attribution: string;
+  fileUrl: string;
+}
+
+async function lookupWikipediaLeadPhoto(
+  article: WikipediaDescription,
+  options: ExternalLookupOptions
+): Promise<MediaCandidate | null> {
+  const imageUrl = article.originalImageUrl ?? article.thumbnailUrl;
+  if (!imageUrl) {
+    return null;
+  }
+
+  const license = await lookupCommonsLicense(imageUrl, options);
+  if (!license) {
+    return null;
+  }
+
+  return {
+    kind: 'representative-image',
+    url: imageUrl,
+    thumbnailUrl: article.thumbnailUrl,
+    title: article.articleTitle,
+    confidence: 'low',
+    attribution: {
+      providerId: 'wikimedia-commons',
+      sourceUrl: license.fileUrl,
+      attributionText: license.attribution,
+      creatorName: license.attribution,
+      licenseCode: license.code,
+      licenseName: license.name,
+      licenseUrl: license.url ?? licenseUrlFromCode(license.code)
+    },
+    provenance: [
+      buildSourceReference({
+        sourceId: 'wikipedia-page-summary',
+        sourceType: 'other',
+        url: article.articleUrl,
+        retrievedAt: article.provenance.retrievedAt,
+        note: 'Representative article lead image, not necessarily the exact species or ancestor; license verified on Wikimedia Commons.'
+      })
+    ]
+  };
+}
+
+// Summary image URLs point at Commons files; the file name is recoverable from the path.
+function commonsFileTitleFromUrl(imageUrl: string): string | undefined {
+  const parsed = new URL(imageUrl);
+  if (
+    !['upload.wikimedia.org', 'thumb.wikimedia.org'].includes(parsed.hostname) ||
+    parsed.protocol !== 'https:' ||
+    !parsed.pathname.startsWith('/wikipedia/commons/')
+  ) {
+    return undefined;
+  }
+  const parts = parsed.pathname.split('/').filter((part) => part.length > 0);
+  const commonsIndex = parts.indexOf('commons');
+  if (commonsIndex < 0) {
+    return undefined;
+  }
+
+  const rest = parts.slice(commonsIndex + 1);
+  // Thumbnails: thumb/<a>/<bc>/<file>/<size>-<file>. Originals: <a>/<bc>/<file>.
+  const fileSegment = rest[0] === 'thumb' ? rest[3] : rest[2];
+  return fileSegment ? decodeURIComponent(fileSegment) : undefined;
+}
+
+function commonsLicenseCode(shortName: string): string | undefined {
+  const name = shortName.trim();
+  if (/^CC0(?: 1\.0)?$/i.test(name)) {
+    return 'cc0';
+  }
+  if (/^public domain$/i.test(name)) {
+    return 'public domain';
+  }
+
+  const match = /^CC BY(-SA)?\s+(\d(?:\.\d)?)(?:\s+[a-z]{2}(?:-[a-z]+)?)?$/i.exec(name);
+  if (!match) {
+    return undefined;
+  }
+  return `cc-by${match[1] ? '-sa' : ''}`;
+}
+
+async function lookupCommonsLicense(
+  imageUrl: string,
+  options: ExternalLookupOptions
+): Promise<CommonsLicense | null> {
+  const fileTitle = commonsFileTitleFromUrl(imageUrl);
+  if (!fileTitle) {
+    return null;
+  }
+
+  return loadCachedOrFetch<CommonsLicense | null>({
+    providerId: 'wikimedia-commons',
     cacheDir: options.cacheDir,
-    key: name,
+    key: `file-license-commercial-v2:${fileTitle}`,
     online: options.online,
     fetcher: async () => {
-      const url = `https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(name)}&per_page=3&is_active=true`;
-      const response = await fetchJson<Record<string, unknown>>(url, options);
+      const url =
+        'https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata' +
+        `&iiextmetadatafilter=LicenseShortName|LicenseUrl|Artist|Credit|Attribution&format=json&formatversion=2&titles=${encodeURIComponent(`File:${fileTitle}`)}`;
+      const response = await fetchJsonAllowingMissing<Record<string, unknown>>(url, options);
+      const page = asArray(asRecord(response?.['query'])?.['pages'])[0];
+      const info = asArray(asRecord(page)?.['imageinfo'])[0];
+      const metadata = asRecord(asRecord(info)?.['extmetadata']);
 
-      const results = asArray(response['results']);
-      for (const row of results) {
-        if (!row || typeof row !== 'object') {
-          continue;
-        }
-
-        const taxon = row as Record<string, unknown>;
-        const defaultPhoto = taxon['default_photo'];
-        if (!defaultPhoto || typeof defaultPhoto !== 'object') {
-          continue;
-        }
-
-        const photo = defaultPhoto as Record<string, unknown>;
-        const licenseCode = (stringOrUndefined(photo['license_code']) ?? '').toLowerCase();
-        if (!isFreeLicenseCode(licenseCode)) {
-          continue;
-        }
-
-        const imageUrl = stringOrUndefined(photo['medium_url']) ?? stringOrUndefined(photo['url']);
-        if (!imageUrl) {
-          continue;
-        }
-
-        const taxonId = numericOrUndefined(taxon['id']);
-        const attribution = stringOrUndefined(photo['attribution']) ?? 'iNaturalist community photo';
-
-        return {
-          kind: 'extant-photo',
-          url: imageUrl,
-          thumbnailUrl: stringOrUndefined(photo['square_url']),
-          title: stringOrUndefined(taxon['preferred_common_name']) ?? stringOrUndefined(taxon['name']),
-          confidence: 'medium',
-          attribution: {
-            providerId: 'inaturalist',
-            sourceRecordId: taxonId !== undefined ? String(taxonId) : undefined,
-            sourceUrl: taxonId !== undefined ? `https://www.inaturalist.org/taxa/${taxonId}` : undefined,
-            attributionText: attribution,
-            creatorName: undefined,
-            licenseCode,
-            licenseName: licenseNameFromCode(licenseCode),
-            licenseUrl: licenseUrlFromCode(licenseCode)
-          },
-          provenance: [
-            buildSourceReference({
-              sourceId: 'inaturalist-taxa',
-              sourceType: 'other',
-              externalId: taxonId !== undefined ? String(taxonId) : undefined,
-              url,
-              retrievedAt: new Date().toISOString(),
-              note: 'Filtered to free-use license codes.'
-            })
-          ]
-        };
+      const shortName = stringOrUndefined(asRecord(metadata?.['LicenseShortName'])?.['value']);
+      const code = shortName ? commonsLicenseCode(shortName) : undefined;
+      if (!shortName || !code || !isAllowedLicenseCode(code)) {
+        return null;
       }
 
-      return null;
+      const cleanCredit = (field: string): string => decodeHtmlText(
+        (stringOrUndefined(asRecord(metadata[field])['value']) ?? '').replace(/<[^>]*>/g, '')
+      ).replace(/\s+/g, ' ').trim();
+      const artist = cleanCredit('Artist');
+      const attribution = cleanCredit('Attribution') || artist;
+      if (!attribution && code !== 'cc0' && code !== 'public domain') {
+        return null;
+      }
+      const version = /\s(\d(?:\.\d)?)(?:\s+([a-z]{2}(?:-[a-z]+)?))?$/i.exec(shortName);
+      const licenseUrl = stringOrUndefined(asRecord(metadata['LicenseUrl'])['value']) ??
+        (version && code.startsWith('cc-by')
+          ? `https://creativecommons.org/licenses/${code.slice(3)}/${version[1]}/${version[2] ? `${version[2].toLowerCase()}/` : ''}`
+          : licenseUrlFromCode(code));
+      if (licenseCodeFromUrl(licenseUrl) !== code) {
+        return null;
+      }
+
+      return {
+        code,
+        name: shortName,
+        url: licenseUrl,
+        attribution: [attribution || 'Public-domain media', cleanCredit('Credit')].filter(Boolean).join(' | '),
+        fileUrl: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(fileTitle)}`
+      };
     },
     providerStats: options.providerStats
   });
@@ -712,6 +876,8 @@ interface WikipediaDescription {
   summary: string;
   articleTitle?: string | undefined;
   articleUrl?: string | undefined;
+  originalImageUrl?: string | undefined;
+  thumbnailUrl?: string | undefined;
   provenance: SourceReference;
 }
 
@@ -778,8 +944,10 @@ async function lookupWikipediaDescriptionByTitle(
 
       return {
         summary,
-        articleTitle: stringOrUndefined(response['title']),
-        articleUrl: pageUrl ?? url,
+        articleTitle: stringOrUndefined(response['title']) ?? name,
+        articleUrl: pageUrl ?? `https://en.wikipedia.org/wiki/${encodeURIComponent(stringOrUndefined(response['title']) ?? name)}`,
+        originalImageUrl: stringOrUndefined(asRecord(response['originalimage'])['source']),
+        thumbnailUrl: stringOrUndefined(asRecord(response['thumbnail'])['source']),
         provenance: buildSourceReference({
           sourceId: 'wikipedia-page-summary',
           sourceType: 'other',
@@ -794,10 +962,11 @@ async function lookupWikipediaDescriptionByTitle(
   });
 }
 
-// Distinct nested clades often redirect to one broad article; only the closest name may keep it.
+// Shared genus articles can legitimately describe species, but unrelated redirects must not inherit them.
 function dropMisattributedDescriptions(
-  nodes: ReadonlyArray<PhyloNode>
-): { label: string; articleTitle: string }[] {
+  nodes: ReadonlyArray<PhyloNode>,
+  articlesByNodeId: ReadonlyMap<string, WikipediaDescription>
+): { nodeId: string; label: string; articleTitle: string }[] {
   const byArticle = new Map<string, PhyloNode[]>();
 
   for (const node of nodes) {
@@ -812,7 +981,7 @@ function dropMisattributedDescriptions(
     byArticle.set(key, existing);
   }
 
-  const dropped: { label: string; articleTitle: string }[] = [];
+  const dropped: { nodeId: string; label: string; articleTitle: string }[] = [];
 
   for (const claimants of byArticle.values()) {
     if (claimants.length < 2) {
@@ -824,7 +993,16 @@ function dropMisattributedDescriptions(
     );
 
     for (const node of ranked.slice(1)) {
+      const article = articlesByNodeId.get(node.id);
+      if (
+        normalizeForMatch(node.scientificName ?? node.displayName) ===
+          normalizeForMatch(node.descriptionSource?.articleTitle ?? '') ||
+        (article && articleExplicitlyMentionsTaxon(article.summary, node))
+      ) {
+        continue;
+      }
       dropped.push({
+        nodeId: node.id,
         label: node.scientificName ?? node.displayName,
         articleTitle: node.descriptionSource?.articleTitle ?? ''
       });
@@ -833,6 +1011,26 @@ function dropMisattributedDescriptions(
       delete node.descriptionSegments;
       delete node.descriptionSource;
     }
+  }
+
+  function articleExplicitlyMentionsTaxon(summary: string, node: PhyloNode): boolean {
+    const name = (node.scientificName ?? node.displayName)
+      .replace(/\s*\([^)]*\)\s*$/, '')
+      .trim()
+      .replace(/\s+/g, ' ')
+      .toLowerCase();
+    if (!name) {
+      return false;
+    }
+    const text = summary.replace(/\s+/g, ' ').toLowerCase();
+    let position = text.indexOf(name);
+    while (position >= 0) {
+      if (isWholeWordMatch(text, position, position + name.length)) {
+        return true;
+      }
+      position = text.indexOf(name, position + 1);
+    }
+    return false;
   }
 
   return dropped;
@@ -1066,6 +1264,27 @@ function decodeHtmlText(value: string): string {
     .replace(/&amp;/g, '&');
 }
 
+const PHYLOPIC_ACCEPT_HEADER = 'application/vnd.phylopic.v2+json';
+const phyloPicBuildLookups = new WeakMap<Record<string, ProviderStatMutable>, Promise<number>>();
+
+// PhyloPic requires a build number on node queries; the root endpoint reports the current one.
+function getPhyloPicBuild(options: ExternalLookupOptions): Promise<number> {
+  const existing = phyloPicBuildLookups.get(options.providerStats);
+  if (existing) {
+    return existing;
+  }
+  const lookup = fetchJson<Record<string, unknown>>('https://api.phylopic.org/', options, {
+    headers: { accept: PHYLOPIC_ACCEPT_HEADER }
+  }).then((root) => {
+    if (typeof root['build'] !== 'number') {
+      throw new Error('PhyloPic root response did not include a build number.');
+    }
+    return root['build'];
+  });
+  phyloPicBuildLookups.set(options.providerStats, lookup);
+  return lookup;
+}
+
 async function lookupPhyloPicSilhouette(
   name: string,
   options: ExternalLookupOptions
@@ -1073,49 +1292,65 @@ async function lookupPhyloPicSilhouette(
   return loadCachedOrFetch<MediaCandidate | null>({
     providerId: 'phylopic',
     cacheDir: options.cacheDir,
-    key: name,
+    key: `phylopic-commercial-v3:${name}`,
     online: options.online,
     fetcher: async () => {
-      const url = `https://api.phylopic.org/images?filter_name=${encodeURIComponent(name)}`;
-      const response = await fetchJson<Record<string, unknown>>(url, options);
-
-      const embedded = response['_embedded'];
-      if (!embedded || typeof embedded !== 'object') {
+      const build = await getPhyloPicBuild(options);
+      const filterName = normalizeTaxonName(name);
+      const url =
+        `https://api.phylopic.org/nodes?build=${build}&page=0&filter_name=${encodeURIComponent(filterName)}` +
+        '&embed_items=true&embed_primaryImage=true';
+      const response = await fetchJsonAllowingMissing<Record<string, unknown>>(url, options, {
+        headers: { accept: PHYLOPIC_ACCEPT_HEADER }
+      });
+      if (!response) {
         return null;
       }
 
-      const imageArray = asArray((embedded as Record<string, unknown>)['images']);
-      const first = imageArray[0];
-      if (!first || typeof first !== 'object') {
+      const items = asArray(asRecord(response['_embedded'])['items']);
+      const image = items
+        .map((item) => asRecord(asRecord(item)['_embedded'])['primaryImage'])
+        .find((candidate) => licenseCodeFromUrl(
+          stringOrUndefined(asRecord(asRecord(asRecord(candidate)['_links'])['license'])['href'])
+        ));
+      if (!image) {
         return null;
       }
 
-      const image = first as Record<string, unknown>;
-      const links = image['_links'];
-      const linksRecord = links && typeof links === 'object' ? (links as Record<string, unknown>) : {};
-      const raster = linksRecord['rasterFile'];
-      const rasterRecord = raster && typeof raster === 'object' ? (raster as Record<string, unknown>) : {};
-      const href = stringOrUndefined(rasterRecord['href']);
-
+      const imageRecord = asRecord(image);
+      const rasterFiles = asArray(asRecord(imageRecord['_links'])['rasterFiles'])
+        .map((raster) => stringOrUndefined(asRecord(raster)['href']))
+        .filter((href): href is string => Boolean(href));
+      const href = rasterFiles[0];
       if (!href) {
         return null;
       }
+      const thumbnailUrl = rasterFiles[rasterFiles.length - 1];
 
-      const attribution = stringOrUndefined(image['attribution']) ?? 'PhyloPic silhouette';
-      const uid = stringOrUndefined(image['uid']);
+      const attribution = stringOrUndefined(imageRecord['attribution']) ?? 'PhyloPic silhouette';
+      const uid = stringOrUndefined(imageRecord['uuid']);
+      const licenseUrl = stringOrUndefined(asRecord(asRecord(imageRecord['_links'])['license'])['href']);
+      const licenseCode = licenseCodeFromUrl(licenseUrl);
+      if (!licenseCode) {
+        return null;
+      }
+      if (!stringOrUndefined(imageRecord['attribution']) && licenseCode !== 'cc0' && licenseCode !== 'public domain') {
+        return null;
+      }
 
       return {
         kind: 'silhouette',
         url: href,
+        thumbnailUrl,
         confidence: 'low',
         attribution: {
           providerId: 'phylopic',
           sourceRecordId: uid,
           sourceUrl: uid ? `https://www.phylopic.org/images/${uid}` : undefined,
           attributionText: attribution,
-          licenseCode: 'varies',
-          licenseName: 'See PhyloPic record',
-          licenseUrl: uid ? `https://www.phylopic.org/images/${uid}` : undefined
+          licenseCode,
+          licenseName: licenseNameFromCode(licenseCode),
+          licenseUrl
         },
         provenance: [
           buildSourceReference({
@@ -1140,7 +1375,7 @@ async function lookupOpenVerseExtinctIllustration(
   return loadCachedOrFetch<MediaCandidate | null>({
     providerId: 'openverse',
     cacheDir: options.cacheDir,
-    key: `${name}-extinct-illustration`,
+    key: `commercial-v2:${name}-extinct-illustration`,
     online: options.online,
     fetcher: async () => {
       const url =
@@ -1155,7 +1390,9 @@ async function lookupOpenVerseExtinctIllustration(
         }
 
         const rec = row as Record<string, unknown>;
-        return typeof rec['url'] === 'string';
+        const code = stringOrUndefined(rec['license'])?.toLowerCase() ?? '';
+        return typeof rec['url'] === 'string' && isAllowedLicenseCode(code) &&
+          (code === 'cc0' || code === 'public domain' || Boolean(stringOrUndefined(rec['creator'])));
       });
 
       if (!first || typeof first !== 'object') {
@@ -1168,7 +1405,8 @@ async function lookupOpenVerseExtinctIllustration(
         return null;
       }
 
-      const license = (stringOrUndefined(row['license']) ?? 'cc-by').toLowerCase();
+      const license = (stringOrUndefined(row['license']) ?? '').toLowerCase();
+      const licenseVersion = stringOrUndefined(row['license_version']);
       const creator = stringOrUndefined(row['creator']);
       const source = stringOrUndefined(row['source']);
       const foreignId = stringOrUndefined(row['foreign_landing_url']) ?? undefined;
@@ -1182,12 +1420,14 @@ async function lookupOpenVerseExtinctIllustration(
         attribution: {
           providerId: 'openverse',
           sourceRecordId: source,
-          sourceUrl: foreignId,
+          sourceUrl: foreignId ?? imageUrl,
           creatorName: creator,
           attributionText: creator ? `${creator} via Openverse` : 'Openverse media result',
           licenseCode: license,
           licenseName: licenseNameFromCode(license),
-          licenseUrl: licenseUrlFromCode(license)
+          licenseUrl: licenseVersion && /^cc-by(?:-sa)?$/.test(license)
+            ? `https://creativecommons.org/licenses/${license.slice(3)}/${licenseVersion}/`
+            : licenseUrlFromCode(license)
         },
         provenance: [
           buildSourceReference({
@@ -1211,8 +1451,9 @@ function applyTaxonomyToNode(
   target: TargetSpecies
 ): void {
   node.scientificName = target.scientificName;
-  node.commonName = target.commonName;
-  node.description = target.briefDescriptor;
+  if (taxonomy.commonName) {
+    node.commonName = taxonomy.commonName;
+  }
 
   if (taxonomy.canonicalName && !node.displayName) {
     node.displayName = taxonomy.canonicalName;
@@ -1624,6 +1865,10 @@ function numericOrUndefined(value: unknown): number | undefined {
   return typeof value === 'number' && Number.isFinite(value) ? value : undefined;
 }
 
+function asRecord(value: unknown): Record<string, unknown> {
+  return value && typeof value === 'object' ? (value as Record<string, unknown>) : {};
+}
+
 function stringOrUndefined(value: unknown): string | undefined {
   return typeof value === 'string' && value.length > 0 ? value : undefined;
 }
@@ -1632,10 +1877,24 @@ function asArray(value: unknown): unknown[] {
   return Array.isArray(value) ? value : [];
 }
 
-function isFreeLicenseCode(code: string): boolean {
-  return ['cc0', 'cc-by', 'cc-by-sa', 'cc-by-4.0', 'cc-by-sa-4.0', 'public domain'].includes(
-    code
-  );
+function isAllowedLicenseCode(code: string): boolean {
+  return [
+    'cc0',
+    'cc-by',
+    'cc-by-sa',
+    'cc-by-4.0',
+    'cc-by-sa-4.0',
+    'public domain'
+  ].includes(code);
+}
+
+function licenseCodeFromUrl(url: string | undefined): string | undefined {
+  const match = /^https?:\/\/creativecommons\.org\/(?:licenses\/(by(?:-sa)?)\/\d\.\d|publicdomain\/(zero|mark)\/1\.0)(?:\/[a-z]{2})?\/?(?:deed\.[a-z_-]+)?$/i.exec(url ?? '');
+  return match?.[1] ? `cc-${match[1].toLowerCase()}` : match?.[2] === 'zero' ? 'cc0' : match?.[2] === 'mark' ? 'public domain' : undefined;
+}
+
+function normalizeTaxonName(name: string): string {
+  return name.trim().replace(/\s+/g, ' ').toLowerCase();
 }
 
 function licenseNameFromCode(code: string): string {
@@ -1664,9 +1923,9 @@ function licenseUrlFromCode(code: string): string | undefined {
   return map[code];
 }
 
-function estimateFamiliarityFromDescriptor(target: TargetSpecies): number {
-  const scientificName = target.scientificName.toLowerCase();
-  const commonName = target.commonName.toLowerCase();
+function estimateFamiliarity(node: PhyloNode): number {
+  const scientificName = (node.scientificName ?? '').toLowerCase();
+  const commonName = (node.commonName ?? '').toLowerCase();
 
   const familiarHints = ['human', 'dog', 'cat', 'lion', 'tiger', 'whale', 'eagle', 'shark'];
   if (familiarHints.some((hint) => commonName.includes(hint) || scientificName.includes(hint))) {

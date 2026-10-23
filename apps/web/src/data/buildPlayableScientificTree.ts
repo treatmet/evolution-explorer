@@ -30,6 +30,7 @@ export interface PriorityCladeConfig {
 
 export interface BuildPlayableScientificTreeOptions {
   priorityClades?: PriorityCladeConfig;
+  nodeIdsWithMedia?: ReadonlySet<string>;
 }
 
 export interface PlayableScientificTreeResult {
@@ -97,6 +98,7 @@ export function buildPlayableScientificTree(
 
     nodesById[node.id] = {
       ...node,
+      mediaSourceNodeId: node.mediaSourceNodeId ?? node.id,
       parentId: null,
       childIds: compressedChildIds,
       traits
@@ -120,7 +122,9 @@ export function buildPlayableScientificTree(
     };
   }
 
-  const stageOneResult = normalizeDuplicateClades(nodesById, rootId, priorityCladeKeys);
+  const stageOneResult = normalizeDuplicateClades(
+    nodesById, rootId, priorityCladeKeys, options.nodeIdsWithMedia ?? new Set<string>()
+  );
   const splicedNonInformativeNodeCount = spliceUnresolvedNonInformativeNodes(
     nodesById,
     rootId,
@@ -288,7 +292,8 @@ function uniqueValues(values: ReadonlyArray<string>): string[] {
 function normalizeDuplicateClades(
   nodesById: Record<string, PhyloNode>,
   rootId: string,
-  priorityCladeKeys: ReadonlySet<string>
+  priorityCladeKeys: ReadonlySet<string>,
+  nodeIdsWithMedia: ReadonlySet<string>
 ): { mergedNodeCount: number; resolvedNonInformativeNodeCount: number } {
   let mergedNodeCount = 0;
   let resolvedNonInformativeNodeCount = 0;
@@ -350,6 +355,7 @@ function normalizeDuplicateClades(
         if (!canonical.description && duplicate.description) {
           adoptDescription(canonical, duplicate);
         }
+        adoptAvailableMedia(canonical, duplicate, nodeIdsWithMedia);
         canonical.extant = canonical.extant || duplicate.extant;
         canonical.isGameEndpoint = canonical.isGameEndpoint || duplicate.isGameEndpoint;
         canonical.isTargetEligible = canonical.isTargetEligible || duplicate.isTargetEligible;
@@ -388,6 +394,9 @@ function normalizeDuplicateClades(
       if (!node.description && child.description) {
         adoptDescription(node, child);
       }
+      if (samePrimaryLabel(node, child)) {
+        adoptAvailableMedia(node, child, nodeIdsWithMedia);
+      }
       node.extant = node.extant || child.extant;
       node.isGameEndpoint = node.isGameEndpoint || child.isGameEndpoint;
       node.isTargetEligible = node.isTargetEligible || child.isTargetEligible;
@@ -420,6 +429,7 @@ function promoteChildIdentityOntoParent(parent: PhyloNode, child: PhyloNode): bo
   }
 
   parent.displayName = nextDisplayName;
+  parent.mediaSourceNodeId = child.mediaSourceNodeId ?? child.id;
   if (child.names) {
     parent.names = child.names;
   }
@@ -473,10 +483,25 @@ function adoptDescription(target: PhyloNode, source: PhyloNode): void {
   }
 }
 
+function adoptAvailableMedia(
+  target: PhyloNode,
+  source: PhyloNode,
+  nodeIdsWithMedia: ReadonlySet<string>
+): void {
+  const targetId = target.mediaSourceNodeId ?? target.id;
+  const sourceId = source.mediaSourceNodeId ?? source.id;
+  if (!nodeIdsWithMedia.has(targetId) && nodeIdsWithMedia.has(sourceId)) {
+    target.mediaSourceNodeId = sourceId;
+  }
+}
+
 // Runs last so a curated or API description is never shadowed by generated lineage text.
 function applyFallbackDescriptions(nodesById: Record<string, PhyloNode>): void {
   for (const node of Object.values(nodesById)) {
     if (node.description) {
+      continue;
+    }
+    if (node.isGameEndpoint || node.isTargetEligible) {
       continue;
     }
 

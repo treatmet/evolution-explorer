@@ -1,12 +1,12 @@
-Scientific name | Common name | Brief descriptor
-Bdellovibrio bacteriovorus | Predatory bacterium | Tiny bacterium invading and consuming other bacteria
-Anguilla anguilla | European eel | Catadromous fish migrating to the Sargasso Sea
-Danio rerio | Zebrafish | Striped minnow and major developmental biology model
-Mucor mucedo | Pin mold | Common saprotrophic mold with upright spore cases
-Fungia fungites | Mushroom coral | Solitary free-living disk-shaped coral
-Homo sapiens | Human | Tool-using bipedal great ape with cumulative culture
-Pan troglodytes | Chimpanzee | Highly social African ape and close human relative
-Castor canadensis | North American beaver | Dam-building rodent and ecosystem engineer
-Octopus vulgaris | Common octopus | Intelligent camouflage-changing mollusk with eight flexible arms
-Taraxacum officinale | Common dandelion | Wind-dispersed rosette herb with milky latex
-Tyrannosaurus rex | Tyrannosaurus rex | Giant bone-crushing theropod predator of Late Cretaceous North America
+Scientific name
+Bdellovibrio bacteriovorus
+Anguilla anguilla
+Danio rerio
+Mucor mucedo
+Fungia fungites
+Homo sapiens
+Pan troglodytes
+Castor canadensis
+Octopus vulgaris
+Taraxacum officinale
+Tyrannosaurus rex

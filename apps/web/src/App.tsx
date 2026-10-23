@@ -41,6 +41,8 @@ import {
 } from './data/runtimeDataset';
 import { buildPlayableScientificTree } from './data/buildPlayableScientificTree';
 import { LinkedDescription } from './components/LinkedDescription';
+import { MediaAttribution, TreeMediaCredits } from './components/MediaAttribution';
+import { NodeHeading } from './components/NodeHeading';
 import { DEFAULT_NAME_FORM } from './config/naming';
 
 const targetMetadata: TargetDifficultyMetadata[] = [
@@ -99,23 +101,10 @@ function nodeName(
 
   const catalogTarget = targetCatalogById[nodeId];
   if (catalogTarget) {
-    return catalogTarget.commonName || catalogTarget.scientificName;
+    return catalogTarget.scientificName;
   }
 
   return nodeId;
-}
-
-function matchesNodeLabel(node: PhyloNode, articleTitle: string): boolean {
-  const normalize = (value: string): string =>
-    value
-      .toLowerCase()
-      .replace(/\s*\([^)]*\)\s*$/, '')
-      .replace(/[^a-z]/g, '');
-
-  const article = normalize(articleTitle);
-  return [node.displayName, node.scientificName, node.commonName, node.names?.singular]
-    .filter((value): value is string => Boolean(value))
-    .some((value) => normalize(value) === article);
 }
 
 function describeNodeAge(node: PhyloNode | null): string {
@@ -153,27 +142,6 @@ function getDecisionTraits(node: PhyloNode | null): string[] {
         !traitName.startsWith('Lineage summary:') && !traitName.startsWith('Lineage anchor:')
     )
     .slice(0, 3);
-}
-
-function describeChoiceHint(node: PhyloNode): string {
-  const firstTrait = node.traits[0];
-  if (firstTrait) {
-    return firstTrait.name;
-  }
-
-  if (node.childIds.length > 0) {
-    return `${node.childIds.length} descendant branches`;
-  }
-
-  if (node.extant) {
-    return 'Extant endpoint';
-  }
-
-  if (node.extinctionAgeMa !== undefined) {
-    return `Extinct around ${node.extinctionAgeMa} Ma`;
-  }
-
-  return 'Lineage details pending curation';
 }
 
 function stripLineageSummary(description: string): string {
@@ -395,11 +363,12 @@ function App() {
   const playableTreeResult = useMemo(
     () =>
       buildPlayableScientificTree(scientificTree, {
+        nodeIdsWithMedia: new Set(Object.keys(nodeMediaByNodeId)),
         priorityClades: {
           labels: PRIORITY_CLADE_LABELS
         }
       }),
-    [scientificTree]
+    [scientificTree, nodeMediaByNodeId]
   );
   const playableTree = playableTreeResult.tree;
 
@@ -438,6 +407,7 @@ function App() {
 
         const nextTree = result.artifact.scientificPhylogeny ?? fixtureScientificPhylogeny;
         const nextPlayableTree = buildPlayableScientificTree(nextTree, {
+          nodeIdsWithMedia: new Set(Object.keys(mediaNodes)),
           priorityClades: {
             labels: PRIORITY_CLADE_LABELS
           }
@@ -527,32 +497,31 @@ function App() {
   const nodeDisplayName = (nodeId: string): string =>
     nodeName(playableTree, nodeId, targetCatalogById);
 
-  const targetTitle =
-    targetNode?.commonName ??
-    targetNode?.names?.singular ??
-    targetNode?.displayName ??
-    targetCatalogTarget?.commonName ??
-    targetCatalogTarget?.scientificName ??
-    'Pending Selection';
+  const targetTitle = targetNode
+    ? resolveNodeLabel(targetNode, DEFAULT_NAME_FORM)
+    : targetCatalogTarget?.scientificName ?? 'Pending Selection';
 
   const targetScientificName =
     targetNode?.scientificName ??
     targetCatalogTarget?.scientificName ??
     'Choose difficulty first, then target species is sampled.';
 
-  const targetNodeMedia = targetNode ? nodeMediaByNodeId[targetNode.id] : undefined;
+  const targetNodeMedia = targetNode ? nodeMediaByNodeId[targetNode.mediaSourceNodeId ?? targetNode.id] : undefined;
   const targetPrimaryAssetId = targetNodeMedia?.primaryAssetId;
   const targetPrimaryAsset = targetPrimaryAssetId
     ? mediaAssetsById[targetPrimaryAssetId]
     : undefined;
   const targetImageUrl = targetPrimaryAsset?.thumbnailUrl ?? targetPrimaryAsset?.url;
-  const targetImageAttribution = targetPrimaryAsset?.attribution.attributionText;
+  const currentMediaRecord = currentNode ? nodeMediaByNodeId[currentNode.mediaSourceNodeId ?? currentNode.id] : undefined;
+  const currentMediaAsset = currentMediaRecord?.primaryAssetId
+    ? mediaAssetsById[currentMediaRecord.primaryAssetId]
+    : undefined;
 
   const nodeImageById = useMemo(() => {
     const next: Record<string, string> = {};
 
     for (const node of Object.values(playableTree.nodesById)) {
-      const nodeMedia = nodeMediaByNodeId[node.id];
+      const nodeMedia = nodeMediaByNodeId[node.mediaSourceNodeId ?? node.id];
       const primaryAssetId = nodeMedia?.primaryAssetId;
       if (!primaryAssetId) {
         continue;
@@ -1183,8 +1152,8 @@ function App() {
                   onClick={() => setStatusPanelOpen((value) => !value)}
                   aria-expanded={statusPanelOpen}
                   aria-controls="layer-boundaries-flyout"
-                  aria-label="Toggle Layer Boundaries information"
-                  title="Layer boundaries information"
+                  aria-label="Toggle information and credits"
+                  title="Information and credits"
                 >
                   i
                 </button>
@@ -1193,7 +1162,7 @@ function App() {
                   <section
                     id="layer-boundaries-flyout"
                     className="hud-flyout panel status-flyout"
-                    aria-label="Layer Boundaries"
+                    aria-label="Information and credits"
                   >
                     <div className="row">
                       <p className="label">Layer Boundaries</p>
@@ -1223,10 +1192,21 @@ function App() {
                       <p className="tiny">Runtime dataset note: {runtimeDataStatus.warning}</p>
                     ) : null}
 
-                    {targetImageAttribution ? (
-                      <p className="tiny">Target media attribution: {targetImageAttribution}</p>
+                    {currentMediaAsset ? (
+                      <section aria-label="Selected node image credit">
+                        <p className="label">Selected node image credit and license</p>
+                        <MediaAttribution asset={currentMediaAsset} />
+                      </section>
                     ) : null}
 
+                    {targetPrimaryAsset && targetPrimaryAsset.assetId !== currentMediaAsset?.assetId ? (
+                      <section aria-label="Target image credit">
+                        <p className="label">Target image credit and license</p>
+                        <MediaAttribution asset={targetPrimaryAsset} />
+                      </section>
+                    ) : null}
+
+                    <TreeMediaCredits assets={mediaAssetsById} nodes={scientificTree.nodesById} />
                     <p className="tiny">
                       Current node: {nodeDisplayName(session.currentNodeId)} | Path length: {session.visitedNodeIds.length}
                     </p>
@@ -1285,21 +1265,29 @@ function App() {
         </section>
 
         <section className="decision-card panel" aria-label="Decision lens preview">
-          <h2>{currentNode ? resolveNodeLabel(currentNode, DEFAULT_NAME_FORM) : 'Unknown node'}</h2>
+          {currentNode ? (
+            <NodeHeading node={currentNode} showWikipediaLink={!hasStartedGame} />
+          ) : <h2>Unknown node</h2>}
+          {currentMediaAsset ? (
+            <figure className="node-media">
+              <img src={currentMediaAsset.thumbnailUrl ?? currentMediaAsset.url} alt={currentMediaAsset.title ?? currentNode?.displayName ?? 'Taxon image'} loading="lazy" />
+            </figure>
+          ) : null}
           {currentNode?.description ? (
             <LinkedDescription
               description={currentNode.description}
               {...(currentNode.descriptionSegments
                 ? { segments: currentNode.descriptionSegments }
                 : {})}
-              {...(currentNode.descriptionSource &&
-              !matchesNodeLabel(currentNode, currentNode.descriptionSource.articleTitle)
+              {...(currentNode.descriptionSource
                 ? {
                     sourceLabel: currentNode.descriptionSource.articleTitle,
                     sourceUrl: currentNode.descriptionSource.url
                   }
                 : {})}
             />
+          ) : currentNode ? (
+            <p className="decision-description">No encyclopedia description is available for this taxon.</p>
           ) : null}
           <div className="metric-row">
             <span className="metric-chip">Age: {describeNodeAge(currentNode)}</span>
@@ -1337,8 +1325,7 @@ function App() {
                           {...(choiceNode.descriptionSegments
                             ? { segments: choiceNode.descriptionSegments }
                             : {})}
-                          {...(choiceNode.descriptionSource &&
-                          !matchesNodeLabel(choiceNode, choiceNode.descriptionSource.articleTitle)
+                          {...(choiceNode.descriptionSource
                             ? {
                                 sourceLabel: choiceNode.descriptionSource.articleTitle,
                                 sourceUrl: choiceNode.descriptionSource.url

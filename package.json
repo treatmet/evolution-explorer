@@ -16,7 +16,7 @@
     "test:e2e": "playwright test",
     "lint": "npm run lint --workspaces --if-present",
     "start": "npm --workspace @evo-tree/web run dev",
-    "data": "npm --workspace @evo-tree/data-refresh run refresh -- --progress --progress-interval-percent=5 --description-max-chars=500"
+    "data": "npm --workspace @evo-tree/data-refresh run refresh -- --progress --progress-interval-percent=1 --description-max-chars=500"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.1",

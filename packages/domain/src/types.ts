@@ -41,6 +41,10 @@ export interface DescriptionSegment {
 export interface DescriptionSource {
   articleTitle: string;
   url: string;
+  licenseCode?: string;
+  licenseUrl?: string;
+  attributionText?: string;
+  modified?: boolean;
 }
 
 export type NodeNameForm = 'singular' | 'plural' | 'clade';
@@ -85,6 +89,8 @@ export interface PhyloNode {
   description?: string;
   descriptionSegments?: DescriptionSegment[];
   descriptionSource?: DescriptionSource;
+  /** Original dataset node owning media when runtime compaction promotes an identity. */
+  mediaSourceNodeId?: string;
   scientificName?: string;
   commonName?: string;
   rank?: string;

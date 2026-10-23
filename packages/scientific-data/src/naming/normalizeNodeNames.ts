@@ -76,7 +76,7 @@ function resolveNames(
     };
   }
 
-  // Seed endpoints keep the curated common name and stay singular in every form.
+  // Endpoints use the hydrated common name and stay singular in every form.
   if (isSeedTarget) {
     const singular = capitalize(node.commonName || node.scientificName || node.displayName);
     return {

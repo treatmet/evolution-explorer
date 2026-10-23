@@ -114,6 +114,21 @@ describe('buildPlayableScientificTree', () => {
     expect(mammalia?.traits[0]?.traitType).toBe('inferred');
   });
 
+  it.each([true, false])('preserves an available image when duplicate taxa merge (canonical has media: %s)', (canonicalHasMedia) => {
+    const tree = makeTreeWithPlaceholderInternal();
+    const canonical = tree.nodesById['named-clade']!;
+    tree.nodesById.root!.childIds = ['named-clade', 'zz-duplicate'];
+    tree.nodesById['zz-duplicate'] = {
+      ...canonical, id: 'zz-duplicate', childIds: ['wolf'], description: 'Mammals are vertebrates.'
+    };
+    tree.nodesById.wolf!.parentId = 'zz-duplicate';
+    const ids = canonicalHasMedia ? ['named-clade', 'zz-duplicate'] : ['zz-duplicate'];
+    const result = buildPlayableScientificTree(tree, { nodeIdsWithMedia: new Set(ids) });
+    const merged = Object.values(result.tree.nodesById).find((node) => node.displayName === 'Mammalia');
+    expect(merged?.mediaSourceNodeId).toBe(canonicalHasMedia ? 'named-clade' : 'zz-duplicate');
+    expect(merged?.description).toBe('Mammals are vertebrates.');
+  });
+
   it('removes pass-through unary internals so nodes represent branch decisions', () => {
     const tree: ScientificPhylogeny = {
       datasetVersion: 'test',
@@ -557,6 +572,7 @@ describe('buildPlayableScientificTree', () => {
     expect(opisthokonta).toBeDefined();
     expect(opisthokonta?.description).toBe('The opisthokonts are a broad group of eukaryotes.');
     expect(opisthokonta?.descriptionSegments?.some((segment) => segment.href)).toBe(true);
+    expect(opisthokonta?.mediaSourceNodeId).toBe('opisthokonta');
   });
 
   it('falls back to generated lineage text only when no description exists', () => {
@@ -564,5 +580,13 @@ describe('buildPlayableScientificTree', () => {
 
     const mammalia = result.tree.nodesById['named-clade'];
     expect(mammalia?.description).toBe(mammalia?.traits[0]?.description);
+  });
+
+  it('does not substitute inferred endpoint traits for a missing taxon description', () => {
+    const tree = makeTreeWithPlaceholderInternal();
+    const result = buildPlayableScientificTree(tree);
+    expect(result.tree.nodesById.wolf?.traits[0]?.description).toContain('Inferred endpoint');
+    expect(result.tree.nodesById.wolf?.description).toBeUndefined();
+    expect(result.tree.nodesById.tiger?.description).toBeUndefined();
   });
 });
